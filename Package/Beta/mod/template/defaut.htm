@@ -1,0 +1,27 @@
+<!--
+ * @version		0.4
+ * @date Crea	11/09/2013.
+ * @date Modif	04/12/2013.
+ * @package		mod.tmpl.defaut.htm
+ * @contact		chagry.fr - git@chagry.fr
+-->
+
+<!-- Erreur fatal 0.4-->
+<script id="erreur" type="text/html">
+	<div id="erreur" class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					<div class="alert alert-danger text-center">
+						<p>{{{messageHtml}}}</p>
+						<p class="text-right">
+							<button onclick={{BtnReloadFunc}} type="button" class="btn btn-danger">
+								<i class="fa fa-refresh fa-spin fa-lg"></i> {{{BtnTitre}}}
+							</button>
+						</p>
+					</div>
+				</p>
+			</div>
+		</div>
+	</div>
+</script>
