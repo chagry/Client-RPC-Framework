@@ -16,31 +16,31 @@
 
 ## // Translate defaut.
 
-* `DEF-PROFIL` Profil
-* `DEF-LOGIN` Connexion
-* `DEF-LOGOUT` Déconnexion
-* `DEF-CLOSE` Fermer
-* `DEF-SAVE` Enregistrement
-* `DEF-EMAIL` Adresse e-mail
-* `DEF-MODIFICATION` Modification
-* `DEF-SEND` Envoyé
-* `DEF-CANCEL` Annuler
-* `DEF-SIGNUP` Inscription
+* `DEF-PROFIL` Profile
+* `DEF-LOGIN` Login
+* `DEF-LOGOUT` Sign out
+* `DEF-CLOSE` Close
+* `DEF-SAVE` Save
+* `DEF-EMAIL` Email address
+* `DEF-MODIFICATION` Modify
+* `DEF-SEND` Sent
+* `DEF-CANCEL` Cancel
+* `DEF-SIGNUP` Register
 * `DEF-ACTION` Action
 * `DEF-ACTIONS` Actions
 * `DEF-IP` Ip
 * `DEF-DATE` Date
-* `DEF-TIME` Temps
-* `DEF-BRAVO-LABEL` Félicitations
-* `DEF-CONFIRM` Confirmer
-* `DEF-WARNING` Avertissement
+* `DEF-TIME` Time
+* `DEF-BRAVO-LABEL` Congratulations
+* `DEF-CONFIRM` Confirm
+* `DEF-WARNING` Warning
 * `DEF-MESSAGE` Message
-* `DEF-CRYPT` Cryptage
-* `DEF-DECRYPT` Decrypte
-* `DEF-NOTICE` Annonce
-* `DEF-CODE-PIN` Code Pin
-* `DEF-CODE-PIN-LABEL` Votre code Pin
-* `DEF-CODE-PIN-INVALID` Votre code pin n'est pas valide
+* `DEF-CRYPT` Encryption
+* `DEF-DECRYPT` Decryption
+* `DEF-NOTICE` Notice
+* `DEF-CODE-PIN` Pin Code
+* `DEF-CODE-PIN-LABEL` Your Pin Code
+* `DEF-CODE-PIN-INVALID` Your code is not valid
 * `DEF-CODE-PIN-RESET` Réinitialisation code pin
 * `DEF-CODE-PIN-NEW` Nouveau code Pin
 * `DEF-CODE-PIN-CRYPT` Code Pin crypté
