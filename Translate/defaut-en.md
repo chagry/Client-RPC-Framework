@@ -41,41 +41,41 @@
 * `DEF-CODE-PIN` Pin Code
 * `DEF-CODE-PIN-LABEL` Your Pin Code
 * `DEF-CODE-PIN-INVALID` Your code is not valid
-* `DEF-CODE-PIN-RESET` Réinitialisation code pin
-* `DEF-CODE-PIN-NEW` Nouveau code Pin
-* `DEF-CODE-PIN-CRYPT` Code Pin crypté
-* `DEF-CODE-PIN-CRYPT-LABEL` Entrer le code Pin crypté que vous avez recu par mail
-* `DEF-CODE-PIN-VALIDATION` Code pin généré
-* `DEF-2-CLIC-INVALID` Il sufit de cliquer une seule fois sur le bouton.
-* `DEF-EDITE-LANGUE-USER` Changement de langue
-* `DEF-EDITE-MAIL-principal` Changement du mail principal
-* `DEF-EDITE-MAIL-security` Changement du mail de securité
+* `DEF-CODE-PIN-RESET` Reinitialization of the Pin Code
+* `DEF-CODE-PIN-NEW` New Pic Code
+* `DEF-CODE-PIN-CRYPT` Crypted Pin Code
+* `DEF-CODE-PIN-CRYPT-LABEL` Enter the crypted Pin Code that you received by mail
+* `DEF-CODE-PIN-VALIDATION` Pin Code generated
+* `DEF-2-CLIC-INVALID` You may only click once on the button.
+* `DEF-EDITE-LANGUE-USER` Change of the language
+* `DEF-EDITE-MAIL-principal` Change of the main mail
+* `DEF-EDITE-MAIL-security` Change of the serucity mail
 
 ## // Translate Server error defaut.
 
-* `SERV-ERROR-ACCESS-DENIED` Vous n'êtes pas autorisé à accéder à cette ressource
-* `SERV-ERROR-ACCESS-NO-CONNECT` Vous n'avez pas accès à cette page. Vous devez vous connecter avant
-* `SERV-ERROR-INVALID-ROLE` Le rôle n'est pas valide
-* `SERV-ERROR-INVALID-ACTION` L'action n'est pas valide
-* `SERV-ERROR-INVALID-CONTROLLER` Le controleur n'est pas valide
-* `SERV-ERROR-OFFLINE-MESSAGE` L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.
-* `SERV-ERROR-INVALID-PARAM-OR-METHODE` Méthode inconnue ou Paramètres incorrects
-* `SERV-ERROR-CONNECT-MYSQL` Connexion à MySQL impossible
-* `SERV-ERROR-SESSION` Erreur de session, merci de vous connecter
-* `SERV-ERROR-SESSION-EXPIRE` Votre session a expiré, veuillez vous connecter à nouveau
-* `SERV-ERROR-USER-BLACKLISTED`	 Votre compte a été bloqué. S'il vous plaît, contactez un administrateur
-* `SERV-ERROR-NOT-FIND-FILE` Erreur lors du chargement du fichier
-* `SERV-ERROR-DATABASE` Impossible de se connecter à la base sql
+* `SERV-ERROR-ACCESS-DENIED` Your are not allowed to access this ressource
+* `SERV-ERROR-ACCESS-NO-CONNECT` You do not have access to this page. You must connect before
+* `SERV-ERROR-INVALID-ROLE` The role is not valid
+* `SERV-ERROR-INVALID-ACTION` The action is not valid
+* `SERV-ERROR-INVALID-CONTROLLER` The controller is not valid
+* `SERV-ERROR-OFFLINE-MESSAGE` The application is currently not available because of maintenance. Sorry for the inconvience.
+* `SERV-ERROR-INVALID-PARAM-OR-METHODE` Unknown method or not accurate parameters
+* `SERV-ERROR-CONNECT-MYSQL` Connection to MySQL impossible
+* `SERV-ERROR-SESSION` Session error, please sign in again
+* `SERV-ERROR-SESSION-EXPIRE` Your session has expired, please sign in again
+* `SERV-ERROR-USER-BLACKLISTED`	You account was blocked. Please contact an administrator
+* `SERV-ERROR-NOT-FIND-FILE` Error while loading the file
+* `SERV-ERROR-DATABASE` Impossible to connect the SQL database
 
 ## // Translate controleur login.
 
-* `LOGIN-ERROR-MAIL-INVALID` Mail d'utilisateur incorrect
-* `LOGIN-ERROR-INVALID-MAIL` L'adresse email n'est pas valide
-* `LOGIN-ERROR-INVALID-CODE` Code pin non valide
-* `LOGIN-ERROR-INVALID-CODE-OR-SESSION` Code pin ou session non valide
-* `LOGIN-ERROR-REGISTRATION-FAILED` Une erreur est survenue lors de l'inscription
-* `LOGIN-ERROR-MAIL-MESSAGE` L'adresse e-mail que vous avez saisie existe déjà. Veuillez saisir une autre adresse e-mail
-* `LOGIN-ERROR-MAIL-UNKNOWN-PARAM` Nous ne pouvons determiner si la demande à lieu pour le mail principal ou le mail de securité.
+* `LOGIN-ERROR-MAIL-INVALID` User Mail not correct
+* `LOGIN-ERROR-INVALID-MAIL` The email address is not valid
+* `LOGIN-ERROR-INVALID-CODE` Pin Code not valid
+* `LOGIN-ERROR-INVALID-CODE-OR-SESSION` Pin Code or session not valid
+* `LOGIN-ERROR-REGISTRATION-FAILED` An error occured during the registration process
+* `LOGIN-ERROR-MAIL-MESSAGE` The email address you entered already exists. Please fill in another address.
+* `LOGIN-ERROR-MAIL-UNKNOWN-PARAM` We cannot differencitate wheater the demand is for the main or the security mail.
 
 ## // Translate modul tmpl.
 
