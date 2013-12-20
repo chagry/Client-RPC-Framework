@@ -97,30 +97,30 @@
 ## // Translate modul user.
 
 * `USER-PROFIL` Profil
-* `USER-NEW-MAIL` Votre nouvelle adresse mail
-* `USER-YOUR-MAIL` Votre adresse mail d'utilisateur
-* `USER-BEFORE-SAVE-MAIL` Avant l'enregistrement Vous devez bien vérifier l'exactitude de votre mail.
-* `USER-MAIL-FIRST-LABEL` Mail principal
-* `USER-MAIL-FIRST-DESC` C'est le mail que vous utilisez pour vous connecter et recevoir le code pin.
-* `USER-MAIL-SECU-LABEL` Mail de sécurité
-* `USER-MAIL-SECU-DESC` Sur ce mail nous vous envoyons la clé de décriptage pour le code pin.
-* `USER-SIGNUP-DATE` Inscription le
-* `USER-HISTORY-LABEL` Historique des dernières actions.
-* `USER-SECURIT-CENTER` Centre de securité
-* `USER-NEW-SIGNUP-LABEL` Créer un compte
-* `USER-RESET-DESC` Code PIN oublié ? Générer un nouveau code pin.
-* `USER-RESET-LABEL` Code PIN oublié
-* `USER-ENTER-YOUR-MAIL` Entrez votre adresse email
-* `USER-KEY-SEND` Cle de decryptage
-* `USER-WELCOM-SECURITI-CENTER` Bienvenu dans le centre de securité. C'est ici que vous pouvez décrypter le code pin avec la clé reçu par mail.
-* `USER-RESET-CUSTOM` Dans cette section vous pouvez générer un nouveau code pin pour
-* `USER-RESET-WARNING` Apres la generation du nouveau code pin, le code pin actuel deviendra obsolète et inutilisable par la platforme.
-* `USER-RESET-SEND-2EMAIL` Deux mails vont vous être envoyés. Si vous utilisez une adresse mail de securité, alors la cle de decryptage vous sera envoyé dessus.
-* `USER-ACCEPT-CONDITION` En signant ce formulaire, vous déclarez avoir +18 ans, avoir pris connaissance et accepté les Conditions Générales.
-* `USER-MAIL1-SEND-DESC` Le premier mail contient votre code pin crypter. C'est ce message que vous devrez decrypter dans le centre de securiter.
-* `USER-MAIL2-SEND-DESC` Le second mail contient la clé pour le décryptage du code pin dans le centre de securité.
-* `USER-KEY-SEND-LABEL` Entrer la clé de décryptage que vous avez reçu par mail
-* `USER-WATH-MAIL-DESC` Nous utilisons votre mail à seul fin de vous connecter à la platforme ou de vous envoyer le code pin. Nous n'avons aucun programme publicitaire ou newsletter. Nous ne vendons ni echangons vos données d'utilisateur.
-* `USER-CONFIRM-SIGNUP` Votre inscription à bien été prise en compte. 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable.
-* `USER-DELETE-MAIL` Penser à effacer les mails pour plus de sécurité. Si vous perdez ou oubliez votre code, vous pourrez toujours génerer une nouveau code pin au moment de la connexion.
-* `USER-RESET-SEND-VALIDATION` 2 mails viennet de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable. Si vous utilisez un mail de securité, alors un des deux mail arivera desus.
+* `USER-NEW-MAIL` You new email address
+* `USER-YOUR-MAIL` Your main user mail
+* `USER-BEFORE-SAVE-MAIL` Before registration, you must veryfy that your email address is correct
+* `USER-MAIL-FIRST-LABEL` Main email
+* `USER-MAIL-FIRST-DESC` This is the email address that you use to connect and receive the Pin Code
+* `USER-MAIL-SECU-LABEL` Security email
+* `USER-MAIL-SECU-DESC` On this email address, we send you the private key for the Pin Code
+* `USER-SIGNUP-DATE` Subscribtion the
+* `USER-HISTORY-LABEL` History of last actions.
+* `USER-SECURIT-CENTER` Security center
+* `USER-NEW-SIGNUP-LABEL` Create an account
+* `USER-RESET-DESC` Pin Code forgot? Generate a new Pin Code.
+* `USER-RESET-LABEL` Pin Code recovery
+* `USER-ENTER-YOUR-MAIL` Enter your email address
+* `USER-KEY-SEND` Private key
+* `USER-WELCOM-SECURITI-CENTER` Welcome in the security center. You can here decrypt your Pin Code with the private key that you received by email.
+* `USER-RESET-CUSTOM` In this section, you can generate a new Pic Code for
+* `USER-RESET-WARNING` After the new Pin Code generation, the current Pin Code will become obsolete and not usable for the platform.
+* `USER-RESET-SEND-2EMAIL` Two email will be sent. If you use a security address, the private ket to decrypt the Pin Code, you'll receive your email on this address.
+* `USER-ACCEPT-CONDITION` Signing this form, you declare being over 18 year old and you accept the general terms and conditions.
+* `USER-MAIL1-SEND-DESC` The first email embeeds your encrypted Pic Code. You must decrypt this message in the security center.
+* `USER-MAIL2-SEND-DESC` The second email embeeds your private key to decrypt your Pin Code in the security center.
+* `USER-KEY-SEND-LABEL` Enter your private key that you received by email.
+* `USER-WATH-MAIL-DESC` We use your email address only to let you connect to the platform or to send you your Pin Code. We do not have any advertisements campaigns or newsletters. We do not sell not exchange your users data.
+* `USER-CONFIRM-SIGNUP` Your subscription has been accepted. 2 emails has just been sent. Do not forget to mind your mailbox. You may find our emails in your spambox.
+* `USER-DELETE-MAIL` Don't forget to delete the mails for more security. If you forget your code, you can always generate a new Pin Code when do you connect.
+* `USER-RESET-SEND-VALIDATION` 2 emails has just been sent. Do not forget to watch your mail box. You may find our emails in your spambox. If you use a security address, the private ket to decrypt the Pin Code, you'll receive your email on this address.
