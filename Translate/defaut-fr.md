@@ -92,7 +92,7 @@
 
 * `HOME` Accueil
 * `HOME-LABEL-TITRE` Framework en développement
-* `HOME-LABEL-DESC` Ce si est un framework basé sur le protocole Json RPC. Contrairment aux autres frameworks, il n est pas fait pour generer des sites webs mais plustot des applications web. Divisé en deux parties distinctes entre le serveur et le client, il comunique grace à Json RPC et la partie client reste libre d'être développée dans n'importe quel language. La partie serveur, quant à elle, reste accesible tout le temps et depuis n'importe quel service client.
+* `HOME-LABEL-DESC` Ceci est un framework basé sur le protocole Json RPC. Contrairment aux autres frameworks, il n est pas fait pour generer des sites webs mais plustot des applications web. Divisé en deux parties distinctes entre le serveur et le client, il comunique grace à Json RPC et la partie client reste libre d'être développée dans n'importe quel language. La partie serveur, quant à elle, reste accesible tout le temps et depuis n'importe quel service client.
 
 ## // Translate modul user.
 
