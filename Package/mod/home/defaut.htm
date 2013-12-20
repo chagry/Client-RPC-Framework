@@ -1,0 +1,33 @@
+<!--
+ * @version		0.4
+ * @date Crea	04/12/2013.
+ * @date Modif	04/12/2013.
+ * @package		mod.home.defaut.htm
+ * @contact		chagry.fr - git@chagry.fr
+ * @Dependence	*All
+-->
+
+<!-- Menu home 0.4-->
+<script id="mHome" type="text/html">
+	<div id="mHome" class="btn-group navbar-btn">
+		<button id='homeSpin' type="button" onClick="{{homeClick}}" class="btn btn-info" data-tr="{{titreTr}}" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{titre}}">
+			<i class="fa fa-home"></i>
+		</button>
+	</div>
+</script>
+
+<!-- Page home 0.4-->
+<script id="home" type="text/html">
+	<div class="jumbotron noir">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<img class="pull-left hidden-xs" src="img/def/under-construction.png" alt="CRP">
+					<h2 class="googPolice">{{{frameworkTitre}}}</h2>
+					<p class="googPolice">{{{frameworkDesc}}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<canvas id="viewport" width="{{canvasWidth}}" height="450"></canvas>
+</script>
