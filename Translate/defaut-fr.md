@@ -123,4 +123,4 @@
 * `USER-WATH-MAIL-DESC` Nous utilisons votre mail à seul fin de vous connecter à la platforme ou de vous envoyer le code pin. Nous n'avons aucun programme publicitaire ou newsletter. Nous ne vendons ni echangons vos données d'utilisateur.
 * `USER-CONFIRM-SIGNUP` Votre inscription à bien été prise en compte. 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable.
 * `USER-DELETE-MAIL` Penser à effacer les mails pour plus de sécurité. Si vous perdez ou oubliez votre code, vous pourrez toujours génerer une nouveau code pin au moment de la connexion.
-* `USER-RESET-SEND-VALIDATION` 2 mails viennet de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable. Si vous utilisez un mail de securité, alors un des deux mail arivera desus.
+* `USER-RESET-SEND-VALIDATION` 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable. Si vous utilisez un mail de securité, alors un des deux mail arivera dessus.
