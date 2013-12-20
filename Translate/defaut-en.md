@@ -79,20 +79,20 @@
 
 ## // Translate modul tmpl.
 
-* `FORM-MESSAGE-EMAIL-REQUIRED` Saisissez votre adresse e-mail
-* `FORM-MESSAGE-EMAIL-INVALID` L'adresse email n'est pas valide
-* `FORM-MESSAGE-VALIDATION-FORM-FAILED` Vous devez valider le formulaire avant de poursuivre
-* `FORM-MESSAGE-PIN-REQUIRED` Veillez entrer le code pin crypté
-* `FORM-MESSAGE-KEY-REQUIRED` Veillez entrer la cle pour décrypter le message
-* `FORM-MESSAGE-CODE-PIN-REQUIRED` Veillez entrer votre code Pin
-* `FORM-MESSAGE-CODE-PIN-MIN` Votre code Pin doit être composé de 4 chiffres au minimum
-* `FORM-MESSAGE-CODE-PIN-INVALID` Votre code Pin ne doit être composé que de chiffres
+* `FORM-MESSAGE-EMAIL-REQUIRED` Enter your email address
+* `FORM-MESSAGE-EMAIL-INVALID` The email address is not valid
+* `FORM-MESSAGE-VALIDATION-FORM-FAILED` You must validate the form before going forward
+* `FORM-MESSAGE-PIN-REQUIRED` Enter your crypted Pin Code
+* `FORM-MESSAGE-KEY-REQUIRED` Enter the key to decrypt the message
+* `FORM-MESSAGE-CODE-PIN-REQUIRED` Enter your Pin Code
+* `FORM-MESSAGE-CODE-PIN-MIN` Your Pin Code must contain at least 4 figures
+* `FORM-MESSAGE-CODE-PIN-INVALID` Your Pin Code must be formed only by figures
 
 ## // Translate modul home.
 
-* `HOME` Accueil
-* `HOME-LABEL-TITRE` Framework en développement
-* `HOME-LABEL-DESC` Ce si est un framework basé sur le protocole Json RPC. Contrairment aux autres frameworks, il n est pas fait pour generer des sites webs mais plustot des applications web. Divisé en deux parties distinctes entre le serveur et le client, il comunique grace à Json RPC et la partie client reste libre d'être développée dans n'importe quel language. La partie serveur, quant à elle, reste accesible tout le temps et depuis n'importe quel service client.
+* `HOME` Home
+* `HOME-LABEL-TITRE` Framework in construction
+* `HOME-LABEL-DESC` This is a framework based on the Json RPC protocol. Unlike other frameworks, it is not developped to make websites but web applications. It is divided in two distincts server and client parts. It communicates thanks to Json RPC and the client part can be developped in any language. The server part remains reacheable all the time by any service provided to clients.
 
 ## // Translate modul user.
 
