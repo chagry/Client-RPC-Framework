@@ -16,6 +16,7 @@
 
 ## // Translate defaut.
 
+* `HOME` Home
 * `DEF-INTRO` Introduction
 * `DEF-FREE` Free
 * `DEF-BITCOIN` Bitcoin
