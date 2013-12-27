@@ -16,6 +16,11 @@
 
 ## // Translate defaut.
 
+* `DEF-INTRO` Introduction
+* `DEF-FREE` Gratuit
+* `DEF-BITCOIN` Bitcoin
+* `DEF-UTIL` Utilisation
+* `DEF-DEPOSIT` Versement
 * `DEF-PROFIL` Profil
 * `DEF-LOGIN` Connexion
 * `DEF-LOGOUT` Déconnexion

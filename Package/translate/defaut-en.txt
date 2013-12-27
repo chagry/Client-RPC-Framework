@@ -16,6 +16,11 @@ zh 中文
 
 // Translate defaut.
 
+DEF-INTRO Introduction
+DEF-FREE Free
+DEF-BITCOIN Bitcoin
+DEF-UTIL Utilization
+DEF-DEPOSIT Deposit
 DEF-PROFIL Profile
 DEF-LOGIN Login
 DEF-LOGOUT Sign out
