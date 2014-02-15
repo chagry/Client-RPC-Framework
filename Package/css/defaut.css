@@ -63,7 +63,7 @@ body
 
 .googPolice {
 	color: #fff;
-	font-family: 'Bad Script', cursive;
+	font-family: 'Jura', cursive;
 }
 
 .btn-label {
@@ -79,4 +79,15 @@ body
 .btn-labeled {
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+.btn-labeled {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.well.noir {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-color: rgba(0, 0, 0, 0.4);
 }

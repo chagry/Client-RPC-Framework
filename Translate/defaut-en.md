@@ -16,7 +16,16 @@
 
 ## // Translate defaut.
 
-* `HOME` Home
+* `DEF-SERVER` Serveur
+* `DEF-FRAMEWORK` Framework
+* `DEF-FRAMEWORKS` Frameworks
+* `DEF-CLIENT` Client
+* `DEF-CLIENTS` Clients
+* `DEF-SECURITE` Sécurité
+* `DEF-DESIGN` Design
+* `DEF-DONNEES` Données
+* `DEF-MODULAR` Modulaire
+* `DEF-TECHNOLOGIE` Technologies
 * `DEF-INTRO` Introduction
 * `DEF-FREE` Free
 * `DEF-BITCOIN` Bitcoin
@@ -96,9 +105,22 @@
 
 ## // Translate modul home.
 
-* `HOME` Home
-* `HOME-LABEL-TITRE` Framework in construction
-* `HOME-LABEL-DESC` This is a framework based on the Json RPC protocol. Unlike other frameworks, it is not developped to make websites but web applications. It is divided in two distincts server and client parts. It communicates thanks to Json RPC and the client part can be developped in any language. The server part remains reacheable all the time by any service provided to clients.
+* `HOME` Accueil
+* `HOME-FLEXIBLE` Flexibilité
+* `HOME-LABEL-TITRE` RPC Framework pour php & jQuery
+* `HOME-LABEL-DESC` Conception et développement d'api sur mesure basé sur le protocole Json RPC 2.
+* `HOME-PARTAGE-CONNAISS` Partage et utilisation des connaissances pour évoluer.
+* `HOME-FRAMEWORK-LABEL` Divisé en deux parties distinctes entre le serveur et le client, ils comunique grace au protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre.
+* `HOME-FLEXI-LABEL` La partie serveur est indépendante et reste accessible 24/24h depuis n'importe quel framework client.
+* `HOME-SECU-LABEL` Integre la gestion des acl et le cryptage des données entre le serveur et le client en plus du https.
+* `HOME-DESIGN-LABEL` Responsive Design. Des téléphones aux postes de travail, votre contenu s'adaptent automatiquement.
+* `HOME-DONNEE-LABEL` Les donnes sont sentraliser sur le serveur. L'acces au donnees se fait grace au protocole JSON RPC 2.
+* `HOME-MODUL-LABEL` Le client peut être développé dans d'autres langues avec un libre choix des systemes d'exploitation.
+* `HOME-TEC-LABEL` Liste des technologies externe deja intégré dans le package. Vous pouvez également ajouter vos propres librairie ou plugin.
+* `HOME-SERVER-LABEL` Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
+* `HOME-CLIENT-LABEL` En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
+* `HOME-CODE-DISPO` Le code est mis à votre disposition en open source. Téléchargeable ici :
+* `HOME-CONTACT-LABEL` Contact & information. Retrouvez moi sur
 
 ## // Translate modul user.
 
@@ -130,3 +152,5 @@
 * `USER-CONFIRM-SIGNUP` Your subscription has been accepted. 2 emails has just been sent. Do not forget to mind your mailbox. You may find our emails in your spambox.
 * `USER-DELETE-MAIL` Don't forget to delete the mails for more security. If you forget your code, you can always generate a new Pin Code when do you connect.
 * `USER-RESET-SEND-VALIDATION` 2 emails has just been sent. Do not forget to watch your mail box. You may find our emails in your spambox. If you use a security address, the private ket to decrypt the Pin Code, you'll receive your email on this address.
+* `USER-MAIL-NOT-CHANGE` Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
+* `USER-GRAVATAR-LABEL` Pour changer Votre Gravatar associer à votre email principal. il vous suffit de vous créer un compte sur

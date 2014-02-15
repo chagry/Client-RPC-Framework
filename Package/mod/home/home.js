@@ -1,9 +1,9 @@
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	07/12/2013.
+ * @date Modif	15/02/2014.
  * @package		mod.home.home.js
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
  */
 
@@ -60,7 +60,47 @@
 				// Data for html template.
 				$.home.data.frameworkTitre = $.lng.tr('HOME-LABEL-TITRE');
 				$.home.data.frameworkDesc = $.lng.tr('HOME-LABEL-DESC');
-				$.home.data.canvasWidth = $('#event').width();
+				$.home.data.ServeurLab = $.lng.tr('DEF-SERVER');
+				$.home.data.frameworkLab = $.lng.tr('DEF-FRAMEWORK');
+				$.home.data.ClientLab = $.lng.tr('DEF-CLIENT');
+				$.home.data.connaissancesLab = $.lng.tr('HOME-PARTAGE-CONNAISS');
+				$.home.data.frameworksTile = $.lng.tr('DEF-FRAMEWORKS');
+				$.home.data.frameworksLab = $.lng.tr('HOME-FRAMEWORK-LABEL');
+				$.home.data.flexiTitle = $.lng.tr('HOME-FLEXIBLE');
+				$.home.data.flexiLab = $.lng.tr('HOME-FLEXI-LABEL');
+				$.home.data.secuTitle = $.lng.tr('DEF-SECURITE');
+				$.home.data.secuLab = $.lng.tr('HOME-SECU-LABEL');
+				$.home.data.designTitle = $.lng.tr('DEF-DESIGN');
+				$.home.data.designLab = $.lng.tr('HOME-DESIGN-LABEL');
+				$.home.data.donneesTitle = $.lng.tr('DEF-DONNEES');
+				$.home.data.donneesLab = $.lng.tr('HOME-DONNEE-LABEL');
+				$.home.data.moduTitle = $.lng.tr('DEF-MODULAR');
+				$.home.data.moduLab = $.lng.tr('HOME-MODUL-LABEL');
+				$.home.data.tecTitle = $.lng.tr('DEF-TECHNOLOGIE');
+				$.home.data.tecLab = $.lng.tr('HOME-TEC-LABEL');
+				$.home.data.serverButLab = $.lng.tr('HOME-SERVER-LABEL');
+				$.home.data.clientButLab = $.lng.tr('HOME-CLIENT-LABEL');
+				$.home.data.codeDispoLab = $.lng.tr('HOME-CODE-DISPO');
+				$.home.data.contactLab = $.lng.tr('HOME-CONTACT-LABEL');
+				$.home.data.canvasWidth = ($('#event').width()<600)? $('#event').width()-25 : $('#event').width()/2-50;
+				$.home.data.list = [{img:'font-awesome', lien:'http://fortawesome.github.io/Font-Awesome/'}, 
+					{img:'crp', lien:'https://github.com/chagry/CRP-Crypt'},
+					{img:'bootstrap', lien:'http://getbootstrap.com/'},
+					{img:'jQuery', lien:'http://jquery.com/'},
+					{img:'d3js', lien:'http://d3js.org/'},
+					{img:'springy', lien:'http://getspringy.com/'},
+					{img:'json', lien:'https://github.com/datagraph/jquery-jsonrpc'},
+					{img:'validate', lien:'http://jqueryvalidation.org/'},
+					{img:'jGrowl', lien:'https://github.com/stanlemon/jGrowl'},
+					{img:'gmap', lien:'http://gmap3.net/en/'},
+					{img:'carousel', lien:'http://owlgraphic.com/owlcarousel/'},
+					{img:'flipFlok', lien:'http://flipclockjs.com/'},
+					{img:'moment', lien:'http://momentjs.com/'},
+					{img:'mustache', lien:'https://github.com/janl/mustache.js'},
+					{img:'spark', lien:'http://omnipotent.net/jquery.sparkline'},
+					{img:'dataTable', lien:'http://www.datatables.net/'},
+					{img:'xChart', lien:'http://tenxer.github.io/xcharts/'}
+				];
 				
 				// Remove tooltip.
 				$('.tooltip').remove();
@@ -75,7 +115,7 @@
 					$(window).resize(function() {
 						
 						// resize canvas.
-						$('#viewport').width($('#conten').width());
+						$('#viewport').width($('#viewportConten').width());
 					});
 					
 					// Animation complete.
@@ -84,101 +124,36 @@
 						// Setup Springy.
 						var sys = new Springy.Graph();
 						
-						// Protocole
-						sys.addNodes(
-							{label:'Http', color:'ac2925'},
-							{label:'Json RPC', color:'ac2925'},
-								{label:'Server', color:'47778F'},
-								{label:'Client', color:'398439'},
-								{label:'Content', color:'47778F'},
-									{label:'Css', color:'5bc0de'},
-									{label:'Html', color:'5bc0de'},
-									{label:'Font', color:'5bc0de'},
-									{label:'Images', color:'5bc0de'},
-									{label:'Translate', color:'5bc0de'}
-						);
-						
 						// Part Serveur.
 						sys.addNodes(
-							{label:'Php', color:'47778F'},
-								{label:'Sql', color:'47778F'},
-							{label:'RPC Server', color:'ed9c28'},
-								{label:'Library', color:'ed9c28'},
-								{label:'Sys', color:'ed9c28'},
-									{label:'Acl', color:'ed9c28'},
-									{label:'Archive', color:'ed9c28'},
-									{label:'db', color:'ed9c28'},
-									{label:'Email', color:'ed9c28'},
-									{label:'Session', color:'ed9c28'},
-									{label:'User', color:'ed9c28'},
-								{label:'Model', color:'ed9c28'},
-									{label:'Your codes', color:'88268D'},
-								{label:'Controller', color:'ed9c28'}
+							{label:'Json RPC', color:'b94a48'},
+							{label:'RPC Server', color:'3a87ad'},
+								{label:'Library', color:'468847'},
+								{label:'Api', color:'468847'},
+								{label:'Model', color:'468847'},
+								{label:'Controller', color:'468847'}
 						);
 						
 						// Part Client.
 						sys.addNodes(
-							{label:'Mac', color:'5cb85c'},
-							{label:'Linux', color:'5cb85c'},
-							{label:'Windows', color:'5cb85c'},
-							{label:'Android', color:'5cb85c'},
-							{label:'iPhone', color:'5cb85c'},
-							{label:'Browser', color:'5cb85c'},
-							{label:'PhoneGap', color:'adadad'},
-								{label:'RPC Client', color:'ed9c28'},
-									{label:'D3', color:'ed9c28'},
-									{label:'Bootstrap', color:'ed9c28'},
-									{label:'Mustache', color:'ed9c28'},
-									{label:'jQuery', color:'ed9c28'},
-										{label:'Widget', color:'ed9c28'},
-										{label:'Module', color:'ed9c28'},
-											{label:'Your render', color:'88268D'},
-										{label:'Plug', color:'ed9c28'}
+							{label:'RPC Client', color:'3a87ad'},
+								{label:'D3', color:'468847'},
+								{label:'Bootstrap', color:'468847'},
+								{label:'Mustache', color:'468847'},
+								{label:'jQuery', color:'468847'}
 						);
 						
 						// add Edges
 						sys.addEdges(
-							['Json RPC', 'Server'],
-							['Json RPC', 'Client'],
-							['Content', 'Http'],
-								['Content', 'Css'],
-								['Content', 'Html'],
-								['Content', 'Font'],
-								['Content', 'Images'],
-								['Content', 'Translate'],
-							['Http', 'Client'],
-								['Client', 'Mac'],
-								['Client', 'Linux'],
-								['Client', 'Windows'],
-								['Client', 'Android'],
-								['Client', 'iPhone'],
-								['Client', 'Browser'],
-								['PhoneGap', 'iPhone'],
-								['PhoneGap', 'Android'],
-								['PhoneGap', 'RPC Client'],
-									['Browser', 'RPC Client'],
-										['RPC Client', 'D3'],
-										['RPC Client', 'Bootstrap'],
-										['RPC Client', 'Mustache'],
-										['RPC Client', 'jQuery'],
-											['jQuery', 'Widget'],
-											['jQuery', 'Module'],
-												['Module', 'Your render'],
-											['jQuery', 'Plug'],
-							['Server', 'Php'],
-								['Sql', 'Model'],
-							['Php', 'RPC Server'],
+							['Json RPC', 'RPC Client'],
+							['Json RPC', 'RPC Server'],
+								['RPC Client', 'D3'],
+								['RPC Client', 'Bootstrap'],
+								['RPC Client', 'Mustache'],
+								['RPC Client', 'jQuery'],
 								['RPC Server', 'Library'],
-								['RPC Server', 'Sys'],
-									['Sys', 'Acl'],
-									['Sys', 'Archive'],
-									['Sys', 'db'],
-									['Sys', 'Email'],
-									['Sys', 'Session'],
-									['Sys', 'User'],
+								['RPC Server', 'Api'],
 								['RPC Server', 'Model'],
-									['Your codes', 'Model'],
-									['Your codes', 'Controller'],
 								['RPC Server', 'Controller']
 						);
 						
@@ -186,22 +161,27 @@
 						var springy = $('#viewport').springy({
 							graph: sys/*,
 							nodeSelected: function(node){
-							
-								// Protocole
+								
 								sys.addNodes(
 									{label:node.data.label+'A', color:'ac2925'},
 									{label:node.data.label+'B', color:'ac2925'}
 								);
-						
-								// add Edges
+								
 								sys.addEdges(
 									[node.data.label, node.data.label+'A'],
 									[node.data.label, node.data.label+'B']
 								);
-								
-								//Node selected: {"id":"Library","data":{"label":"Library","color":"ed9c28"},"_width":{"Library":61}}
-								//console.log('Node selected: ' +JSON.stringify(node));
 							}*/
+						});
+						
+						// Caroussel.
+						var owl = $("#owl-demo");
+						owl.owlCarousel({
+							items : 4, //10 items above 1000px browser width
+							itemsDesktop : [1000,3], //5 items between 1000px and 901px
+							itemsDesktopSmall : [900,3], // betweem 900px and 601px
+							itemsTablet: [600,2], //2 items between 600 and 0
+							itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
 						});
 					});
 				}); 

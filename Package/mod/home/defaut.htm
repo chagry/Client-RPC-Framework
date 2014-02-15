@@ -1,9 +1,9 @@
 <!--
- * @version		0.4
+ * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	04/12/2013.
+ * @date Modif	15/02/2014.
  * @package		mod.home.defaut.htm
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  * @Dependence	*All
 -->
 
@@ -22,12 +22,116 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 text-center">
-					<img class="pull-left hidden-xs" src="img/def/under-construction.png" alt="CRP">
 					<h2 class="googPolice">{{{frameworkTitre}}}</h2>
 					<p class="googPolice">{{{frameworkDesc}}}</p>
+					<h1 class="googPolice">vO.5<small>Alpha</small></h1>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-left">
+					<div class="well noir">
+						<p class="googPolice"><i class="fa fa-upload"></i> {{{ServeurLab}}} <a href="https://github.com/chagry/Server-RPC-Framework" target="blank" class="btn btn-default btn-labeled pull-right"><span class="btn-label"><i class="fa fa-github-alt"></i></span>PHP {{{frameworkLab}}}</a></p>
+					</div>
+				</div>
+				<div class="col-sm-6 text-left">
+					<div class="well noir">
+						<p class="googPolice"><i class="fa fa-laptop"></i> {{{ClientLab}}} <a href="https://github.com/chagry/Client-RPC-Framework" target="blank" class="btn btn-default btn-labeled pull-right"><span class="btn-label"><i class="fa fa-github-alt"></i></span>jQuery {{{frameworkLab}}}</a></p>
+					</div> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p class="text-muted"><small>{{{connaissancesLab}}}</small></p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<canvas id="viewport" width="{{canvasWidth}}" height="450"></canvas>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<br>
+				<h1 class="googFont">2 {{{frameworksTile}}}</h1>
+				<br>
+				<p class="lead">{{{frameworksLab}}}</p>
+			</div>
+			<div id="viewportConten" class="col-sm-6">
+				<canvas id="viewport" width="{{canvasWidth}}" height="270"></canvas>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<hr>
+				<br>
+				<h1 class="googFont">{{{flexiTitle}}}</h1>
+				<p class="lead text-muted">{{{flexiLab}}}</p>
+				<br>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 text-center">
+				<h1 class="text-warning"><i class="fa fa-lock fa-3x"></i></h1>
+				<h3 class="googFont text-warning">{{{secuTitle}}}</h3>
+				<p>{{{secuLab}}}</p>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h1 class="text-success"><i class="fa fa-desktop fa-3x"></i></h1>
+				<h3 class="googFont text-success">{{{designTitle}}}</h3>
+				<p>{{{designLab}}}</p>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h1 class="text-danger"><i class="fa fa-cogs fa-3x"></i></h1>
+				<h3 class="googFont text-danger">{{{donneesTitle}}}</h3>
+				<p>{{{donneesLab}}}</p>
+			</div>
+			<div class="col-sm-3 text-center">
+				<h1 class="text-info"><i class="fa fa-rocket fa-3x"></i></h1>
+				<h3 class="googFont text-info">{{{moduTitle}}}</h3>
+				<p>{{{moduLab}}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<hr>
+				<br>
+				<h1 class="googFont">{{{tecTitle}}}</h1>
+				<p class="lead text-muted">{{{tecLab}}}</p>
+				<hr>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron noir">
+		<div id="owl-demo" class="owl-carousel owl-theme">
+			{{#list}}
+				<div class="item">
+					<a href="{{lien}}" target="blank">
+						<img class="img-responsive img-rounded" src="img/def/{{img}}.jpg" />
+					</a>
+				</div>
+			{{/list}}
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<h1 class="googFont"><i class="fa fa-upload"></i> {{{ServeurLab}}}</h1>
+				<br>
+				<p class="lead">{{{serverButLab}}}</p>
+			</div>
+			<div class="col-sm-6 text-center">
+				<h1 class="googFont"><i class="fa fa-laptop"></i> {{{ClientLab}}}</h1>
+				<br>
+				<p class="lead">{{{clientButLab}}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<hr>
+				<p class="text-muted">{{{codeDispoLab}}} <a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><i class="fa fa-upload"></i> {{{ServeurLab}}}</a> php - <a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><i class="fa fa-laptop"></i> {{{ClientLab}}}</a> jQuery<br>
+					{{{contactLab}}} <a href="https://github.com/chagry" target="blank"><i class="fa fa-github"></i> GitHub.</a>
+				</p>
+			</div>
+		</div>
+	</div>
 </script>

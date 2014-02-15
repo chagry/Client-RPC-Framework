@@ -1,9 +1,9 @@
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	04/12/2013.
+ * @date Modif	13/02/2014.
  * @package		mod.langue.lng.js
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
  */
 
@@ -194,6 +194,9 @@
 							// print flag.
 							$(this).fadeIn(400);
 						});
+						
+						// event. Tmpl mod.
+						$('#event').trigger('langue');
 					}
 				}
 			},

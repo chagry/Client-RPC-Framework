@@ -1,9 +1,9 @@
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	11/12/2013.
+ * @date Modif	13/02/2014.
  * @package		mod.user.user.js
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js home.js
  */
 
@@ -82,6 +82,9 @@
 							
 							// Setup html profil.
 							$.user.profil();
+							
+							// New Cookie mail.
+							$.cookie('user', $.base64.encode($.user.data.info.email));
 							
 							// Close spinner.
 							$.tmpl.spinOff('profilSpin', 'fa fa-user');
@@ -240,7 +243,7 @@
 				else {
 					
 					// erreur.
-					$.tmpl.error('your-mail-egale-mail-first');
+					$.tmpl.error('USER-MAIL-NOT-CHANGE');
 				}
 			},
 			
@@ -373,6 +376,7 @@
 				$.user.data.ipLabel = $.lng.tr('DEF-IP');
 				$.user.data.dateLabel = $.lng.tr('DEF-DATE');
 				$.user.data.tempsLabel = $.lng.tr('DEF-TIME');
+				$.user.data.gravatarLabel = $.lng.tr('USER-GRAVATAR-LABEL');
 				$.user.data.firstMail = $.user.data.info.email;
 				$.user.data.secuMail = $.user.data.info.verif;
 				$.user.data.registerdate = moment($.user.data.info.registerdate, 'X').format('LL');
@@ -501,6 +505,22 @@
 				$.user.data.formLogin.yourCodePin = $.lng.tr('DEF-CODE-PIN-LABEL');
 				$.user.data.formLogin.codePin = $.lng.tr('DEF-CODE-PIN', true);
 				
+				// Mail cookie.
+				var userCookie = $.cookie('user');
+				// if cookie.
+				if(userCookie!=undefined) {
+					
+					// Decrypt id session.
+					var userMail = $.base64.decode(userCookie);
+					// preg_match mail.
+					var reg =/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,5}$/;
+					// if code md5.
+					if(reg.test(userMail)) {
+						// Data for html.
+						$.user.data.formLogin.cookmail = userMail;
+					}
+				}
+				
 				// Animation stop.
 				$('#login').slideUp(500, function() {
 					
@@ -604,47 +624,73 @@
 				// Animation stop.
 				$('#login').slideUp(500, function() {
 					
-					// connexion serveur.
-					$.jsonRPC.request('login_connexion', {
-						
-						// Param send.
-						params : [$.crp.decrypte($.user.data.formLogin.SessionCrp, $.user.data.formLogin.password), $.crp.crypte($.user.data.formLogin.email, $.user.data.formLogin.password), $.crp.crypte($.lng.get(), $.user.data.formLogin.password)],
-						
-						// succees.
-						success : function(data) {
+					// Decrypt id session.
+					var tmpPin = $.crp.decrypte($.user.data.formLogin.SessionCrp, $.user.data.formLogin.password);
+					
+					// preg_match.
+					var reg =/^[a-f0-9]{32}$/;
+					
+					// if code md5.
+					if(reg.test(tmpPin)) {
+					
+						// connexion serveur.
+						$.jsonRPC.request('login_connexion', {
+								 
+							// Param send.
+							params : [tmpPin, 
+								$.crp.crypte($.user.data.formLogin.email, $.user.data.formLogin.password),
+								$.crp.crypte($.lng.get(), $.user.data.formLogin.password)
+							],
 							
-							// add id session.
-							$.user.data.password =  $.user.data.formLogin.password;
-							$.user.data.session =  $.crp.decrypte(data.result.session, $.user.data.password);
-							// Decode info user.
-							$.user.data.info = JSON.parse($.crp.decrypte(data.result.user, $.user.data.password));
-							
-							// empty var formLogin.
-							$.user.data.formLogin = {};
-							
-							// empty div login.
-							$('#login').empty();
+							// succees.
+							success : function(data) {
 								
-							// Close spinner.
-							$.tmpl.spinOff('loginSpin', 'fa fa-user');
-							
-							// Event login.
-							$.user.login();
-						},
-						
-						// erreur serveur.
-						error : function(data) {
-							
-							// erreur.
-							$.tmpl.error(data.error);
-							
-							// formulaire login.
-							$.user.formLoginHtml();
+								// add id session.
+								$.user.data.password =  $.user.data.formLogin.password;
+								$.user.data.session =	 $.crp.decrypte(data.result.session, $.user.data.password);
+								// Decode info user.
+								$.user.data.info = JSON.parse($.crp.decrypte(data.result.user, $.user.data.password));
 								
-							// close spinner.
-							$.tmpl.spinOff('loginSpin', 'fa fa-user');
-						}
-					});
+								// empty var formLogin.
+								$.user.data.formLogin = {};
+								
+								// empty div login.
+								$('#login').empty();
+									
+								// Close spinner.
+								$.tmpl.spinOff('loginSpin', 'fa fa-user');
+								
+								// Event login.
+								$.user.login();
+							},
+							
+							// erreur serveur.
+							error : function(data) {
+								
+								// erreur.
+								$.tmpl.error(data.error);
+								
+								// formulaire login.
+								$.user.formLoginHtml();
+								
+								// close spinner.
+								$.tmpl.spinOff('loginSpin', 'fa fa-user');
+							}
+						});
+					}
+					
+					// if pin invalide.
+					else {
+						
+						// erreur.
+						$.tmpl.error('DEF-CODE-PIN-INVALID');
+						
+						// formulaire login.
+						$.user.formLoginHtml();
+						
+						// close spinner.
+						$.tmpl.spinOff('loginSpin', 'fa fa-user');
+					}
 				});
 			},
 			

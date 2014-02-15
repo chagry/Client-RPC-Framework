@@ -1,9 +1,9 @@
 <!--
- * @version		0.4
+ * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	04/12/2013.
+ * @date Modif	13/02/2014.
  * @package		mod.user.defaut.htm
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
 -->
 
 <!-- Menu User 0.4-->
@@ -63,7 +63,7 @@
 						<label for="email">{{{labelInput}}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-							<input class="form-control input-lg" placeholder="{{{inputMail}}}" id="email" type="email" name="email" required>
+							<input class="form-control input-lg" value="{{{cookmail}}}" placeholder="{{{inputMail}}}" id="email" type="email" name="email" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -98,7 +98,7 @@
 						<label for="email" class="lead">{{{titreLogin}}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-							<input class="form-control input-lg" placeholder="{{{inputMail}}}" id="email" type="email" name="email" required>
+							<input class="form-control input-lg" value="{{{cookmail}}}" placeholder="{{{inputMail}}}" id="email" type="email" name="email" required>
 						</div>
 					</div>
 					<div class="btn-group">
@@ -204,32 +204,48 @@
 	<div class="jumbotron noir">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2">
-					<img class="img-responsive img-rounded" src="http://www.gravatar.com/avatar/{{gravatarMD5}}?s=300&d=mm" />
-					<a href="https://gravatar.com/" target="blank" class="btn btn-xs btn-primary">By Gravatar</a>
+				<div class="col-sm-4 col-md-4 col-lg-3 text-center">
+					<div class="well noir">
+						<img class="img-responsive img-rounded" src="http://www.gravatar.com/avatar/{{gravatarMD5}}?s=300&d=mm" />
+					</div>
 				</div>
-				<div class="col-sm-10">
+				<div class="col-sm-8 col-md-8 col-lg-9 text-center">
 					<div class="row">
 						<div class="col-sm-6 text-center">
-							<h3 class="googPolice">{{{firstMailTitre}}}</h3>	
-							<button class="btn btn-labeled btn-success" type="button" onClick="{{mailPrincipalBtnClic}}">
-								<span class="btn-label"><i class="fa fa-pencil"></i></span>{{firstMail}}
-							</button>
-							<p class="googPolice">{{{firstMailDesc}}}</p>
+							<div class="well noir">
+								<h5 class="googPolice">{{{firstMailTitre}}}</h5>
+								<button class="btn btn-labeled btn-success" type="button" onClick="{{mailPrincipalBtnClic}}">
+									<span class="btn-label"><i class="fa fa-pencil"></i></span>{{firstMail}}
+								</button>
+								<h6 class="googPolice">{{{firstMailDesc}}}</h6>
+							</div>
 						</div>
 						<div class="col-sm-6 text-center">
-							<h3 class="googPolice">{{{secuMailTitre}}}</h3>	
-							<button class="btn btn-labeled {{clBtnMailSecu}}" type="button" onClick="{{mailSecurityBtnClic}}">
-								<span class="btn-label"><i class="fa fa-pencil"></i></span>{{secuMail}}
-							</button>
-							<p class="googPolice">{{{secuMailDesc}}}</p>
+							<div class="well noir">
+								<h5 class="googPolice">{{{secuMailTitre}}}</h5>
+								<button class="btn btn-labeled {{clBtnMailSecu}}" type="button" onClick="{{mailSecurityBtnClic}}">
+									<span class="btn-label"><i class="fa fa-pencil"></i></span>{{secuMail}}
+								</button>
+								<h6 class="googPolice">{{{secuMailDesc}}}</h6>
+							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12 text-center">
-							<button class="btn btn-lg btn-danger" type="button" onClick="{{logoutClick}}">
-								<i class="fa fa-power-off"></i> {{{logoutBtn}}}
-							</button>
+							<div class="well noir">
+								<div class="row">
+									<div class="col-sm-8 text-left">
+										<h6 class="googPolice"><i class="fa fa-arrow-circle-o-right fa-3x pull-left"></i>
+											 {{{gravatarLabel}}} <a href="https://gravatar.com/" target="blank" class="btn btn-xs btn-primary">Gravatar.com</a>
+										</h6>
+									</div>
+									<div class="col-sm-4 text-right">
+										<button class="btn btn-labeled btn-danger" type="button" onClick="{{logoutClick}}">
+											<span class="btn-label"><i class="fa fa-power-off"></i></span>{{{logoutBtn}}}
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
