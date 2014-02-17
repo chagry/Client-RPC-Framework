@@ -78,9 +78,12 @@
 				$.home.data.moduLab = $.lng.tr('HOME-MODUL-LABEL');
 				$.home.data.tecTitle = $.lng.tr('DEF-TECHNOLOGIE');
 				$.home.data.tecLab = $.lng.tr('HOME-TEC-LABEL');
+				$.home.data.tecLab2 = $.lng.tr('HOME-TEC-LABEL2');
 				$.home.data.serverButLab = $.lng.tr('HOME-SERVER-LABEL');
 				$.home.data.clientButLab = $.lng.tr('HOME-CLIENT-LABEL');
 				$.home.data.codeDispoLab = $.lng.tr('HOME-CODE-DISPO');
+				$.home.data.helpTitle = $.lng.tr('HOME-HELP-TITLE');
+				$.home.data.helpLab = $.lng.tr('HOME-HELP-LABEL');
 				$.home.data.contactLab = $.lng.tr('HOME-CONTACT-LABEL');
 				$.home.data.canvasWidth = ($('#event').width()<600)? $('#event').width()-25 : $('#event').width()/2-50;
 				$.home.data.list = [{img:'font-awesome', lien:'http://fortawesome.github.io/Font-Awesome/'}, 

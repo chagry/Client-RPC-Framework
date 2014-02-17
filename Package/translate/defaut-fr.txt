@@ -108,19 +108,22 @@ FORM-MESSAGE-CODE-PIN-INVALID Votre code Pin ne doit être composé que de chiff
 HOME Accueil
 HOME-FLEXIBLE Flexibilité
 HOME-LABEL-TITRE RPC Framework pour php & jQuery
-HOME-LABEL-DESC Conception et développement d'api sur mesure basé sur le protocole Json RPC 2.
+HOME-LABEL-DESC Conception et développement d'api sur mesure basé sur le protocole Json RPC.
 HOME-PARTAGE-CONNAISS Partage et utilisation des connaissances pour évoluer.
 HOME-FRAMEWORK-LABEL Divisé en deux parties distinctes entre le serveur et le client, ils comunique grace au protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre.
 HOME-FLEXI-LABEL La partie serveur est indépendante et reste accessible 24/24h depuis n'importe quel framework client.
-HOME-SECU-LABEL Integre la gestion des acl et le cryptage des données entre le serveur et le client en plus du https.
+HOME-SECU-LABEL Gestion des ACL et une connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
 HOME-DESIGN-LABEL Responsive Design. Des téléphones aux postes de travail, votre contenu s'adaptent automatiquement.
 HOME-DONNEE-LABEL Les donnes sont sentraliser sur le serveur. L'acces au donnees se fait grace au protocole JSON RPC 2.
 HOME-MODUL-LABEL Le client peut être développé dans d'autres langues avec un libre choix des systemes d'exploitation.
-HOME-TEC-LABEL Liste des technologies externe deja intégré dans le package. Vous pouvez également ajouter vos propres librairie ou plugin.
+HOME-TEC-LABEL Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package.
+HOME-TEC-LABEL2 Vous pouvez également ajouter vos propres librairie ou plugin.
 HOME-SERVER-LABEL Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
 HOME-CLIENT-LABEL En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
 HOME-CODE-DISPO Le code est mis à votre disposition en open source. Téléchargeable ici :
 HOME-CONTACT-LABEL Contact & information. Retrouvez moi sur
+HOME-HELP-LABEL Aidez-nous a garder le projet open-source. Subvenir aux dépenses des serveurs domaines & certificats. Rémunérer les intervenant exterieur, redacteurs et traducteur.
+HOME-HELP-TITLE Aidez-nous
 
 // Translate modul user.
 
