@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	15/02/2014.
+ * @date Modif	18/02/2014.
  * @package		mod.home.home.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
@@ -185,6 +185,14 @@
 							itemsDesktopSmall : [900,3], // betweem 900px and 601px
 							itemsTablet: [600,2], //2 items between 600 and 0
 							itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+						});
+						
+						$('#btcDonation').popover({
+							html : true,
+							content : '<div class="text-center text-muted"><small>15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx</small><br><img class="img-rounded" width="200" height="200" src="img/def/qr.jpg" /><br><a href="bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donation%20Chagry%20RPC%20Framework"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg" /></a></div>',
+							placement : 'top',
+							container : 'body'
+							
 						});
 					});
 				}); 

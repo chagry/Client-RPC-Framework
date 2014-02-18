@@ -1,9 +1,9 @@
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	10/12/2013.
+ * @date Modif	17/02/2014.
  * @package		mod.template.tmpl.js
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js
  */
 
@@ -150,7 +150,7 @@
 					var erreur = { 
 							
 						messageHtml:		$.lng.tr(e),
-						BtnTitre:			$.lng.tr('reinitialiser'),
+						BtnTitre:			$.lng.tr('CANCEL'),
 						BtnReloadFunc:		'location.reload();'
 					};
 					
