@@ -1,9 +1,9 @@
 /*
- * @version		0.4
+ * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	10/12/2013.
+ * @date Modif	18/02/2014.
  * @package		boot.js
- * @contact		chagry.fr - git@chagry.fr
+ * @contact		Chagry.com - git@chagry.com
  * @Dependence	*All
  */
 
