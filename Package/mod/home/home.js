@@ -100,7 +100,6 @@
 					{img:'flipFlok', lien:'http://flipclockjs.com/'},
 					{img:'moment', lien:'http://momentjs.com/'},
 					{img:'mustache', lien:'https://github.com/janl/mustache.js'},
-					{img:'spark', lien:'http://omnipotent.net/jquery.sparkline'},
 					{img:'dataTable', lien:'http://www.datatables.net/'},
 					{img:'xChart', lien:'http://tenxer.github.io/xcharts/'}
 				];
@@ -189,7 +188,7 @@
 						
 						$('#btcDonation').popover({
 							html : true,
-							content : '<div class="text-center text-muted"><small>15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx</small><br><img class="img-rounded" width="200" height="200" src="img/def/qr.jpg" /><br><a href="bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donation%20Chagry%20RPC%20Framework"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg" /></a></div>',
+							content : '<div class="text-center text-muted"><small>15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx</small><br><img class="img-rounded" width="200" height="200" src="img/def/qr.jpg" /><br><a href="bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg" /></a></div>',
 							placement : 'top',
 							container : 'body'
 							
