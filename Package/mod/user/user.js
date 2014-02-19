@@ -335,9 +335,6 @@
 				$.user.data.historique=new Array();
 				$.user.data.chart=new Array();
 				
-				// Clean windows.
-				$.tmpl.clean();
-				
 				// Boucle result historique.
 				$.each($.user.data.result.historique, function(key, value) {
 					
@@ -383,6 +380,9 @@
 				$.user.data.mailPrincipalBtnClic = '$.user.editMail(\'principal\')';
 				$.user.data.mailSecurityBtnClic = '$.user.editMail(\'security\')';
 				$.user.data.clBtnMailSecu = ($.user.data.info.email==$.user.data.info.verif)? 'btn-danger' : 'btn-success';
+				
+				// Clean windows.
+				$.tmpl.clean();
 				
 				// Animation stop.
 				$('#conten').slideUp(500, function() {
