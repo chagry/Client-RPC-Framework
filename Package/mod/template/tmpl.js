@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	17/02/2014.
+ * @date Modif	18/02/2014.
  * @package		mod.template.tmpl.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js
@@ -188,6 +188,16 @@
 				
 				// setup modal.
 				$('#'+e).modal('toggle');
+			},
+			
+			/*
+			 * clean. Clean windows. 0.5
+			 */
+			clean: function() {
+				
+				// Clean windows.
+				$('.popover').remove();
+				$('.tooltip').remove();
 			},
 		}
 	});

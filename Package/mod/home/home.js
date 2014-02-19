@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	18/02/2014.
+ * @date Modif	19/02/2014.
  * @package		mod.home.home.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
@@ -101,11 +101,15 @@
 					{img:'moment', lien:'http://momentjs.com/'},
 					{img:'mustache', lien:'https://github.com/janl/mustache.js'},
 					{img:'dataTable', lien:'http://www.datatables.net/'},
-					{img:'xChart', lien:'http://tenxer.github.io/xcharts/'}
+					{img:'xChart', lien:'http://tenxer.github.io/xcharts/'},
+					{img:'phpMailer', lien:'https://github.com/PHPMailer/PHPMailer'},
+					{img:'qrcode', lien:'http://larsjung.de/qrcode/'},
+					{img:'peity', lien:'http://benpickles.github.io/peity/'},
+					{img:'tube', lien:'http://inukshuk.github.io/jquery.tube.js/'}
 				];
 				
-				// Remove tooltip.
-				$('.tooltip').remove();
+				// Clean windows.
+				$.tmpl.clean();
 				
 				// Animation complete.
 				$('#conten').slideUp(500, function() {
@@ -186,13 +190,41 @@
 							itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
 						});
 						
+						// popover donate bitcoin.
 						$('#btcDonation').popover({
 							html : true,
-							content : '<div class="text-center text-muted"><small>15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx</small><br><img class="img-rounded" width="200" height="200" src="img/def/qr.jpg" /><br><a href="bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg" /></a></div>',
+							content : '<div class="text-center text-muted"><small>15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx</small><br><canvas id="qrCodeDonat" width="200" height="210"></canvas><br><a href="bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg" /></a></div>',
 							placement : 'top',
 							container : 'body'
 							
 						});
+						
+						// event shown popover.
+						$('#btcDonation').on('shown.bs.popover', function () {
+							// qr code generate.
+							$('#qrCodeDonat').qrcode({
+								text: 'bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework',
+								render: 'canvas',
+								minVersion: 3,
+								maxVersion: 5,
+								ecLevel: 'M',
+								top: 10,
+								size: 200,
+								fill: '#3a87ad',
+								background: null,
+								radius: 0.5,
+								quiet: 0,
+								mode: 2,
+								mSize: 0.1,
+								mPosX: 0.5,
+								mPosY: 1.0,
+								label: 'Chagry',
+								fontname: 'Jura',
+								fontcolor: '#468847',
+							});
+						});
+						
+						
 					});
 				}); 
 			},

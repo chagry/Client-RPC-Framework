@@ -120,7 +120,7 @@
 * `HOME-TEC-LABEL2` Vous pouvez également ajouter vos propres librairie ou plugin.
 * `HOME-SERVER-LABEL` Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
 * `HOME-CLIENT-LABEL` En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
-* `HOME-CODE-DISPO` Le code est mis à votre disposition en open source. Téléchargeable ici :
+* `HOME-CODE-DISPO` Le code est mis à votre disposition en open source.
 * `HOME-CONTACT-LABEL` Contact & information. Retrouvez moi sur
 * `HOME-HELP-LABEL` Aidez-nous a garder le projet open-source. Subvenir aux dépenses des serveurs domaines & certificats. Rémunérer les intervenant exterieur, redacteurs et traducteur.
 * `HOME-HELP-TITLE` Aidez-nous

@@ -1,7 +1,7 @@
 <!--
  * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	18/02/2014.
+ * @date Modif	19/02/2014.
  * @package		mod.home.defaut.htm
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*All
@@ -10,7 +10,7 @@
 <!-- Menu home 0.4-->
 <script id="mHome" type="text/html">
 	<div id="mHome" class="btn-group navbar-btn">
-		<button id='homeSpin' type="button" onClick="{{homeClick}}" class="btn btn-info" data-tr="{{titreTr}}" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{titre}}">
+		<button id='homeSpin' type="button" onClick="{{homeClick}}" class="btn btn-primary" data-tr="{{titreTr}}" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{titre}}">
 			<i class="fa fa-home"></i>
 		</button>
 	</div>
@@ -120,17 +120,22 @@
 				<h1 class="googFont"><i class="fa fa-upload"></i> {{{ServeurLab}}}</h1>
 				<br>
 				<p class="lead">{{{serverButLab}}}</p>
+				<h1>
+					<a href="https://github.com/chagry/Server-RPC-Framework" target="blank" ><i class="fa text-success fa-github-square fa-3x"></i></a>
+				</h1>
 			</div>
 			<div class="col-sm-6 text-center">
 				<h1 class="googFont"><i class="fa fa-laptop"></i> {{{ClientLab}}}</h1>
 				<br>
 				<p class="lead">{{{clientButLab}}}</p>
+				<h1>
+					<a href="https://github.com/chagry/Client-RPC-Framework" target="blank" ><i class="fa text-info fa-github-square fa-3x"></i></a>
+				</h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<hr>
-				<br>
 				<h1 class="googFont">{{{helpTitle}}}</h1>
 				<p class="lead text-muted">{{{helpLab}}}</p>
 				<br>
@@ -145,7 +150,7 @@
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<hr>
-				<p class="text-muted">{{{codeDispoLab}}} <a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><i class="fa fa-upload"></i> {{{ServeurLab}}}</a> php - <a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><i class="fa fa-laptop"></i> {{{ClientLab}}}</a> jQuery<br>
+				<p class="text-muted">{{{codeDispoLab}}} Repository GitHub - <a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><i class="fa fa-upload"></i> {{{ServeurLab}}}</a> php - <a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><i class="fa fa-laptop"></i> {{{ClientLab}}}</a> jQuery<br>
 					{{{contactLab}}} <a href="https://github.com/chagry" target="blank"><i class="fa fa-github"></i> GitHub.</a>
 				</p>
 				<h1 class="text-muted">

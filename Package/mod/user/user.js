@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	13/02/2014.
+ * @date Modif	18/02/2014.
  * @package		mod.user.user.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js home.js
@@ -327,7 +327,7 @@
 			},
 			
 			/*
-			 * profil. 0.4
+			 * profil. 0.5
 			 */
 			profil: function() {
 				
@@ -335,8 +335,8 @@
 				$.user.data.historique=new Array();
 				$.user.data.chart=new Array();
 				
-				// Remove tooltip.
-				$('.tooltip').remove();
+				// Clean windows.
+				$.tmpl.clean();
 				
 				// Boucle result historique.
 				$.each($.user.data.result.historique, function(key, value) {
