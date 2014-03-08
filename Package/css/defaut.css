@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	18/02/2014.
+ * @date Modif	02/03/2014.
  * @package		defaut.css
  * @contact		Chagry.com - git@chagry.com
  */
@@ -56,9 +56,17 @@ body
 }
 
 .jumbotron.noir {
-	background: none;
+	background-color: #2274b9;
 	background-image: url("../img/css/bg.png");
 	background-attachment: fixed;
+}
+
+.jumbotron.blanc {
+	background-color: none;
+	background-image: url("../img/css/jumbW.png");
+	background-attachment: fixed;
+	border-top: solid 1px #bbb;
+	border-bottom: solid 1px #bbb;
 }
 
 .googPolice {
@@ -85,13 +93,25 @@ body
 	padding-bottom: 0;
 }
 
-.btn-labeled {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
 .well.noir {
 	background-color: #000;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.1);
 	border-color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar-inverse {
+	background-color: #222;
+	border-color: #080808;
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: 0px;
+}
+
+.footMarge {
+	margin-bottom: 10px;
+}
+
+.footMarge-lg {
+	margin-bottom: 20px;
 }

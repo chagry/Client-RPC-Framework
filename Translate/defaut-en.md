@@ -16,6 +16,7 @@
 
 ## // Translate defaut.
 
+* `DEF-SEARCH` chercher
 * `DEF-SERVER` Serveur
 * `DEF-FRAMEWORK` Framework
 * `DEF-FRAMEWORKS` Frameworks

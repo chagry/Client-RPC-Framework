@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	18/02/2014.
+ * @date Modif	07/03/2014.
  * @package		mod.user.user.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js home.js
@@ -25,6 +25,19 @@
 				
 				// event. Tmpl mod.
 				$('#event').one('startTmpl', $.user.defautHtml);
+			},
+			
+			/*
+			 * Funct setup. 0.5
+			 */
+			session: function() {
+				
+				// if session exist.
+				if($.user.data.log==1) {
+					return $.user.data.session;
+				}
+				// else ruturn false.
+				else return false;
 			},
 			
 			/*
@@ -413,7 +426,7 @@
 						var datatable = $(this);
 						// SEARCH - Add the placeholder for Search and Turn this into in-line form control
 						var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');
-						search_input.attr('placeholder', $.lng.tr('search', true));
+						search_input.attr('placeholder', $.lng.tr('DEF-SEARCH', true));
 						search_input.addClass('form-control input-sm');
 						// LENGTH - Inline-Form control
 						var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
