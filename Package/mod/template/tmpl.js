@@ -150,7 +150,7 @@
 					var erreur = { 
 							
 						messageHtml:		$.lng.tr(e),
-						BtnTitre:			$.lng.tr('CANCEL'),
+						BtnTitre:			$.lng.tr('DEF-CANCEL'),
 						BtnReloadFunc:		'location.reload();'
 					};
 					

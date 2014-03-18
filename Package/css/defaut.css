@@ -56,7 +56,7 @@ body
 }
 
 .jumbotron.noir {
-	background-color: #2274b9;
+	background-color: #000;
 	background-image: url("../img/css/bg.png");
 	background-attachment: fixed;
 }
