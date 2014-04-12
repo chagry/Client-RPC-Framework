@@ -1,0 +1,163 @@
+{
+	"vars"          : {},
+	"version"       : "php 5.4 - sql 5.5 - jQuery 1.11.0 - chagry O.5 Beta",
+	"don" : {
+		"btc"       : "15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx",
+		"btcUrl"    : "bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"
+	},
+	"func" : {
+		"home"      : "$.home.accueil()"
+	},
+	"img" : {
+		"pledgie"   : "https://pledgie.com/campaigns/24202.png?skin_name=chrome",
+		"donat"     : "img/def/donate.png",
+		"pathLib"   : "img/lib/",
+		"ext"       : ".jpg"
+	},
+	"url" : {
+		"server"    : "https://github.com/chagry/Server-RPC-Framework",
+		"client"    : "https://github.com/chagry/Client-RPC-Framework",
+		"github"    : "https://github.com/chagry",
+		"pledgie"   : "https://pledgie.com/campaigns/24202"
+	},
+	"nodes" : [
+		{
+			"label" : "Json RPC",
+			"color" : "b94a48"
+		},
+		{
+			"label" : "RPC Server",
+			"color" : "3a87ad"
+		},
+		{
+			"label" : "Library",
+			"color" : "468847"
+		},
+		{
+			"label" : "Api",
+			"color" : "468847"
+		},
+		{
+			"label" : "Model",
+			"color" : "468847"
+		},
+		{
+			"label" : "Controller",
+			"color" : "468847"
+		},
+		{
+			"label" : "RPC Client",
+			"color" : "3a87ad"
+		},
+		{
+			"label" : "D3",
+			"color" : "468847"
+		},
+		{
+			"label" : "Bootstrap",
+			"color" : "468847"
+		},
+		{
+			"label" : "Mustache",
+			"color" : "468847"
+		},
+		{
+			"label" : "jQuery",
+			"color" : "468847"
+		}
+	],
+	"edges" : [
+		["Json RPC"   , "RPC Client"],
+		["Json RPC"   , "RPC Server"],
+		["RPC Client" , "D3"],
+		["RPC Client" , "Bootstrap"],
+		["RPC Client" , "Mustache"],
+		["RPC Client" , "jQuery"],
+		["RPC Server" , "Library"],
+		["RPC Server" , "Api"],
+		["RPC Server" , "Model"],
+		["RPC Server" , "Controller"]
+	],
+	"lib" : [
+		{
+			"img"   : "font-awesome",
+			"lien"  : "http://fortawesome.github.io/Font-Awesome/"
+		},
+		{
+			"img"   : "crp",
+			"lien"  : "https://github.com/chagry/CRP-Crypt"
+		},
+		{
+			"img"   : "bootstrap",
+			"lien"  : "http://getbootstrap.com/"
+		},
+		{
+			"img"   : "jQuery",
+			"lien"  : "http://jquery.com/"
+		},
+		{
+			"img"   : "d3js",
+			"lien"  : "http://d3js.org/"
+		},
+		{
+			"img"   : "springy",
+			"lien"  : "http://getspringy.com/"
+		},
+		{
+			"img"   : "json",
+			"lien"  : "https://github.com/datagraph/jquery-jsonrpc"
+		},
+		{
+			"img"   : "validate",
+			"lien"  : "http://jqueryvalidation.org/"
+		},
+		{
+			"img"   : "jGrowl",
+			"lien"  : "https://github.com/stanlemon/jGrowl"
+		},
+		{
+			"img"   : "gmap",
+			"lien"  : "http://gmap3.net/en/"
+		},
+		{
+			"img"   : "carousel",
+			"lien"  : "http://owlgraphic.com/owlcarousel/"
+		},
+		{
+			"img"   : "noUiSlider",
+			"lien"  : "http://refreshless.com/nouislider/"
+		},
+		{
+			"img"   : "moment",
+			"lien"  : "http://momentjs.com/"
+		},
+		{
+			"img"   : "mustache",
+			"lien"  : "https://github.com/janl/mustache.js"
+		},
+		{
+			"img"   : "xChart",
+			"lien"  : "http://tenxer.github.io/xcharts/"
+		},
+		{
+			"img"   : "dataTable",
+			"lien"  : "http://www.datatables.net/"
+		},
+		{
+			"img"   : "annyang",
+			"lien"  : "https://www.talater.com/annyang/"
+		},
+		{
+			"img"   : "qrcode",
+			"lien"  : "http://larsjung.de/qrcode/"
+		},
+		{
+			"img"   : "peity",
+			"lien"  : "http://benpickles.github.io/peity/"
+		},
+		{
+			"img"   : "tube",
+			"lien"  : "http://inukshuk.github.io/jquery.tube.js/"
+		}
+	]
+}

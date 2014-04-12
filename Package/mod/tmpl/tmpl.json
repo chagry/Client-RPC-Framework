@@ -1,0 +1,72 @@
+{
+	"rules" : {
+		"email" : {
+			"required"  : true,
+			"email"     : true
+		},
+		"password" : {
+			"required"  : true,
+			"minlength" : 4,
+			"number"    : true
+		},
+		"accept" : {
+			"required"  : true
+		},
+		"pin" : {
+			"required"  : true
+		},
+		"cles" : {
+			"required"  : true
+		},
+		"inputSecuCode" : {
+			"required"  : true,
+			"minlength" : 32
+		}
+	},
+	"messages" : {
+		"email" : {
+			"required"  : "FORM-MESSAGE-EMAIL-REQUIRED",
+			"email"     : "FORM-MESSAGE-EMAIL-INVALID"
+		},
+		"accept" : {
+			"required"  : "FORM-MESSAGE-VALIDATION-FORM-FAILED"
+		},
+		"pin" : {
+			"required"  : "FORM-MESSAGE-PIN-REQUIRED"
+		},
+		"cles" : {
+			"required"  : "FORM-MESSAGE-KEY-REQUIRED"
+		},
+		"password" : {
+			"required"  : "FORM-MESSAGE-CODE-PIN-REQUIRED",
+			"minlength" : "FORM-MESSAGE-CODE-PIN-MIN",
+			"number"    : "FORM-MESSAGE-CODE-PIN-INVALID"
+		}
+	},
+	"sound" : {
+		"closeWin"      : "closeWin:0.2",
+		"openWin"       : "openWin:0.2",
+		"scroll"        : "Shutdown:0.1",
+		"click"         : "top:0.1",
+		"error"         : "error"
+	},
+	"html" : {
+		"spinClass"     : "fa-spinner fa-spin",
+		"scrollBtn"     : "<i onClick=\"$.tmpl.scroll('up');\" class=\"fa fa-arrow-circle-up text-muted fa-2x\" style=\"cursor: pointer;\"></i>",
+		"scrollBtnCl1"  : "text-muted",
+		"scrollBtnCl2"  : "text-primary"
+	},
+	"func" : {
+		"reload"        : "location.reload();"
+	},
+	"error" : {
+		"position"      : "bottom-right",
+		"closeIcon"     : "<i class=\"fa fa-times\"></i>",
+		"blackList"     : [
+			"SERV-ERROR-SESSION-EXPIRE",
+			"SERV-ERROR-ACCESS-NO-CONNECT",
+			"SERV-ERROR-USER-BLACKLISTED",
+			"SERV-ERROR-OFFLINE-MESSAGE"
+		]
+	}
+}

@@ -16,6 +16,7 @@
 
 ## // Translate defaut.
 
+* `NOT-RESULTS` Pas de resultas
 * `DEF-SEARCH` chercher
 * `DEF-SERVER` Serveur
 * `DEF-FRAMEWORK` Framework
@@ -117,7 +118,7 @@
 * `HOME-DESIGN-LABEL` Responsive Design. Des téléphones aux postes de travail, votre contenu s'adaptent automatiquement.
 * `HOME-DONNEE-LABEL` Les donnes sont sentraliser sur le serveur. L'acces au donnees se fait grace au protocole JSON RPC 2.
 * `HOME-MODUL-LABEL` Le client peut être développé dans d'autres langues avec un libre choix des systemes d'exploitation.
-* `HOME-TEC-LABEL` Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package.
+* `HOME-TEC-LABEL` Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package client.
 * `HOME-TEC-LABEL2` Vous pouvez également ajouter vos propres librairie ou plugin.
 * `HOME-SERVER-LABEL` Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
 * `HOME-CLIENT-LABEL` En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
@@ -158,3 +159,4 @@
 * `USER-RESET-SEND-VALIDATION` 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable. Si vous utilisez un mail de securité, alors un des deux mail arivera dessus.
 * `USER-MAIL-NOT-CHANGE` Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
 * `USER-GRAVATAR-LABEL` Pour changer Votre Gravatar associer à votre email principal. il vous suffit de vous créer un compte sur
+* `USER-SECU-LABEL` Connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.

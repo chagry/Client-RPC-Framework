@@ -1,8 +1,8 @@
 <!--
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	17/02/2014.
- * @package		mod.tmpl.defaut.htm
+ * @date Modif	04/04/2014.
+ * @package		tmpl.tmpl.htm
  * @contact		Chagry.com - git@chagry.com
 -->
 
@@ -13,10 +13,10 @@
 			<div class="col-sm-12">
 				<p>
 					<div class="alert alert-danger text-center">
-						<p>{{{messageHtml}}}</p>
+						<p>{{#tr}}{{tmpl.error.label}}{{/tr}}</p>
 						<p class="text-right">
-							<button onclick={{BtnReloadFunc}} type="button" class="btn btn-danger">
-								<i class="fa fa-refresh fa-spin fa-lg"></i> {{{BtnTitre}}}
+							<button onclick="{{tmpl.func.reload}}" type="button" class="btn btn-danger">
+								<i class="fa fa-refresh fa-spin fa-lg"></i> {{#tr}}DEF-CANCEL{{/tr}}
 							</button>
 						</p>
 					</div>

@@ -1,0 +1,35 @@
+{
+	"cookie"          : "user",
+	"log"             : false,
+	"vars"            : {},
+	"info"            : {},
+	"form" : {
+		"login"       : "loginForm",
+		"pin"         : "pinForm",
+		"edit"        : "formEdit",
+		"editPin"     : "formEditPin",
+		"signup"      : "formSignup",
+		"secu"        : "formSecu"
+	},
+	"img" : {
+		"logoCRP"     : "img/def/crpMinLogo.png",
+		"grvatar" : {
+			"url"     : "https://www.gravatar.com/avatar/",
+			"web"     : "https://gravatar.com/",
+			"vars"    : "?s=300&d=mm"
+		}
+	},
+	"func" : {
+		"modalLogin"  : "$.tmpl.modal('loginModal')",
+		"modalProfil" : "$.tmpl.modal('profilModal')",
+		"signup"      : "$.user.signupHtml()",
+		"secuCenter"  : "$.user.secuPinHtml()",
+		"forgot"      : "$.user.forgotHtml()",
+		"back"        : "$.user.formLoginHtml()",
+		"profil"      : "$.user.profil()",
+		"editPrince"  : "$.user.editMail('principal')",
+		"editSecurit" : "$.user.editMail('security')",
+		"logout"      : "$.user.logout()",
+		"forgotSend"  : "$.user.forgotFunc()"
+	}
+}

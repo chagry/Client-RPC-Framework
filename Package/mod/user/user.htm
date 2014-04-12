@@ -1,0 +1,528 @@
+<!--
+ * @version		0.5
+ * @date Crea	11/09/2013.
+ * @date Modif	10/04/2014.
+ * @package		user.user.htm
+ * @contact		Chagry.com - git@chagry.com
+-->
+
+<!-- Menu User 0.5 -->
+<script id="mUser" type="text/html">
+	<div id="mUser" class="btn-group navbar-btn">
+		<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}" data-tr="DEF-LOGIN" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#trx}}DEF-LOGIN{{/trx}}">
+			<i class="fa fa-user"></i>
+		</button>
+	</div>
+</script>
+
+<!-- Menu Profil 0.5 -->
+<script id="mProfil" type="text/html">
+	<div id="mProfil" class="btn-group navbar-btn">
+		<button id='profilSpin' type="button" onClick="{{user.func.profil}}" class="btn btn-success" data-tr="DEF-PROFIL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#trx}}DEF-PROFIL{{/trx}}">
+			<i class="fa fa-user"></i>
+		</button>
+	</div>
+</script>
+
+<!-- Page login modal 0.5 -->
+<script id="loginModal" type="text/html">
+	<div id="loginModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
+		<div class="modal-header">
+			<h4 id='loginSpin' class="modal-title text-warning">{{#tr}}DEF-LOGIN{{/tr}} <i class="fa fa-user pull-right fa-lg"></i></h4>
+		</div>
+		<div id="login" class="modal-body"></div>
+		<div class="modal-footer">
+			<img class="pull-left" src="{{user.img.logoCRP}}" alt="CRP">
+			<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}">{{#tr}}DEF-CLOSE{{/tr}}</button>
+		</div>
+	</div>	
+</script>
+
+<!-- Page profil modal 0.5 -->
+<script id="profilModal" type="text/html">
+	<div id="profilModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
+		<div class="modal-header">
+			<h4 id='profilSpinMod' class="modal-title text-success">{{#tr}}DEF-PROFIL{{/tr}} <i class="fa fa-user pull-right fa-lg"></i></h4>
+		</div>		
+		<div id="profil" class="modal-body"></div>
+		<div class="modal-footer">
+			<img class="pull-left" src="{{user.img.logoCRP}}" alt="CRP">
+			<button type="button" class="btn btn-danger" onClick="{{user.func.modalProfil}}">{{#tr}}DEF-CLOSE{{/tr}}</button>
+		</div>
+	</div>	
+</script>
+
+<!-- Page edit formulaire 0.5 -->
+<script id="editForm" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well well-lg">
+				<p class="lead text-center"><i class="fa fa-magic"></i> {{#tr}}DEF-MODIFICATION{{/tr}} {{#tr}}{{user.vars.edit.titre}}{{/tr}}</p>
+				<form id="{{user.form.edit}}" role="form">
+					<div class="form-group">
+						<label for="email">{{#tr}}USER-NEW-MAIL{{/tr}}</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+							<input class="form-control input-lg" value="{{user.vars.edit.mail}}" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" id="accept" name="accept" value="">{{#tr}}USER-BEFORE-SAVE-MAIL{{/tr}}
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-labeled btn-primary" type="submit">
+							<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#tr}}DEF-SAVE{{/tr}}
+						</button>
+					</div>
+				</form>
+			</div>
+			<p class="text-muted text-center"><small>{{#tr}}{{user.vars.edit.desc}}{{/tr}}</small></p>
+		</div>
+	</div>
+</script>
+
+<!-- Page login formulaire 0.5 -->
+<script id="login" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well well-lg text-center">
+				<i class="fa fa-arrow-circle-down fa-4x text-muted hidden-xs"><br /></i>
+				<form id="{{user.form.login}}" role="form">
+					<div class="form-group">
+						<label for="email" class="lead">{{#tr}}USER-YOUR-MAIL{{/tr}}</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+							<input class="form-control input-lg" value="{{user.vars.cookieMail}}" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
+						</div>
+					</div>
+					<div class="btn-group">
+						<button class="btn btn-labeled btn-primary" type="submit">
+							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span> {{#tr}}DEF-LOGIN{{/tr}}
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-sm-6">
+			<button type="button" class="btn btn-success btn-lg btn-block" onClick="{{user.func.signup}}">
+				<i class="fa fa-magic"></i> {{#tr}}USER-NEW-SIGNUP-LABEL{{/tr}}
+			</button>
+		</div>
+		<br class="visible-xs" />
+		<div class="col-sm-6">
+			<button type="button" class="btn btn-info btn-lg btn-block" onClick="{{user.func.secuCenter}}">
+				<i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}
+			</button>
+		</div>
+	</div>
+</script>
+
+<!-- Page pinParam formulaire 0.5 -->
+<script id="pinParam" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="text-center">
+				<p class="text-muted">{{#tr}}USER-RESET-DESC{{/tr}}</p>
+				<button class="btn btn-labeled btn-default" type="button" onClick="{{user.func.forgot}}">
+					<span class="btn-label"><i class="fa fa-magic"></i></span>{{#tr}}DEF-CODE-PIN-NEW{{/tr}}
+				</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- Page pin code formulaire 0.5 -->
+<script id="pin" type="text/html">
+	<div class="row">
+		<p class="lead text-center">{{#tr}}DEF-CODE-PIN-LABEL{{/tr}} <small class="text-muted">{{user.vars.mail}}</small></p>
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="well well-lg">
+				<form id="{{user.form.pin}}" role="form">
+					<div class="form-group text-center">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-th"></i></span>
+							<input class="form-control" placeholder="{{#trx}}DEF-CODE-PIN{{/trx}}" id="password" type="password" name="password" readonly="readonly" required>
+						</div>
+					</div>
+					<div class="btn-toolbar text-center" id="btnPin">
+						<div class="btn-group-vertical">
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"1");'>1</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"4");'>4</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"7");'>7</a>
+						</div>
+						<div class="btn-group-vertical">
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"2");'>2</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"5");'>5</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"8");'>8</a>
+						</div>
+						<div class="btn-group-vertical">
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"3");'>3</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"6");'>6</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"9");'>9</a>
+						</div>
+						<div class="btn-group-vertical">
+							<a class="btn btn-warning btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val().substr(0, $("#password").val().length-1));'><i class="fa fa-angle-left"></i></a>
+							<a class="btn btn-warning btn-lg" onclick='$("#{{user.form.pin}} #password").val("");'><i class="fa fa-angle-double-left"></i></a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.pin}} #password").val($("#{{user.form.pin}} #password").val()+"0");'>0</a>
+						</div>
+					</div>
+					<br />
+					<p>
+						<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
+							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+						</button>
+						
+						<button class="btn btn-labeled btn-primary pull-right" type="submit">
+							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span>{{#tr}}DEF-LOGIN{{/tr}}
+						</button>
+					</p>
+					<br />
+				</form>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- Page user profil 0.5 -->
+<script id="user" type="text/html">
+	<div class="jumbotron noir">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-3 text-center">
+					<div class="well noir">
+						<img class="img-responsive center-block img-rounded" src="{{user.img.grvatar.url}}{{user.vars.MD5mail}}{{user.img.grvatar.vars}}" />
+					</div>
+				</div>
+				<div class="col-sm-8 col-md-8 col-lg-9 text-center">
+					<div class="row">
+						<div class="col-sm-6 text-center">
+							<div class="well noir">
+								<h5 class="googPolice">{{#tr}}USER-MAIL-FIRST-LABEL{{/tr}}</h5>
+								<button class="btn btn-labeled btn-success" type="button" onClick="{{user.func.editPrince}}">
+									<span class="btn-label"><i class="fa fa-pencil"></i></span>{{user.info.email}}
+								</button>
+								<h6 class="text-muted"><small>{{#tr}}USER-MAIL-FIRST-DESC{{/tr}}</small></h6>
+							</div>
+						</div>
+						<div class="col-sm-6 text-center">
+							<div class="well noir">
+								<h5 class="googPolice">{{#tr}}USER-MAIL-SECU-LABEL{{/tr}}</h5>
+								<button class="btn btn-labeled {{user.func.classSecurity}}" type="button" onClick="{{user.func.editSecurit}}">
+									<span class="btn-label"><i class="fa fa-pencil"></i></span>{{user.info.verif}}
+								</button>
+								<h6 class="text-muted"><small>{{#tr}}USER-MAIL-SECU-DESC{{/tr}}</small></h6>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="well noir">
+								<div class="row">
+									<div class="col-sm-7 text-left">
+										<h6 class="googPolice"><i class="fa fa-arrow-circle-o-right fa-3x pull-left"></i>
+											 {{#tr}}USER-GRAVATAR-LABEL{{/tr}} <a href="{{user.img.grvatar.web}}" target="blank"><span class="text-info"> Gravatar.com</span></a>
+										</h6>
+									</div>
+									<div class="col-sm-5 text-right">
+										<button class="btn btn-labeled btn-danger" type="button" onClick="{{user.func.logout}}">
+											<span class="btn-label"><i class="fa fa-power-off"></i></span>{{#tr}}DEF-LOGOUT{{/tr}}
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="googFont"><i class="fa fa-clock-o"></i> {{#FROMNOW}}{{user.info.registerdate}}{{/FROMNOW}}</h1>
+				<p class="lead text-muted">{{#tr}}USER-SIGNUP-DATE{{/tr}} {{#LLLL}}{{user.info.registerdate}}{{/LLLL}}</p>
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<div class="row hidden-xs">
+							<div class="col-sm-12">
+								<div id="userChart" style="height: 170px;"></div>
+							</div>
+						</div>
+						<div class="panel-title text-center"><small>{{#tr}}USER-HISTORY-LABEL{{/tr}}</small></div>
+					</div>
+					<div class="table-responsive">
+						<table cellpadding="0" cellspacing="0" border="0" class="datatable table table-bordered table-hover" id="historyTab">
+							<thead>
+								<tr class="active">
+									<th>{{#tr}}DEF-DATE{{/tr}}</th>
+									<th>{{#tr}}DEF-ACTIONS{{/tr}}</th>
+									<th>{{#tr}}DEF-IP{{/tr}}</th>
+									<th>{{#tr}}DEF-TIME{{/tr}}</th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#user.vars.historique}}
+									<tr class="{{user.func.classIpOrSys}}">
+										<td><span class="text-muted">{{#YMD}}{{date}}{{/YMD}}</span> <span class="label label-warning">{{#H}}{{date}}{{/H}}</span></td>
+										<td>{{#tr}}{{action}}{{/tr}}</td>
+										<td>{{{user.func.spanIpOrSys}}}</td>
+										<td class="text-muted"><i class="fa fa-clock-o"></i> <small>{{#FROMNOW}}{{date}}{{/FROMNOW}}</small></td>
+									</tr>
+								{{/user.vars.historique}}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<p class="text-muted"><small>{{#tr}}USER-SECU-LABEL{{/tr}}</small></p>
+				<h1 id="scrollTopBtn"></h1>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- Page codePin edit formulaire 0.5 -->
+<script id="codePin" type="text/html">
+	<div class="row">
+		<p class="lead text-center">{{#tr}}DEF-CODE-PIN-LABEL{{/tr}} <small class="text-muted">{{user.vars.edit.mail}}</small></p>
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="well well-lg">
+				<form id="{{user.form.editPin}}" role="form">
+					<div class="form-group text-center">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-th"></i></span>
+							<input class="form-control" placeholder="{{#trx}}DEF-CODE-PIN{{/trx}}" id="password" type="password" name="password" readonly="readonly" required>
+						</div>
+					</div>
+					<div class="btn-toolbar text-center" id="btnPin">
+						<div class="btn-group-vertical">
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"1");'>1</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"4");'>4</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"7");'>7</a>
+						</div>
+						<div class="btn-group-vertical">
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"2");'>2</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"5");'>5</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"8");'>8</a>
+						</div>
+						<div class="btn-group-vertical">
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"3");'>3</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"6");'>6</a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"9");'>9</a>
+						</div>
+						<div class="btn-group-vertical">
+							<a class="btn btn-warning btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val().substr(0, $("#password").val().length-1));'><i class="fa fa-angle-left"></i></a>
+							<a class="btn btn-warning btn-lg" onclick='$("#{{user.form.editPin}} #password").val("");'><i class="fa fa-angle-double-left"></i></a>
+							<a class="btn btn-default btn-lg" onclick='$("#{{user.form.editPin}} #password").val($("#{{user.form.editPin}} #password").val()+"0");'>0</a>
+						</div>
+					</div>
+					<br />
+					<p>
+						<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="$.user.editMail('{{user.vars.edit.config}}')">
+							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+						</button>
+						
+						<button class="btn btn-labeled btn-primary pull-right" type="submit">
+							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span>{{#tr}}DEF-SEND{{/tr}}
+						</button>
+					</p>
+					<br />
+				</form>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- Page secu 0.5 -->
+<script id="secu" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="lead text-center"><i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}</p>
+			<p class="text-center text-muted"><small>{{#tr}}USER-WELCOM-SECURITI-CENTER{{/tr}}</small></p>	
+			<form id="{{user.form.secu}}" role="form">
+				<div class="well well-sm">
+					<div class="form-group">
+						<label for="email">{{#tr}}DEF-CODE-PIN-CRYPT-LABEL{{/tr}}</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-unlock-alt fa-fw"></i></span>
+							<input class="form-control input-lg" placeholder="{{#trx}}DEF-CODE-PIN-CRYPT{{/trx}}" id="pin" type="text" name="pin" required>
+						</div>
+					</div>
+				</div>
+				<div class="well well-sm">
+					<div class="form-group">
+						<label for="email">{{#tr}}USER-KEY-SEND-LABEL{{/tr}}</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+							<input class="form-control input-lg" placeholder="{{#trx}}USER-KEY-SEND{{/trx}}" id="cles" type="text" name="cles" required>
+						</div>
+					</div>
+				</div>
+				<p>
+					<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
+						<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+					</button>
+					<button class="btn btn-labeled btn-default pull-right" type="submit">
+						<span class="btn-label"><i class="fa fa-unlock"></i></span>{{#tr}}DEF-DECRYPT{{/tr}}
+					</button>
+				</p>
+			</form>
+		</div>
+	</div>
+</script>
+
+<!-- Page secuDecrypte 0.5 -->
+<script id="secuDecrypte" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="lead text-center"><i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}</p>
+			<div class="well">
+				<p class="text-center">{{#tr}}DEF-CODE-PIN-LABEL{{/tr}}</p>
+				<h1 class="text-center">{{user.vars.pinCode}}</h1>
+			</div>
+			<div class="text-center">
+				<p class="text-muted">{{#tr}}USER-DELETE-MAIL{{/tr}}</p>
+				<button class="btn btn-labeled btn-default" type="button" onClick="{{user.func.back}}">
+					<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span> {{#tr}}DEF-LOGIN{{/tr}}
+				</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- Page signup formulaire 0.5 -->
+<script id="signup" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well well-lg">
+				<p class="lead text-center"><i class="fa fa-magic"></i> {{#tr}}USER-NEW-SIGNUP-LABEL{{/tr}}</p>
+				<form id="{{user.form.signup}}" role="form">
+					<div class="form-group">
+						<label for="email">{{#tr}}USER-ENTER-YOUR-MAIL{{/tr}}</label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+							<input class="form-control input-lg" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" id="accept" name="accept" value="">{{#tr}}USER-ACCEPT-CONDITION{{/tr}}
+								</label>
+							</div>
+						</div>
+					</div>
+					<p>
+						<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
+							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+						</button>
+						<button class="btn btn-labeled btn-primary pull-right" type="submit">
+							<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#tr}}DEF-SAVE{{/tr}}
+						</button>
+					</p>
+					<br />
+				</form>
+			</div>
+			<p class="text-muted text-center"><small>{{#tr}}USER-WATH-MAIL-DESC{{/tr}}</small></p>
+		</div>
+	</div>
+</script>
+
+<!-- Page signupConfirm 0.5 -->
+<script id="signupConfirm" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="lead text-success text-center">
+				<i class="fa fa-check"></i> {{#tr}}DEF-BRAVO-LABEL{{/tr}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well">
+				<p class="text-success text-center">{{#tr}}USER-CONFIRM-SIGNUP{{/tr}}</p>
+				<hr />
+				<p><i class="fa fa-unlock fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL1-SEND-DESC{{/tr}}</p>
+				<hr />
+				<p><i class="fa fa-key fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL2-SEND-DESC{{/tr}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="text-center">
+				<button type="button" class="btn btn-info btn-lg" onClick="{{user.func.secuCenter}}">
+					<i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}
+				</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- Page forgot 0.5 -->
+<script id="forgot" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="lead text-center">{{#tr}}USER-RESET-LABEL{{/tr}} <i class="fa fa-question-circle"></i></p>
+			<p class="text-center text-muted"><small>{{#tr}}USER-RESET-CUSTOM{{/tr}} {{user.vars.mail}}</small></p>
+			<div class="alert alert-danger">
+				<p><i class="fa fa-exclamation-triangle fa-2x pull-left fa-border"></i> {{#tr}}USER-RESET-WARNING{{/tr}}</p>
+			</div>
+			<div class="alert alert-warning">
+				<p><i class="fa fa-exclamation-triangle fa-2x pull-left fa-border"></i> {{#tr}}USER-RESET-SEND-2EMAIL{{/tr}}</p>
+			</div>
+			<p>
+				<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
+					<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+				</button>
+				<button class="btn btn-labeled btn-primary pull-right" type="button" onClick="{{user.func.forgotSend}}">
+					<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#tr}}DEF-CODE-PIN-NEW{{/tr}}
+				</button>
+			</p>
+		</div>
+	</div>
+</script>
+
+<!-- Page forgotConfirm 0.5 -->
+<script id="forgotConfirm" type="text/html">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="lead text-success text-center">
+				<i class="fa fa-check"></i> {{#tr}}DEF-CODE-PIN-VALIDATION{{/tr}}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well">
+				<p class="text-success text-center">{{#tr}}USER-RESET-SEND-VALIDATION{{/tr}}</p>
+				<hr />
+				<p><i class="fa fa-unlock fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL1-SEND-DESC{{/tr}}</p>
+				<hr />
+				<p><i class="fa fa-key fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL2-SEND-DESC{{/tr}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="text-center">
+				<button type="button" class="btn btn-info btn-lg" onClick="{{user.func.secuCenter}}">
+					<i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}
+				</button>
+			</div>
+		</div>
+	</div>
+</script>

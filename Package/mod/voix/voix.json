@@ -1,0 +1,82 @@
+{
+	"is" : {
+		"sound"         : false,
+		"speak"         : false,
+		"listen"        : false
+	},
+	"load" : {
+		"sound"         : false,
+		"listen"        : false
+	},
+	"speak" : {
+		"name"          : "speak",
+		"config"        : "mod/voix/config.json",
+		"urlVoice"      : "mod/voix/voices/",
+		"list" : [
+			{
+				"variant"   : "m7",
+				"amplitude" : "70",
+				"pitch"     : "70",
+				"speed"     : "170"
+			},
+			{
+				"variant"   : "f5",
+				"amplitude" : "70",
+				"pitch"     : "70",
+				"speed"     : "170"
+			}
+		]
+	},
+	"sound" : {
+		"name"          : "sound",
+		"btnOver"       : "btnOver:0.1",
+		"setup"         : "setup:0.2",
+		"url"           : "mod/voix/sounds/",
+		"list" : [
+			"setup",
+			"openWin",
+			"closeWin",
+			"error",
+			"btnOver",
+			"Shutdown",
+			"top",
+			"newPage"
+		]
+	},
+	"listen" : {
+		"name"           : "listen",
+		"speech"         : false,
+		"list" : [
+			{
+				"com"    : "VOIX-UP",
+				"plug"   : "tmpl",
+				"func"   : "scroll",
+				"param"  : "up"
+			},
+			{
+				"com"    : "VOIX-DOWN",
+				"plug"   : "tmpl",
+				"func"   : "scroll",
+				"param"  : "down"
+			},
+			{
+				"com"    : "HOME",
+				"plug"   : "home",
+				"func"   : "accueil",
+				"param"  : false
+			},
+			{
+				"com"    : "DEF-LOGIN",
+				"plug"   : "voix",
+				"func"   : "logCmd",
+				"param"  : "login"
+			},
+			{
+				"com"    : "DEF-LOGOUT",
+				"plug"   : "voix",
+				"func"   : "logCmd",
+				"param"  : "logout"
+			}
+		]
+	}
+}

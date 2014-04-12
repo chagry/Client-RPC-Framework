@@ -1,0 +1,33 @@
+{
+	"api"            : "https://domain.com/api/",
+	"lng" : {
+		"list"       : ["en", "fr"],
+		"url"        : "https://domain.com/translate/",
+		"file"       : "defaut",
+		"langue"     : false,
+		"cookie"     : "langueClient",
+		"root"       : "img/flag/",
+		"extension"  : ".gif"
+	},
+	"event" : {
+		"setup"      : "startTmpl",
+		"langue"     : "langue",
+		"login"      : "login",
+		"logout"     : "logout"
+	},
+	"html" : {
+		"event"      : "event",
+		"content"    : "conten",
+		"menu"       : "menu"
+	},
+	"plug" : {
+		"url"        : "mod/",
+		"list" : [
+			"voix",
+			"user",
+			"home",
+			"lng",
+			"tmpl"
+		]
+	}
+}

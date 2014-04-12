@@ -158,3 +158,4 @@
 * `USER-RESET-SEND-VALIDATION` 2 emails has just been sent. Do not forget to watch your mail box. You may find our emails in your spambox. If you use a security address, the private ket to decrypt the Pin Code, you'll receive your email on this address.
 * `USER-MAIL-NOT-CHANGE` Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
 * `USER-GRAVATAR-LABEL` Pour changer Votre Gravatar associer à votre email principal. il vous suffit de vous créer un compte sur
+* `USER-SECU-LABEL` Connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
