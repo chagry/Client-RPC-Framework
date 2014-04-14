@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	11/04/2014.
+ * @date Modif	14/04/2014.
  * @package		mod.home.home.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
@@ -39,6 +39,9 @@
 					
 					// Tooltip.
 					$('#mHome button').tooltip();
+					
+					// add modal home video.
+					$('#'+$.model.html.event).mustache('homeModal', $.model);
 					
 					// Setup html profil.
 					$.home.accueil();
@@ -114,6 +117,34 @@
 								
 					// Animation complete.
 					$('#'+$.model.html.content).slideDown(500, function() {
+						
+						// Btn modal video.
+						$('#videoBtn').mouseenter(function() {
+								
+							// Anim icon & color text with class.
+							$(this).switchClass( $.model.tmpl.html.scrollBtnCl1, $.model.tmpl.html.scrollBtnCl2, 500, "easeOutQuint" );
+							
+							// Add animation. @param 1-element 2-effect 3-remove anim class after 'default=false' 4-callBack
+							$.tmpl.anim($(this), 'pulse', true);
+							
+							// Play sound.
+							$.voix.play($.model.tmpl.sound.click);
+						
+						// 	mouse leave
+						}).mouseleave(function() {
+							
+							// Anim icon & color text with class.
+							$(this).switchClass( $.model.tmpl.html.scrollBtnCl2, $.model.tmpl.html.scrollBtnCl1, 500, "easeOutQuint" );
+						});
+						
+						// Background modal
+						$('#homeModal').css('background-image', "url('img/css/bg.png')");
+						
+						// Add video in modal.
+						$('#videoPl').player({
+							video : '-fANBFZEHdk',
+							width : $('#videoPl').width()
+						});
 						
 						// Setup graph Springy.
 						var sys = new Springy.Graph();

@@ -6,7 +6,8 @@
 		"btcUrl"    : "bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"
 	},
 	"func" : {
-		"home"      : "$.home.accueil()"
+		"home"      : "$.home.accueil()",
+		"modalVid"  : "$.tmpl.modal('homeModal')"
 	},
 	"img" : {
 		"pledgie"   : "https://pledgie.com/campaigns/24202.png?skin_name=chrome",

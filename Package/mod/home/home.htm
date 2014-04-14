@@ -1,7 +1,7 @@
 <!--
  * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	10/04/2014.
+ * @date Modif	14/04/2014.
  * @package		mod.home.home.htm
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*All
@@ -16,6 +16,16 @@
 	</div>
 </script>
 
+<!-- Page home modal 0.5 -->
+<script id="homeModal" type="text/html">
+	<div id="homeModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
+		<div class="modal-body text-center">
+			<div id="videoPl" style="width: 100%;"></div>
+			<button type="button" class="btn btn-danger" onClick="{{home.func.modalVid}}">{{#tr}}DEF-CLOSE{{/tr}}</button>
+		</div>
+	</div>
+</script>
+
 <!-- Page home 0.5 -->
 <script id="home" type="text/html">
 	<div class="jumbotron noir">
@@ -24,7 +34,9 @@
 				<div class="col-sm-12 text-center">
 					<h2 class="googPolice">{{#tr}}HOME-LABEL-TITRE{{/tr}}</h2>
 					<p class="googPolice">{{#tr}}HOME-LABEL-DESC{{/tr}}</p>
-					<h1 class="googPolice">vO.5<small>Alpha</small></h1>
+					<p>
+						<i onClick="{{home.func.modalVid}}" id="videoBtn" class="fa fa-youtube-play text-muted fa-4x" style="cursor: pointer;"></i>
+					</p>
 					<br>
 				</div>
 			</div>
