@@ -7,11 +7,14 @@
 	},
 	"func" : {
 		"home"      : "$.home.accueil()",
-		"modalVid"  : "$.tmpl.modal('homeModal')"
+		"openVideo" : "$.home.openModal()",
+		"closeVideo": "$.home.closeModal()"
 	},
 	"img" : {
 		"pledgie"   : "https://pledgie.com/campaigns/24202.png?skin_name=chrome",
 		"donat"     : "img/def/donate.png",
+		"modalFond" : "img/css/bg.png",
+		"anim"      : "img/css/twitter.png",
 		"pathLib"   : "img/lib/",
 		"ext"       : ".jpg"
 	},

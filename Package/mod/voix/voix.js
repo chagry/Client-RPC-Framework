@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	27/03/2014.
- * @date Modif	04/04/2014.
+ * @date Modif	19/04/2014.
  * @package		mod.voix.voix.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js
@@ -19,45 +19,45 @@
 			setup: function() {
 				
 				// Load model.
-				$.model.load('voix', function() {
+				$.m.load('voix', function() {
 					
 					// event. login. listen
-					$('#'+$.model.html.event).on($.model.event.login, function() {
+					$('#'+$.m.div.event).on($.m.event.login, function() {
 						
 						// if sound is on.
-						if($.model.voix.is.sound) {
+						if($.m.voix.is.sound) {
 							
 							// Play sound.
-							$.voix.play($.model.voix.sound.setup);
+							$.voix.play($.m.voix.sound.setup);
 							
 							// Add hover event btn sound.
 							setTimeout(function() { $.voix.btnSound(); }, 2000);
 						}
 						
 						// if speak is on. // Synthèse speak.
-						if($.model.voix.is.speak) $.voix.speak($.lng.tr('VOIX-LOGIN-LABEL'));
+						if($.m.voix.is.speak) $.voix.speak($.lng.tr('VOIX-LOGIN-LABEL'));
 					});
 					
 					// event. logout. listen
-					$('#'+$.model.html.event).on($.model.event.logout, function() {
+					$('#'+$.m.div.event).on($.m.event.logout, function() {
 						
 						// if sound is on.
-						if($.model.voix.is.sound) {
+						if($.m.voix.is.sound) {
 							
 							// Add hover event btn sound.
 							setTimeout(function() { $.voix.btnSound(); }, 2000);
 						}
 						
 						// if speak is on. // Synthèse speak.
-						if($.model.voix.is.speak) $.voix.speak($.lng.tr('VOIX-LOGOUT-LABEL'));
+						if($.m.voix.is.speak) $.voix.speak($.lng.tr('VOIX-LOGOUT-LABEL'));
 					});
 				});
 				
 				// event. setup. listen one
-				$('#'+$.model.html.event).one($.model.event.setup, $.voix.defautHtml);
+				$('#'+$.m.div.event).one($.m.event.setup, $.voix.defautHtml);
 				
 				// event. langue. listen
-				$('#'+$.model.html.event).on($.model.event.langue, $.voix.langueEdit);
+				$('#'+$.m.div.event).on($.m.event.langue, $.voix.langueEdit);
 			},
 			
 			/*
@@ -69,7 +69,7 @@
 				$.tmpl.load('voix', function() {
 					
 					// boucle cookie is.
-					$.each($.model.voix.is, function(key, val) {
+					$.each($.m.voix.is, function(key, val) {
 						
 						// look Cookie.
 						var cook = $.cookie(key);
@@ -78,12 +78,12 @@
 						if(cook!=undefined && cook==1) {
 							
 							// edit model.
-							$.model.voix.is[key] = true;
+							$.m.voix.is[key] = true;
 						}
 					});
 					
 					// If SpeechRecognition.true for html btn.
-					if (annyang) $.model.voix.listen.speech = true;
+					if (annyang) $.m.voix.listen.speech = true;
 					
 					// Init plugin.
 					$.voix.init(false);
@@ -92,10 +92,10 @@
 					setTimeout(function() { $.voix.speak($.lng.tr('VOIX-WELCOM-LABEL')); }, 3000);
 					
 					// Play sound.
-					$.voix.play($.model.voix.sound.setup);
+					$.voix.play($.m.voix.sound.setup);
 					
 					// add tmpl.
-					$('#'+$.model.html.menu).mustache('mVoix', $.model, {method:'prepend'});
+					$('#'+$.m.div.menu).mustache('mVoix', $.m, {method:'prepend'});
 					
 					// Tooltip.
 					$('#mVoix button').tooltip();
@@ -109,20 +109,20 @@
 			init: function(e) {
 				
 				// if sound is on.
-				if($.model.voix.is.sound && !e || e == $.model.voix.sound.name) {
+				if($.m.voix.is.sound && !e || e == $.m.voix.sound.name) {
 					
 					// if not load sound.
-					if(!$.model.voix.load.sound) {
+					if(!$.m.voix.load.sound) {
 						
 						// Load sound for api.
 						$.ionSound({
-							sounds: $.model.voix.sound.list,
-							path: $.model.voix.sound.url,
+							sounds: $.m.voix.sound.list,
+							path: $.m.voix.sound.url,
 							multiPlay: true
 						});
 						
 						// sound load on.
-						$.model.voix.load.sound = true;
+						$.m.voix.load.sound = true;
 						
 						// Add hover event btn sound.
 						setTimeout(function() { $.voix.btnSound(); }, 3000);
@@ -130,20 +130,20 @@
 				}
 				
 				// if speak is on.
-				if($.model.voix.is.speak && !e || e == $.model.voix.speak.name) {
+				if($.m.voix.is.speak && !e || e == $.m.voix.speak.name) {
 					
 					// if not load config.
-					if(!meSpeak.isConfigLoaded()) meSpeak.loadConfig($.model.voix.speak.config);
+					if(!meSpeak.isConfigLoaded()) meSpeak.loadConfig($.m.voix.speak.config);
 					
 					// if not load voice.
-					if(!meSpeak.isVoiceLoaded($.lng.get())) meSpeak.loadVoice($.model.voix.speak.urlVoice+$.lng.get()+'.json');
+					if(!meSpeak.isVoiceLoaded($.lng.get())) meSpeak.loadVoice($.m.voix.speak.urlVoice+$.lng.get()+'.json');
 				}
 				
 				// if listen is on.
-				if($.model.voix.is.listen && !e || e == $.model.voix.listen.name) {
+				if($.m.voix.is.listen && !e || e == $.m.voix.listen.name) {
 					
 					// if not load listen.
-					if(!$.model.voix.load.listen) {
+					if(!$.m.voix.load.listen) {
 						
 						// If SpeechRecognition.
 						if (annyang) {
@@ -155,7 +155,7 @@
 							$.voix.addCommandsToList();
 							
 							// listen load on.
-							$.model.voix.load.listen = true;
+							$.m.voix.load.listen = true;
 						}
 					}
 					
@@ -171,13 +171,13 @@
 			speak: function(str) {
 				
 				// if speak is on.
-				if($.model.voix.is.speak) {
+				if($.m.voix.is.speak) {
 					
 					// Voice random.
-					var num =Math.floor(Math.random() * $.model.voix.speak.list.length);
+					var num =Math.floor(Math.random() * $.m.voix.speak.list.length);
 					
 					// Setup speak.
-					meSpeak.speak(str, $.model.voix.speak.list[num]);
+					meSpeak.speak(str, $.m.voix.speak.list[num]);
 				}
 			},
 			
@@ -188,7 +188,7 @@
 			play: function(str) {
 				
 				// if sound is on.
-				if($.model.voix.is.sound) {
+				if($.m.voix.is.sound) {
 					
 					// Play sound.
 					$.ionSound.play(str);
@@ -205,19 +205,19 @@
 				switch(e) {
 					
 					// speak edit toggle
-					case $.model.voix.speak.name:
+					case $.m.voix.speak.name:
 						
 						// if toggle is on.
-						if($.model.voix.is.speak) {
+						if($.m.voix.is.speak) {
 							
 							// Reset speak play.
 							meSpeak.resetQueue();
 							
 							// off toogle.
-							$.model.voix.is.speak=false;
+							$.m.voix.is.speak=false;
 							
 							// New cookie.
-							$.cookie($.model.voix.speak.name, 0);
+							$.cookie($.m.voix.speak.name, 0);
 							
 							// Change btn color.
 							$('#mSpeak').removeClass('btn-success').addClass('btn-danger');
@@ -227,13 +227,13 @@
 						else {
 							
 							// on toogle.
-							$.model.voix.is.speak=true;
+							$.m.voix.is.speak=true;
 							
 							// Init plugin.
-							$.voix.init($.model.voix.speak.name);
+							$.voix.init($.m.voix.speak.name);
 							
 							// New cookie.
-							$.cookie($.model.voix.speak.name, 1);
+							$.cookie($.m.voix.speak.name, 1);
 							
 							// Synthèse speak.
 							$.voix.speak($.lng.tr('VOIX-ON-LABEL'));
@@ -244,16 +244,16 @@
 					break;
 					
 					// sound edit toggle
-					case $.model.voix.sound.name:
+					case $.m.voix.sound.name:
 						
 						// if toggle is on.
-						if($.model.voix.is.sound) {
+						if($.m.voix.is.sound) {
 							
 							// off toogle.
-							$.model.voix.is.sound=false;
+							$.m.voix.is.sound=false;
 							
 							// New cookie.
-							$.cookie($.model.voix.sound.name, 0);
+							$.cookie($.m.voix.sound.name, 0);
 							
 							// Change btn color.
 							$('#mSound').removeClass('btn-success').addClass('btn-danger');
@@ -266,16 +266,16 @@
 						else {
 							
 							// on toogle.
-							$.model.voix.is.sound=true;
+							$.m.voix.is.sound=true;
 							
 							// Init plugin.
-							$.voix.init($.model.voix.sound.name);
+							$.voix.init($.m.voix.sound.name);
 							
 							// New cookie.
-							$.cookie($.model.voix.sound.name, 1);
+							$.cookie($.m.voix.sound.name, 1);
 							
 							// Play sound.
-							$.voix.play($.model.voix.sound.setup);
+							$.voix.play($.m.voix.sound.setup);
 							
 							// Change btn color.
 							$('#mSound').removeClass('btn-danger').addClass('btn-success');
@@ -286,19 +286,19 @@
 					break;
 					
 					// listen edit toggle
-					case $.model.voix.listen.name:
+					case $.m.voix.listen.name:
 						
 						// if toggle is on.
-						if($.model.voix.is.listen) {
+						if($.m.voix.is.listen) {
 							
 							// abort the listening session.
 							annyang.abort();
 							
 							// off toogle.
-							$.model.voix.is.listen=false;
+							$.m.voix.is.listen=false;
 							
 							// New cookie.
-							$.cookie($.model.voix.listen.name, 0);
+							$.cookie($.m.voix.listen.name, 0);
 							
 							// Change btn color.
 							$('#mListen').removeClass('btn-success').addClass('btn-danger');
@@ -311,13 +311,13 @@
 						else {
 							
 							// on toogle.
-							$.model.voix.is.listen=true;
+							$.m.voix.is.listen=true;
 							
 							// Init plugin.
-							$.voix.init($.model.voix.listen.name);
+							$.voix.init($.m.voix.listen.name);
 							
 							// New cookie.
-							$.cookie($.model.voix.listen.name, 1);
+							$.cookie($.m.voix.listen.name, 1);
 							
 							// Change btn color.
 							$('#mListen').removeClass('btn-danger').addClass('btn-success');
@@ -335,23 +335,23 @@
 			langueEdit: function() {
 				
 				// if speak is on.
-				if($.model.voix.is.speak) {
+				if($.m.voix.is.speak) {
 					
 					// Reset speak play.
 					meSpeak.resetQueue();
 					
 					// Edit langue in plugin.
-					meSpeak.loadVoice($.model.voix.speak.urlVoice+$.lng.get()+'.json');
+					meSpeak.loadVoice($.m.voix.speak.urlVoice+$.lng.get()+'.json');
 					
 					// Init plugin.
-					$.voix.init($.model.voix.speak.name);
+					$.voix.init($.m.voix.speak.name);
 					
 					// Synthèse speak.
 					setTimeout(function() { $.voix.speak($.lng.tr('VOIX-EDIT-LANGUE-LABEL')); }, 1000);
 				}
 				
 				// if is listen.
-				if($.model.voix.is.listen) {
+				if($.m.voix.is.listen) {
 				
 					// If SpeechRecognition.
 					if (annyang) {
@@ -366,10 +366,10 @@
 						$.voix.addCommandsToList();
 						
 						// off toogle.
-						$.model.voix.is.listen=false;
+						$.m.voix.is.listen=false;
 						
 						// New cookie.
-						$.cookie($.model.voix.listen.name, 0);
+						$.cookie($.m.voix.listen.name, 0);
 						
 						// Change btn color.
 						$('#mListen').removeClass('btn-success').addClass('btn-danger');
@@ -386,13 +386,13 @@
 			btnSound: function() {
 					
 				// Boucle btn body.
-				$('#'+$.model.html.menu+' .btn').each(function() {
+				$('#'+$.m.div.menu+' .btn').each(function() {
 					
 					// hover btn
 					$(this).mouseenter(function() {
 						
 						// Play sound.
-						$.voix.play($.model.voix.sound.btnOver);
+						$.voix.play($.m.voix.sound.btnOver);
 					});
 				});
 			},
@@ -406,7 +406,7 @@
 				var commands = {};
 				
 				// boucle comande voice.
-				$.each($.model.voix.listen.list, function(key, val) {
+				$.each($.m.voix.listen.list, function(key, val) {
 					
 					// Increment var.
 					commands[$.lng.tr(val.com)] = function() { 
@@ -432,7 +432,7 @@
 				// Init request.
 				switch(str) {
 				
-					case $.model.event.login:
+					case $.m.event.login:
 						// If not connect.
 						if(!$.user.session()) {
 							
@@ -444,7 +444,7 @@
 						else $.tmpl.error('SERV-ERROR-INVALID-ACTION');
 					break;
 					
-					case $.model.event.logout:
+					case $.m.event.logout:
 						// If not connect.
 						if($.user.session()) {
 							

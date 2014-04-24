@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	04/04/2014.
+ * @date Modif	16/04/2014.
  * @package		tmpl.tmpl.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js
@@ -19,13 +19,13 @@
 			setup: function() {
 				
 				// Load model.
-				$.model.load('tmpl', function() {
+				$.m.load('tmpl', function() {
 					
 					// Load tmpl.
 					$.tmpl.load('tmpl', function() {
 						
 						// Event template start.
-						$('#'+$.model.html.event).trigger($.model.event.setup);
+						$('#'+$.m.div.event).trigger($.m.event.setup);
 						
 						// Init valide form.
 						$.tmpl.setupValidatorForm();
@@ -41,7 +41,7 @@
 			spinOn: function(e, i) {
 				
 				// add in tmpl.
-				$('#'+e+' i').removeClass(i).addClass($.model.tmpl.html.spinClass);
+				$('#'+e+' i').removeClass(i).addClass($.m.tmpl.html.spinClass);
 			},
 			
 			/*
@@ -52,7 +52,7 @@
 			spinOff: function(e, i) {
 			
 				// remove icone.
-				$('#'+e+' i').removeClass($.model.tmpl.html.spinClass).addClass(i);
+				$('#'+e+' i').removeClass($.m.tmpl.html.spinClass).addClass(i);
 			},
 			
 			/*
@@ -62,7 +62,7 @@
 			error: function(e) {
 				
 				// boucle error.
-				$.each($.model.tmpl.error.blackList, function(key, val) {
+				$.each($.m.tmpl.error.blackList, function(key, val) {
 					
 					// if critique erreur.
 					if (e==val) {
@@ -71,10 +71,10 @@
 						$.tmpl.clean();
 						
 						// Add message.
-						$.model.tmpl.error.label = val;
+						$.m.tmpl.error.label = val;
 						
 						// add tmpl. Form Login.
-						$('#'+$.model.html.event).empty().mustache('erreur', $.model);
+						$('#'+$.m.div.event).empty().mustache('erreur', $.m);
 						
 						// Break boucle.
 						return false;
@@ -83,12 +83,12 @@
 				
 				// render erreur.
 				$.jGrowl($.lng.tr(e, true)+' ', { 
-					position: $.model.tmpl.error.position,
-					closeTemplate: $.model.tmpl.error.closeIcon
+					position: $.m.tmpl.error.position,
+					closeTemplate: $.m.tmpl.error.closeIcon
 				});
 				
 				// Play sound after 500ms.
-				setTimeout(function() { $.voix.play($.model.tmpl.sound.error); }, 500);
+				setTimeout(function() { $.voix.play($.m.tmpl.sound.error); }, 500);
 			},
 			
 			/*
@@ -102,10 +102,10 @@
 				$('.tooltip').remove();
 				
 				// If modal in dom. Play sound.
-				if($('.modal-backdrop').length > 0) $.voix.play($.model.tmpl.sound.closeWin);
+				if($('.modal-backdrop').length > 0) $.voix.play($.m.tmpl.sound.closeWin);
 				
 				// Play sound.
-				else $.voix.play($.model.tmpl.sound.openWin);
+				else $.voix.play($.m.tmpl.sound.openWin);
 				
 				// setup modal.
 				$('#'+e).modal('toggle');
@@ -125,7 +125,7 @@
 				$('.modal-scrollable').remove();
 				
 				// Boucle for destroy anim.
-				$('#'+$.model.html.content+' div').each(function() {
+				$('#'+$.m.div.content+' div').each(function() {
 					
 					// resets element and removes animation.
 					$(this).destroy();
@@ -174,22 +174,28 @@
 					
 				// If top.
 				if(e=='up') {
-				    
-				    // Scroll up.
-				    $('html,body').animate({scrollTop: 0}, 'slow');
-				    
-				    // Play sound.
-				    $.voix.play($.model.tmpl.sound.scroll);
+					
+					// Scroll up.
+					$('html,body').animate({scrollTop: 0}, 'slow');
+					
+					// Play sound.
+					$.voix.play($.m.tmpl.sound.scroll);
 				}
 				
 				// If b.
-				if(e=='down') { 
-				    
-				    // Scroll down.
-				    $('html,body').animate({scrollTop: $(document).height() - $(window).height()}, 'slow');
-				    
-				    // Play sound.
-				    $.voix.play($.model.tmpl.sound.scroll);
+				else if(e=='down') { 
+					
+					// Scroll down.
+					$('html,body').animate({scrollTop: $(document).height() - $(window).height()}, 'slow');
+					
+					// Play sound.
+					$.voix.play($.m.tmpl.sound.scroll);
+				}
+				
+				else {
+					
+					// Scroll div # position.
+					$('html,body').animate({scrollTop: $('#'+e).offset().top-70}, 'slow');
 				}
 			},
 			
@@ -203,22 +209,22 @@
 				$('#'+e).html(
 					
 					// Btn scroll top. mouse enter.
-					$($.model.tmpl.html.scrollBtn).mouseenter(function() {
+					$($.m.tmpl.html.scrollBtn).mouseenter(function() {
 						
 						// Anim icon & color text with class.
-						$(this).switchClass( $.model.tmpl.html.scrollBtnCl1, $.model.tmpl.html.scrollBtnCl2, 500, "easeOutQuint" );
+						$(this).switchClass( $.m.tmpl.html.scrollBtnCl1, $.m.tmpl.html.scrollBtnCl2, 500, "easeOutQuint" );
 						
 						// Add animation. @param 1-element 2-effect 3-remove anim class after 'default=false' 4-callBack
 						$.tmpl.anim($(this), 'pulse', true);
 						
 						// Play sound.
-						$.voix.play($.model.tmpl.sound.click);
+						$.voix.play($.m.tmpl.sound.click);
 					
 					// 	mouse leave
 					}).mouseleave(function() {
 						
 						// Anim icon & color text with class.
-						$(this).switchClass( $.model.tmpl.html.scrollBtnCl2, $.model.tmpl.html.scrollBtnCl1, 500, "easeOutQuint" );
+						$(this).switchClass( $.m.tmpl.html.scrollBtnCl2, $.m.tmpl.html.scrollBtnCl1, 500, "easeOutQuint" );
 					})
 				);
 			},
@@ -231,7 +237,7 @@
 			load: function(e, callback) {
 				
 				// Load tmpl.
-				$.Mustache.load($.model.plug.url+e+'/'+e+'.htm').done(function () {
+				$.Mustache.load($.m.plug.url+e+'/'+e+'.htm').done(function () {
 				
 					// If call back.
 					if(callback) callback();
@@ -247,10 +253,10 @@
 				jQuery.validator.setDefaults( { 
 					
 					// regle input.
-					rules: $.model.tmpl.rules,
+					rules: $.m.tmpl.rules,
 					
 					// Message.
-					messages: $.model.tmpl.messages,
+					messages: $.m.tmpl.messages,
 					
 					// class erreur
 					errorClass: "help-block",

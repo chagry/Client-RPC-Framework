@@ -16,6 +16,12 @@ zh 中文
 
 // Translate defaut.
 
+DOC-LABEL Documentation
+DOC-SUMMARY Sommaire
+DOC-SUP-LABEL Documentation supplémentaire
+DEF-NOT-CONTENT Pas de contenu
+NOT-RESULTS Pas de resultas
+DEF-SEARCH chercher
 DEF-SERVER Serveur
 DEF-FRAMEWORK Framework
 DEF-FRAMEWORKS Frameworks
@@ -27,81 +33,81 @@ DEF-DONNEES Données
 DEF-MODULAR Modulaire
 DEF-TECHNOLOGIE Technologies
 DEF-INTRO Introduction
-DEF-FREE Free
+DEF-FREE Gratuit
 DEF-BITCOIN Bitcoin
-DEF-UTIL Utilization
-DEF-DEPOSIT Deposit
-DEF-PROFIL Profile
-DEF-LOGIN Login
-DEF-LOGOUT Sign out
-DEF-CLOSE Close
-DEF-SAVE Save
-DEF-EMAIL Email address
-DEF-MODIFICATION Modify
-DEF-SEND Sent
-DEF-CANCEL Cancel
-DEF-SIGNUP Register
+DEF-UTIL Utilisation
+DEF-DEPOSIT Versement
+DEF-PROFIL Profil
+DEF-LOGIN Connexion
+DEF-LOGOUT Déconnexion
+DEF-CLOSE Fermer
+DEF-SAVE Enregistrement
+DEF-EMAIL Adresse e-mail
+DEF-MODIFICATION Modification
+DEF-SEND Envoyé
+DEF-CANCEL Annuler
+DEF-SIGNUP Inscription
 DEF-ACTION Action
 DEF-ACTIONS Actions
 DEF-IP Ip
 DEF-DATE Date
-DEF-TIME Time
-DEF-BRAVO-LABEL Congratulations
-DEF-CONFIRM Confirm
-DEF-WARNING Warning
+DEF-TIME Temps
+DEF-BRAVO-LABEL Félicitations
+DEF-CONFIRM Confirmer
+DEF-WARNING Avertissement
 DEF-MESSAGE Message
-DEF-CRYPT Encryption
-DEF-DECRYPT Decryption
-DEF-NOTICE Notice
-DEF-CODE-PIN Pin Code
-DEF-CODE-PIN-LABEL Your Pin Code
-DEF-CODE-PIN-INVALID Your code is not valid
-DEF-CODE-PIN-RESET Reinitialization of the Pin Code
-DEF-CODE-PIN-NEW New Pic Code
-DEF-CODE-PIN-CRYPT Crypted Pin Code
-DEF-CODE-PIN-CRYPT-LABEL Enter the crypted Pin Code that you received by mail
-DEF-CODE-PIN-VALIDATION Pin Code generated
-DEF-2-CLIC-INVALID You may only click once on the button.
-DEF-EDITE-LANGUE-USER Change of the language
-DEF-EDITE-MAIL-principal Change of the main mail
-DEF-EDITE-MAIL-security Change of the serucity mail
+DEF-CRYPT Cryptage
+DEF-DECRYPT Decrypte
+DEF-NOTICE Annonce
+DEF-CODE-PIN Code Pin
+DEF-CODE-PIN-LABEL Votre code Pin
+DEF-CODE-PIN-INVALID Votre code pin n'est pas valide
+DEF-CODE-PIN-RESET Réinitialisation code pin
+DEF-CODE-PIN-NEW Nouveau code Pin
+DEF-CODE-PIN-CRYPT Code Pin crypté
+DEF-CODE-PIN-CRYPT-LABEL Entrer le code Pin crypté que vous avez recu par mail
+DEF-CODE-PIN-VALIDATION Code pin généré
+DEF-2-CLIC-INVALID Il sufit de cliquer une seule fois sur le bouton.
+DEF-EDITE-LANGUE-USER Changement de langue
+DEF-EDITE-MAIL-principal Changement du mail principal
+DEF-EDITE-MAIL-security Changement du mail de securité
 
 // Translate Server error defaut.
 
-SERV-ERROR-ACCESS-DENIED Your are not allowed to access this ressource
-SERV-ERROR-ACCESS-NO-CONNECT You do not have access to this page. You must connect before
-SERV-ERROR-INVALID-ROLE The role is not valid
-SERV-ERROR-INVALID-ACTION The action is not valid
-SERV-ERROR-INVALID-CONTROLLER The controller is not valid
-SERV-ERROR-OFFLINE-MESSAGE The application is currently not available because of maintenance. Sorry for the inconvience.
-SERV-ERROR-INVALID-PARAM-OR-METHODE Unknown method or not accurate parameters
-SERV-ERROR-CONNECT-MYSQL Connection to MySQL impossible
-SERV-ERROR-SESSION Session error, please sign in again
-SERV-ERROR-SESSION-EXPIRE Your session has expired, please sign in again
-SERV-ERROR-USER-BLACKLISTED You account was blocked. Please contact an administrator
-SERV-ERROR-NOT-FIND-FILE Error while loading the file
-SERV-ERROR-DATABASE Impossible to connect the SQL database
+SERV-ERROR-ACCESS-DENIED Vous n'êtes pas autorisé à accéder à cette ressource
+SERV-ERROR-ACCESS-NO-CONNECT Vous n'avez pas accès à cette page. Vous devez vous connecter avant
+SERV-ERROR-INVALID-ROLE Le rôle n'est pas valide
+SERV-ERROR-INVALID-ACTION L'action n'est pas valide
+SERV-ERROR-INVALID-CONTROLLER Le controleur n'est pas valide
+SERV-ERROR-OFFLINE-MESSAGE L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.
+SERV-ERROR-INVALID-PARAM-OR-METHODE Méthode inconnue ou Paramètres incorrects
+SERV-ERROR-CONNECT-MYSQL Connexion à MySQL impossible
+SERV-ERROR-SESSION Erreur de session, merci de vous connecter
+SERV-ERROR-SESSION-EXPIRE Votre session a expiré, veuillez vous connecter à nouveau
+SERV-ERROR-USER-BLACKLISTED	 Votre compte a été bloqué. S'il vous plaît, contactez un administrateur
+SERV-ERROR-NOT-FIND-FILE Erreur lors du chargement du fichier
+SERV-ERROR-DATABASE Impossible de se connecter à la base sql
 
 // Translate controleur login.
 
-LOGIN-ERROR-MAIL-INVALID User Mail not correct
-LOGIN-ERROR-INVALID-MAIL The email address is not valid
-LOGIN-ERROR-INVALID-CODE Pin Code not valid
-LOGIN-ERROR-INVALID-CODE-OR-SESSION Pin Code or session not valid
-LOGIN-ERROR-REGISTRATION-FAILED An error occured during the registration process
-LOGIN-ERROR-MAIL-MESSAGE The email address you entered already exists. Please fill in another address.
-LOGIN-ERROR-MAIL-UNKNOWN-PARAM We cannot differencitate wheater the demand is for the main or the security mail.
+LOGIN-ERROR-MAIL-INVALID Mail d'utilisateur incorrect
+LOGIN-ERROR-INVALID-MAIL L'adresse email n'est pas valide
+LOGIN-ERROR-INVALID-CODE Code pin non valide
+LOGIN-ERROR-INVALID-CODE-OR-SESSION Code pin ou session non valide
+LOGIN-ERROR-REGISTRATION-FAILED Une erreur est survenue lors de l'inscription
+LOGIN-ERROR-MAIL-MESSAGE L'adresse e-mail que vous avez saisie existe déjà. Veuillez saisir une autre adresse e-mail
+LOGIN-ERROR-MAIL-UNKNOWN-PARAM Nous ne pouvons determiner si la demande à lieu pour le mail principal ou le mail de securité.
 
 // Translate modul tmpl.
 
-FORM-MESSAGE-EMAIL-REQUIRED Enter your email address
-FORM-MESSAGE-EMAIL-INVALID The email address is not valid
-FORM-MESSAGE-VALIDATION-FORM-FAILED You must validate the form before going forward
-FORM-MESSAGE-PIN-REQUIRED Enter your crypted Pin Code
-FORM-MESSAGE-KEY-REQUIRED Enter the key to decrypt the message
-FORM-MESSAGE-CODE-PIN-REQUIRED Enter your Pin Code
-FORM-MESSAGE-CODE-PIN-MIN Your Pin Code must contain at least 4 figures
-FORM-MESSAGE-CODE-PIN-INVALID Your Pin Code must be formed only by figures
+FORM-MESSAGE-EMAIL-REQUIRED Saisissez votre adresse e-mail
+FORM-MESSAGE-EMAIL-INVALID L'adresse email n'est pas valide
+FORM-MESSAGE-VALIDATION-FORM-FAILED Vous devez valider le formulaire avant de poursuivre
+FORM-MESSAGE-PIN-REQUIRED Veillez entrer le code pin crypté
+FORM-MESSAGE-KEY-REQUIRED Veillez entrer la cle pour décrypter le message
+FORM-MESSAGE-CODE-PIN-REQUIRED Veillez entrer votre code Pin
+FORM-MESSAGE-CODE-PIN-MIN Votre code Pin doit être composé de 4 chiffres au minimum
+FORM-MESSAGE-CODE-PIN-INVALID Votre code Pin ne doit être composé que de chiffres
 
 // Translate modul home.
 
@@ -116,11 +122,11 @@ HOME-SECU-LABEL Gestion des ACL et une connexion crypter a 2 facteurs entre le s
 HOME-DESIGN-LABEL Responsive Design. Des téléphones aux postes de travail, votre contenu s'adaptent automatiquement.
 HOME-DONNEE-LABEL Les donnes sont sentraliser sur le serveur. L'acces au donnees se fait grace au protocole JSON RPC 2.
 HOME-MODUL-LABEL Le client peut être développé dans d'autres langues avec un libre choix des systemes d'exploitation.
-HOME-TEC-LABEL Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package.
+HOME-TEC-LABEL Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package client.
 HOME-TEC-LABEL2 Vous pouvez également ajouter vos propres librairie ou plugin.
 HOME-SERVER-LABEL Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
 HOME-CLIENT-LABEL En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
-HOME-CODE-DISPO Le code est mis à votre disposition en open source. Téléchargeable ici :
+HOME-CODE-DISPO Le code est mis à votre disposition en open source.
 HOME-CONTACT-LABEL Contact & information. Retrouvez moi sur
 HOME-HELP-LABEL Aidez-nous a garder le projet open-source. Subvenir aux dépenses des serveurs domaines & certificats. Rémunérer les intervenant exterieur, redacteurs et traducteur.
 HOME-HELP-TITLE Aidez-nous
@@ -128,33 +134,33 @@ HOME-HELP-TITLE Aidez-nous
 // Translate modul user.
 
 USER-PROFIL Profil
-USER-NEW-MAIL You new email address
-USER-YOUR-MAIL Your main user mail
-USER-BEFORE-SAVE-MAIL Before registration, you must veryfy that your email address is correct
-USER-MAIL-FIRST-LABEL Main email
-USER-MAIL-FIRST-DESC This is the email address that you use to connect and receive the Pin Code
-USER-MAIL-SECU-LABEL Security email
-USER-MAIL-SECU-DESC On this email address, we send you the private key for the Pin Code
-USER-SIGNUP-DATE Subscribtion the
-USER-HISTORY-LABEL History of last actions.
-USER-SECURIT-CENTER Security center
-USER-NEW-SIGNUP-LABEL Create an account
-USER-RESET-DESC Pin Code forgot? Generate a new Pin Code.
-USER-RESET-LABEL Pin Code recovery
-USER-ENTER-YOUR-MAIL Enter your email address
-USER-KEY-SEND Private key
-USER-WELCOM-SECURITI-CENTER Welcome in the security center. You can here decrypt your Pin Code with the private key that you received by email.
-USER-RESET-CUSTOM In this section, you can generate a new Pic Code for
-USER-RESET-WARNING After the new Pin Code generation, the current Pin Code will become obsolete and not usable for the platform.
-USER-RESET-SEND-2EMAIL Two email will be sent. If you use a security address, the private ket to decrypt the Pin Code, you'll receive your email on this address.
-USER-ACCEPT-CONDITION Signing this form, you declare being over 18 year old and you accept the general terms and conditions.
-USER-MAIL1-SEND-DESC The first email embeeds your encrypted Pic Code. You must decrypt this message in the security center.
-USER-MAIL2-SEND-DESC The second email embeeds your private key to decrypt your Pin Code in the security center.
-USER-KEY-SEND-LABEL Enter your private key that you received by email.
-USER-WATH-MAIL-DESC We use your email address only to let you connect to the platform or to send you your Pin Code. We do not have any advertisements campaigns or newsletters. We do not sell not exchange your users data.
-USER-CONFIRM-SIGNUP Your subscription has been accepted. 2 emails has just been sent. Do not forget to mind your mailbox. You may find our emails in your spambox.
-USER-DELETE-MAIL Don't forget to delete the mails for more security. If you forget your code, you can always generate a new Pin Code when do you connect.
-USER-RESET-SEND-VALIDATION 2 emails has just been sent. Do not forget to watch your mail box. You may find our emails in your spambox. If you use a security address, the private ket to decrypt the Pin Code, you'll receive your email on this address.
+USER-NEW-MAIL Votre nouvelle adresse mail
+USER-YOUR-MAIL Votre adresse mail d'utilisateur
+USER-BEFORE-SAVE-MAIL Avant l'enregistrement Vous devez bien vérifier l'exactitude de votre mail.
+USER-MAIL-FIRST-LABEL Mail principal
+USER-MAIL-FIRST-DESC C'est le mail que vous utilisez pour vous connecter et recevoir le code pin.
+USER-MAIL-SECU-LABEL Mail de sécurité
+USER-MAIL-SECU-DESC Sur ce mail nous vous envoyons la clé de décriptage pour le code pin.
+USER-SIGNUP-DATE Inscription le
+USER-HISTORY-LABEL Historique des dernières actions.
+USER-SECURIT-CENTER Centre de securité
+USER-NEW-SIGNUP-LABEL Créer un compte
+USER-RESET-DESC Code PIN oublié ? Générer un nouveau code pin.
+USER-RESET-LABEL Code PIN oublié
+USER-ENTER-YOUR-MAIL Entrez votre adresse email
+USER-KEY-SEND Cle de decryptage
+USER-WELCOM-SECURITI-CENTER Bienvenu dans le centre de securité. C'est ici que vous pouvez décrypter le code pin avec la clé reçu par mail.
+USER-RESET-CUSTOM Dans cette section vous pouvez générer un nouveau code pin pour
+USER-RESET-WARNING Apres la generation du nouveau code pin, le code pin actuel deviendra obsolète et inutilisable par la platforme.
+USER-RESET-SEND-2EMAIL Deux mails vont vous être envoyés. Si vous utilisez une adresse mail de securité, alors la cle de decryptage vous sera envoyé dessus.
+USER-ACCEPT-CONDITION En signant ce formulaire, vous déclarez avoir +18 ans, avoir pris connaissance et accepté les Conditions Générales.
+USER-MAIL1-SEND-DESC Le premier mail contient votre code pin crypter. C'est ce message que vous devrez decrypter dans le centre de securiter.
+USER-MAIL2-SEND-DESC Le second mail contient la clé pour le décryptage du code pin dans le centre de securité.
+USER-KEY-SEND-LABEL Entrer la clé de décryptage que vous avez reçu par mail
+USER-WATH-MAIL-DESC Nous utilisons votre mail à seul fin de vous connecter à la platforme ou de vous envoyer le code pin. Nous n'avons aucun programme publicitaire ou newsletter. Nous ne vendons ni echangons vos données d'utilisateur.
+USER-CONFIRM-SIGNUP Votre inscription à bien été prise en compte. 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable.
+USER-DELETE-MAIL Penser à effacer les mails pour plus de sécurité. Si vous perdez ou oubliez votre code, vous pourrez toujours génerer une nouveau code pin au moment de la connexion.
+USER-RESET-SEND-VALIDATION 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable. Si vous utilisez un mail de securité, alors un des deux mail arivera dessus.
 USER-MAIL-NOT-CHANGE Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
 USER-GRAVATAR-LABEL Pour changer Votre Gravatar associer à votre email principal. il vous suffit de vous créer un compte sur
 USER-SECU-LABEL Connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
@@ -165,6 +171,11 @@ VOIX-TITRE Control vocal
 VOIX-UP Monter
 VOIX-DOWN Descendre
 VOIX-SPEAK-TITRE Synthèse vocale
+VOIX-SOUND-TITRE Audio
+VOIX-WARNING-LABAEL La reconnaissance vocale n'est disponible que sur google chrome actuellement.
+VOIX-LIST-COMANDE-LABEL Voici la liste des commandes vocales reconnues par le framework client. Vous pouvez également ajouter vos propres commandes vocale en jQuery.
+VOIX-DESC-LABEL Activer la reconnaissance vocale dans le menu du haut et prenez le contrôle avec votre voix. Activer la Synthèse vocale, et le framework cumuniquera avec vous dans votre langue.
+VOIX-HOME-TITLE Controle & Synthèse vocale
 
 // Translate modul voix speak. **************** NOT EDIT ****************
 

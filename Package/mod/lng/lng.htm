@@ -1,7 +1,7 @@
 <!--
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	04/04/2014.
+ * @date Modif	19/04/2014.
  * @package		lng.lng.htm
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*All
@@ -10,7 +10,7 @@
 <!-- Menu langue. 0.5 -->
 <script id="mLangue" type="text/html">
 	<div id="mLangue" class="btn-group navbar-btn">
-		<button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#trx}}{{lng.langue}}{{/trx}}">
+		<button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}{{lng.langue}}{{/TX}}">
 			<img id="icoLangue" src="{{lng.root}}{{lng.langue}}{{lng.extension}}" alt="{{lng.langue}}">
 		</button>
 		<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" >
@@ -18,7 +18,7 @@
 		</button>
 		<ul class="dropdown-menu">
 			{{#lng.list}}
-				<li><a onclick="$.lng.changeLangue('{{.}}');"><img src="{{lng.root}}{{.}}{{lng.extension}}" alt="{{.}}"> {{#trx}}{{.}}{{/trx}}</a></li>
+				<li><a onclick="$.lng.changeLangue('{{.}}');"><img src="{{lng.root}}{{.}}{{lng.extension}}" alt="{{.}}"> {{#TX}}{{.}}{{/TX}}</a></li>
 			{{/lng.list}}
 		</ul>
 	</div>

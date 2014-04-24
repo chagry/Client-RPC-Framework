@@ -1,7 +1,7 @@
 <!--
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	10/04/2014.
+ * @date Modif	19/04/2014.
  * @package		user.user.htm
  * @contact		Chagry.com - git@chagry.com
 -->
@@ -9,7 +9,7 @@
 <!-- Menu User 0.5 -->
 <script id="mUser" type="text/html">
 	<div id="mUser" class="btn-group navbar-btn">
-		<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}" data-tr="DEF-LOGIN" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#trx}}DEF-LOGIN{{/trx}}">
+		<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}" data-tr="DEF-LOGIN" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-LOGIN{{/TX}}">
 			<i class="fa fa-user"></i>
 		</button>
 	</div>
@@ -18,7 +18,7 @@
 <!-- Menu Profil 0.5 -->
 <script id="mProfil" type="text/html">
 	<div id="mProfil" class="btn-group navbar-btn">
-		<button id='profilSpin' type="button" onClick="{{user.func.profil}}" class="btn btn-success" data-tr="DEF-PROFIL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#trx}}DEF-PROFIL{{/trx}}">
+		<button id='profilSpin' type="button" onClick="{{user.func.profil}}" class="btn btn-success" data-tr="DEF-PROFIL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-PROFIL{{/TX}}">
 			<i class="fa fa-user"></i>
 		</button>
 	</div>
@@ -28,12 +28,12 @@
 <script id="loginModal" type="text/html">
 	<div id="loginModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
 		<div class="modal-header">
-			<h4 id='loginSpin' class="modal-title text-warning">{{#tr}}DEF-LOGIN{{/tr}} <i class="fa fa-user pull-right fa-lg"></i></h4>
+			<h4 id='loginSpin' class="modal-title text-warning">{{#T}}DEF-LOGIN{{/T}} <i class="fa fa-user pull-right fa-lg"></i></h4>
 		</div>
 		<div id="login" class="modal-body"></div>
 		<div class="modal-footer">
 			<img class="pull-left" src="{{user.img.logoCRP}}" alt="CRP">
-			<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}">{{#tr}}DEF-CLOSE{{/tr}}</button>
+			<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}">{{#T}}DEF-CLOSE{{/T}}</button>
 		</div>
 	</div>	
 </script>
@@ -42,12 +42,12 @@
 <script id="profilModal" type="text/html">
 	<div id="profilModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
 		<div class="modal-header">
-			<h4 id='profilSpinMod' class="modal-title text-success">{{#tr}}DEF-PROFIL{{/tr}} <i class="fa fa-user pull-right fa-lg"></i></h4>
+			<h4 id='profilSpinMod' class="modal-title text-success">{{#T}}DEF-PROFIL{{/T}} <i class="fa fa-user pull-right fa-lg"></i></h4>
 		</div>		
 		<div id="profil" class="modal-body"></div>
 		<div class="modal-footer">
 			<img class="pull-left" src="{{user.img.logoCRP}}" alt="CRP">
-			<button type="button" class="btn btn-danger" onClick="{{user.func.modalProfil}}">{{#tr}}DEF-CLOSE{{/tr}}</button>
+			<button type="button" class="btn btn-danger" onClick="{{user.func.modalProfil}}">{{#T}}DEF-CLOSE{{/T}}</button>
 		</div>
 	</div>	
 </script>
@@ -57,10 +57,10 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="well well-lg">
-				<p class="lead text-center"><i class="fa fa-magic"></i> {{#tr}}DEF-MODIFICATION{{/tr}} {{#tr}}{{user.vars.edit.titre}}{{/tr}}</p>
+				<p class="lead text-center"><i class="fa fa-magic"></i> {{#T}}DEF-MODIFICATION{{/T}} {{#T}}{{user.vars.edit.titre}}{{/T}}</p>
 				<form id="{{user.form.edit}}" role="form">
 					<div class="form-group">
-						<label for="email">{{#tr}}USER-NEW-MAIL{{/tr}}</label>
+						<label for="email">{{#T}}USER-NEW-MAIL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
 							<input class="form-control input-lg" value="{{user.vars.edit.mail}}" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
@@ -70,19 +70,19 @@
 						<div class="input-group">
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" id="accept" name="accept" value="">{{#tr}}USER-BEFORE-SAVE-MAIL{{/tr}}
+									<input type="checkbox" id="accept" name="accept" value="">{{#T}}USER-BEFORE-SAVE-MAIL{{/T}}
 								</label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<button class="btn btn-labeled btn-primary" type="submit">
-							<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#tr}}DEF-SAVE{{/tr}}
+							<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#T}}DEF-SAVE{{/T}}
 						</button>
 					</div>
 				</form>
 			</div>
-			<p class="text-muted text-center"><small>{{#tr}}{{user.vars.edit.desc}}{{/tr}}</small></p>
+			<p class="text-muted text-center"><small>{{#T}}{{user.vars.edit.desc}}{{/T}}</small></p>
 		</div>
 	</div>
 </script>
@@ -95,7 +95,7 @@
 				<i class="fa fa-arrow-circle-down fa-4x text-muted hidden-xs"><br /></i>
 				<form id="{{user.form.login}}" role="form">
 					<div class="form-group">
-						<label for="email" class="lead">{{#tr}}USER-YOUR-MAIL{{/tr}}</label>
+						<label for="email" class="lead">{{#T}}USER-YOUR-MAIL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
 							<input class="form-control input-lg" value="{{user.vars.cookieMail}}" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
@@ -103,7 +103,7 @@
 					</div>
 					<div class="btn-group">
 						<button class="btn btn-labeled btn-primary" type="submit">
-							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span> {{#tr}}DEF-LOGIN{{/tr}}
+							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span> {{#T}}DEF-LOGIN{{/T}}
 						</button>
 					</div>
 				</form>
@@ -113,13 +113,13 @@
 	<div class="row">
 		<div class="col-sm-6">
 			<button type="button" class="btn btn-success btn-lg btn-block" onClick="{{user.func.signup}}">
-				<i class="fa fa-magic"></i> {{#tr}}USER-NEW-SIGNUP-LABEL{{/tr}}
+				<i class="fa fa-magic"></i> {{#T}}USER-NEW-SIGNUP-LABEL{{/T}}
 			</button>
 		</div>
 		<br class="visible-xs" />
 		<div class="col-sm-6">
 			<button type="button" class="btn btn-info btn-lg btn-block" onClick="{{user.func.secuCenter}}">
-				<i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}
+				<i class="fa fa-shield"></i> {{#T}}USER-SECURIT-CENTER{{/T}}
 			</button>
 		</div>
 	</div>
@@ -130,9 +130,9 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="text-center">
-				<p class="text-muted">{{#tr}}USER-RESET-DESC{{/tr}}</p>
+				<p class="text-muted">{{#T}}USER-RESET-DESC{{/T}}</p>
 				<button class="btn btn-labeled btn-default" type="button" onClick="{{user.func.forgot}}">
-					<span class="btn-label"><i class="fa fa-magic"></i></span>{{#tr}}DEF-CODE-PIN-NEW{{/tr}}
+					<span class="btn-label"><i class="fa fa-magic"></i></span>{{#T}}DEF-CODE-PIN-NEW{{/T}}
 				</button>
 			</div>
 		</div>
@@ -142,7 +142,7 @@
 <!-- Page pin code formulaire 0.5 -->
 <script id="pin" type="text/html">
 	<div class="row">
-		<p class="lead text-center">{{#tr}}DEF-CODE-PIN-LABEL{{/tr}} <small class="text-muted">{{user.vars.mail}}</small></p>
+		<p class="lead text-center">{{#T}}DEF-CODE-PIN-LABEL{{/T}} <small class="text-muted">{{user.vars.mail}}</small></p>
 		<div class="col-sm-8 col-sm-offset-2">
 			<div class="well well-lg">
 				<form id="{{user.form.pin}}" role="form">
@@ -177,11 +177,11 @@
 					<br />
 					<p>
 						<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
-							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#T}}DEF-CANCEL{{/T}}
 						</button>
 						
 						<button class="btn btn-labeled btn-primary pull-right" type="submit">
-							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span>{{#tr}}DEF-LOGIN{{/tr}}
+							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span>{{#T}}DEF-LOGIN{{/T}}
 						</button>
 					</p>
 					<br />
@@ -205,20 +205,20 @@
 					<div class="row">
 						<div class="col-sm-6 text-center">
 							<div class="well noir">
-								<h5 class="googPolice">{{#tr}}USER-MAIL-FIRST-LABEL{{/tr}}</h5>
+								<h5 class="googPolice">{{#T}}USER-MAIL-FIRST-LABEL{{/T}}</h5>
 								<button class="btn btn-labeled btn-success" type="button" onClick="{{user.func.editPrince}}">
 									<span class="btn-label"><i class="fa fa-pencil"></i></span>{{user.info.email}}
 								</button>
-								<h6 class="text-muted"><small>{{#tr}}USER-MAIL-FIRST-DESC{{/tr}}</small></h6>
+								<h6 class="text-muted"><small>{{#T}}USER-MAIL-FIRST-DESC{{/T}}</small></h6>
 							</div>
 						</div>
 						<div class="col-sm-6 text-center">
 							<div class="well noir">
-								<h5 class="googPolice">{{#tr}}USER-MAIL-SECU-LABEL{{/tr}}</h5>
+								<h5 class="googPolice">{{#T}}USER-MAIL-SECU-LABEL{{/T}}</h5>
 								<button class="btn btn-labeled {{user.func.classSecurity}}" type="button" onClick="{{user.func.editSecurit}}">
 									<span class="btn-label"><i class="fa fa-pencil"></i></span>{{user.info.verif}}
 								</button>
-								<h6 class="text-muted"><small>{{#tr}}USER-MAIL-SECU-DESC{{/tr}}</small></h6>
+								<h6 class="text-muted"><small>{{#T}}USER-MAIL-SECU-DESC{{/T}}</small></h6>
 							</div>
 						</div>
 					</div>
@@ -228,12 +228,12 @@
 								<div class="row">
 									<div class="col-sm-7 text-left">
 										<h6 class="googPolice"><i class="fa fa-arrow-circle-o-right fa-3x pull-left"></i>
-											 {{#tr}}USER-GRAVATAR-LABEL{{/tr}} <a href="{{user.img.grvatar.web}}" target="blank"><span class="text-info"> Gravatar.com</span></a>
+											 {{#T}}USER-GRAVATAR-LABEL{{/T}} <a href="{{user.img.grvatar.web}}" target="blank"><span class="text-info"> Gravatar.com</span></a>
 										</h6>
 									</div>
 									<div class="col-sm-5 text-right">
 										<button class="btn btn-labeled btn-danger" type="button" onClick="{{user.func.logout}}">
-											<span class="btn-label"><i class="fa fa-power-off"></i></span>{{#tr}}DEF-LOGOUT{{/tr}}
+											<span class="btn-label"><i class="fa fa-power-off"></i></span>{{#T}}DEF-LOGOUT{{/T}}
 										</button>
 									</div>
 								</div>
@@ -248,7 +248,7 @@
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="googFont"><i class="fa fa-clock-o"></i> {{#FROMNOW}}{{user.info.registerdate}}{{/FROMNOW}}</h1>
-				<p class="lead text-muted">{{#tr}}USER-SIGNUP-DATE{{/tr}} {{#LLLL}}{{user.info.registerdate}}{{/LLLL}}</p>
+				<p class="lead text-muted">{{#T}}USER-SIGNUP-DATE{{/T}} {{#LLLL}}{{user.info.registerdate}}{{/LLLL}}</p>
 				<br />
 			</div>
 		</div>
@@ -261,23 +261,23 @@
 								<div id="userChart" style="height: 170px;"></div>
 							</div>
 						</div>
-						<div class="panel-title text-center"><small>{{#tr}}USER-HISTORY-LABEL{{/tr}}</small></div>
+						<div class="panel-title text-center"><small>{{#T}}USER-HISTORY-LABEL{{/T}}</small></div>
 					</div>
 					<div class="table-responsive">
 						<table cellpadding="0" cellspacing="0" border="0" class="datatable table table-bordered table-hover" id="historyTab">
 							<thead>
 								<tr class="active">
-									<th>{{#tr}}DEF-DATE{{/tr}}</th>
-									<th>{{#tr}}DEF-ACTIONS{{/tr}}</th>
-									<th>{{#tr}}DEF-IP{{/tr}}</th>
-									<th>{{#tr}}DEF-TIME{{/tr}}</th>
+									<th>{{#T}}DEF-DATE{{/T}}</th>
+									<th>{{#T}}DEF-ACTIONS{{/T}}</th>
+									<th>{{#T}}DEF-IP{{/T}}</th>
+									<th>{{#T}}DEF-TIME{{/T}}</th>
 								</tr>
 							</thead>
 							<tbody>
 								{{#user.vars.historique}}
 									<tr class="{{user.func.classIpOrSys}}">
 										<td><span class="text-muted">{{#YMD}}{{date}}{{/YMD}}</span> <span class="label label-warning">{{#H}}{{date}}{{/H}}</span></td>
-										<td>{{#tr}}{{action}}{{/tr}}</td>
+										<td>{{#T}}{{action}}{{/T}}</td>
 										<td>{{{user.func.spanIpOrSys}}}</td>
 										<td class="text-muted"><i class="fa fa-clock-o"></i> <small>{{#FROMNOW}}{{date}}{{/FROMNOW}}</small></td>
 									</tr>
@@ -286,7 +286,7 @@
 						</table>
 					</div>
 				</div>
-				<p class="text-muted"><small>{{#tr}}USER-SECU-LABEL{{/tr}}</small></p>
+				<p class="text-muted"><small>{{#T}}USER-SECU-LABEL{{/T}}</small></p>
 				<h1 id="scrollTopBtn"></h1>
 			</div>
 		</div>
@@ -296,7 +296,7 @@
 <!-- Page codePin edit formulaire 0.5 -->
 <script id="codePin" type="text/html">
 	<div class="row">
-		<p class="lead text-center">{{#tr}}DEF-CODE-PIN-LABEL{{/tr}} <small class="text-muted">{{user.vars.edit.mail}}</small></p>
+		<p class="lead text-center">{{#T}}DEF-CODE-PIN-LABEL{{/T}} <small class="text-muted">{{user.vars.edit.mail}}</small></p>
 		<div class="col-sm-8 col-sm-offset-2">
 			<div class="well well-lg">
 				<form id="{{user.form.editPin}}" role="form">
@@ -331,11 +331,11 @@
 					<br />
 					<p>
 						<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="$.user.editMail('{{user.vars.edit.config}}')">
-							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#T}}DEF-CANCEL{{/T}}
 						</button>
 						
 						<button class="btn btn-labeled btn-primary pull-right" type="submit">
-							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span>{{#tr}}DEF-SEND{{/tr}}
+							<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span>{{#T}}DEF-SEND{{/T}}
 						</button>
 					</p>
 					<br />
@@ -349,12 +349,12 @@
 <script id="secu" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
-			<p class="lead text-center"><i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}</p>
-			<p class="text-center text-muted"><small>{{#tr}}USER-WELCOM-SECURITI-CENTER{{/tr}}</small></p>	
+			<p class="lead text-center"><i class="fa fa-shield"></i> {{#T}}USER-SECURIT-CENTER{{/T}}</p>
+			<p class="text-center text-muted"><small>{{#T}}USER-WELCOM-SECURITI-CENTER{{/T}}</small></p>	
 			<form id="{{user.form.secu}}" role="form">
 				<div class="well well-sm">
 					<div class="form-group">
-						<label for="email">{{#tr}}DEF-CODE-PIN-CRYPT-LABEL{{/tr}}</label>
+						<label for="email">{{#T}}DEF-CODE-PIN-CRYPT-LABEL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-unlock-alt fa-fw"></i></span>
 							<input class="form-control input-lg" placeholder="{{#trx}}DEF-CODE-PIN-CRYPT{{/trx}}" id="pin" type="text" name="pin" required>
@@ -363,7 +363,7 @@
 				</div>
 				<div class="well well-sm">
 					<div class="form-group">
-						<label for="email">{{#tr}}USER-KEY-SEND-LABEL{{/tr}}</label>
+						<label for="email">{{#T}}USER-KEY-SEND-LABEL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
 							<input class="form-control input-lg" placeholder="{{#trx}}USER-KEY-SEND{{/trx}}" id="cles" type="text" name="cles" required>
@@ -372,10 +372,10 @@
 				</div>
 				<p>
 					<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
-						<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+						<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#T}}DEF-CANCEL{{/T}}
 					</button>
 					<button class="btn btn-labeled btn-default pull-right" type="submit">
-						<span class="btn-label"><i class="fa fa-unlock"></i></span>{{#tr}}DEF-DECRYPT{{/tr}}
+						<span class="btn-label"><i class="fa fa-unlock"></i></span>{{#T}}DEF-DECRYPT{{/T}}
 					</button>
 				</p>
 			</form>
@@ -387,15 +387,15 @@
 <script id="secuDecrypte" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
-			<p class="lead text-center"><i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}</p>
+			<p class="lead text-center"><i class="fa fa-shield"></i> {{#T}}USER-SECURIT-CENTER{{/T}}</p>
 			<div class="well">
-				<p class="text-center">{{#tr}}DEF-CODE-PIN-LABEL{{/tr}}</p>
+				<p class="text-center">{{#T}}DEF-CODE-PIN-LABEL{{/T}}</p>
 				<h1 class="text-center">{{user.vars.pinCode}}</h1>
 			</div>
 			<div class="text-center">
-				<p class="text-muted">{{#tr}}USER-DELETE-MAIL{{/tr}}</p>
+				<p class="text-muted">{{#T}}USER-DELETE-MAIL{{/T}}</p>
 				<button class="btn btn-labeled btn-default" type="button" onClick="{{user.func.back}}">
-					<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span> {{#tr}}DEF-LOGIN{{/tr}}
+					<span class="btn-label"><i class="fa fa-arrow-circle-right"></i></span> {{#T}}DEF-LOGIN{{/T}}
 				</button>
 			</div>
 		</div>
@@ -407,10 +407,10 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="well well-lg">
-				<p class="lead text-center"><i class="fa fa-magic"></i> {{#tr}}USER-NEW-SIGNUP-LABEL{{/tr}}</p>
+				<p class="lead text-center"><i class="fa fa-magic"></i> {{#T}}USER-NEW-SIGNUP-LABEL{{/T}}</p>
 				<form id="{{user.form.signup}}" role="form">
 					<div class="form-group">
-						<label for="email">{{#tr}}USER-ENTER-YOUR-MAIL{{/tr}}</label>
+						<label for="email">{{#T}}USER-ENTER-YOUR-MAIL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
 							<input class="form-control input-lg" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
@@ -420,23 +420,23 @@
 						<div class="input-group">
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" id="accept" name="accept" value="">{{#tr}}USER-ACCEPT-CONDITION{{/tr}}
+									<input type="checkbox" id="accept" name="accept" value="">{{#T}}USER-ACCEPT-CONDITION{{/T}}
 								</label>
 							</div>
 						</div>
 					</div>
 					<p>
 						<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
-							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+							<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#T}}DEF-CANCEL{{/T}}
 						</button>
 						<button class="btn btn-labeled btn-primary pull-right" type="submit">
-							<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#tr}}DEF-SAVE{{/tr}}
+							<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#T}}DEF-SAVE{{/T}}
 						</button>
 					</p>
 					<br />
 				</form>
 			</div>
-			<p class="text-muted text-center"><small>{{#tr}}USER-WATH-MAIL-DESC{{/tr}}</small></p>
+			<p class="text-muted text-center"><small>{{#T}}USER-WATH-MAIL-DESC{{/T}}</small></p>
 		</div>
 	</div>
 </script>
@@ -446,18 +446,18 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="lead text-success text-center">
-				<i class="fa fa-check"></i> {{#tr}}DEF-BRAVO-LABEL{{/tr}}
+				<i class="fa fa-check"></i> {{#T}}DEF-BRAVO-LABEL{{/T}}
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="well">
-				<p class="text-success text-center">{{#tr}}USER-CONFIRM-SIGNUP{{/tr}}</p>
+				<p class="text-success text-center">{{#T}}USER-CONFIRM-SIGNUP{{/T}}</p>
 				<hr />
-				<p><i class="fa fa-unlock fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL1-SEND-DESC{{/tr}}</p>
+				<p><i class="fa fa-unlock fa-2x pull-left fa-border"></i> {{#T}}USER-MAIL1-SEND-DESC{{/T}}</p>
 				<hr />
-				<p><i class="fa fa-key fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL2-SEND-DESC{{/tr}}</p>
+				<p><i class="fa fa-key fa-2x pull-left fa-border"></i> {{#T}}USER-MAIL2-SEND-DESC{{/T}}</p>
 			</div>
 		</div>
 	</div>
@@ -465,7 +465,7 @@
 		<div class="col-sm-12">
 			<div class="text-center">
 				<button type="button" class="btn btn-info btn-lg" onClick="{{user.func.secuCenter}}">
-					<i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}
+					<i class="fa fa-shield"></i> {{#T}}USER-SECURIT-CENTER{{/T}}
 				</button>
 			</div>
 		</div>
@@ -476,20 +476,20 @@
 <script id="forgot" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
-			<p class="lead text-center">{{#tr}}USER-RESET-LABEL{{/tr}} <i class="fa fa-question-circle"></i></p>
-			<p class="text-center text-muted"><small>{{#tr}}USER-RESET-CUSTOM{{/tr}} {{user.vars.mail}}</small></p>
+			<p class="lead text-center">{{#T}}USER-RESET-LABEL{{/T}} <i class="fa fa-question-circle"></i></p>
+			<p class="text-center text-muted"><small>{{#T}}USER-RESET-CUSTOM{{/T}} {{user.vars.mail}}</small></p>
 			<div class="alert alert-danger">
-				<p><i class="fa fa-exclamation-triangle fa-2x pull-left fa-border"></i> {{#tr}}USER-RESET-WARNING{{/tr}}</p>
+				<p><i class="fa fa-exclamation-triangle fa-2x pull-left fa-border"></i> {{#T}}USER-RESET-WARNING{{/T}}</p>
 			</div>
 			<div class="alert alert-warning">
-				<p><i class="fa fa-exclamation-triangle fa-2x pull-left fa-border"></i> {{#tr}}USER-RESET-SEND-2EMAIL{{/tr}}</p>
+				<p><i class="fa fa-exclamation-triangle fa-2x pull-left fa-border"></i> {{#T}}USER-RESET-SEND-2EMAIL{{/T}}</p>
 			</div>
 			<p>
 				<button class="btn btn-labeled btn-danger pull-left" type="button" onClick="{{user.func.back}}">
-					<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#tr}}DEF-CANCEL{{/tr}}
+					<span class="btn-label"><i class="fa fa-arrow-circle-left"></i></span>{{#T}}DEF-CANCEL{{/T}}
 				</button>
 				<button class="btn btn-labeled btn-primary pull-right" type="button" onClick="{{user.func.forgotSend}}">
-					<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#tr}}DEF-CODE-PIN-NEW{{/tr}}
+					<span class="btn-label"><i class="fa fa-floppy-o"></i></span>{{#T}}DEF-CODE-PIN-NEW{{/T}}
 				</button>
 			</p>
 		</div>
@@ -501,18 +501,18 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="lead text-success text-center">
-				<i class="fa fa-check"></i> {{#tr}}DEF-CODE-PIN-VALIDATION{{/tr}}
+				<i class="fa fa-check"></i> {{#T}}DEF-CODE-PIN-VALIDATION{{/T}}
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="well">
-				<p class="text-success text-center">{{#tr}}USER-RESET-SEND-VALIDATION{{/tr}}</p>
+				<p class="text-success text-center">{{#T}}USER-RESET-SEND-VALIDATION{{/T}}</p>
 				<hr />
-				<p><i class="fa fa-unlock fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL1-SEND-DESC{{/tr}}</p>
+				<p><i class="fa fa-unlock fa-2x pull-left fa-border"></i> {{#T}}USER-MAIL1-SEND-DESC{{/T}}</p>
 				<hr />
-				<p><i class="fa fa-key fa-2x pull-left fa-border"></i> {{#tr}}USER-MAIL2-SEND-DESC{{/tr}}</p>
+				<p><i class="fa fa-key fa-2x pull-left fa-border"></i> {{#T}}USER-MAIL2-SEND-DESC{{/T}}</p>
 			</div>
 		</div>
 	</div>
@@ -520,7 +520,7 @@
 		<div class="col-sm-12">
 			<div class="text-center">
 				<button type="button" class="btn btn-info btn-lg" onClick="{{user.func.secuCenter}}">
-					<i class="fa fa-shield"></i> {{#tr}}USER-SECURIT-CENTER{{/tr}}
+					<i class="fa fa-shield"></i> {{#T}}USER-SECURIT-CENTER{{/T}}
 				</button>
 			</div>
 		</div>

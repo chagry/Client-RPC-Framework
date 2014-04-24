@@ -16,6 +16,10 @@
 
 ## // Translate defaut.
 
+* `DOC-LABEL` Documentation
+* `DOC-SUMMARY` Sommaire
+* `DOC-SUP-LABEL` Documentation supplémentaire
+* `DEF-NOT-CONTENT` Pas de contenu
 * `NOT-RESULTS` Pas de resultas
 * `DEF-SEARCH` chercher
 * `DEF-SERVER` Serveur
@@ -160,3 +164,23 @@
 * `USER-MAIL-NOT-CHANGE` Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
 * `USER-GRAVATAR-LABEL` Pour changer Votre Gravatar associer à votre email principal. il vous suffit de vous créer un compte sur
 * `USER-SECU-LABEL` Connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
+
+## // Translate modul voix.
+
+* `VOIX-TITRE` Control vocal
+* `VOIX-UP` Monter
+* `VOIX-DOWN` Descendre
+* `VOIX-SPEAK-TITRE` Synthèse vocale
+* `VOIX-SOUND-TITRE` Audio
+* `VOIX-WARNING-LABAEL` La reconnaissance vocale n'est disponible que sur google chrome actuellement.
+* `VOIX-LIST-COMANDE-LABEL` Voici la liste des commandes vocales reconnues par le framework client. Vous pouvez également ajouter vos propres commandes vocale en jQuery.
+* `VOIX-DESC-LABEL` Activer la reconnaissance vocale dans le menu du haut et prenez le contrôle avec votre voix. Activer la Synthèse vocale, et le framework cumuniquera avec vous dans votre langue.
+* `VOIX-HOME-TITLE` Controle & Synthèse vocale
+
+## // Translate modul voix speak. **************** NOT EDIT ****************
+
+* `VOIX-WELCOM-LABEL` Bien venue.
+* `VOIX-ON-LABEL` Synnthèse vocale
+* `VOIX-EDIT-LANGUE-LABEL` Language, modiffier
+* `VOIX-LOGIN-LABEL` Vous zettes, connecté
+* `VOIX-LOGOUT-LABEL` Mersssi, pourre, votre vissite

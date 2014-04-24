@@ -1,9 +1,9 @@
-/*
- * @version		0.5
- * @date Crea	11/09/2013.
- * @date Modif	02/04/2014.
- * @package		defaut.css
- * @contact		Chagry.com - git@chagry.com
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package defaut.css
  */
 
 html 
@@ -55,7 +55,7 @@ body
 	padding-top: 50px;	
 }
 
-.navbar {
+.navbar.navbar-fixed-top.navbar-static-top {
 	box-shadow: 0px 0px 60px #111;
 }
 
@@ -121,4 +121,32 @@ body
 
 .footMarge-lg {
 	margin-bottom: 20px;
+}
+
+.affix {
+	position: fixed;
+	top: 70px;
+}
+.affix-top{
+	position: static;
+}
+.affix-bottom {
+	position: absolute;
+}
+
+a.anchor {
+	text-decoration: none;
+	padding-left: 1%;
+	opacity: 0.5;
+	color: #357ebd;
+	font-weight: none;
+	font-size: 1em;
+}
+
+a:hover.anchor {
+	opacity: 1;
+}
+
+.cursor {
+	cursor: pointer;
 }

@@ -2,23 +2,12 @@
 
 ***
 
-Consult the website [Chagry](https://chagry.com/)
-
-# Documentation
-
-* Release for 2016
+# Doc Client JS
+Documentation for Client Jquery framework.
 
 ***
 
-# Acknowledgments
 
-* [Bootstrap](http://getbootstrap.com/) Front-end framework for developing responsive.
-
-***
-
-# License
-
-Released under the [ MIT license](http://opensource.org/licenses/mit-license.php).
 
 ***
 

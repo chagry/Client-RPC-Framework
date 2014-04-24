@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	04/12/2013.
- * @date Modif	14/04/2014.
+ * @date Modif	19/04/2014.
  * @package		mod.home.home.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
@@ -19,10 +19,10 @@
 			setup: function() {
 				
 				// Load model.
-				$.model.load('home');
+				$.m.load('home');
 				
 				// Event. Tmpl mod.
-				$('#'+$.model.html.event).one($.model.event.setup, $.home.defautHtml);
+				$('#'+$.m.div.event).one($.m.event.setup, $.home.defautHtml);
 			},
 			
 			
@@ -35,20 +35,23 @@
 				$.tmpl.load('home', function () {
 					
 					// add tmpl.
-					$('#'+$.model.html.menu).mustache('mHome', $.model, {method:'prepend'});
+					$('#'+$.m.div.menu).mustache('mHome', $.m, {method:'prepend'});
 					
 					// Tooltip.
 					$('#mHome button').tooltip();
 					
 					// add modal home video.
-					$('#'+$.model.html.event).mustache('homeModal', $.model);
+					$('#'+$.m.div.event).mustache('homeModal', $.m);
+					
+					// Background modal
+					$('#homeModal').css('background-image', 'url("'+$.m.home.img.modalFond+'")');
 					
 					// Setup html profil.
 					$.home.accueil();
 					
 					// Add twitter sprite. + css attr. 
-					$('#'+$.model.html.event).prepend($('<div id="twitter"></div>').width(150).height(150).css({
-						background	: 'url("img/css/twitter.png") 0 0 no-repeat',
+					/*$('#'+$.m.div.event).prepend($('<div id="twitter"></div>').width(150).height(150).css({
+						background	: 'url("'+$.m.home.img.anim+'") 0 0 no-repeat',
 						position	: 'absolute',
 						cursor		: 'pointer'
 					
@@ -61,8 +64,8 @@
 						}).spRandom({
 							top		: 70,
 							left	: 50,
-							right	: $('#'+$.model.html.event).width()/2,
-							bottom	: $('#'+$.model.html.event).height()-50,
+							right	: $('#'+$.m.div.event).width()/2,
+							bottom	: $('#'+$.m.div.event).height()-50,
 							speed	: 2000,
 							pause	: 4000
 							
@@ -84,7 +87,7 @@
 						
 						// Start anim sprite.
 						}).spStart()
-					);
+					);*/
 				});
 			},
 			
@@ -94,19 +97,19 @@
 			accueil: function() {
 				
 				// Data for owl.
-				$.model.home.vars.lib = $.shuffle($.model.home.lib);
+				$.m.home.vars.lib = $.shuffle($.m.home.lib);
 				
 				// Canvas width for springy.
-				$.model.home.vars.canvasWidth = ($('#event').width()<600)? $('#event').width()-25 : $('#event').width()/2-50;
+				$.m.home.vars.canvasWidth = ($('#event').width()<600)? $('#event').width()-25 : $('#event').width()/2-50;
 				
 				// Clean windows.
 				$.tmpl.clean();
 				
 				// Animation complete.
-				$('#'+$.model.html.content).slideUp(500, function() {
+				$('#'+$.m.div.content).slideUp(500, function() {
 					
 					// add tmpl. home.
-					$('#'+$.model.html.content).empty().mustache('home', $.model);
+					$('#'+$.m.div.content).empty().mustache('home', $.m);
 						
 					// If resize.
 					$(window).resize(function() {
@@ -116,34 +119,25 @@
 					});
 								
 					// Animation complete.
-					$('#'+$.model.html.content).slideDown(500, function() {
+					$('#'+$.m.div.content).slideDown(500, function() {
 						
 						// Btn modal video.
 						$('#videoBtn').mouseenter(function() {
 								
 							// Anim icon & color text with class.
-							$(this).switchClass( $.model.tmpl.html.scrollBtnCl1, $.model.tmpl.html.scrollBtnCl2, 500, "easeOutQuint" );
+							$(this).switchClass( $.m.tmpl.html.scrollBtnCl1, $.m.tmpl.html.scrollBtnCl2, 500, "easeOutQuint" );
 							
 							// Add animation. @param 1-element 2-effect 3-remove anim class after 'default=false' 4-callBack
 							$.tmpl.anim($(this), 'pulse', true);
 							
 							// Play sound.
-							$.voix.play($.model.tmpl.sound.click);
+							$.voix.play($.m.tmpl.sound.click);
 						
 						// 	mouse leave
 						}).mouseleave(function() {
 							
 							// Anim icon & color text with class.
-							$(this).switchClass( $.model.tmpl.html.scrollBtnCl2, $.model.tmpl.html.scrollBtnCl1, 500, "easeOutQuint" );
-						});
-						
-						// Background modal
-						$('#homeModal').css('background-image', "url('img/css/bg.png')");
-						
-						// Add video in modal.
-						$('#videoPl').player({
-							video : '-fANBFZEHdk',
-							width : $('#videoPl').width()
+							$(this).switchClass( $.m.tmpl.html.scrollBtnCl2, $.m.tmpl.html.scrollBtnCl1, 500, "easeOutQuint" );
 						});
 						
 						// Setup graph Springy.
@@ -155,14 +149,14 @@
 						});
 						
 						// Boucle Nodes for Springy.
-						$.each($.model.home.nodes, function(key, value) {
+						$.each($.m.home.nodes, function(key, value) {
 							
 							// add nodes.
 							sys.addNodes(value);
 						});
 						
 						// Boucle Edges for Springy.
-						$.each($.model.home.edges, function(key, value) {
+						$.each($.m.home.edges, function(key, value) {
 							
 							// add nodes.
 							sys.addEdges(value);
@@ -206,8 +200,8 @@
 							placement	: 'top',
 							container	: 'body',
 							content 	: '<div class="text-center text-muted"><small>'+
-								$.model.home.don.btc+'</small><br><canvas id="qrCodeDonat" width="200" height="210"></canvas><br><a href="'+
-								$.model.home.don.btcUrl+'"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg"></a></div>'
+								$.m.home.don.btc+'</small><br><canvas id="qrCodeDonat" width="200" height="210"></canvas><br><a href="'+
+								$.m.home.don.btcUrl+'"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg"></a></div>'
 						});
 						
 						// img for qr code.
@@ -218,7 +212,7 @@
 						$('#btcDonation').on('shown.bs.popover', function () {
 							// qr code generate.
 							$('#qrCodeDonat').qrcode({
-								text		: $.model.home.don.btcUrl,
+								text		: $.m.home.don.btcUrl,
 								render		: 'canvas',
 								minVersion	: 3,
 								maxVersion	: 5,
@@ -245,6 +239,42 @@
 						$.tmpl.tagScroll('scrollTopBtn');
 					});
 				}); 
+			},
+			
+			/*
+			 * Funct openModal. 0.5
+			 */
+			openModal: function() {
+				
+				// Add video in modal.
+				$('#videoPl').tubeplayer({
+					initialVideo	: '-fANBFZEHdk',
+					width			: $('#homeModal').width()-40,
+					height			: ($('#homeModal').width()-40)*720/1280,
+					protocol		: $.m.protocol,
+					showControls	: false,
+					color			: 'white',
+					autoPlay		: true,
+					autoHide		: false,
+				});
+				
+				// Add height for video.
+				$('#videoPl').height(($('#homeModal').width()-40)*720/1280);
+				
+				// template modal.
+				$.tmpl.modal('homeModal');
+			},
+			
+			/*
+			 * Funct closeModal 0.5
+			 */
+			closeModal: function() {
+				
+				// template modal.
+				$.tmpl.modal('homeModal');
+				
+				// destroy video.
+				$('#videoPl').tubeplayer("destroy");
 			},
 		}
 	});

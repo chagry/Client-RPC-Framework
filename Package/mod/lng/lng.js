@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	04/04/2014.
+ * @date Modif	19/04/2014.
  * @package		lng.lng.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*tmpl.js
@@ -19,7 +19,7 @@
 			setup: function() {
 				
 				// event. Tmpl mod.
-				$('#'+$.model.html.event).one($.model.event.setup, $.lng.defautHtml);
+				$('#'+$.m.div.event).one($.m.event.setup, $.lng.defautHtml);
 			},
 			
 			/*
@@ -31,7 +31,7 @@
 				$.tmpl.load('lng', function() {
 					
 					// add tmpl.
-					$('#'+$.model.html.menu).mustache('mLangue', $.model);
+					$('#'+$.m.div.menu).mustache('mLangue', $.m);
 					
 					// Tooltip.
 					$('#mLangue button').tooltip();
@@ -45,25 +45,25 @@
 			get: function() {
 				
 				// Not langue.
-				if(!$.model.lng.langue) {
+				if(!$.m.lng.langue) {
 					
 					// Cookie langue.
-					var lngCookie = $.cookie($.model.lng.cookie);
+					var lngCookie = $.cookie($.m.lng.cookie);
 					
 					// if cookie.
 					if(lngCookie!=undefined) {
 						
 						// if code cookie in array.
-						if($.inArray(lngCookie, $.model.lng.list) > -1) $.model.lng.langue=lngCookie;
+						if($.inArray(lngCookie, $.m.lng.list) > -1) $.m.lng.langue=lngCookie;
 						
 						// if not code in array.
 						else {
 							
 							// first code in array.
-							$.model.lng.langue=$.model.lng.list[0];
+							$.m.lng.langue=$.m.lng.list[0];
 							
 							// New cookie.
-							$.cookie($.model.lng.cookie, $.model.lng.langue);
+							$.cookie($.m.lng.cookie, $.m.lng.langue);
 						}
 					}
 					
@@ -71,18 +71,18 @@
 					else {
 						
 						// if code lingua in array.
-						if($.inArray($.linguaGetLanguage(), $.model.lng.list) > -1) $.model.lng.langue=$.linguaGetLanguage();
+						if($.inArray($.linguaGetLanguage(), $.m.lng.list) > -1) $.m.lng.langue=$.linguaGetLanguage();
 						
 						// if not code in array. first.
-						else $.model.lng.langue=$.model.lng.list[0];
+						else $.m.lng.langue=$.m.lng.list[0];
 						
 						// New cookie.
-						$.cookie($.model.lng.cookie, $.model.lng.langue);
+						$.cookie($.m.lng.cookie, $.m.lng.langue);
 					}
 				}
 				
 				// return langue.
-				return $.model.lng.langue;
+				return $.m.lng.langue;
 			},
 			
 			/*
@@ -113,22 +113,22 @@
 			changeLangue: function(param) {
 				
 				// if code in array langue dispo.
-				if($.inArray(param, $.model.lng.list) > -1) {
+				if($.inArray(param, $.m.lng.list) > -1) {
 					
 					// if langue != langue actu.
-					if($.model.lng.langue!=param) {
+					if($.m.lng.langue!=param) {
 						
 						// Modif langue in objet.
-						$.model.lng.langue=param;
+						$.m.lng.langue=param;
 						
 						// this will also update controls by ID
-						$.linguaLoad($.model.lng.langue);
+						$.linguaLoad($.m.lng.langue);
 						
 						// New cookie.
-						$.cookie($.model.lng.cookie, $.model.lng.langue);
+						$.cookie($.m.lng.cookie, $.m.lng.langue);
 						
 						// Lague of date
-						moment.lang($.model.lng.langue);
+						moment.lang($.m.lng.langue);
 						
 						// translate text in page.
 						$('.langTr').each(function() {
@@ -156,17 +156,17 @@
 							
 							// flag img and title.
 							$(this).attr({
-								src: $.model.lng.root+$.model.lng.langue+$.model.lng.extension,
-								alt: $.model.lng.langue
+								src: $.m.lng.root+$.m.lng.langue+$.m.lng.extension,
+								alt: $.m.lng.langue
 								// add new titre div parent de l'image flag.
-							}).parent().attr("data-original-title", $.lng.tr($.model.lng.langue));
+							}).parent().attr("data-original-title", $.lng.tr($.m.lng.langue));
 							
 							// print flag.
 							$(this).fadeIn(400);
 						});
 						
 						// event. Tmpl mod.
-						$('#'+$.model.html.event).trigger($.model.event.langue);
+						$('#'+$.m.div.event).trigger($.m.event.langue);
 					}
 				}
 			},

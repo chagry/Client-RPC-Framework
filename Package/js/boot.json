@@ -1,5 +1,6 @@
 {
 	"api"            : "https://domain.com/api/",
+	"protocol"       : "https",
 	"lng" : {
 		"list"       : ["en", "fr"],
 		"url"        : "https://domain.com/translate/",
@@ -15,7 +16,7 @@
 		"login"      : "login",
 		"logout"     : "logout"
 	},
-	"html" : {
+	"div" : {
 		"event"      : "event",
 		"content"    : "conten",
 		"menu"       : "menu"
@@ -25,6 +26,7 @@
 		"list" : [
 			"voix",
 			"user",
+			"doc",
 			"home",
 			"lng",
 			"tmpl"

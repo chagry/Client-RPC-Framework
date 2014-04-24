@@ -1,7 +1,7 @@
 /*
  * @version		0.5
  * @date Crea	11/09/2013.
- * @date Modif	10/04/2014.
+ * @date Modif	19/04/2014.
  * @package		user.user.js
  * @contact		Chagry.com - git@chagry.com
  * @Dependence	*lng.js home.js
@@ -19,10 +19,10 @@
 			setup: function() {
 				
 				// Load model.
-				$.model.load('user');
+				$.m.load('user');
 				
 				// event. setup listen.
-				$('#'+$.model.html.event).one($.model.event.setup, $.user.defautHtml);
+				$('#'+$.m.div.event).one($.m.event.setup, $.user.defautHtml);
 			},
 			
 			/*
@@ -34,13 +34,13 @@
 				$.tmpl.load('user', function () {
 					
 					// add menu Login.
-					$('#'+$.model.html.menu).mustache('mUser', $.model, {method:'prepend'});
+					$('#'+$.m.div.menu).mustache('mUser', $.m, {method:'prepend'});
 					
 					// Init popup sur les lien.
 					$('#mUser button').tooltip();
 					
 					// add modal Login.
-					$('#'+$.model.html.event).mustache('loginModal', $.model);
+					$('#'+$.m.div.event).mustache('loginModal', $.m);
 					
 					// Setup form login.
 					$.user.formLoginHtml();
@@ -53,11 +53,11 @@
 			formLoginHtml: function() {
 				
 				// Data for html.
-				$.model.user.vars = {};
-				$.model.user.info = {};
+				$.m.user.vars = {};
+				$.m.user.info = {};
 				
 				// Mail cookie.
-				var userCookie = $.cookie($.model.user.cookie);
+				var userCookie = $.cookie($.m.user.cookie);
 				// if cookie.
 				if(userCookie!=undefined) {
 					
@@ -68,7 +68,7 @@
 					// if code md5.
 					if(reg.test(userMail)) {
 						// Data for html.
-						$.model.user.vars.cookieMail = userMail;
+						$.m.user.vars.cookieMail = userMail;
 					}
 				}
 				
@@ -76,16 +76,16 @@
 				$('#login').slideUp(500, function() {
 					
 					// add tmpl. Form Login.
-					$('#login').empty().mustache('login', $.model);
+					$('#login').empty().mustache('login', $.m);
 					
 					// Anim Down.
 					$('#login').slideDown(500, function() {
 						
 						// Valid Form.
-						$('#'+$.model.user.form.login).validate();
+						$('#'+$.m.user.form.login).validate();
 						
 						// event. Form login. listen.
-						$('#'+$.model.user.form.login).on($.model.user.form.login, $.user.formLoginPinHtml);
+						$('#'+$.m.user.form.login).on($.m.user.form.login, $.user.formLoginPinHtml);
 					});
 				});
 			},
@@ -96,13 +96,13 @@
 			formLoginPinHtml: function() {
 				
 				// event off.
-				$('#'+$.model.user.form.login).off($.model.user.form.login);
+				$('#'+$.m.user.form.login).off($.m.user.form.login);
 				
 				// open spinner. 1-div 2-icone name.
 				$.tmpl.spinOn('loginSpin', 'fa-user');
 				
 				// add local mail for connexion.
-				$.model.user.vars.mail = $('#'+$.model.user.form.login+' #email').val();
+				$.m.user.vars.mail = $('#'+$.m.user.form.login+' #email').val();
 				
 				// Animation stop.
 				$('#login').slideUp(500, function() {
@@ -111,25 +111,25 @@
 					$.jsonRPC.request('login_identification', {
 						
 						// Param send.
-						params : [$.base64.encode($.model.user.vars.mail)],
+						params : [$.base64.encode($.m.user.vars.mail)],
 						
 						// succees.
 						success : function(data) {
 							
 							// add local id session crypter.
-							$.model.user.vars.session = data.result.session;
+							$.m.user.vars.session = data.result.session;
 							
 							// add tmpl. Form Login code pin.
-							$('#login').empty().mustache('pin', $.model).mustache('pinParam', $.model);
+							$('#login').empty().mustache('pin', $.m).mustache('pinParam', $.m);
 							
 							// Animation stop.
 							$('#login').slideDown(500, function() {
 								
 								// Valid Form.
-								$('#'+$.model.user.form.pin).validate();
+								$('#'+$.m.user.form.pin).validate();
 								
 								// event. Form login.
-								$('#'+$.model.user.form.pin).on($.model.user.form.pin, $.user.loginFunc);
+								$('#'+$.m.user.form.pin).on($.m.user.form.pin, $.user.loginFunc);
 								
 								// Boucle btn pin.
 								$('#btnPin .btn').each(function() {
@@ -138,7 +138,7 @@
 									$(this).click(function() {
 										
 										// Play sound.
-										$.voix.play($.model.voix.sound.btnOver);
+										$.voix.play($.m.voix.sound.btnOver);
 									});
 								});
 								
@@ -169,19 +169,19 @@
 			loginFunc: function() {
 				
 				// event off.
-				$('#'+$.model.user.form.pin).off($.model.user.form.pin);
+				$('#'+$.m.user.form.pin).off($.m.user.form.pin);
 				
 				// open spinner.
 				$.tmpl.spinOn('loginSpin', 'fa-user');
 				
 				// add local mail.
-				$.model.user.vars.password=$.sha1($('#'+$.model.user.form.pin+' #password').val());
+				$.m.user.vars.password=$.sha1($('#'+$.m.user.form.pin+' #password').val());
 				
 				// Animation stop.
 				$('#login').slideUp(500, function() {
 					
 					// Decrypt id session.
-					var tmpPin = $.crp.decrypte($.model.user.vars.session, $.model.user.vars.password);
+					var tmpPin = $.crp.decrypte($.m.user.vars.session, $.m.user.vars.password);
 					
 					// preg_match.
 					var reg =/^[a-f0-9]{32}$/;
@@ -194,18 +194,18 @@
 								 
 							// Param send. 1-session 2-mailCRP 3-langueCRP
 							params : [tmpPin, 
-								$.crp.crypte($.model.user.vars.mail, $.model.user.vars.password),
-								$.crp.crypte($.lng.get(), $.model.user.vars.password)
+								$.crp.crypte($.m.user.vars.mail, $.m.user.vars.password),
+								$.crp.crypte($.lng.get(), $.m.user.vars.password)
 							],
 							
 							// succees.
 							success : function(data) {
 								
 								// add id session.
-								$.model.user.vars.session =	 $.crp.decrypte(data.result.session, $.model.user.vars.password);
+								$.m.user.vars.session =	 $.crp.decrypte(data.result.session, $.m.user.vars.password);
 								
 								// Decode info user.
-								$.model.user.info = JSON.parse($.crp.decrypte(data.result.user, $.model.user.vars.password));
+								$.m.user.info = JSON.parse($.crp.decrypte(data.result.user, $.m.user.vars.password));
 								
 								// empty div login.
 								$('#login').empty();
@@ -253,7 +253,7 @@
 			login: function() {
 				
 				// If not connexion.
-				if(!$.model.user.log) {
+				if(!$.m.user.log) {
 					
 					// Clean windows.
 					$.tmpl.clean();
@@ -265,16 +265,16 @@
 					$('#mUser').remove();
 					
 					// add menu profil.
-					$('#'+$.model.html.menu).mustache('mProfil', $.model, {method:'prepend'});
+					$('#'+$.m.div.menu).mustache('mProfil', $.m, {method:'prepend'});
 					
 					// Init popup sur les lien.
 					$('#mProfil button').tooltip();
 					
 					// add modal profil.
-					$('#'+$.model.html.event).mustache('profilModal', $.model);
+					$('#'+$.m.div.event).mustache('profilModal', $.m);
 					
 					// Loger connexion.
-					$.model.user.log=true;
+					$.m.user.log=true;
 					
 					// Open spinner.
 					$.tmpl.spinOn('profilSpin', 'fa-user');
@@ -289,21 +289,21 @@
 						success : function(data) {
 							
 							// return result.
-							$.model.user.vars.historique = data.result.historique;
-							$.model.user.vars.chart = data.result.chart;
-							$.model.user.vars.MD5mail = $.md5($.trim($.model.user.info.email.toString().toLowerCase()));
+							$.m.user.vars.historique = data.result.historique;
+							$.m.user.vars.chart = data.result.chart;
+							$.m.user.vars.MD5mail = $.md5($.trim($.m.user.info.email.toString().toLowerCase()));
 							
 							// Setup html profil.
 							$.user.profil();
 							
 							// New Cookie mail.
-							$.cookie('user', $.base64.encode($.model.user.info.email));
+							$.cookie('user', $.base64.encode($.m.user.info.email));
 							
 							// Close spinner.
 							$.tmpl.spinOff('profilSpin', 'fa-user');
 							
 							// event. login. trigger.
-							$('#'+$.model.html.event).trigger('login');
+							$('#'+$.m.div.event).trigger('login');
 						},
 						
 						// erreur serveur.
@@ -322,7 +322,7 @@
 			session: function() {
 				
 				// if session exist.
-				if($.model.user.log) return $.model.user.vars.session;
+				if($.m.user.log) return $.m.user.vars.session;
 				
 				// else ruturn false.
 				else return false;
@@ -334,7 +334,7 @@
 			password: function() {
 				
 				// if session exist.
-				if($.model.user.log) return $.model.user.vars.password;
+				if($.m.user.log) return $.m.user.vars.password;
 				
 				// else ruturn false.
 				else return false;
@@ -346,17 +346,17 @@
 			profil: function() {
 				
 				// Extend model user. function for see is mail secu existe.
-				$.model.user.func.classSecurity = function(){ 
-					return ($.model.user.info.email==$.model.user.info.verif)? 'btn-danger' : 'btn-success'
+				$.m.user.func.classSecurity = function(){ 
+					return ($.m.user.info.email==$.m.user.info.verif)? 'btn-danger' : 'btn-success'
 				};
 				
 				// Extend model user. function Ip client or System.
-				$.model.user.func.classIpOrSys = function(){
+				$.m.user.func.classIpOrSys = function(){
 					return (this.usip=='system')? 'warning' : 'good'
 				};
 				
 				// Extend model user. function Ip client or System.
-				$.model.user.func.spanIpOrSys = function(){ 
+				$.m.user.func.spanIpOrSys = function(){ 
 					return (this.usip=='system')? '<span class="badge">'+this.usip+'</span>' : '<span class="text-success"><small>'+this.usip+'</small></span>'
 				};
 				
@@ -364,10 +364,10 @@
 				$.tmpl.clean();
 				
 				// Animation stop.
-				$('#'+$.model.html.content).slideUp(500, function() {
+				$('#'+$.m.div.content).slideUp(500, function() {
 					
 					// add tmpl. Form Login.
-					$('#'+$.model.html.content).empty().mustache('user', $.model);
+					$('#'+$.m.div.content).empty().mustache('user', $.m);
 					
 					// table data.
 					$('#historyTab').dataTable({
@@ -395,12 +395,12 @@
 					});
 					
 					// Animation stop.
-					$('#'+$.model.html.content).slideDown(500, function() {
+					$('#'+$.m.div.content).slideDown(500, function() {
 						
 						// Content array chart.
 						var arrChart = new Array();
 						// Boucle result chart.
-						$.each($.model.user.vars.chart, function(key, value) {
+						$.each($.m.user.vars.chart, function(key, value) {
 							
 							// add result chart.
 							arrChart.push({
@@ -457,7 +457,7 @@
 			logout: function() {
 				
 				// If connexion.
-				if($.model.user.log) {
+				if($.m.user.log) {
 					
 					// Clean windows.
 					$.tmpl.clean();
@@ -469,16 +469,16 @@
 					$('#mProfil').remove();
 					
 					// Loger connexion.
-					$.model.user.log=false;
+					$.m.user.log=false;
 					
 					// add menu Login.
-					$('#'+$.model.html.menu).mustache('mUser', $.model, {method:'prepend'});
+					$('#'+$.m.div.menu).mustache('mUser', $.m, {method:'prepend'});
 					
 					// Init popup sur les lien.
 					$('#mUser button').tooltip();
 					
 					// add modal Login.
-					$('#'+$.model.html.event).mustache('loginModal', $.model);
+					$('#'+$.m.div.event).mustache('loginModal', $.m);
 					
 					// Setup form login.
 					$.user.formLoginHtml();
@@ -487,7 +487,7 @@
 					$.home.accueil();
 					
 					// event. logout. trigger.
-					$('#'+$.model.html.event).trigger('logout');
+					$('#'+$.m.div.event).trigger('logout');
 				}
 			},
 			
@@ -504,33 +504,33 @@
 				$.tmpl.modal('profilModal');
 				
 				// Data edit.
-				$.model.user.vars.edit={};
-				$.model.user.vars.edit.config = a;
+				$.m.user.vars.edit={};
+				$.m.user.vars.edit.config = a;
 				
 				// See is mail first or security.
 				switch (a)
 				{
 					case "principal":
-						$.model.user.vars.edit.titre = 'USER-MAIL-FIRST-LABEL';
-						$.model.user.vars.edit.desc = 'USER-MAIL-FIRST-DESC';
-						$.model.user.vars.edit.mail = $.model.user.info.email;
+						$.m.user.vars.edit.titre = 'USER-MAIL-FIRST-LABEL';
+						$.m.user.vars.edit.desc = 'USER-MAIL-FIRST-DESC';
+						$.m.user.vars.edit.mail = $.m.user.info.email;
 					break;
 					
 					case "security":
-						$.model.user.vars.edit.titre = 'USER-MAIL-SECU-LABEL';
-						$.model.user.vars.edit.desc = 'USER-MAIL-SECU-DESC';
-						$.model.user.vars.edit.mail = $.model.user.info.verif;
+						$.m.user.vars.edit.titre = 'USER-MAIL-SECU-LABEL';
+						$.m.user.vars.edit.desc = 'USER-MAIL-SECU-DESC';
+						$.m.user.vars.edit.mail = $.m.user.info.verif;
 					break;
 				}
 				
 				// add tmpl. Form Login.
-				$('#profil').empty().mustache('editForm', $.model);
+				$('#profil').empty().mustache('editForm', $.m);
 				
 				// Valid Form.
-				$('#'+$.model.user.form.edit).validate();
+				$('#'+$.m.user.form.edit).validate();
 				
 				// event. Form login.
-				$('#'+$.model.user.form.edit).on($.model.user.form.edit, $.user.editConfirm);
+				$('#'+$.m.user.form.edit).on($.m.user.form.edit, $.user.editConfirm);
 				
 				// Close spinner.
 				$.tmpl.spinOff('profilSpin', 'fa-user');
@@ -542,28 +542,28 @@
 			editConfirm: function() {
 				
 				// if new mail != mail actu.
-				if($.model.user.info.email!=$('#'+$.model.user.form.edit+' #email').val()) {
+				if($.m.user.info.email!=$('#'+$.m.user.form.edit+' #email').val()) {
 					
 					// stop envent.
-					$('#'+$.model.user.form.edit).off($.model.user.form.edit);
+					$('#'+$.m.user.form.edit).off($.m.user.form.edit);
 					
 					// save local mail.
-					$.model.user.vars.edit.mail=$('#'+$.model.user.form.edit+' #email').val();
+					$.m.user.vars.edit.mail=$('#'+$.m.user.form.edit+' #email').val();
 					
 					// Anim stop.
 					$('#profil').slideUp(500, function() {
 								
 						// add tmpl. Form edit confirm code pin.
-						$('#profil').empty().mustache('codePin', $.model);
+						$('#profil').empty().mustache('codePin', $.m);
 								
 						// Anim play.
 						$('#profil').slideDown(500, function() {
 								
 							// Valid Form.
-							$('#'+$.model.user.form.editPin).validate();
+							$('#'+$.m.user.form.editPin).validate();
 							
 							// event. edit confirm. listen.
-							$('#'+$.model.user.form.editPin).on($.model.user.form.editPin, $.user.editFunc);
+							$('#'+$.m.user.form.editPin).on($.m.user.form.editPin, $.user.editFunc);
 							
 							// Boucle btn pin.
 							$('#btnPin .btn').each(function() {
@@ -572,7 +572,7 @@
 								$(this).click(function() {
 									
 									// Play sound.
-									$.voix.play($.model.voix.sound.btnOver);
+									$.voix.play($.m.voix.sound.btnOver);
 								});
 							});
 						});
@@ -589,10 +589,10 @@
 			editFunc: function() {
 				
 				// if password.
-				if($.model.user.vars.password==$.sha1($('#'+$.model.user.form.editPin+' #password').val())) {
+				if($.m.user.vars.password==$.sha1($('#'+$.m.user.form.editPin+' #password').val())) {
 					
 					// event.
-					$('#'+$.model.user.form.editPin).off($.model.user.form.editPin);
+					$('#'+$.m.user.form.editPin).off($.m.user.form.editPin);
 					
 					// Close modal profil.
 					$.tmpl.modal('profilModal');
@@ -608,8 +608,8 @@
 							
 							// Param send.
 							params : [
-								$.crp.crypte($.model.user.vars.edit.mail, $.user.password()),
-								$.crp.crypte($.model.user.vars.edit.config, $.user.password())
+								$.crp.crypte($.m.user.vars.edit.mail, $.user.password()),
+								$.crp.crypte($.m.user.vars.edit.config, $.user.password())
 							],
 							
 							// succees.
@@ -622,26 +622,26 @@
 									case "principal":
 										
 										// Add new mail.
-										$.model.user.info.email=data.result.email;
+										$.m.user.info.email=data.result.email;
 									break;
 									
 									// If edit mail security.
 									case "security":
 										
 										// Add new mail.
-										$.model.user.info.verif=data.result.email;
+										$.m.user.info.verif=data.result.email;
 									break;
 								}
 								
 								// add historique.
-								$.model.user.vars.historique.push({
+								$.m.user.vars.historique.push({
 									date:	data.result.date,
 									action:	data.result.action,
 									usip:	data.result.usip
 								});
 								
 								// var zero.
-								$.model.user.vars.edit={};
+								$.m.user.vars.edit={};
 								
 								// Close spinner.
 								$.tmpl.spinOff('profilSpin', 'fa-user');
@@ -682,16 +682,16 @@
 				$('#login').slideUp(500, function() {
 					
 					// add tmpl. Form Login.
-					$('#login').empty().mustache('signup', $.model);
+					$('#login').empty().mustache('signup', $.m);
 										
 					// Animation stop.
 					$('#login').slideDown(500, function() {
 						
 						// Valid Form.
-						$('#'+$.model.user.form.signup).validate();
+						$('#'+$.m.user.form.signup).validate();
 						
 						// event. Form login.
-						$('#'+$.model.user.form.signup).on($.model.user.form.signup, $.user.signupFunc);
+						$('#'+$.m.user.form.signup).on($.m.user.form.signup, $.user.signupFunc);
 					});
 				});
 			},
@@ -702,7 +702,7 @@
 			signupFunc: function() {
 				
 				// event. signup. off.
-				$('#'+$.model.user.form.signup).off($.model.user.form.signup);
+				$('#'+$.m.user.form.signup).off($.m.user.form.signup);
 				
 				// open spinner.
 				$.tmpl.spinOn('loginSpin', 'fa-user');
@@ -714,13 +714,13 @@
 					$.jsonRPC.request('login_inscription', {
 						
 						// Param send.
-						params : [$.base64.encode($('#'+$.model.user.form.signup+' #email').val()), $.base64.encode($.lng.get())],
+						params : [$.base64.encode($('#'+$.m.user.form.signup+' #email').val()), $.base64.encode($.lng.get())],
 						
 						// succees.
 						success : function(data) {
 							
 							// add tmpl. Form Login code pin.
-							$('#login').empty().mustache('signupConfirm', $.model);
+							$('#login').empty().mustache('signupConfirm', $.m);
 							
 							// Animation stop.
 							$('#login').slideDown(500, function() {
@@ -740,7 +740,7 @@
 							$('#login').slideDown(500, function() {
 								
 								// event. signup. listen.
-								$('#'+$.model.user.form.signup).on($.model.user.form.signup, $.user.signupFunc);
+								$('#'+$.m.user.form.signup).on($.m.user.form.signup, $.user.signupFunc);
 								
 								// close spinner.
 								$.tmpl.spinOff('loginSpin', 'fa-user');
@@ -759,16 +759,16 @@
 				$('#login').slideUp(500, function() {
 					
 					// add tmpl. Form Login.
-					$('#login').empty().mustache('secu', $.model);
+					$('#login').empty().mustache('secu', $.m);
 										
 					// Animation stop.
 					$('#login').slideDown(500, function() {
 						
 						// Valid Form.
-						$('#'+$.model.user.form.secu).validate();
+						$('#'+$.m.user.form.secu).validate();
 						
 						// event. Form login.
-						$('#'+$.model.user.form.secu).on($.model.user.form.secu, $.user.secuFunc);
+						$('#'+$.m.user.form.secu).on($.m.user.form.secu, $.user.secuFunc);
 					});
 				});
 			},
@@ -779,23 +779,23 @@
 			secuFunc: function() {
 				
 				// event.
-				$('#'+$.model.user.form.secu).off($.model.user.form.secu);
+				$('#'+$.m.user.form.secu).off($.m.user.form.secu);
 				
 				try {
 					// decrypte inputs strings.
-					var tmps=$.crp.decrypte($('#'+$.model.user.form.secu+' #pin').val(), $('#'+$.model.user.form.secu+' #cles').val());
+					var tmps=$.crp.decrypte($('#'+$.m.user.form.secu+' #pin').val(), $('#'+$.m.user.form.secu+' #cles').val());
 					
 					// if code lengyh 6.
 					if(tmps.length==6) {
 					
 						// Data for html.
-						$.model.user.vars.pinCode = tmps;
+						$.m.user.vars.pinCode = tmps;
 						
 						// Animation complete.
 						$('#login').slideUp(500, function() {
 							
 							// Ajout tmpl. Form Login.
-							$('#login').empty().mustache('secuDecrypte', $.model);
+							$('#login').empty().mustache('secuDecrypte', $.m);
 							
 							// Animation complete.
 							$('#login').slideDown(500, function() {});
@@ -809,7 +809,7 @@
 						$.tmpl.error('DEF-CODE-PIN-INVALID');
 						
 						// event. Form login.
-						$('#'+$.model.user.form.secu).on($.model.user.form.secu, $.user.secuFunc);
+						$('#'+$.m.user.form.secu).on($.m.user.form.secu, $.user.secuFunc);
 					}
 				}
 				
@@ -819,7 +819,7 @@
 					$.tmpl.error('DEF-CODE-PIN-INVALID');
 					
 					// event. Form login.
-					$('#'+$.model.user.form.secu).on($.model.user.form.secu, $.user.secuFunc);
+					$('#'+$.m.user.form.secu).on($.m.user.form.secu, $.user.secuFunc);
 				}
 			},
 			
@@ -832,7 +832,7 @@
 				$('#login').slideUp(500, function() {
 					
 					// add tmpl. Form Login.
-					$('#login').empty().mustache('forgot', $.model);
+					$('#login').empty().mustache('forgot', $.m);
 										
 					// Animation stop.
 					$('#login').slideDown(500, function() {});
@@ -854,13 +854,13 @@
 					$.jsonRPC.request('login_forgotCodePin', {
 						
 						// Param send.
-						params : [$.base64.encode($.model.user.vars.mail)],
+						params : [$.base64.encode($.m.user.vars.mail)],
 						
 						// succees.
 						success : function(data) {
 							
 							// add tmpl. Form Login code pin.
-							$('#login').empty().mustache('forgotConfirm', $.model);
+							$('#login').empty().mustache('forgotConfirm', $.m);
 							
 							// Animation stop.
 							$('#login').slideDown(500, function() {
