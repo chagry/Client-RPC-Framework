@@ -1,19 +1,20 @@
 <!--
- * @version		0.5
- * @date Crea	15/04/2014.
- * @date Modif	19/04/2014.
- * @package		mod.doc.doc.htm
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*All
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	doc.doc.htm
 -->
 
 <!-- Menu home 0.5 -->
 <script id="mDoc" type="text/html">
-	<div id="mDoc" class="btn-group navbar-btn">
-		<button id='mDocSpin' type="button" onClick="{{doc.func.page}}" class="btn btn-primary" data-tr="DOC-LABEL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DOC-LABEL{{/TX}}">
-			<i class="fa fa-book"></i>
-		</button>
-	</div>
+	{{#doc.off}}
+		<div id="mDoc" class="btn-group navbar-btn">
+			<button id='mDocSpin' type="button" onClick="{{doc.func.page}}" class="btn btn-primary" data-tr="DOC-LABEL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DOC-LABEL{{/TX}}">
+				<i class="fa fa-book"></i>
+			</button>
+		</div>
+	{{/doc.off}}
 </script>
 
 <!-- Menu sommaire 0.5 -->

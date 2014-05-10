@@ -2,6 +2,7 @@
 	"api"            : "https://domain.com/api/",
 	"protocol"       : "https",
 	"lng" : {
+		"off"        : true,
 		"list"       : ["en", "fr"],
 		"url"        : "https://domain.com/translate/",
 		"file"       : "defaut",

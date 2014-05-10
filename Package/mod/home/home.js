@@ -1,10 +1,9 @@
 /*
- * @version		0.5
- * @date Crea	04/12/2013.
- * @date Modif	19/04/2014.
- * @package		mod.home.home.js
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*tmpl.js
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	home.home.js
  */
 
 (function($, undefined) {
@@ -50,7 +49,7 @@
 					$.home.accueil();
 					
 					// Add twitter sprite. + css attr. 
-					/*$('#'+$.m.div.event).prepend($('<div id="twitter"></div>').width(150).height(150).css({
+					$('#'+$.m.div.event).prepend($('<div id="twitter"></div>').width(150).height(150).css({
 						background	: 'url("'+$.m.home.img.anim+'") 0 0 no-repeat',
 						position	: 'absolute',
 						cursor		: 'pointer'
@@ -87,7 +86,7 @@
 						
 						// Start anim sprite.
 						}).spStart()
-					);*/
+					);
 				});
 			},
 			
@@ -248,7 +247,7 @@
 				
 				// Add video in modal.
 				$('#videoPl').tubeplayer({
-					initialVideo	: '-fANBFZEHdk',
+					initialVideo	: $.lng.tx($.m.home.vid),
 					width			: $('#homeModal').width()-40,
 					height			: ($('#homeModal').width()-40)*720/1280,
 					protocol		: $.m.protocol,

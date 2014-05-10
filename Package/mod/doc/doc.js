@@ -1,10 +1,9 @@
-/*
- * @version		0.5
- * @date Crea	15/04/2014.
- * @date Modif	19/04/2014.
- * @package		mod.doc.doc.js
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*tmpl.js
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package doc.doc.js
  */
 
 (function($, undefined) {
@@ -13,8 +12,8 @@
 		
 		doc: {
 			
-			/*
-			 * Funct setup. Init mod home. 0.5
+			/**
+			 * Funct setup. Init mod home.
 			 */
 			setup: function() {
 				
@@ -25,8 +24,8 @@
 				$('#'+$.m.div.event).one($.m.event.setup, $.doc.defautHtml);
 			},
 			
-			/*
-			 * Funct defautHtml. Menu in dock. 0.5
+			/**
+			 * Funct defautHtml. Menu in dock.
 			 */
 			defautHtml: function() {
 				
@@ -41,8 +40,8 @@
 				});
 			},
 			
-			/*
-			 * Funct docHtml. 0.5
+			/**
+			 * Funct sommaire.
 			 */
 			sommaire: function() {
 				
@@ -64,8 +63,8 @@
 				}); 
 			},
 			
-			/*
-			 * Funct pageHtml. 0.5
+			/**
+			 * Funct pageHtml.
 			 * @param e -> string client/server.
 			 */
 			pageHtml: function(e) {

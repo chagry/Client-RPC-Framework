@@ -1,10 +1,9 @@
-/*
- * @version		0.5
- * @date Crea	11/09/2013.
- * @date Modif	19/04/2014.
- * @package		lng.lng.js
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*tmpl.js
+/**
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package lng.lng.js
  */
 
 (function($, undefined) {
@@ -13,8 +12,8 @@
 		
 		lng: {
 			
-			/*
-			 * Funct setup. Init mod langue. 0.5
+			/**
+			 * Funct setup. Init mod langue.
 			 */
 			setup: function() {
 				
@@ -22,8 +21,8 @@
 				$('#'+$.m.div.event).one($.m.event.setup, $.lng.defautHtml);
 			},
 			
-			/*
-			 * Funct defautHtml. Menu brique in dock. 0.5
+			/**
+			 * Funct defautHtml. Menu brique in dock.
 			 */
 			defautHtml: function() {
 				
@@ -38,8 +37,8 @@
 				});
 			},
 			
-			/*
-			 * Funct get. Return code langue actuel. 0.5
+			/**
+			 * Funct get.
 			 * @return code langue actuel. ex: 'fr'
 			 */
 			get: function() {
@@ -85,11 +84,11 @@
 				return $.m.lng.langue;
 			},
 			
-			/*
-			 * Funct tr. Traduction. 0.5
-			 * @param e code string for translate.
-			 * @param p if false, return juste string and not html. defaut : false.
-			 * @return string.
+			/**
+			 * Function tr.
+			 * @param   string $e string for translate.
+			 * @param   bool   $p if false, return juste string and not html. defaut : false.
+			 * @return  array string or html
 			 */
 			tr: function(e, p) {
 				
@@ -106,9 +105,34 @@
 				else return transit;
 			},
 			
-			/*
-			 * Funct changeLangue. 0.5
-			 * @param param code langue select user.
+			/**
+			 * Function tx.
+			 * @param   array $e array for translate.
+			 * @return  string of array.
+			 */
+			tx: function(e) {
+				
+				// Result.
+				var result = '';
+				
+				// Boucle param.
+				$.each( e, function(key, val) {
+					
+					// If lang = e.key
+					if($.lng.get() == key) result = val;
+				});
+				
+				// If not code langue in array.
+				if(!result) result = e[Object.keys(e)[0]];
+				
+				// Return result.
+				return result;
+			},
+			
+			/**
+			 * Function changeLangue.
+			 * @param   string $param code langue "en".
+			 * @access  public
 			 */
 			changeLangue: function(param) {
 				

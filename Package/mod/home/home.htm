@@ -1,19 +1,20 @@
 <!--
- * @version		0.5
- * @date Crea	04/12/2013.
- * @date Modif	19/04/2014.
- * @package		mod.home.home.htm
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*All
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	home.home.htm
 -->
 
 <!-- Menu home 0.5 -->
 <script id="mHome" type="text/html">
-	<div id="mHome" class="btn-group navbar-btn">
-		<button id='homeSpin' type="button" onClick="{{home.func.home}}" class="btn btn-primary" data-tr="HOME" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}HOME{{/TX}}">
-			<i class="fa fa-home"></i>
-		</button>
-	</div>
+	{{#home.off}}
+		<div id="mHome" class="btn-group navbar-btn">
+			<button id='homeSpin' type="button" onClick="{{home.func.home}}" class="btn btn-primary" data-tr="HOME" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}HOME{{/TX}}">
+				<i class="fa fa-home"></i>
+			</button>
+		</div>
+	{{/home.off}}
 </script>
 
 <!-- Page home modal 0.5 -->

@@ -1,10 +1,9 @@
 /*
- * @version		0.5
- * @date Crea	11/09/2013.
- * @date Modif	16/04/2014.
- * @package		tmpl.tmpl.js
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*lng.js
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	tmpl.tmpl.js
  */
 
 (function($, undefined) {
@@ -13,8 +12,8 @@
 	
 		tmpl: {
 			
-			/*
-			 * Funct setup. 0.5
+			/**
+			 * Funct setup.
 			 */
 			setup: function() {
 				
@@ -33,9 +32,9 @@
 				});
 			},
 			
-			/*
+			/**
 			 * spinOn. add spinner.
-			 * @param e div conteneur balise i. 0.5
+			 * @param e div conteneur balise i.
 			 * @param i name icon.
 			 */
 			spinOn: function(e, i) {
@@ -44,8 +43,8 @@
 				$('#'+e+' i').removeClass(i).addClass($.m.tmpl.html.spinClass);
 			},
 			
-			/*
-			 * spinOff. close spinner. 0.5
+			/**
+			 * spinOff. close spinner.
 			 * @param e div conteneur.
 			 * @param i name icone add.
 			 */
@@ -55,8 +54,8 @@
 				$('#'+e+' i').removeClass($.m.tmpl.html.spinClass).addClass(i);
 			},
 			
-			/*
-			 * Funct error. 0.5
+			/**
+			 * Funct error.
 			 * @param e Message erreur.
 			 */
 			error: function(e) {
@@ -91,8 +90,8 @@
 				setTimeout(function() { $.voix.play($.m.tmpl.sound.error); }, 500);
 			},
 			
-			/*
-			 * modal. 0.5.
+			/**
+			 * modal.
 			 * @param e div of modal.
 			 */
 			modal: function(e) {
@@ -111,8 +110,8 @@
 				$('#'+e).modal('toggle');
 			},
 			
-			/*
-			 * clean. Clean windows. 0.5
+			/**
+			 * clean. Clean windows.
 			 */
 			clean: function() {
 				
@@ -132,8 +131,8 @@
 				});
 			},
 			
-			/*
-			 * niceNumber. 0.5. ex: '12 345 542'
+			/**
+			 * niceNumber. ex: '12 345 542'
 			 * @param e The number.
 			 * Return string number nice.
 			 */
@@ -143,8 +142,8 @@
 				return e.toString().replace(/(\d)(?=(?:\d{3})+(?:$))/g, '$1 ');
 			},
 			
-			/*
-			 * anim. animation.css. 0.5
+			/**
+			 * anim. animation.css.
 			 * @param e Element.
 			 * @param effect The number.
 			 * @param r remove class after.
@@ -166,8 +165,8 @@
 				});
 			},
 			
-			/*
-			 * scroll. 0.5.
+			/**
+			 * scroll.
 			 * @param e tag for if.
 			 */
 			scroll: function(e) {
@@ -199,8 +198,8 @@
 				}
 			},
 			
-			/*
-			 * tagScroll. 0.5.
+			/**
+			 * tagScroll.
 			 * @param e id div.
 			 */
 			tagScroll: function(e) {
@@ -229,8 +228,8 @@
 				);
 			},
 			
-			/*
-			 * Funct load. 0.5
+			/**
+			 * Funct load.
 			 * @param e file name.
 			 * @param callback.
 			 */
@@ -244,8 +243,8 @@
 				});
 			},
 			
-			/*
-			 * Funct setupValidatorForm. validator form. 0.5
+			/**
+			 * Funct setupValidatorForm. validator form.
 			 */
 			setupValidatorForm : function() {
 				

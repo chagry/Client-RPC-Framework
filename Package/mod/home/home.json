@@ -1,9 +1,13 @@
 {
 	"vars"          : {},
+	"off"           : true,
 	"version"       : "php 5.4 - sql 5.5 - jQuery 1.11.0 - chagry O.5 Beta",
 	"don" : {
 		"btc"       : "15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx",
 		"btcUrl"    : "bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"
+	},
+	"vid" : {
+		"fr"        : "-fANBFZEHdk"
 	},
 	"func" : {
 		"home"      : "$.home.accueil()",
@@ -121,7 +125,7 @@
 		},
 		{
 			"img"   : "gmap",
-			"lien"  : "http://gmap3.net/en/"
+			"lien"  : "http://leafletjs.com/"
 		},
 		{
 			"img"   : "carousel",
@@ -161,7 +165,39 @@
 		},
 		{
 			"img"   : "tube",
-			"lien"  : "http://inukshuk.github.io/jquery.tube.js/"
+			"lien"  : "http://tikku.com/jquery-youtube-tubeplayer-plugin"
+		},
+		{
+			"img"   : "anchorific",
+			"lien"  : "https://github.com/renettarenula/anchorific.js"
+		},
+		{
+			"img"   : "Animate",
+			"lien"  : "http://daneden.github.io/animate.css/"
+		},
+		{
+			"img"   : "highlight",
+			"lien"  : "http://highlightjs.org/"
+		},
+		{
+			"img"   : "ion",
+			"lien"  : "http://ionden.com/a/plugins/ion.sound/en.html"
+		},
+		{
+			"img"   : "jqueryui",
+			"lien"  : "http://jqueryui.com/"
+		},
+		{
+			"img"   : "navgoco",
+			"lien"  : "http://www.komposta.net/article/navgoco"
+		},
+		{
+			"img"   : "showdown",
+			"lien"  : "https://github.com/coreyti/showdown"
+		},
+		{
+			"img"   : "spritely",
+			"lien"  : "http://spritely.net/"
 		}
 	]
 }

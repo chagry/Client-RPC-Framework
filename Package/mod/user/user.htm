@@ -1,21 +1,23 @@
 <!--
- * @version		0.5
- * @date Crea	11/09/2013.
- * @date Modif	19/04/2014.
- * @package		user.user.htm
- * @contact		Chagry.com - git@chagry.com
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	user.user.htm
 -->
 
-<!-- Menu User 0.5 -->
+<!-- Menu User -->
 <script id="mUser" type="text/html">
-	<div id="mUser" class="btn-group navbar-btn">
-		<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}" data-tr="DEF-LOGIN" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-LOGIN{{/TX}}">
-			<i class="fa fa-user"></i>
-		</button>
-	</div>
+	{{#user.off}}
+		<div id="mUser" class="btn-group navbar-btn">
+			<button type="button" class="btn btn-danger" onClick="{{user.func.modalLogin}}" data-tr="DEF-LOGIN" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-LOGIN{{/TX}}">
+				<i class="fa fa-user"></i>
+			</button>
+		</div>
+	{{/user.off}}
 </script>
 
-<!-- Menu Profil 0.5 -->
+<!-- Menu Profil -->
 <script id="mProfil" type="text/html">
 	<div id="mProfil" class="btn-group navbar-btn">
 		<button id='profilSpin' type="button" onClick="{{user.func.profil}}" class="btn btn-success" data-tr="DEF-PROFIL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-PROFIL{{/TX}}">
@@ -24,7 +26,7 @@
 	</div>
 </script>
 
-<!-- Page login modal 0.5 -->
+<!-- Page login modal -->
 <script id="loginModal" type="text/html">
 	<div id="loginModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
 		<div class="modal-header">
@@ -38,7 +40,7 @@
 	</div>	
 </script>
 
-<!-- Page profil modal 0.5 -->
+<!-- Page profil modal -->
 <script id="profilModal" type="text/html">
 	<div id="profilModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
 		<div class="modal-header">
@@ -52,7 +54,7 @@
 	</div>	
 </script>
 
-<!-- Page edit formulaire 0.5 -->
+<!-- Page edit formulaire -->
 <script id="editForm" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -63,7 +65,7 @@
 						<label for="email">{{#T}}USER-NEW-MAIL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-							<input class="form-control input-lg" value="{{user.vars.edit.mail}}" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
+							<input class="form-control input-lg" value="{{user.vars.edit.mail}}" placeholder="{{#TX}}DEF-EMAIL{{/TX}}" id="email" type="email" name="email" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -87,7 +89,7 @@
 	</div>
 </script>
 
-<!-- Page login formulaire 0.5 -->
+<!-- Page login formulaire -->
 <script id="login" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -98,7 +100,7 @@
 						<label for="email" class="lead">{{#T}}USER-YOUR-MAIL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-							<input class="form-control input-lg" value="{{user.vars.cookieMail}}" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
+							<input class="form-control input-lg" value="{{user.vars.cookieMail}}" placeholder="{{#TX}}DEF-EMAIL{{/TX}}" id="email" type="email" name="email" required>
 						</div>
 					</div>
 					<div class="btn-group">
@@ -125,7 +127,7 @@
 	</div>
 </script>
 
-<!-- Page pinParam formulaire 0.5 -->
+<!-- Page pinParam formulaire -->
 <script id="pinParam" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -139,7 +141,7 @@
 	</div>
 </script>
 
-<!-- Page pin code formulaire 0.5 -->
+<!-- Page pin code formulaire -->
 <script id="pin" type="text/html">
 	<div class="row">
 		<p class="lead text-center">{{#T}}DEF-CODE-PIN-LABEL{{/T}} <small class="text-muted">{{user.vars.mail}}</small></p>
@@ -149,7 +151,7 @@
 					<div class="form-group text-center">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-th"></i></span>
-							<input class="form-control" placeholder="{{#trx}}DEF-CODE-PIN{{/trx}}" id="password" type="password" name="password" readonly="readonly" required>
+							<input class="form-control" placeholder="{{#TX}}DEF-CODE-PIN{{/TX}}" id="password" type="password" name="password" readonly="readonly" required>
 						</div>
 					</div>
 					<div class="btn-toolbar text-center" id="btnPin">
@@ -191,7 +193,7 @@
 	</div>
 </script>
 
-<!-- Page user profil 0.5 -->
+<!-- Page user profil -->
 <script id="user" type="text/html">
 	<div class="jumbotron noir">
 		<div class="container">
@@ -293,7 +295,7 @@
 	</div>
 </script>
 
-<!-- Page codePin edit formulaire 0.5 -->
+<!-- Page codePin edit formulaire -->
 <script id="codePin" type="text/html">
 	<div class="row">
 		<p class="lead text-center">{{#T}}DEF-CODE-PIN-LABEL{{/T}} <small class="text-muted">{{user.vars.edit.mail}}</small></p>
@@ -303,7 +305,7 @@
 					<div class="form-group text-center">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-th"></i></span>
-							<input class="form-control" placeholder="{{#trx}}DEF-CODE-PIN{{/trx}}" id="password" type="password" name="password" readonly="readonly" required>
+							<input class="form-control" placeholder="{{#TX}}DEF-CODE-PIN{{/TX}}" id="password" type="password" name="password" readonly="readonly" required>
 						</div>
 					</div>
 					<div class="btn-toolbar text-center" id="btnPin">
@@ -345,7 +347,7 @@
 	</div>
 </script>
 
-<!-- Page secu 0.5 -->
+<!-- Page secu -->
 <script id="secu" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -357,7 +359,7 @@
 						<label for="email">{{#T}}DEF-CODE-PIN-CRYPT-LABEL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-unlock-alt fa-fw"></i></span>
-							<input class="form-control input-lg" placeholder="{{#trx}}DEF-CODE-PIN-CRYPT{{/trx}}" id="pin" type="text" name="pin" required>
+							<input class="form-control input-lg" placeholder="{{#TX}}DEF-CODE-PIN-CRYPT{{/TX}}" id="pin" type="text" name="pin" required>
 						</div>
 					</div>
 				</div>
@@ -366,7 +368,7 @@
 						<label for="email">{{#T}}USER-KEY-SEND-LABEL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-							<input class="form-control input-lg" placeholder="{{#trx}}USER-KEY-SEND{{/trx}}" id="cles" type="text" name="cles" required>
+							<input class="form-control input-lg" placeholder="{{#TX}}USER-KEY-SEND{{/TX}}" id="cles" type="text" name="cles" required>
 						</div>
 					</div>
 				</div>
@@ -383,7 +385,7 @@
 	</div>
 </script>
 
-<!-- Page secuDecrypte 0.5 -->
+<!-- Page secuDecrypte -->
 <script id="secuDecrypte" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -402,7 +404,7 @@
 	</div>
 </script>
 
-<!-- Page signup formulaire 0.5 -->
+<!-- Page signup formulaire -->
 <script id="signup" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -413,7 +415,7 @@
 						<label for="email">{{#T}}USER-ENTER-YOUR-MAIL{{/T}}</label>
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-							<input class="form-control input-lg" placeholder="{{#trx}}DEF-EMAIL{{/trx}}" id="email" type="email" name="email" required>
+							<input class="form-control input-lg" placeholder="{{#TX}}DEF-EMAIL{{/TX}}" id="email" type="email" name="email" required>
 						</div>
 					</div>
 					<div class="form-group">
@@ -441,7 +443,7 @@
 	</div>
 </script>
 
-<!-- Page signupConfirm 0.5 -->
+<!-- Page signupConfirm -->
 <script id="signupConfirm" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -472,7 +474,7 @@
 	</div>
 </script>
 
-<!-- Page forgot 0.5 -->
+<!-- Page forgot -->
 <script id="forgot" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">
@@ -496,7 +498,7 @@
 	</div>
 </script>
 
-<!-- Page forgotConfirm 0.5 -->
+<!-- Page forgotConfirm -->
 <script id="forgotConfirm" type="text/html">
 	<div class="row">
 		<div class="col-sm-12">

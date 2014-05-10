@@ -1,10 +1,9 @@
 /*
- * @version		0.5
- * @date Crea	27/03/2014.
- * @date Modif	19/04/2014.
- * @package		mod.voix.voix.js
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*lng.js
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	voix.voix.js
  */
 
 (function($, undefined) {
@@ -13,8 +12,8 @@
 	
 		voix: {
 			
-			/*
-			 * Funct setup. 0.5
+			/**
+			 * Funct setup.
 			 */
 			setup: function() {
 				
@@ -60,8 +59,8 @@
 				$('#'+$.m.div.event).on($.m.event.langue, $.voix.langueEdit);
 			},
 			
-			/*
-			 * Funct defautHtml. Menu brique in dock. 0.5
+			/**
+			 * Funct defautHtml. Menu brique in dock.
 			 */
 			defautHtml: function() {
 				
@@ -102,8 +101,8 @@
 				});
 			},
 			
-			/*
-			 * Funct init. 0.5
+			/**
+			 * Funct init.
 			 * @param e -> string speak/sound/listen or false
 			 */
 			init: function(e) {
@@ -164,8 +163,8 @@
 				}
 			},
 			
-			/*
-			 * Funct speak. 0.5
+			/**
+			 * Funct speak.
 			 * @param str -> string for vocal syntese
 			 */
 			speak: function(str) {
@@ -181,8 +180,8 @@
 				}
 			},
 			
-			/*
-			 * Funct play. 0.5
+			/**
+			 * Funct play.
 			 * @param str -> sound name
 			 */
 			play: function(str) {
@@ -195,8 +194,8 @@
 				}
 			},
 			
-			/*
-			 * Funct toggle. 0.5
+			/**
+			 * Funct toggle.
 			 * @param e -> string speak/sound/listen 
 			 */
 			toggle: function(e) {
@@ -329,8 +328,8 @@
 				}
 			},
 			
-			/*
-			 * Funct langueEdit. 0.5
+			/**
+			 * Funct langueEdit.
 			 */
 			langueEdit: function() {
 				
@@ -380,8 +379,8 @@
 				}
 			},
 			
-			/*
-			 * Funct btnSound. 0.5
+			/**
+			 * Funct btnSound.
 			 */
 			btnSound: function() {
 					
@@ -397,8 +396,8 @@
 				});
 			},
 			
-			/*
-			 * Funct addCommandsToList. 0.5
+			/**
+			 * Funct addCommandsToList.
 			 */
 			addCommandsToList: function() {
 				
@@ -423,8 +422,8 @@
 				annyang.addCommands(commands);
 			},
 			
-			/*
-			 * Funct logCmd. 0.5
+			/**
+			 * Funct logCmd.
 			 * @param e -> string for commande login/logout
 			 */
 			logCmd: function(str) {

@@ -10,6 +10,7 @@
 	},
 	"speak" : {
 		"name"          : "speak",
+		"off"           : true,
 		"config"        : "mod/voix/config.json",
 		"urlVoice"      : "mod/voix/voices/",
 		"list" : [
@@ -29,6 +30,7 @@
 	},
 	"sound" : {
 		"name"          : "sound",
+		"off"           : true,
 		"btnOver"       : "btnOver:0.1",
 		"setup"         : "setup:0.2",
 		"url"           : "mod/voix/sounds/",
@@ -45,6 +47,7 @@
 	},
 	"listen" : {
 		"name"           : "listen",
+		"off"            : true,
 		"speech"         : false,
 		"list" : [
 			{

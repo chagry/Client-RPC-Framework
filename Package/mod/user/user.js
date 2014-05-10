@@ -1,10 +1,9 @@
 /*
- * @version		0.5
- * @date Crea	11/09/2013.
- * @date Modif	19/04/2014.
- * @package		user.user.js
- * @contact		Chagry.com - git@chagry.com
- * @Dependence	*lng.js home.js
+ * @version 0.5.0
+ * @license MIT license
+ * @link    https://chagry.com
+ * @author  Grigori <git@chagry.com>
+ * @package	user.user.js
  */
 
 (function($, undefined) {
@@ -13,8 +12,8 @@
 		
 		user: {
 			
-			/*
-			 * Funct setup. 0.5
+			/**
+			 * Funct setup.
 			 */
 			setup: function() {
 				
@@ -25,8 +24,8 @@
 				$('#'+$.m.div.event).one($.m.event.setup, $.user.defautHtml);
 			},
 			
-			/*
-			 * html defaut. 0.5
+			/**
+			 * html defaut.
 			 */
 			defautHtml: function() {
 				
@@ -47,8 +46,8 @@
 				});
 			},
 			
-			/*
-			 * html formLogin. Formulaire login. 0.5
+			/**
+			 * html formLogin. Formulaire login.
 			 */
 			formLoginHtml: function() {
 				
@@ -90,8 +89,8 @@
 				});
 			},
 			
-			/*
-			 * html formLoginPin. Formulaire login code pin. 0.5
+			/**
+			 * html formLoginPin. Formulaire login code pin.
 			 */
 			formLoginPinHtml: function() {
 				
@@ -163,8 +162,8 @@
 				});
 			},
 			
-			/*
-			 * html loginFunc. fonction de connexion. 0.5
+			/**
+			 * html loginFunc. fonction de connexion.
 			 */
 			loginFunc: function() {
 				
@@ -247,8 +246,8 @@
 				});
 			},
 			
-			/*
-			 * Funct login. 0.5
+			/**
+			 * Funct login.
 			 */
 			login: function() {
 				
@@ -316,8 +315,8 @@
 				}
 			},
 			
-			/*
-			 * Funct session. 0.5
+			/**
+			 * Funct session.
 			 */
 			session: function() {
 				
@@ -328,8 +327,8 @@
 				else return false;
 			},
 			
-			/*
-			 * Funct password. 0.5
+			/**
+			 * Funct password.
 			 */
 			password: function() {
 				
@@ -340,8 +339,8 @@
 				else return false;
 			},
 			
-			/*
-			 * profil. 0.5
+			/**
+			 * profil.
 			 */
 			profil: function() {
 				
@@ -451,8 +450,8 @@
 				});
 			},
 			
-			/*
-			 * Funct logout. 0.5
+			/**
+			 * Funct logout.
 			 */
 			logout: function() {
 				
@@ -491,8 +490,8 @@
 				}
 			},
 			
-			/*
-			 * Funct editMail. 0.5
+			/**
+			 * Funct editMail.
 			 *	@param a -> edit mail param.
 			 */
 			editMail: function(a) {
@@ -536,8 +535,8 @@
 				$.tmpl.spinOff('profilSpin', 'fa-user');
 			},
 			
-			/*
-			 * Funct formEditConfirm. 0.5
+			/**
+			 * Funct formEditConfirm.
 			 */
 			editConfirm: function() {
 				
@@ -583,8 +582,8 @@
 				else $.tmpl.error('USER-MAIL-NOT-CHANGE');
 			},
 			
-			/*
-			 * Funct editFunc. 0.5
+			/**
+			 * Funct editFunc.
 			 */
 			editFunc: function() {
 				
@@ -673,8 +672,8 @@
 				else $.tmpl.error('DEF-CODE-PIN-INVALID');
 			},
 			
-			/*
-			 * html signupHtml. Formulaire signup. 0.5
+			/**
+			 * html signupHtml. Formulaire signup.
 			 */
 			signupHtml: function() {
 				
@@ -696,8 +695,8 @@
 				});
 			},
 			
-			/*
-			 * html signupFunc. 0.5
+			/**
+			 * html signupFunc.
 			 */
 			signupFunc: function() {
 				
@@ -750,8 +749,8 @@
 				});
 			},
 			
-			/*
-			 * html secuPinHtml. Formulaire pour decrypt code pin. 0.5
+			/**
+			 * html secuPinHtml. Formulaire pour decrypt code pin.
 			 */
 			secuPinHtml: function() {
 				
@@ -773,8 +772,8 @@
 				});
 			},
 			
-			/*
-			 * html secuFunc. Decrypt code pin. 0.5
+			/**
+			 * html secuFunc. Decrypt code pin.
 			 */
 			secuFunc: function() {
 				
@@ -823,8 +822,8 @@
 				}
 			},
 			
-			/*
-			 * html forgotHtml. Form forgot code pin. 0.5
+			/**
+			 * html forgotHtml. Form forgot code pin.
 			 */
 			forgotHtml: function() {
 				
@@ -839,8 +838,8 @@
 				});
 			},
 			
-			/*
-			 * html forgotFunc. reset code pin. 0.5
+			/**
+			 * html forgotFunc. reset code pin.
 			 */
 			forgotFunc: function() {
 				

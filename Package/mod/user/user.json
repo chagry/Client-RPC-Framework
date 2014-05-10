@@ -1,5 +1,6 @@
 {
 	"cookie"          : "user",
+	"off"             : true,
 	"log"             : false,
 	"vars"            : {},
 	"info"            : {},
