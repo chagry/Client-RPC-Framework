@@ -251,34 +251,32 @@
 			<div class="col-sm-12 text-center">
 				<h1 class="googFont"><i class="fa fa-clock-o"></i> {{#FROMNOW}}{{user.info.registerdate}}{{/FROMNOW}}</h1>
 				<p class="lead text-muted">{{#T}}USER-SIGNUP-DATE{{/T}} {{#LLLL}}{{user.info.registerdate}}{{/LLLL}}</p>
-				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 footMarge-lg">
+				<canvas id="actionBarChart"></canvas>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<div class="row hidden-xs">
-							<div class="col-sm-12">
-								<div id="userChart" style="height: 170px;"></div>
+						<h3 class="panel-title googFont"><i class="fa fa-sign-in"></i> {{#T}}USER-HISTORY-LABEL{{/T}} 
+							<div class="btn-group btn-group-xs pagerHistory pull-right">
+								<button type="button" class="btn btn-warning firstPage"><span class='currentPage'></span></button>
+								<button type="button" class="btn btn-warning prevPage"><i class="fa fa-angle-left"></i></button>
+								<button type="button" class="btn btn-warning nextPage"><i class="fa fa-angle-right"></i></button>
+								<button type="button" class="btn btn-warning lastPage"><span class='totalPages'></span></button>
 							</div>
-						</div>
-						<div class="panel-title text-center"><small>{{#T}}USER-HISTORY-LABEL{{/T}}</small></div>
+						</h3>
 					</div>
 					<div class="table-responsive">
-						<table cellpadding="0" cellspacing="0" border="0" class="datatable table table-bordered table-hover" id="historyTab">
-							<thead>
-								<tr class="active">
-									<th>{{#T}}DEF-DATE{{/T}}</th>
-									<th>{{#T}}DEF-ACTIONS{{/T}}</th>
-									<th>{{#T}}DEF-IP{{/T}}</th>
-									<th>{{#T}}DEF-TIME{{/T}}</th>
-								</tr>
-							</thead>
+						<table cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover" id="historyTab">
 							<tbody>
 								{{#user.vars.historique}}
 									<tr class="{{user.func.classIpOrSys}}">
-										<td><span class="text-muted">{{#YMD}}{{date}}{{/YMD}}</span> <span class="label label-warning">{{#H}}{{date}}{{/H}}</span></td>
+										<td class="text-center"><span class="text-muted">{{#YMD}}{{date}}{{/YMD}}</span> <span class="label label-warning">{{#H}}{{date}}{{/H}}</span></td>
 										<td>{{#T}}{{action}}{{/T}}</td>
 										<td>{{{user.func.spanIpOrSys}}}</td>
 										<td class="text-muted"><i class="fa fa-clock-o"></i> <small>{{#FROMNOW}}{{date}}{{/FROMNOW}}</small></td>
@@ -288,8 +286,8 @@
 						</table>
 					</div>
 				</div>
-				<p class="text-muted"><small>{{#T}}USER-SECU-LABEL{{/T}}</small></p>
-				<h1 id="scrollTopBtn"></h1>
+				<p class="text-muted text-center"><small>{{#T}}USER-SECU-LABEL{{/T}}</small></p>
+				<h1 class="text-center" id="scrollTopBtn"></h1>
 			</div>
 		</div>
 	</div>

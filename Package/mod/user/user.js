@@ -368,77 +368,54 @@
 					// add tmpl. Form Login.
 					$('#'+$.m.div.content).empty().mustache('user', $.m);
 					
-					// table data.
-					$('#historyTab').dataTable({
-						"sPaginationType"	: "bs_four_button",
-						"iDisplayLength"	: 10,
-						"bInfo"				: true,
-						"bPaginate"			: true,
-						"bFilter"			: true,
-						"bLengthChange"		: true,
-						"bSort"				: true,
-					}).fnSort([[0,'desc']]);
-					
-					// Boucle table data.
-					$('#historyTab').each(function(){
-						var datatable = $(this);
-						
-						// SEARCH - Add the placeholder for Search and Turn this into in-line form control
-						var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');
-						search_input.attr('placeholder', $.lng.tr('DEF-SEARCH'));
-						search_input.addClass('form-control input-sm');
-						
-						// LENGTH - Inline-Form control
-						var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
-						length_sel.addClass('form-control input-sm');
-					});
+					// Paginat tab action user.
+					$('#historyTab').paginateTable({ rowsPerPage: 10, pager: ".pagerHistory" });
 					
 					// Animation stop.
 					$('#'+$.m.div.content).slideDown(500, function() {
 						
-						// Content array chart.
-						var arrChart = new Array();
-						// Boucle result chart.
+						// Adm chart data.
+						var actionData = {
+							labels: new Array(),
+							datasets: [
+								{
+									label: 'Action',
+									fillColor: '#3880aa',
+									highlightFill: '#3880aa',
+									strokeColor: '#327297',
+									highlightStroke: '#327297',
+									data: new Array()
+								}
+							]
+						};
+						
+						// Boucle result action chart.
 						$.each($.m.user.vars.chart, function(key, value) {
 							
-							// add result chart.
-							arrChart.push({
-								x	:	$.lng.tr(key),
-								y	:	value
-							});
+							// Add name of action for label chart.
+							actionData.labels.push($.lng.tr(key));
+							
+							// Add nb for chart.
+							actionData.datasets[0].data.push(value);
 						});
-						
-						// Var for chart.
-						var dataVar = {
-							"xScale"	: "ordinal",
-							"yScale"	: "linear",
-							"main"		: [{
-								"className": ".action",
-								"data": arrChart
-							}]
-						};
 						
 						// Option chart.
 						var opts = {
-							"axisPaddingTop"	: 5,
-							"paddingLeft"		: 0,
-							"tickFormatX"		: function (x) {
-								return '...'+x.substring(x.length-6, x.length);
-							},
-							"mouseover"			: function (d, i) {
-								$(this).tooltip({
-									"title"		: d.x+' '+d.y,
-									"container"	:"body"
-								}).tooltip('show');
-							},
-							
-							"mouseout": function (x) {
-								$(this).tooltip('hide');
-							}
+							scaleBeginAtZero : false,
+							scaleShowGridLines : false,
+							barShowStroke: true,
+							scaleGridLineWidth : 0,
+							barValueSpacing : 30,
+							multiTooltipTemplate: '<%=value%>',
 						};
 						
-						// Charts historique
-						var myChart = new xChart('bar', dataVar, '#userChart', opts);
+						// Defaut seting chart.
+						Chart.defaults.global.responsive = true;
+						Chart.defaults.global.showScale = true;
+						Chart.defaults.global.maintainAspectRatio = false;
+						
+						// start chart bar for adm user.
+						var actionChart = new Chart($('#actionBarChart').get(0).getContext('2d')).Bar(actionData, opts);
 						
 						// Animation background img.
 						$('.noir').pan({fps: 12, speed: 1, dir: 'left'});

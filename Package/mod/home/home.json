@@ -104,10 +104,6 @@
 			"lien"  : "http://jquery.com/"
 		},
 		{
-			"img"   : "d3js",
-			"lien"  : "http://d3js.org/"
-		},
-		{
 			"img"   : "springy",
 			"lien"  : "http://getspringy.com/"
 		},
@@ -144,12 +140,12 @@
 			"lien"  : "https://github.com/janl/mustache.js"
 		},
 		{
-			"img"   : "xChart",
-			"lien"  : "http://tenxer.github.io/xcharts/"
+			"img"   : "Chartjs",
+			"lien"  : "http://www.chartjs.org/"
 		},
 		{
-			"img"   : "dataTable",
-			"lien"  : "http://www.datatables.net/"
+			"img"   : "paginateTable",
+			"lien"  : "https://github.com/mattpage/jquery.paginateTable"
 		},
 		{
 			"img"   : "annyang",
