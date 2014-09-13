@@ -16,6 +16,7 @@
 
 ## // Translate defaut.
 
+* `DEF-TB` Tableau de bord
 * `DOC-LABEL` Documentation
 * `DOC-SUMMARY` Sommaire
 * `DOC-SUP-LABEL` Documentation supplémentaire
@@ -27,12 +28,14 @@
 * `DEF-FRAMEWORKS` Frameworks
 * `DEF-CLIENT` Client
 * `DEF-CLIENTS` Clients
+* `DEF-CARDS` Carte
 * `DEF-SECURITE` Sécurité
 * `DEF-DESIGN` Design
 * `DEF-DONNEES` Données
 * `DEF-MODULAR` Modulaire
 * `DEF-TECHNOLOGIE` Technologies
 * `DEF-INTRO` Introduction
+* `DEF-HISTORY` Historique
 * `DEF-FREE` Gratuit
 * `DEF-BITCOIN` Bitcoin
 * `DEF-UTIL` Utilisation
@@ -45,6 +48,8 @@
 * `DEF-EMAIL` Adresse e-mail
 * `DEF-MODIFICATION` Modification
 * `DEF-SEND` Envoyé
+* `DEF-VALIDE` Valider
+* `DEF-PAY` Payer
 * `DEF-CANCEL` Annuler
 * `DEF-SIGNUP` Inscription
 * `DEF-ACTION` Action
@@ -52,6 +57,9 @@
 * `DEF-IP` Ip
 * `DEF-DATE` Date
 * `DEF-TIME` Temps
+* `DEF-TOTAL` Total
+* `DEF-TX` Transaction
+* `DEF-NEW` Nouveau
 * `DEF-BRAVO-LABEL` Félicitations
 * `DEF-CONFIRM` Confirmer
 * `DEF-WARNING` Avertissement
@@ -107,7 +115,15 @@
 * `FORM-MESSAGE-KEY-REQUIRED` Veillez entrer la cle pour décrypter le message
 * `FORM-MESSAGE-CODE-PIN-REQUIRED` Veillez entrer votre code Pin
 * `FORM-MESSAGE-CODE-PIN-MIN` Votre code Pin doit être composé de 4 chiffres au minimum
-* `FORM-MESSAGE-CODE-PIN-INVALID` Votre code Pin ne doit être composé que de chiffres
+* `FORM-MESSAGE-CODE-PIN-INVALID` Votre code Pin doit être composé que de chiffres
+* `FORM-MESSAGE-SOM-REQUIRED` Veillez entrer la somme integre
+* `FORM-MESSAGE-SOM-INVALID` La somme doit être composé que de chiffres
+* `FORM-MESSAGE-BTCSTH-REQUIRED` Veillez entrer la somme bitcoin en satoshi
+* `FORM-MESSAGE-BTCSTH-INVALID` La somme en bitcoin doit être composé que de chiffres
+* `FORM-MESSAGE-TX-BTC-REQUIRED` Veillez entrer l'id de la transaction Bitcoin
+* `FORM-MESSAGE-TX-BTC-MIN` Transaction id incorrect
+* `FORM-MESSAGE-ADR-BTC-REQUIRED` Veillez entrer l'adresse bitcoin
+* `FORM-MESSAGE-ADR-BTC-MIN` L'adresse bitcoin incorrect
 
 ## // Translate modul home.
 

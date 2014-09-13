@@ -18,6 +18,22 @@
 		"cles" : {
 			"required"  : true
 		},
+		"som" : {
+			"required"  : true,
+			"number"    : true
+		},
+		"btcsth" : {
+			"required"  : true,
+			"number"    : true
+		},
+		"btctx" : {
+			"required"  : true,
+			"minlength" : 64
+		},
+		"btcadr" : {
+			"required"  : true,
+			"minlength" : 32
+		},
 		"inputSecuCode" : {
 			"required"  : true,
 			"minlength" : 32
@@ -36,6 +52,22 @@
 		},
 		"cles" : {
 			"required"  : "FORM-MESSAGE-KEY-REQUIRED"
+		},
+		"som" : {
+			"required"  : "FORM-MESSAGE-SOM-REQUIRED",
+			"number"    : "FORM-MESSAGE-SOM-INVALID"
+		},
+		"btcsth" : {
+			"required"  : "FORM-MESSAGE-BTCSTH-REQUIRED",
+			"number"    : "FORM-MESSAGE-BTCSTH-INVALID"
+		},
+		"btctx" : {
+			"required"  : "FORM-MESSAGE-TX-BTC-REQUIRED",
+			"minlength" : "FORM-MESSAGE-TX-BTC-MIN"
+		},
+		"btcadr" : {
+			"required"  : "FORM-MESSAGE-ADR-BTC-REQUIRED",
+			"minlength" : "FORM-MESSAGE-ADR-BTC-MIN"
 		},
 		"password" : {
 			"required"  : "FORM-MESSAGE-CODE-PIN-REQUIRED",
