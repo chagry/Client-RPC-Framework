@@ -18,7 +18,7 @@
 			</button>
 			<ul class="dropdown-menu">
 				{{#lng.list}}
-					<li><a onclick="$.lng.changeLangue('{{.}}');"><img src="{{lng.root}}{{.}}{{lng.extension}}" alt="{{.}}"> {{#TX}}{{.}}{{/TX}}</a></li>
+					<li><a class="cursor" onclick="$.lng.changeLangue('{{.}}');"><img src="{{lng.root}}{{.}}{{lng.extension}}" alt="{{.}}"> {{#TX}}{{.}}{{/TX}}</a></li>
 				{{/lng.list}}
 			</ul>
 		</div>

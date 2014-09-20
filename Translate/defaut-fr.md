@@ -38,6 +38,7 @@
 * `DEF-HISTORY` Historique
 * `DEF-FREE` Gratuit
 * `DEF-BITCOIN` Bitcoin
+* `DEF-BITCOIN-ADR` Bitcoin Adresse
 * `DEF-UTIL` Utilisation
 * `DEF-DEPOSIT` Versement
 * `DEF-PROFIL` Profil

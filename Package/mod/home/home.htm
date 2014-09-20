@@ -21,7 +21,7 @@
 <script id="homeModal" type="text/html">
 	<div id="homeModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
 		<div class="modal-body text-center">
-			<div id="videoPl" style="width: 100%;"></div>
+			<div id="videoPl" class="embed-responsive embed-responsive-16by9"></div>
 			<button type="button" class="btn btn-danger" onClick="{{home.func.closeVideo}}">{{#T}}DEF-CLOSE{{/T}}</button>
 		</div>
 	</div>
@@ -141,10 +141,11 @@
 			</div>
 		</div>
 	</div>
+	<!-- Carousel import lib logo and url -->
 	<div class="jumbotron noir text-center">
 		<div id="owl-demo" class="owl-carousel owl-theme">
 			{{#home.vars.lib}}
-				<div class="item">
+				<div class="item" style="margin:0px 10px;">
 					<a href="{{lien}}" target="blank">
 						<img class="img-responsive img-rounded" src="{{home.img.pathLib}}{{img}}{{home.img.ext}}" />
 					</a>

@@ -248,8 +248,8 @@
 				// Add video in modal.
 				$('#videoPl').tubeplayer({
 					initialVideo	: $.lng.tx($.m.home.vid),
-					width			: $('#homeModal').width()-40,
-					height			: ($('#homeModal').width()-40)*720/1280,
+					//width			: $('#homeModal').width()-40,
+					//height		: ($('#homeModal').width()-40)*720/1280,
 					protocol		: $.m.protocol,
 					showControls	: false,
 					color			: 'white',
