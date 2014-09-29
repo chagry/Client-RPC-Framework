@@ -132,17 +132,6 @@
 			},
 			
 			/**
-			 * niceNumber. ex: '12 345 542'
-			 * @param e The number.
-			 * Return string number nice.
-			 */
-			niceNumber: function(e) {
-				
-				// return.
-				return e.toString().replace(/(\d)(?=(?:\d{3})+(?:$))/g, '$1 ');
-			},
-			
-			/**
 			 * anim. animation.css.
 			 * @param e Element.
 			 * @param effect The number.

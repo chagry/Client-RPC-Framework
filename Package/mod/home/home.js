@@ -258,7 +258,7 @@
 				});
 				
 				// Add height for video.
-				$('#videoPl').height(($('#homeModal').width()-40)*720/1280);
+				//$('#videoPl').height(($('#homeModal').width()-40)*720/1280);
 				
 				// template modal.
 				$.tmpl.modal('homeModal');
