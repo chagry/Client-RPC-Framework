@@ -110,6 +110,7 @@
 * `DEF-CARDS`                             Carte
 * `DEF-FREE`                              Gratuit
 * `DEF-BITCOIN`                           Bitcoin
+* `DEF-CRYPTO-MONNAIE`                    Crypto-monnaie
 * `DEF-BITCOIN-ADR`                       Bitcoin Adresse
 * `DEF-UTIL`                              Utilisation
 * `DEF-DEPOSIT`                           Versement
@@ -179,7 +180,7 @@
 * `HOME`                                  Accueil
 * `HOME-HELP-TITLE`                       Aidez-nous
 * `HOME-FLEXIBLE`                         Flexibilité
-* `HOME-LABEL-TITRE`                      RPC Framework pour php & jQuery
+* `HOME-LABEL-TITRE`                      RPC Framework
 * `HOME-CONTACT-LABEL`                    Contact & information. Retrouvez moi sur
 * `HOME-CODE-DISPO`                       Le code est mis à votre disposition en open source.
 * `HOME-PARTAGE-CONNAISS`                 Partage et utilisation des connaissances pour évoluer.
@@ -189,6 +190,7 @@
 * `HOME-MODUL-LABEL`                      Le client peut être développé dans d'autres langues avec un libre choix des systemes d'exploitation.
 * `HOME-DONNEE-LABEL`                     Les donnes sont sentraliser sur le serveur. L'acces au donnees se fait grace au protocole JSON RPC 2.
 * `HOME-FLEXI-LABEL`                      La partie serveur est indépendante et reste accessible 24/24h depuis n'importe quel framework client.
+* `HOME-INT-CRYPTO-LABEL`                 Integrer facilement les protocole de communication avec les nouvelle technologie disponible sur le web.
 * `HOME-SECU-LABEL`                       Gestion des ACL et une connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
 * `HOME-TEC-LABEL`                        Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package client.
 * `HOME-SERVER-LABEL`                     Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.

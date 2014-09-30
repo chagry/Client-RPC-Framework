@@ -38,11 +38,7 @@
 			"color" : "3a87ad"
 		},
 		{
-			"label" : "Library",
-			"color" : "468847"
-		},
-		{
-			"label" : "Api",
+			"label" : "Data",
 			"color" : "468847"
 		},
 		{
@@ -56,10 +52,6 @@
 		{
 			"label" : "RPC Client",
 			"color" : "3a87ad"
-		},
-		{
-			"label" : "D3",
-			"color" : "468847"
 		},
 		{
 			"label" : "Bootstrap",
@@ -77,12 +69,10 @@
 	"edges" : [
 		["Json RPC"   , "RPC Client"],
 		["Json RPC"   , "RPC Server"],
-		["RPC Client" , "D3"],
 		["RPC Client" , "Bootstrap"],
 		["RPC Client" , "Mustache"],
 		["RPC Client" , "jQuery"],
-		["RPC Server" , "Library"],
-		["RPC Server" , "Api"],
+		["RPC Server" , "Data"],
 		["RPC Server" , "Model"],
 		["RPC Server" , "Controller"]
 	],
@@ -146,10 +136,6 @@
 		{
 			"img"   : "paginate",
 			"lien"  : "https://github.com/mattpage/jquery.paginateTable"
-		},
-		{
-			"img"   : "annyang",
-			"lien"  : "https://www.talater.com/annyang/"
 		},
 		{
 			"img"   : "qrcode",

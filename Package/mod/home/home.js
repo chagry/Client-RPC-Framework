@@ -39,12 +39,6 @@
 					// Tooltip.
 					$('#mHome button').tooltip();
 					
-					// add modal home video.
-					$('#'+$.m.div.event).mustache('homeModal', $.m);
-					
-					// Background modal
-					$('#homeModal').css('background-image', 'url("'+$.m.home.img.modalFond+'")');
-					
 					// Setup html profil.
 					$.home.accueil();
 					
@@ -120,23 +114,10 @@
 					// Animation complete.
 					$('#'+$.m.div.content).slideDown(500, function() {
 						
-						// Btn modal video.
-						$('#videoBtn').mouseenter(function() {
-								
-							// Anim icon & color text with class.
-							$(this).switchClass( $.m.tmpl.html.scrollBtnCl1, $.m.tmpl.html.scrollBtnCl2, 500, "easeOutQuint" );
-							
-							// Add animation. @param 1-element 2-effect 3-remove anim class after 'default=false' 4-callBack
-							$.tmpl.anim($(this), 'pulse', true);
-							
-							// Play sound.
-							$.voix.play($.m.tmpl.sound.click);
-						
-						// 	mouse leave
-						}).mouseleave(function() {
-							
-							// Anim icon & color text with class.
-							$(this).switchClass( $.m.tmpl.html.scrollBtnCl2, $.m.tmpl.html.scrollBtnCl1, 500, "easeOutQuint" );
+						// Add video bitcoin.
+						$('#videoChagry').tubeplayer({
+							initialVideo	: $.lng.tx($.m.home.vid),
+							protocol		: $.m.protocol
 						});
 						
 						// Setup graph Springy.
@@ -238,42 +219,6 @@
 						$.tmpl.tagScroll('scrollTopBtn');
 					});
 				}); 
-			},
-			
-			/*
-			 * Funct openModal. 0.5
-			 */
-			openModal: function() {
-				
-				// Add video in modal.
-				$('#videoPl').tubeplayer({
-					initialVideo	: $.lng.tx($.m.home.vid),
-					//width			: $('#homeModal').width()-40,
-					//height		: ($('#homeModal').width()-40)*720/1280,
-					protocol		: $.m.protocol,
-					showControls	: false,
-					color			: 'white',
-					autoPlay		: true,
-					autoHide		: false,
-				});
-				
-				// Add height for video.
-				//$('#videoPl').height(($('#homeModal').width()-40)*720/1280);
-				
-				// template modal.
-				$.tmpl.modal('homeModal');
-			},
-			
-			/*
-			 * Funct closeModal 0.5
-			 */
-			closeModal: function() {
-				
-				// template modal.
-				$.tmpl.modal('homeModal');
-				
-				// destroy video.
-				$('#videoPl').tubeplayer("destroy");
 			},
 		}
 	});

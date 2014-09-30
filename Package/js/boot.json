@@ -26,6 +26,7 @@
 		"url"        : "mod/",
 		"list" : [
 			"voix",
+			"btc",
 			"user",
 			"doc",
 			"home",

@@ -1,32 +1,8 @@
 {
-	"is" : {
-		"sound"         : false,
-		"speak"         : false,
-		"listen"        : false
-	},
+	"off" : true,
+	"is"  : false,
 	"load" : {
-		"sound"         : false,
-		"listen"        : false
-	},
-	"speak" : {
-		"name"          : "speak",
-		"off"           : true,
-		"config"        : "mod/voix/config.json",
-		"urlVoice"      : "mod/voix/voices/",
-		"list" : [
-			{
-				"variant"   : "m7",
-				"amplitude" : "70",
-				"pitch"     : "70",
-				"speed"     : "170"
-			},
-			{
-				"variant"   : "f5",
-				"amplitude" : "70",
-				"pitch"     : "70",
-				"speed"     : "170"
-			}
-		]
+		"sound"         : false
 	},
 	"sound" : {
 		"name"          : "sound",
@@ -43,43 +19,6 @@
 			"Shutdown",
 			"top",
 			"newPage"
-		]
-	},
-	"listen" : {
-		"name"           : "listen",
-		"off"            : true,
-		"speech"         : false,
-		"list" : [
-			{
-				"com"    : "VOIX-UP",
-				"plug"   : "tmpl",
-				"func"   : "scroll",
-				"param"  : "up"
-			},
-			{
-				"com"    : "VOIX-DOWN",
-				"plug"   : "tmpl",
-				"func"   : "scroll",
-				"param"  : "down"
-			},
-			{
-				"com"    : "HOME",
-				"plug"   : "home",
-				"func"   : "accueil",
-				"param"  : false
-			},
-			{
-				"com"    : "DEF-LOGIN",
-				"plug"   : "voix",
-				"func"   : "logCmd",
-				"param"  : "login"
-			},
-			{
-				"com"    : "DEF-LOGOUT",
-				"plug"   : "voix",
-				"func"   : "logCmd",
-				"param"  : "logout"
-			}
 		]
 	}
 }

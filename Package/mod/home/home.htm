@@ -17,60 +17,26 @@
 	{{/home.off}}
 </script>
 
-<!-- Page home modal 0.5 -->
-<script id="homeModal" type="text/html">
-	<div id="homeModal" class="modal fade" tabindex="-1" data-width="540" data-backdrop="static">
-		<div class="modal-body text-center">
-			<div id="videoPl" class="embed-responsive embed-responsive-16by9"></div>
-			<button type="button" class="btn btn-danger" onClick="{{home.func.closeVideo}}">{{#T}}DEF-CLOSE{{/T}}</button>
-		</div>
-	</div>
-</script>
-
 <!-- Page home 0.5 -->
 <script id="home" type="text/html">
+	<!-- Titre + Desc + video bitcoin -->
 	<div class="jumbotron noir">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12 text-center">
+				<div class="col-sm-6 col-md-7 col-lg-8 text-center">
 					<h2 class="googPolice">{{#T}}HOME-LABEL-TITRE{{/T}}</h2>
 					<p class="googPolice">{{#T}}HOME-LABEL-DESC{{/T}}</p>
-					<p>
-						<i onClick="{{home.func.openVideo}}" id="videoBtn" class="fa fa-youtube-play text-muted fa-4x cursor"></i>
-					</p>
-					<br>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-6 text-left">
-					<div class="well noir">
-						<p class="googPolice">
-							<i class="fa fa-upload"></i> {{#T}}DEF-SERVER{{/T}}
-							<a href="{{home.url.server}}" target="blank" class="btn btn-default btn-labeled pull-right">
-								<span class="btn-label"><i class="fa fa-github-alt"></i></span>PHP {{#T}}DEF-FRAMEWORK{{/T}}
-							</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-6 text-left">
-					<div class="well noir">
-						<p class="googPolice"><i class="fa fa-laptop"></i> {{#T}}DEF-CLIENT{{/T}}
-							<a href="{{home.url.client}}" target="blank" class="btn btn-default btn-labeled pull-right">
-								<span class="btn-label"><i class="fa fa-github-alt"></i></span>jQuery {{#T}}DEF-FRAMEWORK{{/T}}
-							</a>
-						</p>
-					</div> 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12 text-center">
 					<p class="text-muted"><small>{{#T}}HOME-PARTAGE-CONNAISS{{/T}}</small></p>
-					<h6 class="text-muted"><small>{{home.version}}</small></h6>
-					<img src="img/ico/icon.png">
+				</div>
+				<div class="col-sm-6 col-md-5 col-lg-4">
+					<div class="well well-sm noir">
+						<div id="videoChagry" class="embed-responsive embed-responsive-16by9"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Home + Desc -->
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 text-center">
@@ -90,6 +56,9 @@
 				<h1 class="googFont"><i class="fa fa-upload"></i> {{#T}}DEF-SERVER{{/T}}</h1>
 				<br>
 				<p class="lead">{{#T}}HOME-SERVER-LABEL{{/T}}</p>
+				<a href="{{home.url.server}}" target="blank" class="btn btn-primary btn-labeled">
+					<span class="btn-label"><i class="fa fa-github-alt"></i></span>PHP {{#T}}DEF-FRAMEWORK{{/T}}
+				</a>
 			</div>
 			<div class="col-sm-6 text-center">
 				<hr>
@@ -97,6 +66,9 @@
 				<h1 class="googFont"><i class="fa fa-laptop"></i> {{#T}}DEF-CLIENT{{/T}}</h1>
 				<br>
 				<p class="lead">{{#T}}HOME-CLIENT-LABEL{{/T}}</p>
+				<a href="{{home.url.client}}" target="blank" class="btn btn-success btn-labeled">
+					<span class="btn-label"><i class="fa fa-github-alt"></i></span>jQuery {{#T}}DEF-FRAMEWORK{{/T}}
+				</a>
 			</div>
 		</div>
 		<div class="row">
@@ -154,19 +126,18 @@
 		</div>
 		<h4 class="text-muted"><small>{{#T}}HOME-TEC-LABEL2{{/T}}</small></h4>
 	</div>
+	<!-- Bitcoin + donation -->
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 text-center footMarge-lg">
+			<div class="col-sm-6 text-center">
+				<h1 class="googFont"><i class="fa fa-pie-chart"></i> {{#T}}DEF-CRYPTO-MONNAIE{{/T}}</h1>
+				<br>
+				<p class="lead">{{#T}}HOME-INT-CRYPTO-LABEL{{/T}}</p>
+			</div>
+			<div class="col-sm-6 text-center">
 				<hr>
-				<h1 class="googFont"><i class="fa fa-microphone"></i> {{#T}}VOIX-HOME-TITLE{{/T}} <i class="fa fa-volume-up"></i></h1>
-				<p class="lead">{{#T}}VOIX-DESC-LABEL{{/T}}</p>
-				<p class="text-muted">{{#T}}VOIX-LIST-COMANDE-LABEL{{/T}}</p>
-				<span class="label label-warning"><i class="fa fa-arrow-up"></i> {{#T}}VOIX-UP{{/T}}</span>
-				<span class="label label-warning"><i class="fa fa-arrow-down"></i> {{#T}}VOIX-DOWN{{/T}}</span>
-				<span class="label label-success"><i class="fa fa-power-off"></i> {{#T}}DEF-LOGIN{{/T}}</span>
-				<span class="label label-success"><i class="fa fa-power-off"></i> {{#T}}DEF-LOGOUT{{/T}}</span>
-				<span class="label label-primary"><i class="fa fa-home"></i> {{#T}}HOME{{/T}}</span>
-				<p><small class="text-warning"><i class="fa fa-exclamation-triangle"></i> {{#T}}VOIX-WARNING-LABAEL{{/T}}</small></p>
+				<br>
+				<img class="img-responsive center-block" src="img/def/bitcoin.png" />
 			</div>
 		</div>
 		<div class="row">
@@ -193,6 +164,7 @@
 					php - <a href="{{home.url.client}}" target="blank"><i class="fa fa-laptop"></i> {{#T}}DEF-CLIENT{{/T}}</a> 
 					jQuery<br>
 					{{#T}}HOME-CONTACT-LABEL{{/T}} <a href="{{home.url.github}}" target="blank"><i class="fa fa-github"></i> GitHub.</a>
+					<h6 class="text-muted"><small>{{home.version}}</small></h6>
 				</p>
 				<h1 id="scrollTopBtn"></h1>
 			</div>

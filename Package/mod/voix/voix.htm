@@ -9,43 +9,17 @@
 <!-- Menu User 0.4-->
 <script id="mVoix" type="text/html">
 	<div id="mVoix" class="btn-group navbar-btn">
-		{{#voix.listen.off}}
-			{{#voix.listen.speech}}
-				{{#voix.is.listen}}
-					<button type="button" id="mListen" class="btn btn-success" onClick="$.voix.toggle('{{voix.listen.name}}');" data-tr="VOIX-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-TITRE{{/TX}}">
-						<i class="fa fa-microphone-slash"></i>
-					</button>
-				{{/voix.is.listen}}
-				{{^voix.is.listen}}
-					<button type="button" id="mListen" class="btn btn-danger" onClick="$.voix.toggle('{{voix.listen.name}}');" data-tr="VOIX-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-TITRE{{/TX}}">
-						<i class="fa fa-microphone-slash"></i>
-					</button>
-				{{/voix.is.listen}}
-			{{/voix.listen.speech}}
-		{{/voix.listen.off}}
-		{{#voix.speak.off}}
-			{{#voix.is.speak}}
-				<button type="button" id="mSpeak" class="btn btn-success" onClick="$.voix.toggle('{{voix.speak.name}}');" data-tr="VOIX-SPEAK-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SPEAK-TITRE{{/TX}}">
-					<i class="fa fa-bullhorn"></i>
-				</button>
-			{{/voix.is.speak}}
-			{{^voix.is.speak}}
-				<button type="button" id="mSpeak" class="btn btn-danger" onClick="$.voix.toggle('{{voix.speak.name}}');" data-tr="VOIX-SPEAK-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SPEAK-TITRE{{/TX}}">
-					<i class="fa fa-bullhorn"></i>
-				</button>
-			{{/voix.is.speak}}
-		{{/voix.speak.off}}
-		{{#voix.sound.off}}
-			{{#voix.is.sound}}
-				<button type="button" id="mSound" class="btn btn-success" onClick="$.voix.toggle('{{voix.sound.name}}');" data-tr="VOIX-SOUND-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SOUND-TITRE{{/TX}}">
+		{{#voix.off}}
+			{{#voix.is}}
+				<button type="button" id="mSound" class="btn btn-success" onClick="$.voix.toggle();" data-tr="VOIX-SOUND-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SOUND-TITRE{{/TX}}">
 					<i class="fa fa-volume-up"></i>
 				</button>
-			{{/voix.is.sound}}
-			{{^voix.is.sound}}
-				<button type="button" id="mSound" class="btn btn-danger" onClick="$.voix.toggle('{{voix.sound.name}}');" data-tr="VOIX-SOUND-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SOUND-TITRE{{/TX}}">
+			{{/voix.is}}
+			{{^voix.is}}
+				<button type="button" id="mSound" class="btn btn-danger" onClick="$.voix.toggle();" data-tr="VOIX-SOUND-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SOUND-TITRE{{/TX}}">
 					<i class="fa fa-volume-off"></i>
 				</button>
-			{{/voix.is.sound}}
-		{{/voix.sound.off}}
+			{{/voix.is}}
+		{{/voix.off}}
 	</div>
 </script>
