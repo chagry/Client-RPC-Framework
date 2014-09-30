@@ -4,7 +4,7 @@
 	"page" : {
 		"server"    : "Server-PHP-Doc",
 		"client"    : "Client-JS-Doc",
-		"url"       : "https://chagry.com/mod/doc/sommaire/",
+		"url"       : "https://domain.com/mod/doc/sommaire/",
 		"ext"       : ".md"
 	},
 	"func" : {
