@@ -76,7 +76,7 @@
 * `DEF-MESSAGES`                          Messages
 * `VOIX-SOUND-TITRE`                      Audio
 
-* `DEF-CLIC-HERE`                         cliquer ici
+* `DEF-CLIC-HERE`                         Cliquez ici
 * `DEF-DELETE`                            Effacer
 * `DEF-LOGIN`                             Connexion
 * `DEF-LOGOUT`                            Déconnexion
@@ -103,7 +103,7 @@
 * `DEF-ANONYME`                           Anonyme
 * `DEF-DEV`                               Développeur
 * `DEF-ADMIN`                             Administrateur
-* `DEF-GUEST`                             Inviter
+* `DEF-GUEST`                             Invité
 
 * `DEF-PAY`                               Payer
 * `DEF-CASH`                              Cash
@@ -111,7 +111,7 @@
 * `DEF-FREE`                              Gratuit
 * `DEF-BITCOIN`                           Bitcoin
 * `DEF-CRYPTO-MONNAIE`                    Crypto-monnaie
-* `DEF-BITCOIN-ADR`                       Bitcoin Adresse
+* `DEF-BITCOIN-ADR`                       Adresse Bitcoin
 * `DEF-UTIL`                              Utilisation
 * `DEF-DEPOSIT`                           Versement
 * `DEF-TX`                                Transaction
@@ -125,7 +125,7 @@
 * `DEF-EDITE-LANGUE-USER`                 Changement de langue
 * `DEF-CODE-PIN-RESET`                    Réinitialisation code pin
 * `DEF-EDITE-MAIL-principal`              Changement du mail principal
-* `DEF-EDITE-MAIL-security`               Changement du mail de securité
+* `DEF-EDITE-MAIL-security`               Changement du mail de sécurité
 * `DEF-CODE-PIN-INVALID`                  Votre code pin n'est pas valide
 * `DEF-2-CLIC-INVALID`                    Il sufit de cliquer une seule fois sur le bouton.
 * `DEF-CODE-PIN-CRYPT-LABEL`              Entrer le code Pin crypté que vous avez recu par mail
@@ -143,7 +143,7 @@
 * `SERV-ERROR-ACCESS-DENIED`              Vous n'êtes pas autorisé à accéder à cette ressource
 * `SERV-ERROR-SESSION-EXPIRE`             Votre session a expiré, veuillez vous connecter à nouveau
 * `SERV-ERROR-ACCESS-NO-CONNECT`          Vous n'avez pas accès à cette page. Vous devez vous connecter avant
-* `SERV-ERROR-USER-BLACKLISTED`	          Votre compte a été bloqué. S'il vous plaît, contactez un administrateur
+* `SERV-ERROR-USER-BLACKLISTED`	           Votre compte a été bloqué. S'il vous plaît, contactez un administrateur
 * `SERV-ERROR-OFFLINE-MESSAGE`            L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.
 
 ## // Controleur login.
@@ -162,7 +162,7 @@
 * `FORM-MESSAGE-ADR-BTC-MIN`              L'adresse bitcoin incorrect
 * `FORM-MESSAGE-CODE-PIN-REQUIRED`        Veillez entrer votre code Pin
 * `FORM-MESSAGE-EMAIL-REQUIRED`           Saisissez votre adresse e-mail
-* `FORM-MESSAGE-SOM-REQUIRED`             Veillez entrer la somme integre
+* `FORM-MESSAGE-SOM-REQUIRED`             Veillez entrer la somme (nombre entier)
 * `FORM-MESSAGE-ADR-BTC-REQUIRED`         Veillez entrer l'adresse bitcoin
 * `FORM-MESSAGE-EMAIL-INVALID`            L'adresse email n'est pas valide
 * `FORM-MESSAGE-PIN-REQUIRED`             Veillez entrer le code pin crypté
@@ -170,9 +170,9 @@
 * `FORM-MESSAGE-BTCSTH-REQUIRED`          Veillez entrer la somme bitcoin en satoshi
 * `FORM-MESSAGE-TX-BTC-REQUIRED`          Veillez entrer l'id de la transaction Bitcoin
 * `FORM-MESSAGE-KEY-REQUIRED`             Veillez entrer la cle pour décrypter le message
-* `FORM-MESSAGE-CODE-PIN-INVALID`         Votre code Pin doit être composé que de chiffres
+* `FORM-MESSAGE-CODE-PIN-INVALID`         Votre code Pin ne doit être composé que de chiffres
 * `FORM-MESSAGE-VALIDATION-FORM-FAILED`   Vous devez valider le formulaire avant de poursuivre
-* `FORM-MESSAGE-BTCSTH-INVALID`           La somme en bitcoin doit être composé que de chiffres
+* `FORM-MESSAGE-BTCSTH-INVALID`           La somme en bitcoin ne doit être composé que de chiffres
 * `FORM-MESSAGE-CODE-PIN-MIN`             Votre code Pin doit être composé de 4 chiffres au minimum
 
 ## // Mod home.
@@ -186,16 +186,16 @@
 * `HOME-PARTAGE-CONNAISS`                 Partage et utilisation des connaissances pour évoluer.
 * `HOME-TEC-LABEL2`                       Vous pouvez également ajouter vos propres librairie ou plugin.
 * `HOME-LABEL-DESC`                       Conception et développement d'api sur mesure basé sur le protocole Json RPC.
-* `HOME-DESIGN-LABEL`                     Responsive Design. Des téléphones aux postes de travail, votre contenu s'adaptent automatiquement.
-* `HOME-MODUL-LABEL`                      Le client peut être développé dans d'autres langues avec un libre choix des systemes d'exploitation.
-* `HOME-DONNEE-LABEL`                     Les donnes sont sentraliser sur le serveur. L'acces au donnees se fait grace au protocole JSON RPC 2.
+* `HOME-DESIGN-LABEL`                     Responsive Design. Des téléphones aux postes de travail, votre contenu s'adapte automatiquement.
+* `HOME-MODUL-LABEL`                      Le client peut être développé dans d'autres langages avec un libre choix des systemes d'exploitation.
+* `HOME-DONNEE-LABEL`                     Les données sont centralisées sur le serveur. L'accès aux données se fait grâce au protocole JSON RPC 2.
 * `HOME-FLEXI-LABEL`                      La partie serveur est indépendante et reste accessible 24/24h depuis n'importe quel framework client.
-* `HOME-INT-CRYPTO-LABEL`                 Integrer facilement les protocole de communication avec les nouvelle technologie disponible sur le web.
-* `HOME-SECU-LABEL`                       Gestion des ACL et une connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
-* `HOME-TEC-LABEL`                        Utilisation de librairies existantes. Liste des technologies open source deja intégré dans le package client.
+* `HOME-INT-CRYPTO-LABEL`                 Integrez facilement les protocoles de communication avec les nouvelles technologies disponibles sur le web.
+* `HOME-SECU-LABEL`                       Gestion des ACL et une connexion cryptée à 2 facteurs entre le serveur et le client en surcouche du https.
+* `HOME-TEC-LABEL`                        Utilisation de librairies existantes. Liste des technologies open source deja intégrées dans le package client.
 * `HOME-SERVER-LABEL`                     Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
-* `HOME-HELP-LABEL`                       Aidez-nous a garder le projet open-source. Subvenir aux dépenses des serveurs domaines & certificats. Rémunérer les intervenant exterieur, redacteurs et traducteur.
-* `HOME-FRAMEWORK-LABEL`                  Divisé en deux parties distinctes entre le serveur et le client, ils comunique grace au protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre.
+* `HOME-HELP-LABEL`                       Aidez-nous à garder le projet open-source. Subvenir aux dépenses des serveurs domaines & certificats. Rémunérer les intervenant exterieur, redacteurs et traducteur.
+* `HOME-FRAMEWORK-LABEL`                  Divisé en deux parties distinctes entre le serveur et le client, elles comuniquent grâce au protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'une de l'autre.
 * `HOME-CLIENT-LABEL`                     En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
 
 ## // Mod user.
@@ -206,7 +206,7 @@
 * `USER-NEW-SIGNUP-LABEL`                 Créer un compte
 * `USER-RESET-LABEL`                      Code PIN oublié
 * `USER-MAIL-SECU-LABEL`                  Mail de sécurité
-* `USER-KEY-SEND`                         Cle de decryptage
+* `USER-KEY-SEND`                         Clé de decryptage
 * `USER-SECURIT-CENTER`                   Centre de securité
 * `USER-ENTER-YOUR-MAIL`                  Entrez votre adresse email
 * `USER-NEW-MAIL`                         Votre nouvelle adresse mail
@@ -218,14 +218,14 @@
 * `USER-MAIL-SECU-DESC`                   Sur ce mail nous vous envoyons la clé de décriptage pour le code pin.
 * `USER-BEFORE-SAVE-MAIL`                 Avant l'enregistrement Vous devez bien vérifier l'exactitude de votre mail.
 * `USER-MAIL-FIRST-DESC`                  C'est le mail que vous utilisez pour vous connecter et recevoir le code pin.
-* `USER-SECU-LABEL`                       Connexion crypter a 2 facteurs entre le serveur et le client en surcouche du https.
+* `USER-SECU-LABEL`                       Connexion cryptée à 2 facteurs entre le serveur et le client en surcouche du https.
 * `USER-MAIL-NOT-CHANGE`                  Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
 * `USER-MAIL2-SEND-DESC`                  Le second mail contient la clé pour le décryptage du code pin dans le centre de securité.
-* `USER-GRAVATAR-LABEL`                   Pour changer Votre Gravatar associer à votre email principal. il vous suffit de vous créer un compte sur
+* `USER-GRAVATAR-LABEL`                   Pour changer Votre Gravatar associé à votre email principal, il vous suffit de vous créer un compte sur
 * `USER-WELCOM-SECURITI-CENTER`           Bienvenu dans le centre de securité. C'est ici que vous pouvez décrypter le code pin avec la clé reçu par mail.
-* `USER-RESET-WARNING`                    Apres la generation du nouveau code pin, le code pin actuel deviendra obsolète et inutilisable par la platforme.
+* `USER-RESET-WARNING`                    Apres la génération du nouveau code pin, le code pin actuel deviendra obsolète et inutilisable par la platforme.
 * `USER-ACCEPT-CONDITION`                 En signant ce formulaire, vous déclarez avoir +18 ans, avoir pris connaissance et accepté les Conditions Générales.
-* `USER-MAIL1-SEND-DESC`                  Le premier mail contient votre code pin crypter. C'est ce message que vous devrez decrypter dans le centre de securiter.
+* `USER-MAIL1-SEND-DESC`                  Le premier mail contient votre code pin crypté. C'est ce message que vous devrez decrypter dans le centre de securité.
 * `USER-RESET-SEND-2EMAIL`                Deux mails vont vous être envoyés. Si vous utilisez une adresse mail de securité, alors la cle de decryptage vous sera envoyé dessus.
 * `USER-DELETE-MAIL`                      Penser à effacer les mails pour plus de sécurité. Si vous perdez ou oubliez votre code, vous pourrez toujours génerer une nouveau code pin au moment de la connexion.
 * `USER-CONFIRM-SIGNUP`                   Votre inscription à bien été prise en compte. 2 mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable.
@@ -238,11 +238,11 @@
 * `BTC-HISTORY-LABEL`                     Historique du bitcoin
 * `BTC-USE-LABEL`                         Utilisation du bitcoin
 * `BTC-WHAT-IS-IT`                        Bitcoin Qu'es-ce que c'est ?
-* `BTC-MSG-PAY-FINISH`                    Transaction terminer avec success
+* `BTC-MSG-PAY-FINISH`                    Transaction terminée avec success
 * `BTC-MSG-PAY-ACCEPT`                    Transaction est en cours de virement
 * `BTC-MSG-PAY-PROCESS`                   Transaction est en cours de traitement
 * `BTC-MSG-PAY-WAITING`                   Transaction est en attente de traitement
-* `BTC-MSG-PAY-NOT-ACCEPT`                Transaction annuler, pour parametre incorrect
+* `BTC-MSG-PAY-NOT-ACCEPT`                Transaction annulée, pour parametre incorrect
 * `BTC-ERR-SERVER-UNAVAILABLE`            Récupération des données auprès de blockChain Impossible
 * `BTC-LABEL`                             C’est une monnaie électronique décentralisée qui permet de s’échanger des montants sans banques et autorité centrale.
 * `BTC-MULYIBIT-LABEL`                    MultiBit est un portefeuille facile d'utilisation. C’est un bon choix pour les novices. Disponible sur plusieurs plateformes.
@@ -251,8 +251,8 @@
 * `BTC-BITADDRESS-LABEL`                  Bitaddress, générateur d'adresses / clés privées. Effectuer un paiement nécessite l'import des clés dans un logiciel portefeuille.
 * `BTC-DESCTOP-LABEL`                     Les portefeuilles de bureau peuvent être installés sur votre ordinateur et vous donnent un contrôle complet sur vos clés privées.
 * `BTC-WEB-LABEL`                         Les portefeuilles Web peuvent être utilisés sur les navigateurs ou téléphones portables et peuvent vous suivre dans votre quotidien.
-* `BTC-PRINT-LABEL`                       Les portefeuilles sur papier sont une excellente solution de securiter pour conserver des bitcoins sur logn terme et à éviter les vols.
-* `BTC-SATOSHI-LABEL`                     Les bitcoins peuvent être divisés jusqu'à 8 décimales. Le satoshi étant la plus petite unité du Bitcoin. 1 Btc vaux cent million de satoshi. Ça tombe bien quand ont sait qu'au final il aura que 21 million de bitcoin en circulation.
-* `BTC-HISTORY-DESC`                      Conçu par un développeur utilisant le pseudonyme de Satoshi Nakamoto. Cette personne ou ce groupe de personnes ont conçu et créé le Bitcoin de 2009 à 2010. Au milieu de l'année 2010 Nakamoto installe Gavin Andresen comme son successeur en lui donnant accès au projet SourceForge Bitcoin. La Fondation Bitcoin quant à elle, est créée en 2012.
-* `BTC-WARNING-LABEL`                     Sauvegarder votre portefeuille peut vous protéger contre les pannes et des erreurs humaines. Faire des sauvegardes régulières et utiliser plusieurs emplacements. Chiffrer votre portefeuille avec un mot de passe. Cette pratique vous aidera à vous protéger contre le vol. Vous devriez vous assurer de ne jamais perdre vos clés privée ou vos fonds seront perdus définitivement.
-* `BTC-USE-DESC`                          Le bitcoin est composé d'une adresse publique et d'une clef privée. L'adresse est utilisé pour recevoire les bitcoin , Si vous souhaitez effectuer un paiement depuis votre adresse, Vous aurez besoin de votre clef privée. Toute transaction effectuée ne peut être renversée. Pour vous aider à utiliser ou générait des nouvelle paire adresse/clé, il existe plusieurs solutions de portefeuilles.
+* `BTC-PRINT-LABEL`                       Les portefeuilles sur papier sont une excellente solution de securité pour conserver des bitcoins sur le long terme et à éviter les vols.
+* `BTC-SATOSHI-LABEL`                     Les bitcoins peuvent être divisés jusqu'à 8 décimales. Le satoshi étant la plus petite unité du Bitcoin. 1 Btc vaux cent million de satoshi. Au final il aura que 21 million de bitcoin en circulation.
+* `BTC-HISTORY-DESC`                      Conçu par un développeur utilisant le pseudonyme de Satoshi Nakamoto. Cette personne ou ce groupe de personnes a conçu et créé le Bitcoin de 2009 à 2010. Au milieu de l'année 2010 Nakamoto installe Gavin Andresen comme son successeur en lui donnant accès au projet SourceForge Bitcoin. La Fondation Bitcoin quant à elle, est créée en 2012.
+* `BTC-WARNING-LABEL`                     Sauvegarder votre portefeuille peut vous protéger contre les pannes et des erreurs humaines. Faire des sauvegardes régulières et utiliser plusieurs emplacements. Chiffrez votre portefeuille avec un mot de passe. Cette pratique vous aidera à vous protéger contre le vol. Vous devriez vous assurer de ne jamais perdre vos clés privées ou vos fonds seront perdus définitivement.
+* `BTC-USE-DESC`                          Le bitcoin est composé d'une adresse publique et d'une clef privée. L'adresse est utilisé pour recevoire les bitcoins , Si vous souhaitez effectuer un paiement depuis votre adresse, Vous aurez besoin de votre clef privée. Toute transaction effectuée ne peut être renversée. Pour vous aider à utiliser ou générer des nouvelles paires adresse/clé, il existe plusieurs solutions de portefeuilles.

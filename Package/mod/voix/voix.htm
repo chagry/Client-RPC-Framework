@@ -8,8 +8,8 @@
 
 <!-- Menu User 0.4-->
 <script id="mVoix" type="text/html">
-	<div id="mVoix" class="btn-group navbar-btn">
-		{{#voix.off}}
+	{{#voix.off}}
+		<div id="mVoix" class="btn-group navbar-btn">
 			{{#voix.is}}
 				<button type="button" id="mSound" class="btn btn-success" onClick="$.voix.toggle();" data-tr="VOIX-SOUND-TITRE" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}VOIX-SOUND-TITRE{{/TX}}">
 					<i class="fa fa-volume-up"></i>
@@ -20,6 +20,6 @@
 					<i class="fa fa-volume-off"></i>
 				</button>
 			{{/voix.is}}
-		{{/voix.off}}
-	</div>
+		</div>
+	{{/voix.off}}
 </script>
