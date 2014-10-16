@@ -3,7 +3,7 @@
 	"protocol"       : "https",
 	"lng" : {
 		"off"        : true,
-		"list"       : ["en", "fr"],
+		"list"       : ["fr"],
 		"url"        : "https://domain.com/translate/",
 		"file"       : "defaut",
 		"langue"     : false,
