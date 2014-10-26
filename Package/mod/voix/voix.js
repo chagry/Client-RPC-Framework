@@ -69,9 +69,6 @@
 						
 						// edit model.
 						$.m.voix.is = true;
-						
-						// Play sound.
-						$.voix.play($.m.voix.sound.setup);
 					}
 					
 					// Init plugin.
