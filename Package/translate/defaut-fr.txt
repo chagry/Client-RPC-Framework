@@ -194,7 +194,7 @@ HOME-INT-CRYPTO-LABEL                 Intégrez facilement les protocoles de com
 HOME-SECU-LABEL                       Gestion des ACL et une connexion crypté à 2 facteurs entre le serveur et le client en surcouche du https.
 HOME-TEC-LABEL                        Utilisation de librairies existantes. Liste des technologies open source déjà intégrées dans le package client.
 HOME-SERVER-LABEL                     Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
-HOME-HELP-LABEL                       Aidez-nous à garder le projet open-source. Subvenir aux dépenses des serveurs domaines & certificats. Rémunérer les intervenants exterieurs, rédacteurs et traducteurs.
+HOME-HELP-LABEL                       Nous avons besoin de votre soutien pour continuer à faire vivre ce projet open-source. En faisant un don, vous nous aidez à subvenir aux dépenses liées aux serveurs, aux noms de domaines, aux certficats et à la rémunération des rédacteurs / traducteurs.
 HOME-FRAMEWORK-LABEL                  Divisé en deux parties distinctes entre le serveur et le client, elles communiquent grâce au protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'une de l'autre.
 HOME-CLIENT-LABEL                     En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
 
