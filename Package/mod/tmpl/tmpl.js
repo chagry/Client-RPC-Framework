@@ -23,6 +23,15 @@
 					// Load tmpl.
 					$.tmpl.load('tmpl', function() {
 						
+						// Extend model : Func nice Number.
+						$.m.tmpl.NICE = function() { 
+							return function(text, render) {
+								
+								// return.
+								return render(text).toString().replace(/(\d)(?=(?:\d{3})+(?:$))/g, '$1 ');
+							}
+						};
+						
 						// Event template start.
 						$('#'+$.m.div.event).trigger($.m.event.setup);
 						
@@ -40,7 +49,7 @@
 			spinOn: function(e, i) {
 				
 				// add in tmpl.
-				$('#'+e+' i').removeClass(i).addClass($.m.tmpl.html.spinClass);
+				$('#'+e).removeClass(i).addClass($.m.tmpl.html.spinClass);
 			},
 			
 			/**
@@ -51,7 +60,7 @@
 			spinOff: function(e, i) {
 			
 				// remove icone.
-				$('#'+e+' i').removeClass($.m.tmpl.html.spinClass).addClass(i);
+				$('#'+e).removeClass($.m.tmpl.html.spinClass).addClass(i);
 			},
 			
 			/**
@@ -88,6 +97,22 @@
 				
 				// Play sound after 500ms.
 				setTimeout(function() { $.voix.play($.m.tmpl.sound.error); }, 500);
+			},
+			
+			/**
+			 * Funct msg.
+			 * @param e Message.
+			 */
+			msg: function(e) {
+				
+				// render erreur.
+				$.jGrowl($.lng.tr(e, true)+' ', { 
+					position: $.m.tmpl.error.position,
+					closeTemplate: $.m.tmpl.error.closeIcon
+				});
+				
+				// Play sound after 500ms.
+				setTimeout(function() { $.voix.play($.m.tmpl.sound.click); }, 500);
 			},
 			
 			/**

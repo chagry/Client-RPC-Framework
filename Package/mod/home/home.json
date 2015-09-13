@@ -1,185 +1,27 @@
 {
-	"vars"          : {},
 	"off"           : true,
-	"version"       : "php 5.4 - sql 5.5 - jQuery 1.11.0 - chagry O.5 Beta",
-	"don" : {
-		"btc"       : "15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx",
-		"btcUrl"    : "bitcoin:15n5RBiHiZjfySqqoBTgYyALh5JQhy6Mpx?label=Donate%20Chagry%20RPC%20Framework"
-	},
 	"vid" : {
-		"fr"        : "-fANBFZEHdk"
+		"fr"        : "FOWqazj5Bb0"
 	},
+	"serverVid" : [
+		{
+			"nombre"   : 1,
+			"titre"   : "DEF-INTRO",
+			"vid" : {
+				"fr"        : "4ZF-uqE7JCg"
+			}
+		}
+	],
+	"clientVid" : [
+		{
+			"nombre"   : 1,
+			"titre"   : "DEF-INTRO",
+			"vid" : {
+				"fr"        : "ObHKDk76ytA"
+			}
+		}
+	],
 	"func" : {
-		"home"      : "$.home.accueil()",
-		"openVideo" : "$.home.openModal()",
-		"closeVideo": "$.home.closeModal()"
-	},
-	"img" : {
-		"pledgie"   : "https://pledgie.com/campaigns/24202.png?skin_name=chrome",
-		"donat"     : "img/def/donate.png",
-		"modalFond" : "img/css/bg.png",
-		"anim"      : "img/css/twitter.png",
-		"pathLib"   : "img/lib/",
-		"ext"       : ".jpg"
-	},
-	"url" : {
-		"server"    : "https://github.com/chagry/Server-RPC-Framework",
-		"client"    : "https://github.com/chagry/Client-RPC-Framework",
-		"github"    : "https://github.com/chagry",
-		"pledgie"   : "https://pledgie.com/campaigns/24202"
-	},
-	"nodes" : [
-		{
-			"label" : "Json RPC",
-			"color" : "b94a48"
-		},
-		{
-			"label" : "RPC Server",
-			"color" : "3a87ad"
-		},
-		{
-			"label" : "Data",
-			"color" : "468847"
-		},
-		{
-			"label" : "Model",
-			"color" : "468847"
-		},
-		{
-			"label" : "Controller",
-			"color" : "468847"
-		},
-		{
-			"label" : "RPC Client",
-			"color" : "3a87ad"
-		},
-		{
-			"label" : "Bootstrap",
-			"color" : "468847"
-		},
-		{
-			"label" : "Mustache",
-			"color" : "468847"
-		},
-		{
-			"label" : "jQuery",
-			"color" : "468847"
-		}
-	],
-	"edges" : [
-		["Json RPC"   , "RPC Client"],
-		["Json RPC"   , "RPC Server"],
-		["RPC Client" , "Bootstrap"],
-		["RPC Client" , "Mustache"],
-		["RPC Client" , "jQuery"],
-		["RPC Server" , "Data"],
-		["RPC Server" , "Model"],
-		["RPC Server" , "Controller"]
-	],
-	"lib" : [
-		{
-			"img"   : "font-awesome",
-			"lien"  : "http://fortawesome.github.io/Font-Awesome/"
-		},
-		{
-			"img"   : "crp",
-			"lien"  : "https://github.com/chagry/CRP-Crypt"
-		},
-		{
-			"img"   : "bootstrap",
-			"lien"  : "http://getbootstrap.com/"
-		},
-		{
-			"img"   : "jQuery",
-			"lien"  : "http://jquery.com/"
-		},
-		{
-			"img"   : "springy",
-			"lien"  : "http://getspringy.com/"
-		},
-		{
-			"img"   : "json",
-			"lien"  : "https://github.com/datagraph/jquery-jsonrpc"
-		},
-		{
-			"img"   : "validate",
-			"lien"  : "http://jqueryvalidation.org/"
-		},
-		{
-			"img"   : "jGrowl",
-			"lien"  : "https://github.com/stanlemon/jGrowl"
-		},
-		{
-			"img"   : "gmap",
-			"lien"  : "http://leafletjs.com/"
-		},
-		{
-			"img"   : "carousel",
-			"lien"  : "http://owlgraphic.com/owlcarousel/"
-		},
-		{
-			"img"   : "noUiSlider",
-			"lien"  : "http://refreshless.com/nouislider/"
-		},
-		{
-			"img"   : "moment",
-			"lien"  : "http://momentjs.com/"
-		},
-		{
-			"img"   : "mustache",
-			"lien"  : "https://github.com/janl/mustache.js"
-		},
-		{
-			"img"   : "Chartjs",
-			"lien"  : "http://www.chartjs.org/"
-		},
-		{
-			"img"   : "paginate",
-			"lien"  : "https://github.com/mattpage/jquery.paginateTable"
-		},
-		{
-			"img"   : "qrcode",
-			"lien"  : "http://larsjung.de/qrcode/"
-		},
-		{
-			"img"   : "peity",
-			"lien"  : "http://benpickles.github.io/peity/"
-		},
-		{
-			"img"   : "tube",
-			"lien"  : "http://tikku.com/jquery-youtube-tubeplayer-plugin"
-		},
-		{
-			"img"   : "anchorific",
-			"lien"  : "https://github.com/renettarenula/anchorific.js"
-		},
-		{
-			"img"   : "Animate",
-			"lien"  : "http://daneden.github.io/animate.css/"
-		},
-		{
-			"img"   : "highlight",
-			"lien"  : "http://highlightjs.org/"
-		},
-		{
-			"img"   : "ion",
-			"lien"  : "http://ionden.com/a/plugins/ion.sound/en.html"
-		},
-		{
-			"img"   : "jqueryui",
-			"lien"  : "http://jqueryui.com/"
-		},
-		{
-			"img"   : "navgoco",
-			"lien"  : "http://www.komposta.net/article/navgoco"
-		},
-		{
-			"img"   : "showdown",
-			"lien"  : "https://github.com/coreyti/showdown"
-		},
-		{
-			"img"   : "spritely",
-			"lien"  : "http://spritely.net/"
-		}
-	]
+		"home"      : "$.home.accueil()"
+	}
 }

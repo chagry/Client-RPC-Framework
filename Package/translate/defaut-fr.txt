@@ -14,147 +14,64 @@ ja                                    日本語
 ar                                    العربية
 zh                                    中文
 
-// Mod Value.
+// Modul home
 
-USD                                   US Dollar
-JPY                                   Yen japonais
-CNY                                   Yuan chinois
-SGD                                   Singapour Dollar
-HKD                                   Hong Kong Dollar
-CAD                                   Canadien Dollar
-NZD                                   Nouvelle-Zélande Dollar
-AUD                                   Australie Dollar
-CLP                                   Peso chilien
-GBP                                   Livre britannique
-DKK                                   Couronne danoise
-SEK                                   Couronne suédoise
-ISK                                   Couronne islandaise
-CHF                                   Franc suisse
-BRL                                   Réal brésilien
-EUR                                   Euros
-RUB                                   Rouble russe
-PLN                                   Zloty polonais
-THB                                   Baht thaïlandais
-KRW                                   Won sud-coréen
-TWD                                   Taïwan Dollar
+HOME                                  Accueil
+HOME-VIDEO                            Video
+HOME-INTRO                            Frameworks RPC
+HOME-DESC                             2 frameworks distinctes utilisant le protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre.
+HOME-SERV-LABEL                       Uniquement en PHP, il vous permet de crée une API avec une architecture MC en quelle que minute.
+HOME-CLIENT-LABEL                     Réaliser facilement une application web avec une architecture MVC uniquement en jQuery, HTML et CSS.
+
+// Modul user
+
+USER-PASS-PHRASE-EX                   Ex : decoupa -foxminecho- 110299 :mecodelta: (tr304512) dans le sens du ventre 669912 0143785912 decoti ++ZEROMONT++ 45er
+USER-SIGN-MESS                        Signature
+USER-KEY-PRIVAT                       Clé privée
+USER-PASS-PHRASE                      Phrase secrète
+USER-VERIF-MESS                       Vérification
+USER-SIGN-MESS-INPUT                  Le message signé
+USER-SIGN-MESS-LABEL                  Le message a signier
+USER-SIGN-INPUT-LABEL                 La signature du message
+USER-SIGN-MESS-TITLE                  Signature du message
+USER-VERIF-MESS-TITLE                 Vérifier une signature
+USER-ADR-SIGN-LABEL                   L'identifiant du signataire
+USER-SYNC-BLOCK                       Synchroniser avec la Blockchain
+USER-ALREADY-CONNECTED                Vous êtes déjà connecté
+USER-ALREADY-NOT-CONNECTED            Vous n'êtes pas connecté
+USER-SIGN-INPUT                       Veuillez entrer la signature.
+USER-MESS-INPUT                       Veuillez entrer le message.
+USER-PASS-PHRASE-REQUIRED             Veuillez saisir votre phrase secrète.
+USER-NOT-TX                           Aucune transaction pour cette adresse bitcoin.
+USER-VALIDE-SIGN                      Le message est bien signé avec l'identifiant de l'utilisateur.
+USER-SIGN-MESS-ERR                    La signature du message a échoué, merci de réessayer.
+USER-NOT-SIGN-VALIDE                  La signature du message n'est pas valide et ne correspond pas à l'identifiant de l'utilisateur.
+USER-SIGN-MESS-RESULT                 Voici la signature électronique de votre message authentifier par votre identifiant client.
+USER-VERIF-MESS-DESC                  Dans cette section, vous pouvez vérifier une signature et son message avec L'identifiant du signataire.
+USER-SIGN-MESS-DESC                   Dans cette section, vous pouvez signer un message avec votre clé privée et vérifiable avec votre identifiant client.
+USER-PASS-CODE-LABEL                  Crée un nouveau code pin, destiner a protéger cette session. À chaque nouvelle connexion, vous pouvez choisir un code pin différent.
+USER-KEY-DESC                         Les clés privées ne doivent jamais être divulguées, car elles permettent de dépenser les bitcoins de l'adresse. Pour utiliser la clé privée simplement, vous pouvez visiter
+USER-ADR-DESC                         Votre identifiant public, vous permet de recevoir des paiements en bitcoin. Utiliser le librement, auprès de tout le monde. Pour utiliser les sommes de cette adresse, vous aurez besoin de la clef privée.
+USER-PASS-PHRASE-LABEL                Plus la phrase secrète est complexe, plus vos fonds seront en sécurité. Mélanger lettre minuscules, majuscules, chiffres et ponctuation. Si vous oubliez votre phrase secrète, vos Bitcoins sont perdus définitivement.
+USER-BLOCKCHAIN-DESC                  La connexion est basée sur la technologie cryptographique du bitcoin. Votre identifiant client est une adresse bitcoin que vous pouvez synchroniser avec la blockchain, qui est le livre de compte public et qui contient toutes les transactions du réseau bitcoin.
 
 // Defaut.
 
-DEF-TB                                Tableau de bord
-DEF-MY-COMPTE-LABEL                   Mon compte
-DEF-INTRO                             Introduction
-DEF-VISIT-SITE                        Visiter le site
-DEF-WELCOM                            Bienvenue
-DEF-MOD-EMPLOI                        Mode d'emploi
-DEF-PRESENTAT                         Présentation
-DOC-LABEL                             Documentation
-DOC-SUMMARY                           Sommaire
-DEF-FRAMEWORK                         Framework
-DEF-FRAMEWORKS                        Frameworks
-DEF-NOTICE                            Annonce
-DEF-CONTACT                           Contacts
-DEF-CONTACT-INFO                      contacts et informations
-DOC-SUP-LABEL                         Documentation supplémentaire
-DEF-NOT-CONTENT                       Pas de contenu
-NOT-RESULTS                           Pas de résultats
-DEF-SECURITE                          Sécurité
-DEF-TECHNOLOGIE                       Technologie
-DEF-HISTORY                           Historique
-DEF-DESIGN                            Design
-DEF-DONNEES                           Données
-DEF-MODULAR                           Modulaire
-DEF-EMAIL                             Adresse e-mail
-DEF-ACTION                            Action
-DEF-ACTIONS                           Actions
-DEF-IP                                Ip
-DEF-DATE                              Date
-DEF-TIME                              Temps
-DEF-NEW                               Nouveau
-DEF-BRAVO-LABEL                       Félicitations
-DEF-WARNING                           Avertissement
-DEF-MESSAGE                           Message
-DEF-MESSAGES                          Messages
 VOIX-SOUND-TITRE                      Audio
-
-DEF-CLIC-HERE                         Cliquez ici
-DEF-DELETE                            Effacer
-DEF-LOGIN                             Connexion
-DEF-LOGOUT                            Déconnexion
-DEF-CLOSE                             Fermer
-DEF-SAVE                              Enregistrement
-DEF-DOWNLOAD                          Téléchargement
-DEF-SEND                              Envoyer
-DEF-VALIDE                            Valider
 DEF-CANCEL                            Annuler
-DEF-SIGNUP                            Inscription
-DEF-SEARCH                            Chercher
-DEF-CRYPT                             Cryptage
-DEF-DECRYPT                           Decryptage
-DEF-MODIFICATION                      Modification
-DEF-EDIT                              Editer
-DEF-CONFIRM                           Confirmer
-VOIX-UP                               Monter
-VOIX-DOWN                             Descendre
-
 DEF-SERVER                            Serveur
 DEF-CLIENT                            Client
-DEF-CLIENTS                           Clients
-DEF-PROFIL                            Profil
-DEF-ANONYME                           Anonyme
-DEF-DEV                               Développeur
-DEF-ADMIN                             Administrateur
-DEF-GUEST                             Invité
-
-DEF-PAY                               Payer
-DEF-CASH                              Cash
-DEF-CARDS                             Carte
-DEF-FREE                              Gratuit
-DEF-BITCOIN                           Bitcoin
-DEF-CRYPTO-MONNAIE                    Crypto-monnaie
-DEF-BITCOIN-ADR                       Adresse Bitcoin
-DEF-UTIL                              Utilisation
-DEF-DEPOSIT                           Versement
-DEF-TX                                Transaction
-DEF-TOTAL                             Total
-
+DEF-MY-COMPTE-LABEL                   Mon compte
 DEF-CODE-PIN                          Code Pin
+DEF-OUT                               Retraits
+DEF-LOGOUT                            Déconnexion
+DEF-LOGIN                             Connexion
 DEF-CODE-PIN-LABEL                    Votre code Pin
-DEF-CODE-PIN-CRYPT                    Code Pin crypté
-DEF-CODE-PIN-VALIDATION               Code pin généré
+DEF-BITCOIN-ADR                       Adresse Bitcoin
 DEF-CODE-PIN-NEW                      Nouveau code Pin
-DEF-EDITE-LANGUE-USER                 Changement de langue
-DEF-CODE-PIN-RESET                    Réinitialisation code pin
-DEF-EDITE-MAIL-principal              Changement du mail principal
-DEF-EDITE-MAIL-security               Changement du mail de sécurité
-DEF-CODE-PIN-INVALID                  Votre code pin n'est pas valide
-DEF-2-CLIC-INVALID                    Il suffit de cliquer une seule fois sur le bouton.
-DEF-CODE-PIN-CRYPT-LABEL              Entrer le code Pin crypté que vous avez reçu par mail
-
-// Server error defaut.
-
-SERV-ERROR-INVALID-ROLE               Le rôle n'est pas valide
-SERV-ERROR-INVALID-ACTION             L'action n'est pas valide
-SERV-ERROR-CONNECT-MYSQL              Connexion à MySQL impossible
-SERV-ERROR-INVALID-CONTROLLER         Le contrôleur n'est pas valide
-SERV-ERROR-NOT-FIND-FILE              Erreur lors du chargement du fichier
-SERV-ERROR-DATABASE                   Impossible de se connecter à la base sql
-SERV-ERROR-INVALID-PARAM-OR-METHODE   Méthodes inconnues ou Paramètres incorrects
-SERV-ERROR-SESSION                    Erreur de session, merci de vous connecter
-SERV-ERROR-ACCESS-DENIED              Vous n'êtes pas autorisé à accéder à cette ressource
-SERV-ERROR-SESSION-EXPIRE             Votre session a expiré, veuillez vous connecter à nouveau
-SERV-ERROR-ACCESS-NO-CONNECT          Vous n'avez pas accès à cette page. Vous devez vous connecter avant
-SERV-ERROR-USER-BLACKLISTED	          Votre compte a été bloqué. Veuillez contactez un administrateur
-SERV-ERROR-OFFLINE-MESSAGE            L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.
-
-// Controleur login.
-
-LOGIN-ERROR-INVALID-CODE              Code pin non valide
-LOGIN-ERROR-MAIL-INVALID              Mail d'utilisateur incorrect
-LOGIN-ERROR-INVALID-CODE-OR-SESSION   Code pin ou session non valide
-LOGIN-ERROR-INVALID-MAIL              L'adresse email n'est pas valide
-LOGIN-ERROR-REGISTRATION-FAILED       Une erreur est survenue lors de l'inscription
-LOGIN-ERROR-MAIL-MESSAGE              L'adresse e-mail que vous avez saisie existe déjà. Veuillez saisir une autre adresse e-mail
-LOGIN-ERROR-MAIL-UNKNOWN-PARAM        Nous ne pouvons déterminer si la demande à lieu pour le mail principal ou le mail de sécurité.
+DOC-LABEL                             Documentation
+DEF-FRAMEWORK                         Framework
+DEF-MESSAGE                           Message
 
 // Mod tmpl.
 
@@ -167,92 +84,18 @@ FORM-MESSAGE-ADR-BTC-REQUIRED         Veuillez entrer l'adresse bitcoin
 FORM-MESSAGE-EMAIL-INVALID            L'adresse email n'est pas valide
 FORM-MESSAGE-PIN-REQUIRED             Veuillez entrer le code pin crypté
 FORM-MESSAGE-SOM-INVALID              Le montant ne doit être composé que de chiffres
-FORM-MESSAGE-BTCSTH-REQUIRED          Veuillez entrer le montant de  bitcoin en satoshi
-FORM-MESSAGE-TX-BTC-REQUIRED          Veuillez entrer l'id de la transaction Bitcoin
-FORM-MESSAGE-KEY-REQUIRED             Veuillez entrer la clé pour décrypter le message
 FORM-MESSAGE-CODE-PIN-INVALID         Votre code Pin ne doit être composé que de chiffres
 FORM-MESSAGE-VALIDATION-FORM-FAILED   Vous devez valider le formulaire avant de poursuivre
-FORM-MESSAGE-BTCSTH-INVALID           Le montant  en bitcoin ne doit être composée que de chiffres
 FORM-MESSAGE-CODE-PIN-MIN             Votre code Pin doit être composé de 4 chiffres au minimum
 
-// Mod home.
+// Server error defaut.
 
-HOME                                  Accueil
-HOME-HELP-TITLE                       Aidez-nous
-HOME-FLEXIBLE                         Flexibilité
-HOME-LABEL-TITRE                      RPC Framework
-HOME-CONTACT-LABEL                    Contacts & informations. Retrouvez moi sur
-HOME-CODE-DISPO                       Le code est mis à votre disposition en open source.
-HOME-PARTAGE-CONNAISS                 Partage et utilisation des connaissances pour évoluer.
-HOME-TEC-LABEL2                       Vous pouvez également ajouter vos propres librairies ou plugins.
-HOME-LABEL-DESC                       Conception et développement d'api sur mesure basé sur le protocole Json RPC.
-HOME-DESIGN-LABEL                     Design adaptatif . Smartphones, tablettes, écrans d'ordinateurs, votre contenu s'adapte automatiquement.
-HOME-MODUL-LABEL                      Le client peut être développé dans d'autres langages avec un libre choix des systèmes d'exploitation.
-HOME-DONNEE-LABEL                     Les données sont centralisées sur le serveur. L'accès aux données se fait grâce au protocole JSON RPC 2.
-HOME-FLEXI-LABEL                      La partie serveur est indépendante et reste accessible 24/24h depuis n'importe quel framework client.
-HOME-INT-CRYPTO-LABEL                 Intégrez facilement les protocoles de communication avec les nouvelles technologies disponibles sur le web.
-HOME-SECU-LABEL                       Gestion des ACL et une connexion crypté à 2 facteurs entre le serveur et le client en surcouche du https.
-HOME-TEC-LABEL                        Utilisation de librairies existantes. Liste des technologies open source déjà intégrées dans le package client.
-HOME-SERVER-LABEL                     Son but est d'être paramétrable avec n'importe quel framework, plugin, API, et à son tour de se comporter comme une API pour redistribuer les données.
-HOME-HELP-LABEL                       Nous avons besoin de votre soutien pour continuer à faire vivre ce projet open-source. En faisant un don, vous nous aidez à subvenir aux dépenses liées aux serveurs, aux noms de domaines, aux certficats et à la rémunération des rédacteurs / traducteurs.
-HOME-FRAMEWORK-LABEL                  Divisé en deux parties distinctes entre le serveur et le client, elles communiquent grâce au protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'une de l'autre.
-HOME-CLIENT-LABEL                     En ne gérant plus l’affichage mais uniquement l’envoi des données brutes, le serveur offre l’opportunité d’avoir des interfaces riches et une meilleure expérience utilisateur.
+SERV-ERROR-NOT-FIND-FILE              Erreur lors du chargement du fichier d'exécution.
+SERV-ERROR-DATABASE                   Impossible de se connecter à la base SQL. Erreur dans les données.
+SERV-ERROR-INVALID-PARAM-OR-METHODE   Méthodes ou Paramètres incorrects. Erreur dans les données d'accès.
+SERV-ERROR-CONNECT-MYSQL              Connexion au serveur MySQL impossible. Erreur dans les données d'accès.
+SERV-ERROR-OFFLINE-MESSAGE            L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.
 
-// Mod user.
+// Video titre.
 
-USER-PROFIL                           Profil
-USER-MAIL-FIRST-LABEL                 Mail principal
-USER-SIGNUP-DATE                      Inscription le
-USER-NEW-SIGNUP-LABEL                 Créer un compte
-USER-RESET-LABEL                      Code PIN oublié
-USER-MAIL-SECU-LABEL                  Mail de sécurité
-USER-KEY-SEND                         Clé de décryptage
-USER-SECURIT-CENTER                   Centre de sécurité
-USER-ENTER-YOUR-MAIL                  Entrez votre adresse email
-USER-NEW-MAIL                         Votre nouvelle adresse mail
-USER-YOUR-MAIL                        Votre adresse mail d'utilisateur
-USER-HISTORY-LABEL                    Historique des dernières actions.
-USER-RESET-DESC                       Code PIN oublié ? Générer un nouveau code pin.
-USER-KEY-SEND-LABEL                   Entrer la clé de décryptage que vous avez reçu par mail
-USER-RESET-CUSTOM                     Dans cette section vous pouvez générer un nouveau code pin pour
-USER-MAIL-SECU-DESC                   Sur ce mail nous vous envoyons la clé de décryptage pour le code pin.
-USER-BEFORE-SAVE-MAIL                 Avant l'enregistrement,soyez certain de votre adresse mail
-USER-MAIL-FIRST-DESC                  C'est le mail que vous utilisez pour vous connecter et recevoir le code pin.
-USER-SECU-LABEL                       Connexion cryptée à 2 facteurs entre le serveur et le client en surcouche du https.
-USER-MAIL-NOT-CHANGE                  Vous ne pouvez pas remplacer l'adresse e-mail de votre compte par une adresse existante.
-USER-MAIL2-SEND-DESC                  Le second mail contient la clé pour le décryptage du code pin dans le centre de sécurité.
-USER-GRAVATAR-LABEL                   Pour changer Votre Avatar associé à votre email principal, il vous suffit de vous créer un compte sur
-USER-WELCOM-SECURITI-CENTER           Bienvenu dans le centre de sécurité. C'est ici que vous pouvez décrypter le code pin avec la clé reçu par mail.
-USER-RESET-WARNING                    Après la génération du nouveau code pin, le code pin actuel deviendra obsolète et inutilisable par la plateforme.
-USER-ACCEPT-CONDITION                 En signant ce formulaire, vous déclarez avoir +18 ans, avoir pris connaissance et accepté les Conditions Générales.
-USER-MAIL1-SEND-DESC                  Le premier mail contient votre code pin crypté. C'est ce message que vous devrez décrypter dans le centre de sécurité.
-USER-RESET-SEND-2EMAIL                Deux mails vont vous être envoyés. Si vous utilisez une adresse mail de sécurité, alors la clé de décryptage vous sera envoyée dessus.
-USER-DELETE-MAIL                      Pensez à effacer les mails pour plus de sécurité. Si vous perdez ou oubliez votre code, vous pourrez toujours générer un nouveau code pin au moment de la connexion.
-USER-CONFIRM-SIGNUP                   Votre inscription à bien été prise en compte. Deux mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable.
-USER-WATH-MAIL-DESC                   Nous utilisons votre mail à seul fin de vous connecter à la plateforme ou pour vous envoyer le code pin. Nous n'avons aucun programme publicitaire ou newsletter. Nous ne vendons ni échangons vos données d'utilisateur.
-USER-RESET-SEND-VALIDATION            Deux mails viennent de vous être envoyés. N'oubliez pas de surveiller votre boîte aux lettres. Sinon, consultez votre dossier Courrier indésirable. Si vous utilisez un mail de sécurité, alors un des deux mail arrivera dessus.
-
-// Modul btc.
-
-BTC-PRICE-TITRE                       Prix du Bitcoin
-BTC-HISTORY-LABEL                     Historique du bitcoin
-BTC-USE-LABEL                         Utilisation du bitcoin
-BTC-WHAT-IS-IT                        Bitcoin qu'est-ce que c'est ?
-BTC-MSG-PAY-FINISH                    Transaction finalisée avec succès
-BTC-MSG-PAY-ACCEPT                    Transaction est en cours de virement
-BTC-MSG-PAY-PROCESS                   Transaction est en cours de traitement
-BTC-MSG-PAY-WAITING                   Transaction est en attente de traitement
-BTC-MSG-PAY-NOT-ACCEPT                Transaction annulée, pour cause de paramètre incorrect
-BTC-ERR-SERVER-UNAVAILABLE            Récupération des données auprès de BlockChain Impossible
-BTC-LABEL                             C’est une monnaie électronique décentralisée qui permet de s’échanger des montants sans banques ni autorité centrale.
-BTC-MULYIBIT-LABEL                    MultiBit est un portefeuille facile d'utilisation. C’est un bon choix pour les novices. Disponible sur plusieurs plateformes.
-BTC-FORD-LABEL                        La jeunesse qui pourra résoudre la question monétaire fera plus pour le monde que toutes les armées de l’histoire. Henry Ford
-BTC-BLOCKCHAIN-LABEL                  Blockchain est un portefeuille Web et mobile. La sauvegarde est automatique par mail. Authentification à 2 facteurs disponibles.
-BTC-BITADDRESS-LABEL                  Bitaddress, générateur d'adresse / clés privés. Effectuer un paiement nécessite l'import des clés dans un logiciel portefeuille.
-BTC-DESCTOP-LABEL                     Les portefeuilles de bureau peuvent être installés sur votre ordinateur et vous donnent un contrôle complet sur vos clés privés.
-BTC-WEB-LABEL                         Les portefeuilles Web peuvent être utilisés sur les navigateurs ou téléphones portables et peuvent vous suivre dans votre quotidien.
-BTC-PRINT-LABEL                       Les portefeuilles sur papier sont une excellente solution de sécurité pour conserver des bitcoins sur le long terme et à éviter les vols.
-BTC-SATOSHI-LABEL                     Les bitcoins peuvent être divisés jusqu'à 8 décimales. Le satoshi étant la plus petite unité du Bitcoin. 1 Btc vaux cent million de satoshi. Au final il aura que 21 million de bitcoin en circulation.
-BTC-HISTORY-DESC                      Conçu par un développeur utilisant le pseudonyme de Satoshi Nakamoto. Cette personne ou ce groupe de personnes a conçu et créé le Bitcoin de 2009 à 2010. Au milieu de l'année 2010 Nakamoto installe Gavin Andresen comme son successeur en lui donnant accès au projet SourceForge Bitcoin. La Fondation Bitcoin quant à elle, est créée en 2012.
-BTC-WARNING-LABEL                     Sauvegarder votre portefeuille peut vous protéger contre les pannes et des erreurs humaines. Faire des sauvegardes régulières et utiliser plusieurs emplacements. Chiffrez votre portefeuille avec un mot de passe. Cette pratique vous aidera à vous protéger contre le vol. Vous devriez vous assurer de ne jamais perdre vos clés privées ou vos fonds seront perdus définitivement.
-BTC-USE-DESC                          Le bitcoin est composé d'une adresse publique et d'une clef privée. L'adresse est utilisé pour recevoir les bitcoins , Si vous souhaitez effectuer un paiement depuis votre adresse, Vous aurez besoin de votre clef privée. Toute transaction effectuée ne peut être annulée. Pour vous aider à utiliser ou générer des nouvelles paires adresse/clé, il existe plusieurs solutions de portefeuilles.
+DEF-INTRO                             Introduction

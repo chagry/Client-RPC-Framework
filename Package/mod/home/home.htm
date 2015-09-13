@@ -10,8 +10,14 @@
 <script id="mHome" type="text/html">
 	{{#home.off}}
 		<div id="mHome" class="btn-group navbar-btn">
-			<button id='homeSpin' type="button" onClick="{{home.func.home}}" class="btn btn-primary" data-tr="HOME" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}HOME{{/TX}}">
+			<button id='homeSpin' type="button" onClick="{{home.func.home}}" class="btn btn-warning" data-tr="HOME" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}HOME{{/TX}}">
 				<i class="fa fa-home"></i>
+			</button>
+			<button type="button" onClick="$.home.serveurHTML()" class="btn btn-warning" data-tr="DEF-SERVER" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-SERVER{{/TX}}">
+				<i class="fa fa-database"></i>
+			</button>
+			<button type="button" onClick="$.home.clientHTML()" class="btn btn-warning" data-tr="DEF-CLIENT" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-CLIENT{{/TX}}">
+				<i class="fa fa-desktop"></i>
 			</button>
 		</div>
 	{{/home.off}}
@@ -20,153 +26,109 @@
 <!-- Page home 0.5 -->
 <script id="home" type="text/html">
 	<!-- Titre + Desc + video bitcoin -->
-	<div class="jumbotron noir">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-md-7 col-lg-8 text-center">
-					<h2 class="googPolice">{{#T}}HOME-LABEL-TITRE{{/T}}</h2>
-					<p class="googPolice">{{#T}}HOME-LABEL-DESC{{/T}}</p>
-					<p class="text-muted"><small>{{#T}}HOME-PARTAGE-CONNAISS{{/T}}</small></p>
-				</div>
-				<div class="col-sm-6 col-md-5 col-lg-4">
-					<div class="well well-sm noir">
-						<div id="videoChagry" class="embed-responsive embed-responsive-16by9"></div>
+	<div class="container-fluid">
+		<div class="row topMarge-lg">
+			<div class="col-sm-6 col-md-6 col-lg-5 text-center">
+				<h2 class="text-uppercase fontH1blk">{{#T}}HOME-INTRO{{/T}}</h2>
+				<p class="lead fontPblk">{{#T}}HOME-DESC{{/T}}</p>
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="well well-sm blue text-center">
+							<h3 class="text-uppercase fontH1wt"><i class="fa fa-database"></i> {{#T}}DEF-SERVER{{/T}}<br><small>{{#T}}DEF-FRAMEWORK{{/T}}</small></h3>
+							<p class="text-justify fontPwt"> {{#T}}HOME-SERV-LABEL{{/T}}</p>
+							<div class="well well-sm noir">
+								<a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
+							</div>
+							<button type="button" onClick="$.home.serveurHTML()" class="btn btn-warning btn-block footMarge">
+								<span class="text-uppercase fontH1wt"><small><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</small></span>
+							</button>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="well well-sm blue text-center">
+							<h3 class="text-uppercase fontH1wt"><i class="fa fa-desktop"></i> {{#T}}DEF-CLIENT{{/T}}<br><small>{{#T}}DEF-FRAMEWORK{{/T}}</small></h3>
+							<p class="text-justify fontPwt"> {{#T}}HOME-CLIENT-LABEL{{/T}}</p>
+							<div class="well well-sm noir">
+								<a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
+							</div>
+							<button type="button" onClick="$.home.clientHTML()" class="btn btn-warning btn-block footMarge">
+								<span class="text-uppercase fontH1wt"><small><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</small></span>
+							</button>
+						</div>
 					</div>
 				</div>
+				
 			</div>
-		</div>
-	</div>
-	<!-- Home + Desc -->
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 text-center">
-				<br>
-				<h1 class="googFont">2 {{#T}}DEF-FRAMEWORKS{{/T}}</h1>
-				<br>
-				<p class="lead">{{#T}}HOME-FRAMEWORK-LABEL{{/T}}</p>
-			</div>
-			<div id="viewportConten" class="col-sm-6">
-				<canvas id="viewport" width="{{home.vars.canvasWidth}}" height="270"></canvas>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 text-center">
-				<hr>
-				<br>
-				<h1 class="googFont"><i class="fa fa-upload"></i> {{#T}}DEF-SERVER{{/T}}</h1>
-				<br>
-				<p class="lead">{{#T}}HOME-SERVER-LABEL{{/T}}</p>
-				<a href="{{home.url.server}}" target="blank" class="btn btn-primary btn-labeled">
-					<span class="btn-label"><i class="fa fa-github-alt"></i></span>PHP {{#T}}DEF-FRAMEWORK{{/T}}
-				</a>
-			</div>
-			<div class="col-sm-6 text-center">
-				<hr>
-				<br>
-				<h1 class="googFont"><i class="fa fa-laptop"></i> {{#T}}DEF-CLIENT{{/T}}</h1>
-				<br>
-				<p class="lead">{{#T}}HOME-CLIENT-LABEL{{/T}}</p>
-				<a href="{{home.url.client}}" target="blank" class="btn btn-success btn-labeled">
-					<span class="btn-label"><i class="fa fa-github-alt"></i></span>jQuery {{#T}}DEF-FRAMEWORK{{/T}}
-				</a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<hr>
-				<br>
-				<h1 class="googFont">{{#T}}HOME-FLEXIBLE{{/T}}</h1>
-				<p class="lead text-muted">{{#T}}HOME-FLEXI-LABEL{{/T}}</p>
-				<br>
-				<hr>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-3 text-center">
-				<h1 class="text-warning"><i class="fa fa-lock fa-3x"></i></h1>
-				<h3 class="googFont text-warning">{{#T}}DEF-SECURITE{{/T}}</h3>
-				<p>{{#T}}HOME-SECU-LABEL{{/T}}</p>
-			</div>
-			<div class="col-sm-3 text-center">
-				<h1 class="text-success"><i class="fa fa-desktop fa-3x"></i></h1>
-				<h3 class="googFont text-success">{{#T}}DEF-DESIGN{{/T}}</h3>
-				<p>{{#T}}HOME-DESIGN-LABEL{{/T}}</p>
-			</div>
-			<div class="col-sm-3 text-center">
-				<h1 class="text-danger"><i class="fa fa-cogs fa-3x"></i></h1>
-				<h3 class="googFont text-danger">{{#T}}DEF-DONNEES{{/T}}</h3>
-				<p>{{#T}}HOME-DONNEE-LABEL{{/T}}</p>
-			</div>
-			<div class="col-sm-3 text-center">
-				<h1 class="text-info"><i class="fa fa-rocket fa-3x"></i></h1>
-				<h3 class="googFont text-info">{{#T}}DEF-MODULAR{{/T}}</h3>
-				<p>{{#T}}HOME-MODUL-LABEL{{/T}}</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<hr>
-				<br>
-				<h1 class="googFont">{{#T}}DEF-TECHNOLOGIE{{/T}}</h1>
-				<p class="lead text-muted">{{#T}}HOME-TEC-LABEL{{/T}}</p>
-				<br>
-			</div>
-		</div>
-	</div>
-	<!-- Carousel import lib logo and url -->
-	<div class="jumbotron noir text-center">
-		<div id="owl-demo" class="owl-carousel owl-theme">
-			{{#home.vars.lib}}
-				<div class="item" style="margin:0px 10px;">
-					<a href="{{lien}}" target="blank">
-						<img class="img-responsive img-rounded" src="{{home.img.pathLib}}{{img}}{{home.img.ext}}" />
-					</a>
+			<div class="col-sm-6 col-md-6 col-lg-7">
+				<div class="well well-sm noir">
+					<div id="videoChagry" class="embed-responsive embed-responsive-16by9"></div>
 				</div>
-			{{/home.vars.lib}}
+			</div>
 		</div>
-		<h4 class="text-muted"><small>{{#T}}HOME-TEC-LABEL2{{/T}}</small></h4>
 	</div>
-	<!-- Bitcoin + donation -->
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 text-center">
-				<h1 class="googFont"><i class="fa fa-pie-chart"></i> {{#T}}DEF-CRYPTO-MONNAIE{{/T}}</h1>
-				<br>
-				<p class="lead">{{#T}}HOME-INT-CRYPTO-LABEL{{/T}}</p>
+</script>
+
+<!-- Page serveur 0.5 -->
+<script id="serveur" type="text/html">
+	<!-- Titre + Desc + video bitcoin -->
+	<div class="container-fluid">
+		<div class="row topMarge-lg">
+			<div class="col-sm-6 col-md-6 col-lg-5 text-center">
+				<h2 class="text-uppercase fontH1blk"><i class="fa fa-database"></i> {{#T}}DEF-SERVER{{/T}}</h2>
+				<p class="lead fontPblk">{{#T}}HOME-SERV-LABEL{{/T}}</p>
+				<div class="well well-sm noir">
+					<a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
+				</div>
+				<h2 class="text-uppercase fontH1blk topMarge-lg"><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</h2>
+				<div class="owl-carousel owl-theme topMarge-lg" id="owl-head">
+					{{#home.serverVid}}
+						<div class="item cursor" onClick="$.home.serverVideo({{nombre}})" style="margin:0px 10px;" data-tr="{{titre}}" data-toggle="tooltip" data-placement="top" data-container="body" title="{{#TX}}{{titre}}{{/TX}}">
+							<div class="well well-sm blue">
+								<span class="text-uppercase lead fontH1wt">{{nombre}}</span>
+								<br><span class="text-uppercase fontH1blk">{{#T}}HOME-VIDEO{{/T}}</span>
+								<br><span class="lead fontH1wt"><i class="fa fa-youtube-play"></i></span>
+							</div>
+						</div>
+					{{/home.serverVid}}
+				</div>
 			</div>
-			<div class="col-sm-6 text-center">
-				<hr>
-				<br>
-				<img class="img-responsive center-block" src="img/def/bitcoin.png" />
+			<div class="col-sm-6 col-md-6 col-lg-7">
+				<div class="well well-sm noir">
+					<div id="videoTuto" class="embed-responsive embed-responsive-16by9"></div>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<hr>
-				<h1 class="googFont">{{#T}}HOME-HELP-TITLE{{/T}}</h1>
-				<p class="lead text-muted">{{#T}}HOME-HELP-LABEL{{/T}}</p>
-				<br>
+	</div>
+</script>
+
+<!-- Page client 0.5 -->
+<script id="client" type="text/html">
+	<!-- Titre + Desc + video bitcoin -->
+	<div class="container-fluid">
+		<div class="row topMarge-lg">
+			<div class="col-sm-6 col-md-6 col-lg-5 text-center">
+				<h2 class="text-uppercase fontH1blk"><i class="fa fa-desktop"></i> {{#T}}DEF-CLIENT{{/T}}</h2>
+				<p class="lead fontPblk">{{#T}}HOME-CLIENT-LABEL{{/T}}</p>
+				<div class="well well-sm noir">
+					<a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
+				</div>
+				<h2 class="text-uppercase fontH1blk topMarge-lg"><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</h2>
+				<div class="owl-carousel owl-theme topMarge-lg" id="owl-head">
+					{{#home.clientVid}}
+						<div class="item cursor" onClick="$.home.clientVideo({{nombre}})" style="margin:0px 10px;" data-tr="{{titre}}" data-toggle="tooltip" data-placement="top" data-container="body" title="{{#TX}}{{titre}}{{/TX}}">
+							<div class="well well-sm blue">
+								<span class="text-uppercase lead fontH1wt">{{nombre}}</span>
+								<br><span class="text-uppercase fontH1blk">{{#T}}HOME-VIDEO{{/T}}</span>
+								<br><span class="lead fontH1wt"><i class="fa fa-youtube-play"></i></span>
+							</div>
+						</div>
+					{{/home.clientVid}}
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<a href="{{home.url.pledgie}}" target="blank" style="text-decoration: none;">
-					<img alt='Click here to lend your support to: RPC Framework' src="{{home.img.pledgie}}" border="0">
-				</a> 
-				<img id="btcDonation" style="cursor: pointer;" data-toggle="popover" src="{{home.img.donat}}">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<hr>
-				<p class="text-muted">{{#T}}HOME-CODE-DISPO{{/T}} Repository GitHub - 
-					<a href="{{home.url.server}}" target="blank"><i class="fa fa-upload"></i> {{#T}}DEF-SERVER{{/T}}</a> 
-					php - <a href="{{home.url.client}}" target="blank"><i class="fa fa-laptop"></i> {{#T}}DEF-CLIENT{{/T}}</a> 
-					jQuery<br>
-					{{#T}}HOME-CONTACT-LABEL{{/T}} <a href="{{home.url.github}}" target="blank"><i class="fa fa-github"></i> GitHub.</a>
-					<h6 class="text-muted"><small>{{home.version}}</small></h6>
-				</p>
-				<h1 id="scrollTopBtn"></h1>
+			<div class="col-sm-6 col-md-6 col-lg-7">
+				<div class="well well-sm noir">
+					<div id="videoTuto" class="embed-responsive embed-responsive-16by9"></div>
+				</div>
 			</div>
 		</div>
 	</div>

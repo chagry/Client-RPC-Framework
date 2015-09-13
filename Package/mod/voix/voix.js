@@ -21,31 +21,17 @@
 				$.m.load('voix', function() {
 					
 					// event. login. listen
-					$('#'+$.m.div.event).on($.m.event.login, function() {
+					$('#'+$.m.div.event).on('login', function() {
 						
 						// if sound is on.
-						if($.m.voix.is) {
-							
-							// Play sound.
-							$.voix.play($.m.voix.sound.setup);
-							
-							// Init plugin.
-							$.voix.init();
-						}
+						if($.m.voix.is) $.voix.init();
 					});
 					
 					// event. logout. listen
-					$('#'+$.m.div.event).on($.m.event.logout, function() {
+					$('#'+$.m.div.event).on('logout', function() {
 						
 						// if sound is on.
-						if($.m.voix.is) {
-							
-							// Play sound.
-							$.voix.play($.m.voix.sound.setup);
-							
-							// Init plugin.
-							$.voix.init();
-						}
+						if($.m.voix.is) $.voix.init();
 					});
 				});
 				
@@ -138,7 +124,7 @@
 					$.cookie('voixSound', 0);
 					
 					// Change btn color.
-					$('#mSound').removeClass('btn-success').addClass('btn-danger');
+					$('#mSound').removeClass('btn-warning').addClass('btn-warning');
 					
 					// Change btn icon.
 					$('#mSound i').removeClass('fa-volume-up').addClass('fa-volume-off');
@@ -160,7 +146,7 @@
 					$.voix.play($.m.voix.sound.setup);
 					
 					// Change btn color.
-					$('#mSound').removeClass('btn-danger').addClass('btn-success');
+					$('#mSound').removeClass('btn-warning').addClass('btn-warning');
 					
 					// Change btn icon.
 					$('#mSound i').removeClass('fa-volume-off').addClass('fa-volume-up');

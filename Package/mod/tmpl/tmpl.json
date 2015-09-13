@@ -12,27 +12,22 @@
 		"accept" : {
 			"required"  : true
 		},
-		"pin" : {
+		"passPhrase" : {
 			"required"  : true
 		},
-		"cles" : {
+		"mess" : {
+			"required"  : true
+		},
+		"sign" : {
 			"required"  : true
 		},
 		"som" : {
-			"required"  : true,
 			"number"    : true
-		},
-		"btcsth" : {
-			"required"  : true,
-			"number"    : true
-		},
-		"btctx" : {
-			"required"  : true,
-			"minlength" : 64
 		},
 		"btcadr" : {
 			"required"  : true,
-			"minlength" : 32
+			"minlength" : 32,
+			"alphanumeric" : true
 		},
 		"inputSecuCode" : {
 			"required"  : true,
@@ -47,27 +42,22 @@
 		"accept" : {
 			"required"  : "FORM-MESSAGE-VALIDATION-FORM-FAILED"
 		},
-		"pin" : {
-			"required"  : "FORM-MESSAGE-PIN-REQUIRED"
+		"passPhrase" : {
+			"required"  : "USER-PASS-PHRASE-REQUIRED"
 		},
-		"cles" : {
-			"required"  : "FORM-MESSAGE-KEY-REQUIRED"
+		"mess" : {
+			"required"  : "USER-MESS-INPUT"
+		},
+		"sign" : {
+			"required"  : "USER-SIGN-INPUT"
 		},
 		"som" : {
-			"required"  : "FORM-MESSAGE-SOM-REQUIRED",
 			"number"    : "FORM-MESSAGE-SOM-INVALID"
-		},
-		"btcsth" : {
-			"required"  : "FORM-MESSAGE-BTCSTH-REQUIRED",
-			"number"    : "FORM-MESSAGE-BTCSTH-INVALID"
-		},
-		"btctx" : {
-			"required"  : "FORM-MESSAGE-TX-BTC-REQUIRED",
-			"minlength" : "FORM-MESSAGE-TX-BTC-MIN"
 		},
 		"btcadr" : {
 			"required"  : "FORM-MESSAGE-ADR-BTC-REQUIRED",
-			"minlength" : "FORM-MESSAGE-ADR-BTC-MIN"
+			"minlength" : "FORM-MESSAGE-ADR-BTC-MIN",
+			"alphanumeric" : "FORM-MESSAGE-ADR-BTC-ALPHANUM"
 		},
 		"password" : {
 			"required"  : "FORM-MESSAGE-CODE-PIN-REQUIRED",
@@ -95,9 +85,7 @@
 		"position"      : "bottom-right",
 		"closeIcon"     : "<i class=\"fa fa-times\"></i>",
 		"blackList"     : [
-			"SERV-ERROR-SESSION-EXPIRE",
 			"SERV-ERROR-ACCESS-NO-CONNECT",
-			"SERV-ERROR-USER-BLACKLISTED",
 			"SERV-ERROR-OFFLINE-MESSAGE"
 		]
 	}

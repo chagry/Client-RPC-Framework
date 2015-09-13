@@ -4,10 +4,10 @@
 		
 		<!-- start: Meta -->
 		<meta charset="utf-8" />
-		<title>Beta</title>
-		<meta name="description" content="Beta." />
+		<title>Chagry Framework</title>
+		<meta name="description" content="Chagry framework. Conception et développement d'api sur mesure basé sur le protocole Json RPC. 2 frameworks distinctes utilisant le protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre." />
 		<meta name="author" content="Chagry" />
-		<meta name="keyword" content="Beta, beta" />
+		<meta name="keyword" content="framework, php, jQuery, java scrypt, java, js, bootstrap, mustache, json, object, développement, développeur, api, server, client, responsive, design, mysql, bitcoin, litecoin, crypto" />
 		
 		<!-- start: Mobile Specific -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,23 +18,14 @@
 		<link rel="stylesheet" href="css/bootstrap.modal.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/jquery.jgrowl.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/jquery.nouislider.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
 		<link rel="stylesheet" href="css/owl.theme.min.css" type="text/css">
 		<link rel="stylesheet" href="css/animate.min.css" type="text/css">
-		<link rel="stylesheet" href="css/github.min.css" type="text/css">
-		<link rel="stylesheet" href="css/jquery.navgoco.min.css" type="text/css">
-		<link rel="stylesheet" href="css/leaflet.css" type="text/css">
 		<link rel="stylesheet" href="css/defaut.css" type="text/css">
 		
 		<!-- start: Google police !!! https !!! -->
-		<link href='https://fonts.googleapis.com/css?family=Jura:600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="js/assets/html5shiv.js"></script>
-		<script src="js/assets/respond.min.js"></script>
-		<![endif]-->
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 		
 		<!-- start: Favicon and Touch Icons -->
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png" />
@@ -68,10 +59,10 @@
 			</nav>
 			<div id="conten">
 				<div class="jumbotron noir">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-sm-12 text-center">
-								<h1 class="googPolice"><i class="fa fa-spinner fa-spin"></i> Loading...</h1>
+								<h2 class="fontH1wt"><i class="fa fa-spinner fa-spin"></i> Loading...</h2>
 								<br>
 							</div>
 						</div>
@@ -81,9 +72,9 @@
 		</div>
 		<!-- HTML -->
 		
-		<!-- start: Framework jQuery 1.11.0 -->
+		<!-- start: Framework jQuery 2.1.3 -->
 		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
-		<!-- start: Framework Bootstrap 3.2 -->
+		<!-- start: Framework Bootstrap 3.3.2 -->
 		<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/lib/bootstrap.modalmanager.js"></script>
 		<script type="text/javascript" src="js/lib/bootstrap.modal.js"></script>
@@ -92,6 +83,7 @@
 		
 		<!-- plug: form validate -->
 		<script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/lib/additional-methods.min.js"></script>
 		<!-- plug: Class de Cryptage -->
 		<script type="text/javascript" src="js/lib/jquery.crp.min.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.md5.min.js"></script>
@@ -120,10 +112,6 @@
 		<script type="text/javascript" src="js/lib/owl.carousel.min.js"></script>
 		<!-- plug: Gestion youtube -->
 		<script type="text/javascript" src="js/lib/jQuery.tubeplayer.min.r.js"></script>
-		<!-- plug: Gestion range slider -->
-		<script type="text/javascript" src="js/lib/jquery.nouislider.min.js"></script>
-		<!-- plug: map js -->
-		<script type="text/javascript" src="js/lib/leaflet.js"></script>
 		<!-- plug: generate QR codes dynamically -->
 		<script type="text/javascript" src="js/lib/jquery.qrcode.min.js"></script>
 		<!-- plug: for playing different sounds on the web-page. -->
@@ -134,30 +122,19 @@
 		<script type="text/javascript" src="js/lib/jquery.spritely.min.js"></script>
 		<!-- plug: calculates the highest CSS z-index -->
 		<script type="text/javascript" src="js/lib/jquery.topzindex.min.js"></script>
-		<!-- plug: JavaScript port of Markdown -->
-		<script type="text/javascript" src="js/lib/showdown.min.r.js"></script>
-		<!-- plug: automatically generates anchored headings and nested navigations based on header tags. -->
-		<script type="text/javascript" src="js/lib/anchorific.r.js"></script>
-		<!-- plug: highlights syntax in code examples on blogs -->
-		<script type="text/javascript" src="js/lib/highlight.pack.js"></script>
-		<!-- plug: Multi-level slide navigation with session storage and accordion effect -->
-		<script type="text/javascript" src="js/lib/jquery.navgoco.min.js"></script>
 		<!-- plug: Pagination -->
 		<script type="text/javascript" src="js/lib/jquery.paginatetable.r.js"></script>
-		<!-- plug: Bitvoinjs -->
+		<!-- plug: Bitcoinjs -->
 		<script type="text/javascript" src="js/lib/bitcoinjs-min.js"></script>
 		
 		<!-- mod: Api Module -->
 		<script type="text/javascript" src="mod/lng/lng.js"></script>
 		<script type="text/javascript" src="mod/tmpl/tmpl.js"></script>
 		<script type="text/javascript" src="mod/voix/voix.js"></script>
+		<script type="text/javascript" src="mod/user/user.js"></script>
 		<script type="text/javascript" src="mod/home/home.js"></script>
-		<script type="text/javascript" src="mod/doc/doc.js"></script>
-		<script type="text/javascript" src="mod/btc/btc.js"></script>
-		<script type="text/javascript" src="mod/user/user.js"></script>		
 		
 		<!-- start: Framework Chagry -->
 		<script type="text/javascript" src="js/boot.js"></script>
-		
 	</body>
 </html>

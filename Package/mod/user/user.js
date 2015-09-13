@@ -1,9 +1,9 @@
-/*
- * @version 0.5.0
+/**
+ * @version 0.6.0
  * @license MIT license
  * @link    https://chagry.com
  * @author  Grigori <git@chagry.com>
- * @package	user.user.js
+ * @package user.user.js
  */
 
 (function($, undefined) {
@@ -13,854 +13,563 @@
 		user: {
 			
 			/**
-			 * Funct setup.
+			 * Funct setup. Init mod accueil.
 			 */
 			setup: function() {
 				
 				// Load model.
 				$.m.load('user');
 				
-				// event. setup listen.
+				// Event. Tmpl mod.
 				$('#'+$.m.div.event).one($.m.event.setup, $.user.defautHtml);
 			},
 			
 			/**
-			 * html defaut.
+			 * Funct defautHtml. Menu in dock.
 			 */
 			defautHtml: function() {
 				
 				// Load tmpl.
 				$.tmpl.load('user', function () {
 					
-					// add menu Login.
+					// Wallet var.
+					$.m.user.wallet = {};
+					
+					// Image for qr code
+					$.m.user.img = {};
+					$.m.user.img.qr = new Image();
+					$.m.user.img.qr.src = "img/css/qr.png";
+					$.m.user.img.qrp = new Image();
+					$.m.user.img.qrp.src = "img/css/qrp.png";
+					
+					// add tmpl.
 					$('#'+$.m.div.menu).mustache('mUser', $.m, {method:'prepend'});
 					
-					// Init popup sur les lien.
+					// Tooltip.
 					$('#mUser button').tooltip();
 					
-					// add modal Login.
-					$('#'+$.m.div.event).mustache('loginModal', $.m);
-					
-					// Setup form login.
-					$.user.formLoginHtml();
+					// event. setup listen.
+					$('#'+$.m.div.event).on($.m.event.langue, $.user.editeVideo);
 				});
 			},
 			
 			/**
-			 * html formLogin. Formulaire login.
+			 * Funct accueil.
 			 */
-			formLoginHtml: function() {
-				
-				// Data for html.
-				$.m.user.vars = {};
-				$.m.user.info = {};
-				
-				// Mail cookie.
-				var userCookie = $.cookie($.m.user.cookie);
-				// if cookie.
-				if(userCookie!=undefined) {
-					
-					// Decrypt id session.
-					var userMail = $.base64.decode(userCookie);
-					// preg_match mail.
-					var reg =/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,5}$/;
-					// if code md5.
-					if(reg.test(userMail)) {
-						// Data for html.
-						$.m.user.vars.cookieMail = userMail;
-					}
-				}
-				
-				// Anim Up.
-				$('#login').slideUp(500, function() {
-					
-					// add tmpl. Form Login.
-					$('#login').empty().mustache('login', $.m);
-					
-					// Anim Down.
-					$('#login').slideDown(500, function() {
-						
-						// Valid Form.
-						$('#'+$.m.user.form.login).validate();
-						
-						// event. Form login. listen.
-						$('#'+$.m.user.form.login).on($.m.user.form.login, $.user.formLoginPinHtml);
-					});
-				});
-			},
-			
-			/**
-			 * html formLoginPin. Formulaire login code pin.
-			 */
-			formLoginPinHtml: function() {
-				
-				// event off.
-				$('#'+$.m.user.form.login).off($.m.user.form.login);
-				
-				// open spinner. 1-div 2-icone name.
-				$.tmpl.spinOn('loginSpin', 'fa-user');
-				
-				// add local mail for connexion.
-				$.m.user.vars.mail = $('#'+$.m.user.form.login+' #email').val();
-				
-				// Animation stop.
-				$('#login').slideUp(500, function() {
-					
-					// connexion serveur.
-					$.jsonRPC.request('login_identification', {
-						
-						// Param send.
-						params : [$.base64.encode($.m.user.vars.mail)],
-						
-						// succees.
-						success : function(data) {
-							
-							// add local id session crypter.
-							$.m.user.vars.session = data.result.session;
-							
-							// add tmpl. Form Login code pin.
-							$('#login').empty().mustache('pin', $.m).mustache('pinParam', $.m);
-							
-							// Animation stop.
-							$('#login').slideDown(500, function() {
-								
-								// Valid Form.
-								$('#'+$.m.user.form.pin).validate();
-								
-								// event. Form login.
-								$('#'+$.m.user.form.pin).on($.m.user.form.pin, $.user.loginFunc);
-								
-								// Boucle btn pin.
-								$('#btnPin .btn').each(function() {
-									
-									// click btn
-									$(this).click(function() {
-										
-										// Play sound.
-										$.voix.play($.m.voix.sound.btnOver);
-									});
-								});
-								
-								// close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-							});
-						},
-						
-						// erreur serveur.
-						error : function(data) {
-							
-							// erreur.
-							$.tmpl.error(data.error);
-							
-							// formulaire login.
-							$.user.formLoginHtml();
-							
-							// close spinner.
-							$.tmpl.spinOff('loginSpin', 'fa-user');
-						}
-					});
-				});
-			},
-			
-			/**
-			 * html loginFunc. fonction de connexion.
-			 */
-			loginFunc: function() {
-				
-				// event off.
-				$('#'+$.m.user.form.pin).off($.m.user.form.pin);
-				
-				// open spinner.
-				$.tmpl.spinOn('loginSpin', 'fa-user');
-				
-				// add local mail.
-				$.m.user.vars.password=$.sha1($('#'+$.m.user.form.pin+' #password').val());
-				
-				// Animation stop.
-				$('#login').slideUp(500, function() {
-					
-					// Decrypt id session.
-					var tmpPin = $.crp.decrypte($.m.user.vars.session, $.m.user.vars.password);
-					
-					// preg_match.
-					var reg =/^[a-f0-9]{32}$/;
-					
-					// if code md5.
-					if(reg.test(tmpPin)) {
-					
-						// connexion serveur.
-						$.jsonRPC.request('login_connexion', {
-								 
-							// Param send. 1-session 2-mailCRP 3-langueCRP
-							params : [tmpPin, 
-								$.crp.crypte($.m.user.vars.mail, $.m.user.vars.password),
-								$.crp.crypte($.lng.get(), $.m.user.vars.password)
-							],
-							
-							// succees.
-							success : function(data) {
-								
-								// add id session.
-								$.m.user.vars.session =	 $.crp.decrypte(data.result.session, $.m.user.vars.password);
-								
-								// Decode info user.
-								$.m.user.info = JSON.parse($.crp.decrypte(data.result.user, $.m.user.vars.password));
-								
-								// empty div login.
-								$('#login').empty();
-									
-								// Close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-								
-								// Func login.
-								$.user.login();
-							},
-							
-							// erreur serveur.
-							error : function(data) {
-								
-								// erreur.
-								$.tmpl.error(data.error);
-								
-								// formulaire login.
-								$.user.formLoginHtml();
-								
-								// close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-							}
-						});
-					}
-					
-					// if pin invalide.
-					else {
-						
-						// erreur.
-						$.tmpl.error('DEF-CODE-PIN-INVALID');
-						
-						// formulaire login.
-						$.user.formLoginHtml();
-						
-						// close spinner.
-						$.tmpl.spinOff('loginSpin', 'fa-user');
-					}
-				});
-			},
-			
-			/**
-			 * Funct login.
-			 */
-			login: function() {
-				
-				// If not connexion.
-				if(!$.m.user.log) {
-					
-					// Clean windows.
-					$.tmpl.clean();
-					
-					// delete modal login.
-					$('#loginModal').remove();
-					
-					// delete menu user.
-					$('#mUser').remove();
-					
-					// add menu profil.
-					$('#'+$.m.div.menu).mustache('mProfil', $.m, {method:'prepend'});
-					
-					// Init popup sur les lien.
-					$('#mProfil button').tooltip();
-					
-					// add modal profil.
-					$('#'+$.m.div.event).mustache('profilModal', $.m);
-					
-					// Loger connexion.
-					$.m.user.log=true;
-					
-					// Open spinner.
-					$.tmpl.spinOn('profilSpin', 'fa-user');
-					
-					// connexion serveur.
-					$.jsonRPC.request('login_historique_'+$.user.session(), {
-						
-						// Param send.
-						params : [$.crp.crypte('control', $.user.password())],
-						
-						// succees.
-						success : function(data) {
-							
-							// return result.
-							$.m.user.vars.historique = data.result.historique;
-							$.m.user.vars.chart = data.result.chart;
-							$.m.user.vars.MD5mail = $.md5($.trim($.m.user.info.email.toString().toLowerCase()));
-							
-							// Setup html profil.
-							$.user.profil();
-							
-							// New Cookie mail.
-							$.cookie('user', $.base64.encode($.m.user.info.email));
-							
-							// Close spinner.
-							$.tmpl.spinOff('profilSpin', 'fa-user');
-							
-							// event. login. trigger.
-							$('#'+$.m.div.event).trigger('login');
-						},
-						
-						// erreur serveur.
-						error : function(data) {
-							
-							// init api.
-							location.reload();
-						}
-					});
-				}
-			},
-			
-			/**
-			 * Funct session.
-			 */
-			session: function() {
-				
-				// if session exist.
-				if($.m.user.log) return $.m.user.vars.session;
-				
-				// else ruturn false.
-				else return false;
-			},
-			
-			/**
-			 * Funct password.
-			 */
-			password: function() {
-				
-				// if session exist.
-				if($.m.user.log) return $.m.user.vars.password;
-				
-				// else ruturn false.
-				else return false;
-			},
-			
-			/**
-			 * profil.
-			 */
-			profil: function() {
-				
-				// Extend model user. function for see is mail secu existe.
-				$.m.user.func.classSecurity = function(){ 
-					return ($.m.user.info.email==$.m.user.info.verif)? 'btn-danger' : 'btn-success'
-				};
-				
-				// Extend model user. function Ip client or System.
-				$.m.user.func.classIpOrSys = function(){
-					return (this.usip=='system')? 'warning' : 'good'
-				};
-				
-				// Extend model user. function Ip client or System.
-				$.m.user.func.spanIpOrSys = function(){ 
-					return (this.usip=='system')? '<span class="badge">'+this.usip+'</span>' : '<span class="text-success"><small>'+this.usip+'</small></span>'
-				};
+			accueil: function() {
 				
 				// Clean windows.
 				$.tmpl.clean();
 				
-				// Animation stop.
-				$('#'+$.m.div.content).slideUp(500, function() {
+				// Anim complete.
+				$('#'+$.m.div.content).fadeOut(300, function() {
 					
-					// add tmpl. Form Login.
-					$('#'+$.m.div.content).empty().mustache('user', $.m);
-					
-					// Paginat tab action user.
-					$('#historyTab').paginateTable({ rowsPerPage: 10, pager: ".pagerHistory" });
-					
-					// Animation stop.
-					$('#'+$.m.div.content).slideDown(500, function() {
+					// If btc adress exist
+					if($.m.user.wallet.adr) {
 						
-						// Adm chart data.
-						var actionData = {
-							labels: new Array(),
-							datasets: [
-								{
-									label: 'Action',
-									fillColor: '#3880aa',
-									highlightFill: '#3880aa',
-									strokeColor: '#327297',
-									highlightStroke: '#327297',
-									data: new Array()
-								}
-							]
-						};
+						// add tmpl. DOC.
+						$('#'+$.m.div.content).empty().mustache('wallet', $.m);
 						
-						// Boucle result action chart.
-						$.each($.m.user.vars.chart, function(key, value) {
-							
-							// Add name of action for label chart.
-							actionData.labels.push($.lng.tr(key));
-							
-							// Add nb for chart.
-							actionData.datasets[0].data.push(value);
+						// If tx exist. paginate Table.
+						if($.m.user.wallet.tx) $('#myTxTab').paginateTable({ rowsPerPage: 3, pager: ".pagerMyTx" });
+						
+						// qr code generate.
+						$('#qrCodeAdr').qrcode({
+							text		: $.m.user.wallet.adr,
+							render		: 'canvas',
+							minVersion	: 2,
+							maxVersion	: 20,
+							ecLevel		: 'H',
+							top			: 0,
+							size		: 250,
+							fill		: '#ffffff',
+							background	: null,
+							radius		: 0.5,
+							mode		: 4,
+							mSize		: 0.2,
+							mPosX		: 0.5,
+							mPosY		: 0.5,
+							image		: $.m.user.img.qr,
 						});
 						
-						// Option chart.
-						var opts = {
-							scaleBeginAtZero : false,
-							scaleShowGridLines : false,
-							barShowStroke: true,
-							scaleGridLineWidth : 0,
-							barValueSpacing : 30,
-							multiTooltipTemplate: '<%=value%>',
-						};
+						// Anim complete.
+						$('#'+$.m.div.content).fadeIn(300, function() {
+							
+							// Tooltip.
+							$('#conten i').tooltip();
+						});
+					}
+					
+					// Else not btc adress
+					else {
 						
-						// Defaut seting chart.
-						Chart.defaults.global.responsive = true;
-						Chart.defaults.global.showScale = true;
-						Chart.defaults.global.maintainAspectRatio = false;
+						// add tmpl. DOC.
+						$('#'+$.m.div.content).empty().mustache('accueil', $.m);
 						
-						// start chart bar for adm user.
-						var actionChart = new Chart($('#actionBarChart').get(0).getContext('2d')).Bar(actionData, opts);
-						
-						// Animation background img.
-						$('.noir').pan({fps: 12, speed: 1, dir: 'left'});
-						$('.noir').pan({fps: 12, speed: 1, dir: 'down'});
-						
-						// Add btn scroll top. 1-id div
-						$.tmpl.tagScroll('scrollTopBtn');
-					});
+						// Anim complete.
+						$('#'+$.m.div.content).fadeIn(300, function() {
+							
+							// Add video bitcoin.
+							$('#videoUser').tubeplayer({
+								initialVideo	: $.lng.tx($.m.user.vid),
+								protocol		: $.m.protocol
+							});
+							
+							// Valid Form.
+							$('#formLogin').validate();
+							
+							// event. Form send. listen.
+							$('#formLogin').on('formLogin', $.user.sendLogin);
+							
+							// Tooltip.
+							$('#conten i').tooltip();
+						});
+					}
 				});
 			},
 			
 			/**
-			 * Funct logout.
+			 * html editeVideo.
 			 */
-			logout: function() {
+			editeVideo: function() {
 				
-				// If connexion.
-				if($.m.user.log) {
+				// If video in dom.
+				if($('#videoUser').length) {
+									
+					// Add video bitcoin.
+					$('#videoUser').removeClass( "jquery-youtube-tubeplayer" ).empty();
+					
+					// Add new video in dom.
+					$('#videoUser').tubeplayer({
+						initialVideo	: $.lng.tx($.m.user.vid),
+						protocol		: $.m.protocol
+					});
+				}
+			},
+			
+			/**
+			 * Funct keyHTML.
+			 */
+			keyHTML: function() {
+				
+				// If btc adress exist
+				if($.m.user.wallet.adr) {
 					
 					// Clean windows.
 					$.tmpl.clean();
 					
-					// delet modal login.
-					$('#profilModal').remove();
-					
-					// delet menu user.
-					$('#mProfil').remove();
-					
-					// Loger connexion.
-					$.m.user.log=false;
-					
-					// add menu Login.
-					$('#'+$.m.div.menu).mustache('mUser', $.m, {method:'prepend'});
-					
-					// Init popup sur les lien.
-					$('#mUser button').tooltip();
-					
-					// add modal Login.
-					$('#'+$.m.div.event).mustache('loginModal', $.m);
-					
-					// Setup form login.
-					$.user.formLoginHtml();
-					
-					// Setup home.
-					$.home.accueil();
-					
-					// event. logout. trigger.
-					$('#'+$.m.div.event).trigger('logout');
-				}
-			},
-			
-			/**
-			 * Funct editMail.
-			 *	@param a -> edit mail param.
-			 */
-			editMail: function(a) {
-				
-				// Open spinner.
-				$.tmpl.spinOn('profilSpin', 'fa-user');
-				
-				// modal.
-				$.tmpl.modal('profilModal');
-				
-				// Data edit.
-				$.m.user.vars.edit={};
-				$.m.user.vars.edit.config = a;
-				
-				// See is mail first or security.
-				switch (a)
-				{
-					case "principal":
-						$.m.user.vars.edit.titre = 'USER-MAIL-FIRST-LABEL';
-						$.m.user.vars.edit.desc = 'USER-MAIL-FIRST-DESC';
-						$.m.user.vars.edit.mail = $.m.user.info.email;
-					break;
-					
-					case "security":
-						$.m.user.vars.edit.titre = 'USER-MAIL-SECU-LABEL';
-						$.m.user.vars.edit.desc = 'USER-MAIL-SECU-DESC';
-						$.m.user.vars.edit.mail = $.m.user.info.verif;
-					break;
-				}
-				
-				// add tmpl. Form Login.
-				$('#profil').empty().mustache('editForm', $.m);
-				
-				// Valid Form.
-				$('#'+$.m.user.form.edit).validate();
-				
-				// event. Form login.
-				$('#'+$.m.user.form.edit).on($.m.user.form.edit, $.user.editConfirm);
-				
-				// Close spinner.
-				$.tmpl.spinOff('profilSpin', 'fa-user');
-			},
-			
-			/**
-			 * Funct formEditConfirm.
-			 */
-			editConfirm: function() {
-				
-				// if new mail != mail actu.
-				if($.m.user.info.email!=$('#'+$.m.user.form.edit+' #email').val()) {
-					
-					// stop envent.
-					$('#'+$.m.user.form.edit).off($.m.user.form.edit);
-					
-					// save local mail.
-					$.m.user.vars.edit.mail=$('#'+$.m.user.form.edit+' #email').val();
-					
-					// Anim stop.
-					$('#profil').slideUp(500, function() {
-								
-						// add tmpl. Form edit confirm code pin.
-						$('#profil').empty().mustache('codePin', $.m);
-								
-						// Anim play.
-						$('#profil').slideDown(500, function() {
-								
+					// Anim complete.
+					$('#'+$.m.div.content).fadeOut(300, function() {
+						
+						// add tmpl. DOC.
+						$('#'+$.m.div.content).empty().mustache('keyHTML', $.m);
+						
+						// Anim complete.
+						$('#'+$.m.div.content).fadeIn(300, function() {
+							
 							// Valid Form.
-							$('#'+$.m.user.form.editPin).validate();
+							$('#formKey').validate();
 							
-							// event. edit confirm. listen.
-							$('#'+$.m.user.form.editPin).on($.m.user.form.editPin, $.user.editFunc);
-							
-							// Boucle btn pin.
-							$('#btnPin .btn').each(function() {
-								
-								// click btn
-								$(this).click(function() {
-									
-									// Play sound.
-									$.voix.play($.m.voix.sound.btnOver);
-								});
-							});
+							// event. Form send. listen.
+							$('#formKey').on('formKey', $.user.keyFUNC);
 						});
 					});
 				}
 				
-				// If actu mail. erreur.
-				else $.tmpl.error('USER-MAIL-NOT-CHANGE');
+				// If not btcAdr.
+				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
 			},
 			
 			/**
-			 * Funct editFunc.
+			 * Funct keyFUNC.
 			 */
-			editFunc: function() {
+			keyFUNC: function() {
 				
-				// if password.
-				if($.m.user.vars.password==$.sha1($('#'+$.m.user.form.editPin+' #password').val())) {
+				// If btc adress exist
+				if($.m.user.wallet.adr) {
 					
-					// event.
-					$('#'+$.m.user.form.editPin).off($.m.user.form.editPin);
+					// Cree hash of pass phrase.
+					var hash = Crypto.util.hexToBytes($.crp.decrypte($.m.user.wallet.hash, $.sha1($('#formKey #password').val())));
 					
-					// Close modal profil.
-					$.tmpl.modal('profilModal');
+					// Btc Address
+					var sec = new Bitcoin.ECKey(hash);
+					var adr = ''+sec.getBitcoinAddress();
 					
-					// open spinner.
-					$.tmpl.spinOn('profilSpin', 'fa-user');
-					
-					// Anim stop.
-					$('#profil').slideUp(800, function() {
+					// If good adr bitcoin.
+					if($.m.user.wallet.adr == adr) {
 						
-						// connexion serveur.
-						$.jsonRPC.request('login_editMail_'+$.user.session(), {
-							
-							// Param send.
-							params : [
-								$.crp.crypte($.m.user.vars.edit.mail, $.user.password()),
-								$.crp.crypte($.m.user.vars.edit.config, $.user.password())
-							],
-							
-							// succees.
-							success : function(data) {
-								
-								// Switch reponse.
-								switch (data.result.config) {
-									
-									// If edit mail first.
-									case "principal":
-										
-										// Add new mail.
-										$.m.user.info.email=data.result.email;
-									break;
-									
-									// If edit mail security.
-									case "security":
-										
-										// Add new mail.
-										$.m.user.info.verif=data.result.email;
-									break;
-								}
-								
-								// add historique.
-								$.m.user.vars.historique.push({
-									date:	data.result.date,
-									action:	data.result.action,
-									usip:	data.result.usip
-								});
-								
-								// var zero.
-								$.m.user.vars.edit={};
-								
-								// Close spinner.
-								$.tmpl.spinOff('profilSpin', 'fa-user');
-									
-								// Setup html profil.
-								$.user.profil();
-								
-								// Anim play.
-								$('#profil').slideDown(100);
-							},
-							
-							// erreur serveur.
-							error : function(data) {
-								
-								// erreur.
-								$.tmpl.error(data.error);
-								
-								// close spinner.
-								$.tmpl.spinOff('profilSpin', 'fa-user');
-								
-								// Anim play.
-								$('#profil').slideDown(100);
-							}
+						// Private Key
+						var key = ''+sec.getExportedPrivateKey();
+						
+						// Add key to html.
+						$('#keyQrCode').empty().mustache('QrPrivatKeyPart', $.m);
+						$('#keyText').html('<i class="fa fa-key"></i> '+key);
+						
+						// qr code generate.
+						$('#qrKeyCodeAdr').qrcode({
+							text		: key,
+							render		: 'canvas',
+							minVersion	: 5,
+							maxVersion	: 20,
+							ecLevel		: 'H',
+							top			: 0,
+							size		: 250,
+							fill		: '#ffffff',
+							background	: null,
+							radius		: 0.5,
+							mode		: 4,
+							mSize		: 0.2,
+							mPosX		: 0.5,
+							mPosY		: 0.5,
+							image		: $.m.user.img.qrp,
 						});
-					});
-				}
-				
-				// if not password. erreur.
-				else $.tmpl.error('DEF-CODE-PIN-INVALID');
-			},
-			
-			/**
-			 * html signupHtml. Formulaire signup.
-			 */
-			signupHtml: function() {
-				
-				// Animation stop.
-				$('#login').slideUp(500, function() {
-					
-					// add tmpl. Form Login.
-					$('#login').empty().mustache('signup', $.m);
-										
-					// Animation stop.
-					$('#login').slideDown(500, function() {
 						
-						// Valid Form.
-						$('#'+$.m.user.form.signup).validate();
+						// Play sound.
+						$.voix.play($.m.tmpl.sound.click);
 						
-						// event. Form login.
-						$('#'+$.m.user.form.signup).on($.m.user.form.signup, $.user.signupFunc);
-					});
-				});
-			},
-			
-			/**
-			 * html signupFunc.
-			 */
-			signupFunc: function() {
-				
-				// event. signup. off.
-				$('#'+$.m.user.form.signup).off($.m.user.form.signup);
-				
-				// open spinner.
-				$.tmpl.spinOn('loginSpin', 'fa-user');
-				
-				// Animation stop.
-				$('#login').slideUp(500, function() {
-					
-					// connextion serveur.
-					$.jsonRPC.request('login_inscription', {
-						
-						// Param send.
-						params : [$.base64.encode($('#'+$.m.user.form.signup+' #email').val()), $.base64.encode($.lng.get())],
-						
-						// succees.
-						success : function(data) {
-							
-							// add tmpl. Form Login code pin.
-							$('#login').empty().mustache('signupConfirm', $.m);
-							
-							// Animation stop.
-							$('#login').slideDown(500, function() {
-															
-								// close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-							});
-						},
-						
-						// erreur serveur.
-						error : function(data) {
-							
-							// erreur.
-							$.tmpl.error(data.error);
-							
-							// form login.
-							$('#login').slideDown(500, function() {
-								
-								// event. signup. listen.
-								$('#'+$.m.user.form.signup).on($.m.user.form.signup, $.user.signupFunc);
-								
-								// close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-							});
-						}
-					});
-				});
-			},
-			
-			/**
-			 * html secuPinHtml. Formulaire pour decrypt code pin.
-			 */
-			secuPinHtml: function() {
-				
-				// Animation stop.
-				$('#login').slideUp(500, function() {
-					
-					// add tmpl. Form Login.
-					$('#login').empty().mustache('secu', $.m);
-										
-					// Animation stop.
-					$('#login').slideDown(500, function() {
-						
-						// Valid Form.
-						$('#'+$.m.user.form.secu).validate();
-						
-						// event. Form login.
-						$('#'+$.m.user.form.secu).on($.m.user.form.secu, $.user.secuFunc);
-					});
-				});
-			},
-			
-			/**
-			 * html secuFunc. Decrypt code pin.
-			 */
-			secuFunc: function() {
-				
-				// event.
-				$('#'+$.m.user.form.secu).off($.m.user.form.secu);
-				
-				try {
-					// decrypte inputs strings.
-					var tmps=$.crp.decrypte($('#'+$.m.user.form.secu+' #pin').val(), $('#'+$.m.user.form.secu+' #cles').val());
-					
-					// if code lengyh 6.
-					if(tmps.length==6) {
-					
-						// Data for html.
-						$.m.user.vars.pinCode = tmps;
-						
-						// Animation complete.
-						$('#login').slideUp(500, function() {
-							
-							// Ajout tmpl. Form Login.
-							$('#login').empty().mustache('secuDecrypte', $.m);
-							
-							// Animation complete.
-							$('#login').slideDown(500, function() {});
-						});
+						// Destruct var.
+						sec = '';
+						hash = '';
+						key = '';
 					}
 					
-					// if pin invalide.
+					// If not btcAdr.
 					else {
 						
-						// erreur.
-						$.tmpl.error('DEF-CODE-PIN-INVALID');
+						// Error.
+						$.tmpl.error('FORM-MESSAGE-ADR-BTC-MIN');
 						
-						// event. Form login.
-						$('#'+$.m.user.form.secu).on($.m.user.form.secu, $.user.secuFunc);
+						// Setup html.
+						$.user.accueil();
 					}
 				}
 				
-				catch(er){
+				// If not btcAdr.
+				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+			},
+			
+			/**
+			 * Funct signHTML.
+			 */
+			signHTML: function() {
 				
-					// erreur.
-					$.tmpl.error('DEF-CODE-PIN-INVALID');
+				// If btc adress exist
+				if($.m.user.wallet.adr) {
 					
-					// event. Form login.
-					$('#'+$.m.user.form.secu).on($.m.user.form.secu, $.user.secuFunc);
+					// Clean windows.
+					$.tmpl.clean();
+					
+					// Anim complete.
+					$('#'+$.m.div.content).fadeOut(300, function() {
+						
+						// add tmpl. DOC.
+						$('#'+$.m.div.content).empty().mustache('signHTML', $.m);
+						
+						// Anim complete.
+						$('#'+$.m.div.content).fadeIn(300, function() {
+							
+							// Valid Form.
+							$('#formSignMess').validate();
+							
+							// event. Form send. listen.
+							$('#formSignMess').on('formSignMess', $.user.signFUNC);
+						});
+					});
 				}
+				
+				// If not btcAdr.
+				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
 			},
 			
 			/**
-			 * html forgotHtml. Form forgot code pin.
+			 * Funct signFUNC.
 			 */
-			forgotHtml: function() {
+			signFUNC: function() {
 				
-				// Animation stop.
-				$('#login').slideUp(500, function() {
+				// If btc adress exist.
+				if($.m.user.wallet.adr) {
 					
-					// add tmpl. Form Login.
-					$('#login').empty().mustache('forgot', $.m);
-										
-					// Animation stop.
-					$('#login').slideDown(500, function() {});
-				});
-			},
-			
-			/**
-			 * html forgotFunc. reset code pin.
-			 */
-			forgotFunc: function() {
-				
-				// open spinner.
-				$.tmpl.spinOn('loginSpin', 'fa-user');
-				
-				// Anim stop.
-				$('#login').slideUp(500, function() {
+					// Cree hash of pass phrase.
+					var hash = Crypto.util.hexToBytes($.crp.decrypte($.m.user.wallet.hash, $.sha1($('#formSignMess #password').val())));
 					
-					// connexion serveur.
-					$.jsonRPC.request('login_forgotCodePin', {
+					// Private Key+Address
+					var sec = new Bitcoin.ECKey(hash);
+					var adr = ''+sec.getBitcoinAddress();
+					var key = ''+sec.getExportedPrivateKey();
+					var payload = Bitcoin.Base58.decode(key);
+					var compressed = payload.length == 38;
+					
+					// If good adr bitcoin.
+					if($.m.user.wallet.adr == adr) {
 						
-						// Param send.
-						params : [$.base64.encode($.m.user.vars.mail)],
+						// Message
+						$.m.user.wallet.mess = $('#formSignMess #mess').val();
 						
-						// succees.
-						success : function(data) {
-							
-							// add tmpl. Form Login code pin.
-							$('#login').empty().mustache('forgotConfirm', $.m);
-							
-							// Animation stop.
-							$('#login').slideDown(500, function() {
-														
-								// close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-							});
-						},
+						// Signature of message
+						$.m.user.wallet.sign = $.user.sign_message(sec, $.m.user.wallet.mess, compressed);
 						
-						// erreur serveur.
-						error : function(data) {
+						// If good adr bitcoin.
+						if($.m.user.wallet.sign) {
 							
-							// erreur.
-							$.tmpl.error(data.error);
+							// Add key to html.
+							$('#signMess').empty().mustache('goodSignPart', $.m);
 							
-							// form login.
-							$('#login').slideDown(500, function() {
-								
-								// close spinner.
-								$.tmpl.spinOff('loginSpin', 'fa-user');
-							});
+							// Play sound.
+							$.voix.play($.m.tmpl.sound.click);
+							
+							// Destruct var.
+							sec = '';
 						}
+						
+						// Else not sign
+						else {
+							
+							// Destruct var.
+							sec = '';
+							
+							// Error.
+							$.tmpl.error('USER-SIGN-MESS-ERR');
+						}
+					}
+					
+					// If not btcAdr.
+					else $.tmpl.error('FORM-MESSAGE-ADR-BTC-MIN');
+				}
+				
+				// If not btcAdr.
+				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+			},
+			
+			/**
+			 * Funct verifHTML.
+			 */
+			verifHTML: function() {
+					
+				// Clean windows.
+				$.tmpl.clean();
+				
+				// Anim complete.
+				$('#'+$.m.div.content).fadeOut(300, function() {
+					
+					// add tmpl. DOC.
+					$('#'+$.m.div.content).empty().mustache('verifHTML', $.m);
+					
+					// Anim complete.
+					$('#'+$.m.div.content).fadeIn(300, function() {
+						
+						// Valid Form.
+						$('#formVerif').validate();
+						
+						// event. Form send. listen.
+						$('#formVerif').on('formVerif', $.user.verifFUNC);
 					});
 				});
+			},
+			
+			/**
+			 * Funct verifFUNC.
+			 */
+			verifFUNC: function() {
+						
+				// If good adr bitcoin on sign.
+				if($.user.verify_message($('#formVerif #sign').val(), $('#formVerif #mess').val())==$('#formVerif #btcadr').val()) {
+					
+					// login body for modal.
+					$('#verifMess').empty().mustache('valideSignPart', $.m);
+					
+					// Play sound.
+					$.voix.play($.m.tmpl.sound.click);
+					
+					setTimeout(function() {
+						
+						// html add defaut Partials.
+						$('#verifMess').empty().mustache('verifDefautPart', $.m);
+					}, 3000);
+				}
+				
+				// If not btcAdr.
+				else $.tmpl.error('USER-NOT-SIGN-VALIDE');
+			},
+			
+			/**
+			 * Funct sendLogin.
+			 */
+			sendLogin: function() {
+				
+				// If btc adress exist.
+				if(!$.m.user.wallet.adr) {
+					
+					// Cree hash of pass phrase.
+					var hash = Crypto.SHA256($('#formLogin #passPhrase').val(), { asBytes: true });
+					
+					// Private Key+Address
+					var sec = new Bitcoin.ECKey(hash);
+					
+					// Add address bitcoin.
+					$.m.user.wallet.adr = ''+sec.getBitcoinAddress();
+					
+					// Hash pass phrase bitcoin.
+					$.m.user.wallet.hash = $.crp.crypte(Crypto.util.bytesToHex(hash), $.sha1($('#formLogin #password').val()));
+					
+					// Destruct var.
+					sec = '';
+					
+					// event. login. trigger.
+					$('#'+$.m.div.event).trigger('login');
+					
+					// Setup html.
+					$.user.accueil();
+					
+					// add btn logout to menu.
+					$('#mUser').mustache('logoutBtnPart', $.m);
+					
+					// Tooltip.
+					$('#mUser button').tooltip();
+				}
+				
+				// If not btcAdr.
+				else $.tmpl.error('USER-ALREADY-CONNECTED');
+			},
+			
+			/**
+			 * Funct sendLogout.
+			 */
+			sendLogout: function() {
+				
+				// If btc adress exist.
+				if($.m.user.wallet.adr) {
+					
+					// Add address bitcoin.
+					$.m.user.wallet = {};
+					
+					// Setup html.
+					$.user.accueil();
+					
+					// event. login. trigger.
+					$('#'+$.m.div.event).trigger('logout');
+					
+					// remove btn logout to menu.
+					$('#mIbtcSignSpin, #mIbtcKeySpin, #mIbtcLogoutSpin').remove();
+				}
+				
+				// If not btcAdr.
+				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+			},
+			
+			/**
+			 * Function sign_message.
+			 * @param   ...
+			 */
+			sign_message: function(private_key, message, compressed, addrtype) {
+				
+				function msg_numToVarInt(i) {
+					if (i < 0xfd) {
+						return [i];
+					} else if (i <= 0xffff) {
+						// can't use numToVarInt from bitcoinjs, BitcoinQT wants big endian here (!)
+						return [0xfd, i & 255, i >>> 8];
+					} else {
+						throw ("message too large");
+					}
+				}
+				
+				function msg_bytes(message) {
+					var b = Crypto.charenc.UTF8.stringToBytes(message);
+					return msg_numToVarInt(b.length).concat(b);
+				}
+
+				function msg_digest(message) {
+					var b = msg_bytes("Bitcoin Signed Message:\n").concat(msg_bytes(message));
+					return Crypto.SHA256(Crypto.SHA256(b, {asBytes:true}), {asBytes:true});
+				}
+				
+				if (!private_key) return false;
+					
+				var signature = private_key.sign(msg_digest(message));
+				var address = new Bitcoin.Address(private_key.getPubKeyHash());
+				address.version = addrtype ? addrtype : 0;
+				
+				//convert ASN.1-serialized signature to bitcoin-qt format
+				var obj = Bitcoin.ECDSA.parseSig(signature);
+				var sequence = [0];
+				sequence = sequence.concat(obj.r.toByteArrayUnsigned());
+				sequence = sequence.concat(obj.s.toByteArrayUnsigned());
+				
+				for (var i = 0; i < 4; i++) {
+					var nV = 27 + i;
+					if (compressed)
+						nV += 4;
+					sequence[0] = nV;
+					var sig = Crypto.util.bytesToBase64(sequence);
+					if ($.user.verify_message(sig, message, addrtype) == address) return sig;
+				}
+				return false;
+			},
+			
+			/**
+			 * Funct verify_message.
+			 */
+			verify_message: function(signature, message, addrtype) {
+				
+				function msg_numToVarInt(i) {
+					if (i < 0xfd) {
+						return [i];
+					} else if (i <= 0xffff) {
+						// can't use numToVarInt from bitcoinjs, BitcoinQT wants big endian here (!)
+						return [0xfd, i & 255, i >>> 8];
+					} else {
+						throw ("message too large");
+					}
+				}
+				
+				function msg_bytes(message) {
+					var b = Crypto.charenc.UTF8.stringToBytes(message);
+					return msg_numToVarInt(b.length).concat(b);
+				}
+				
+				function msg_digest(message) {
+					var b = msg_bytes("Bitcoin Signed Message:\n").concat(msg_bytes(message));
+					return Crypto.SHA256(Crypto.SHA256(b, {asBytes:true}), {asBytes:true});
+				}
+				
+				try {
+					var sig = Crypto.util.base64ToBytes(signature);
+				} catch(err) {
+					return false;
+				}
+				if (sig.length != 65) return false;
+				// extract r,s from signature
+				var r = BigInteger.fromByteArrayUnsigned(sig.slice(1,1+32));
+				var s = BigInteger.fromByteArrayUnsigned(sig.slice(33,33+32));
+				// get recid
+				var compressed = false;
+				var nV = sig[0];
+				if (nV < 27 || nV >= 35) return false;
+				if (nV >= 31) {
+					compressed = true;
+					nV -= 4;
+				}
+				var recid = BigInteger.valueOf(nV - 27);
+				var ecparams = getSECCurveByName("secp256k1");
+				var curve = ecparams.getCurve();
+				var a = curve.getA().toBigInteger();
+				var b = curve.getB().toBigInteger();
+				var p = curve.getQ();
+				var G = ecparams.getG();
+				var order = ecparams.getN();
+				var x = r.add(order.multiply(recid.divide(BigInteger.valueOf(2))));
+				var alpha = x.multiply(x).multiply(x).add(a.multiply(x)).add(b).mod(p);
+				var beta = alpha.modPow(p.add(BigInteger.ONE).divide(BigInteger.valueOf(4)), p);
+				var y = beta.subtract(recid).isEven() ? beta : p.subtract(beta);
+				var R = new ECPointFp(curve, curve.fromBigInteger(x), curve.fromBigInteger(y));
+				var e = BigInteger.fromByteArrayUnsigned(msg_digest(message));
+				var minus_e = e.negate().mod(order);
+				var inv_r = r.modInverse(order);
+				var Q = (R.multiply(s).add(G.multiply(minus_e))).multiply(inv_r);
+				var public_key = Q.getEncoded(compressed);
+				var addr = new Bitcoin.Address(Bitcoin.Util.sha256ripe160(public_key));
+				addr.version = addrtype ? addrtype : 0;
+				return addr.toString();
 			},
 		}
 	});

@@ -1,10 +1,10 @@
 {
-	"api"            : "https://domain.com/api/",
-	"protocol"       : "https",
+	"api"            : "http://DOMAIN.COM/api/",
+	"protocol"       : "http",
 	"lng" : {
 		"off"        : true,
 		"list"       : ["fr"],
-		"url"        : "https://domain.com/translate/",
+		"url"        : "http://DOMAIN.COM/translate/",
 		"file"       : "defaut",
 		"langue"     : false,
 		"cookie"     : "langueClient",
@@ -26,11 +26,9 @@
 		"url"        : "mod/",
 		"list" : [
 			"voix",
-			"btc",
 			"user",
-			"doc",
-			"home",
 			"lng",
+			"home",
 			"tmpl"
 		]
 	}

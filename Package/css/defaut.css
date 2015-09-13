@@ -10,16 +10,15 @@ html
 {
 	width: 100%;
 	height: 100%;
-	overflow-y:scroll;
 }
 
 body 
 {
 	width: 100%;
 	height: 100%;
-	background-image: url("../img/css/grey.png");
-	background-attachment: fixed;
-	background-color: #333;
+	background: url("../img/css/fond.jpg") no-repeat center top fixed;
+	background-size: cover;
+	background-color: #000;
 }
 
 #event
@@ -27,62 +26,44 @@ body
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: url("../img/css/logo.png");
-	background-attachment: fixed;
-	background-repeat:no-repeat;
-	background-position:50% 50%;
-}
-
-/* Landscape phones and down */
-@media (max-width: 768px)
-{
-	#event
-	{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background-image: url("../img/css/logo-min.png");
-		background-attachment: fixed;
-		background-repeat:no-repeat;
-		background-position:50% 50%;
-	}
 }
 
 #conten
 {
 	height: auto;
-	background-image: url("../img/css/stripes.png");
-	padding-top: 50px;	
+	background: none;
+	padding-top: 50px;
 }
 
 .navbar.navbar-fixed-top.navbar-static-top {
 	box-shadow: 0px 0px 60px #111;
+	background-color: #000;
+	background: url("../img/css/m3.jpg") no-repeat center top fixed;
+	background-size: cover;
 }
 
 .jumbotron.noir {
-	background-color: #000;
-	background-image: url("../img/css/bg.png");
-	background-attachment: fixed;
-	box-shadow: 0px 0px 50px #333;
-	
+	background: none;
 }
 
-.jumbotron.blanc {
-	background-color: none;
-	background-image: url("../img/css/jumbW.png");
-	background-attachment: fixed;
-	border-top: solid 1px #bbb;
-	border-bottom: solid 1px #bbb;
-	box-shadow: 0px 0px 50px #333;
-}
-
-.googPolice {
+.fontH1wt{
 	color: #fff;
-	font-family: 'Jura', cursive;
+	font-family: 'Ubuntu', cursive;
 }
 
-.googFont {
-	font-family: 'Jura', cursive;
+.fontH1blk{
+	color: #000;
+	font-family: 'Ubuntu', cursive;
+}
+
+.fontPwt{
+	color: #fff;
+	font-family: 'Poiret One', cursive;
+}
+
+.fontPblk{
+	color: #000;
+	font-family: 'Poiret One', cursive;
 }
 
 .btn-label {
@@ -107,7 +88,17 @@ body
 .well.noir {
 	background-color: #000;
 	background-color: rgba(0, 0, 0, 0.1);
+	background: url("../img/css/m3.jpg") no-repeat center center;
+	background-size: cover;
 	border-color: rgba(0, 0, 0, 0.4);
+	box-shadow: 0 7px 6px -6px #333;
+}
+
+.well.blue {
+	background: radial-gradient(farthest-side at center top,rgba(255, 200, 113, 1) -30%,rgba(219, 136, 0, 1) 178%) repeat scroll 0 0 rgba(0,0,0,0);
+	border-color: rgba(210, 133, 0, 1);
+	box-shadow:  0 7px 6px -6px #353535;
+	
 }
 
 .navbar-inverse {
@@ -115,16 +106,22 @@ body
 	border-color: #080808;
 }
 
-.navbar-nav.navbar-right:last-child {
-	margin-right: 0px;
-}
+
 
 .footMarge {
 	margin-bottom: 10px;
 }
 
+.topMarge-lg {
+	margin-top: 40px;
+}
+
+.topMarge {
+	margin-top: 10px;
+}
+
 .footMarge-lg {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .affix {
@@ -157,6 +154,34 @@ a:hover.anchor {
 
 canvas {
 	width: 100% !important;
-	max-height: 250px;
+	max-height: 300px;
 	height: auto !important;
+}
+
+#qrDiv {
+	width: 270px;
+	height: 270px;
+	padding: 10px;
+	background: url("../img/css/a1.jpg") no-repeat center top;
+	background-size: cover;
+	border-radius: 7px;
+}
+
+hr {
+	border-color: #c58700; 
+	border-style: solid; 
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: 0px;
+}
+
+.table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+	border-top: none;
+}
+
+@media screen and (max-width: 767px) {
+	.table-responsive {
+		border: none;
+	}
 }

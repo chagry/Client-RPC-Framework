@@ -1,5 +1,5 @@
 /*
- * @version 0.5.0
+ * @version 0.6.0
  * @license MIT license
  * @link    https://chagry.com
  * @author  Grigori <git@chagry.com>
@@ -13,7 +13,7 @@
 		home: {
 			
 			/*
-			 * Funct setup. Init mod home. 0.5
+			 * Funct setup. Init mod home.
 			 */
 			setup: function() {
 				
@@ -26,7 +26,7 @@
 			
 			
 			/*
-			 * Funct defautHtml. Menu brique in dock. 0.5
+			 * Funct defautHtml. Menu brique in dock.
 			 */
 			defautHtml: function() {
 				
@@ -42,183 +42,178 @@
 					// Setup html profil.
 					$.home.accueil();
 					
-					// Add twitter sprite. + css attr. 
-					$('#'+$.m.div.event).prepend($('<div id="twitter"></div>').width(150).height(150).css({
-						background	: 'url("'+$.m.home.img.anim+'") 0 0 no-repeat',
-						position	: 'absolute',
-						cursor		: 'pointer'
-					
-						// Animation twitter. + Z index max.
-						}).topZIndex().sprite({
-							fps				: 8,
-							no_of_frames	: 4
-							
-						// Position of anim twitter.
-						}).spRandom({
-							top		: 70,
-							left	: 50,
-							right	: $('#'+$.m.div.event).width()/2,
-							bottom	: $('#'+$.m.div.event).height()-50,
-							speed	: 2000,
-							pause	: 4000
-							
-						// Move and Click client twitter.
-						}).isDraggable().click(function() {
-							
-							// Strop anim sprite.
-							$(this).spStop();
-							
-							// Add animation. @param 1-element 2-effect 3-remove anim class after 'default=false' 4-callBack
-							$.tmpl.anim($(this), 'hinge', false, function(e){
-								
-								// Delete div twitter
-								e.remove();
-							});
-							
-							// Play sound.
-							$.voix.play('top:0.1');
-						
-						// Start anim sprite.
-						}).spStart()
-					);
+					// event. setup listen.
+					$('#'+$.m.div.event).on($.m.event.langue, $.home.editeVideo);
 				});
 			},
 			
 			/*
-			 * Funct accueil. 0.5
+			 * Funct accueil.
 			 */
 			accueil: function() {
-				
-				// Data for owl.
-				$.m.home.vars.lib = $.shuffle($.m.home.lib);
-				
-				// Canvas width for springy.
-				$.m.home.vars.canvasWidth = ($('#event').width()<600)? $('#event').width()-25 : $('#event').width()/2-50;
 				
 				// Clean windows.
 				$.tmpl.clean();
 				
 				// Animation complete.
-				$('#'+$.m.div.content).slideUp(500, function() {
+				$('#'+$.m.div.content).fadeOut(300, function() {
 					
 					// add tmpl. home.
 					$('#'+$.m.div.content).empty().mustache('home', $.m);
-						
-					// If resize.
-					$(window).resize(function() {
-						
-						// resize canvas.
-						$('#viewport').width($('#viewportConten').width());
-					});
 								
 					// Animation complete.
-					$('#'+$.m.div.content).slideDown(500, function() {
+					$('#'+$.m.div.content).fadeIn(300, function() {
 						
 						// Add video bitcoin.
 						$('#videoChagry').tubeplayer({
 							initialVideo	: $.lng.tx($.m.home.vid),
 							protocol		: $.m.protocol
 						});
-						
-						// Setup graph Springy.
-						var sys = new Springy.Graph();
-						
-						// Setup Springy & add graph.
-						var springy = $('#viewport').springy({
-							graph : sys
-						});
-						
-						// Boucle Nodes for Springy.
-						$.each($.m.home.nodes, function(key, value) {
-							
-							// add nodes.
-							sys.addNodes(value);
-						});
-						
-						// Boucle Edges for Springy.
-						$.each($.m.home.edges, function(key, value) {
-							
-							// add nodes.
-							sys.addEdges(value);
-						});
+					});
+				}); 
+			},
+			
+			/**
+			 * html editeVideo.
+			 */
+			editeVideo: function() {
+				
+				// If video in dom.
+				if($('#videoChagry').length) {
+									
+					// Add video bitcoin.
+					$('#videoChagry').removeClass( "jquery-youtube-tubeplayer" ).empty();
+					
+					// Add new video in dom.
+					$('#videoChagry').tubeplayer({
+						initialVideo	: $.lng.tx($.m.home.vid),
+						protocol		: $.m.protocol
+					});
+				}
+			},
+			
+			/*
+			 * Funct serveurHTML.
+			 */
+			serveurHTML: function() {
+				
+				// Clean windows.
+				$.tmpl.clean();
+				
+				// Animation complete.
+				$('#'+$.m.div.content).fadeOut(300, function() {
+					
+					// add tmpl. home.
+					$('#'+$.m.div.content).empty().mustache('serveur', $.m);
+								
+					// Animation complete.
+					$('#'+$.m.div.content).fadeIn(300, function() {
 						
 						// Caroussel.
-						$("#owl-demo").owlCarousel({
+						$("#owl-head").owlCarousel({
 							items				: 4, //10 items above 1000px browser width
 							itemsDesktop		: [1000,3], //5 items between 1000px and 901px
 							itemsDesktopSmall	: [900,3], // betweem 900px and 601px
 							itemsTablet			: [600,2], //2 items between 600 and 0
-							itemsMobile			: false // itemsMobile disabled - inherit from itemsTablet option
+							itemsMobile			: false, // itemsMobile disabled - inherit from itemsTablet option
+							autoPlay			: false
 						});
 						
-						// Boucle caroussel class "item". +Anim & sound.
-						$('#owl-demo .item').each(function() {
-							
-							// mouse enter btn.
-							$(this).mouseenter(function() {
-								
-								// Add animation. @param 1-element 2-effect 3-remove anim class after 'default=false' 4-callBack
-								$.tmpl.anim($(this), 'shake', true);
-								
-								// Anim opacity img.
-								$(this).animate({ opacity: 0.3 }, 1000);
-								
-								// Play sound.
-								$.voix.play('newPage:0.1');
-								
-							// mouse leave
-							}).mouseleave(function() {
-								
-								// Anim opacity img.
-								$(this).animate({ opacity: 1 }, 300);
-							});
+						// Tooltip.
+						$('.item').tooltip();
+						
+						// Add video bitcoin.
+						$('#videoTuto').tubeplayer({
+							initialVideo	: $.lng.tx($.m.home.serverVid[0].vid),
+							protocol		: $.m.protocol
 						});
-						
-						// popover donate bitcoin.
-						$('#btcDonation').popover({
-							html		: true,
-							placement	: 'top',
-							container	: 'body',
-							content 	: '<div class="text-center text-muted"><small>'+
-								$.m.home.don.btc+'</small><br><canvas id="qrCodeDonat" width="200" height="210"></canvas><br><a href="'+
-								$.m.home.don.btcUrl+'"><img class="img-rounded" width="200" height="57" src="img/def/btcDon.jpg"></a></div>'
-						});
-						
-						// img for qr code.
-						heavyImage = new Image(); 
-						heavyImage.src = "img/def/qr.jpg";
-						
-						// event shown popover. donate bitcoin.
-						$('#btcDonation').on('shown.bs.popover', function () {
-							// qr code generate.
-							$('#qrCodeDonat').qrcode({
-								text		: $.m.home.don.btcUrl,
-								render		: 'canvas',
-								minVersion	: 3,
-								maxVersion	: 5,
-								ecLevel		: 'M',
-								top			: 10,
-								size		: 200,
-								fill		: '#3a87ad',
-								background	: null,
-								radius		: 0.5,
-								quiet		: 0,
-								mode		: 4,
-								mSize		: 0.2,
-								mPosX		: 0.5,
-								mPosY		: 0.5,
-								image		: heavyImage,
-							});
-						});
-						
-						// Animation background img.
-						$('.noir').pan({fps: 12, speed: 1, dir: 'left'});
-						$('.noir').pan({fps: 12, speed: 1, dir: 'down'});
-						
-						// Add btn scroll top. 1-id div
-						$.tmpl.tagScroll('scrollTopBtn');
 					});
 				}); 
+			},
+			
+			/*
+			 * Funct serverVideo.
+			 */
+			serverVideo: function(n) {
+				
+				// Creat array menu devise code.
+				$.each($.m.home.serverVid, function(key, val) {
+					
+					// Si video trouver.
+					if(n == val.nombre) {
+						
+						// Add video bitcoin.
+						$('#videoTuto').removeClass( "jquery-youtube-tubeplayer" ).empty();
+						
+						// Add new video in dom.
+						$('#videoTuto').tubeplayer({
+							initialVideo	: $.lng.tx(val.vid),
+							protocol		: $.m.protocol
+						});
+					}	
+				});
+			},
+			
+			/*
+			 * Funct clientHTML.
+			 */
+			clientHTML: function() {
+				
+				// Clean windows.
+				$.tmpl.clean();
+				
+				// Animation complete.
+				$('#'+$.m.div.content).fadeOut(300, function() {
+					
+					// add tmpl. home.
+					$('#'+$.m.div.content).empty().mustache('client', $.m);
+								
+					// Animation complete.
+					$('#'+$.m.div.content).fadeIn(300, function() {
+						
+						// Caroussel.
+						$("#owl-head").owlCarousel({
+							items				: 4, //10 items above 1000px browser width
+							itemsDesktop		: [1000,3], //5 items between 1000px and 901px
+							itemsDesktopSmall	: [900,3], // betweem 900px and 601px
+							itemsTablet			: [600,2], //2 items between 600 and 0
+							itemsMobile			: false, // itemsMobile disabled - inherit from itemsTablet option
+							autoPlay			: false
+						});
+						
+						// Tooltip.
+						$('.item').tooltip();
+						
+						// Add video bitcoin.
+						$('#videoTuto').tubeplayer({
+							initialVideo	: $.lng.tx($.m.home.clientVid[0].vid),
+							protocol		: $.m.protocol
+						});
+					});
+				}); 
+			},
+			
+			/*
+			 * Funct serverVideo.
+			 */
+			clientVideo: function(n) {
+				
+				// Creat array menu devise code.
+				$.each($.m.home.clientVid, function(key, val) {
+					
+					// Si video trouver.
+					if(n == val.nombre) {
+						
+						// Add video bitcoin.
+						$('#videoTuto').removeClass( "jquery-youtube-tubeplayer" ).empty();
+						
+						// Add new video in dom.
+						$('#videoTuto').tubeplayer({
+							initialVideo	: $.lng.tx(val.vid),
+							protocol		: $.m.protocol
+						});
+					}	
+				});
 			},
 		}
 	});

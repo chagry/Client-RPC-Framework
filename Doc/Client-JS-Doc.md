@@ -1,19 +1,27 @@
-![logo](https://chagry.com/img/css/logo-menu.png)
+![logo](http://chagry.com/img/css/logo-menu.png)
 
 ***
 
 # Doc Client JS
-Documentation for Client Jquery framework.
+
+Documentation for Client jQuery framework.
+
+* Creating custom APP with JSON RPC 2 protocol.
 
 ***
 
+# Introduction
 
+[![Chagry Framework](http://img.youtube.com/vi/ObHKDk76ytA/0.jpg)](http://www.youtube.com/watch?v=ObHKDk76ytA)
+
+***
+
+# Installation
+
+Follow the steps for installing the JS framework.
 
 ***
 
 # Contribution
 
 You can also help us translating the documentation in other languages.
-
-[![Chagry](https://pledgie.com/campaigns/24202.png?skin_name=chrome)](https://pledgie.com/campaigns/24202)
-[![Chagry](https://chagry.com/img/def/donate.png)](https://chagry.com/)
