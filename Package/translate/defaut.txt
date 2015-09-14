@@ -99,3 +99,4 @@ SERV-ERROR-OFFLINE-MESSAGE            L'application est actuellement indisponibl
 // Video titre.
 
 DEF-INTRO                             Introduction
+DEF-INSTAL                            Installation
