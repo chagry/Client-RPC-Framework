@@ -100,3 +100,4 @@ SERV-ERROR-OFFLINE-MESSAGE            L'application est actuellement indisponibl
 
 DEF-INTRO                             Introduction
 DEF-INSTAL                            Installation
+DEF-FIRST-DEV                         Premier développement
