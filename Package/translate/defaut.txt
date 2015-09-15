@@ -102,3 +102,4 @@ DEF-INTRO                             Introduction
 DEF-INSTAL                            Installation
 DEF-FIRST-DEV                         Premier développement
 DEF-CL-UTIL                           Class Util
+DEF-CL-VAL                            Class valide
