@@ -18,7 +18,7 @@ Documentation for Client jQuery framework.
 
 # Installation
 
-Follow the steps for installing the JS framework.
+[![Chagry Framework](http://img.youtube.com/vi/uD_nj5yFJKY/0.jpg)](http://www.youtube.com/watch?v=uD_nj5yFJKY)
 
 ***
 
