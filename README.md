@@ -39,6 +39,7 @@ Consult the website [Chagry](http://chagry.com/)
 * [Spritely](http://spritely.net/) Creating dynamic character and background animation.
 * [topzindex](https://code.google.com/p/topzindex/) Calculates the highest CSS z-index value in the current document.
 * [PaginateTable](https://github.com/dynamo-media/jquery.paginateTable) Paginate Table.
+* [Animate](https://daneden.github.io/animate.css/) Just-add-water CSS animations.
 
 ***
 
