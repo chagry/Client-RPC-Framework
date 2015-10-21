@@ -35,6 +35,7 @@
 						<div class="form-group">
 							<textarea class="form-control text-left" name="passPhrase" id="passPhrase" placeholder="{{#TX}}USER-PASS-PHRASE-EX{{/TX}}" rows="4"></textarea>
 						</div>
+						<div id="messDangerPhrase"></div>
 						<div class="well noir text-center">
 							<p class="text-uppercase text-left fontH1wt">
 								{{#T}}DEF-CODE-PIN-NEW{{/T}} <i class="fa fa-question-circle" data-tr="USER-PASS-CODE-LABEL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}USER-PASS-CODE-LABEL{{/TX}}"></i>
@@ -291,4 +292,11 @@
 	<button id='mIbtcLogoutSpin' type="button" onClick="$.user.sendLogout()" class="btn btn-warning" data-tr="DEF-LOGOUT" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-LOGOUT{{/TX}}">
 		<i class="fa fa-power-off"></i>
 	</button>
+</script>
+
+<!-- Partials message danger phrase bad or good -->
+<script id="messDangerPhraseHTML" type="text/html">
+	<div class="alert alert-{{user.messPass.alert}} text-justify" role="alert">
+		<i class="fa fa-{{user.messPass.icone}} fa-3x pull-left"></i> <small><strong>{{#T}}{{user.messPass.message}}{{/T}}</strong> {{#T}}USER-PHRASE-MESS-LABEL{{/T}}</small>
+	</div>
 </script>

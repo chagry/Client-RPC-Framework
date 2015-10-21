@@ -41,6 +41,10 @@ USER-ALREADY-CONNECTED                Vous êtes déjà connecté
 USER-ALREADY-NOT-CONNECTED            Vous n'êtes pas connecté
 USER-SIGN-INPUT                       Veuillez entrer la signature.
 USER-MESS-INPUT                       Veuillez entrer le message.
+USER-PHRASE-MESS-DANGER               Votre phrase secrète est faible!!!
+USER-PHRASE-MESS-WARNING              Votre phrase secrète est moyenne.
+USER-PHRASE-MESS-SUCCES               Votre phrase secrète est complexe.
+USER-PHRASE-MESS-LABEL                Vous êtes responsable de la complexité de votre phrase. Une phrase trop faible met vos fonds en danger.
 USER-PASS-PHRASE-REQUIRED             Veuillez saisir votre phrase secrète.
 USER-NOT-TX                           Aucune transaction pour cette adresse bitcoin.
 USER-VALIDE-SIGN                      Le message est bien signé avec l'identifiant de l'utilisateur.

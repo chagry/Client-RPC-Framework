@@ -123,9 +123,102 @@
 							
 							// Tooltip.
 							$('#conten i').tooltip();
+							
+							// Controle pass phrase for complexity.
+							$('#formLogin #passPhrase').keyup($.user.passPhraseControl);
 						});
 					}
 				});
+			},
+			
+			/**
+			 * Funct passPhraseControl.
+			 */
+			passPhraseControl: function() {
+				
+				// var expression reg control.
+				var anUpperCase = /[A-ZÉÈÄËÏÖÜŸÃÑÊÕÀÁÂÎÃÔÒÓÇÝÛÚÙÆ]/;
+				var aLowerCase = /[a-zéèçàôùúûîêäëïöüÿãñõœ]/;
+				var aNumber = /[0-9]/;
+				var aSpecial = /[ !@#$%^&*()\-\/_\'"§;.,:+\=]/;
+				var Resultat = 0;
+				
+				// If empty, not message. Vide html div.
+				if(!$('#formLogin #passPhrase').val()) $('#messDangerPhrase').empty();
+				
+				// Else not vide.
+				else {
+				
+					// Phrase.
+					var p = $('#formLogin #passPhrase').val();
+					
+					// var number of constante.
+					var numUpper = 0;
+					var numLower = 0;
+					var numNums = 0;
+					var numSpecials = 0;
+					var numLongeur = p.length;
+					var PassScore = 0
+					
+					// Each in prase
+					for(var i=0; i<p.length; i++) {
+						
+						// Incremonte var of canstante.
+						if(anUpperCase.test(p[i])) numUpper++;
+						else if(aLowerCase.test(p[i])) numLower++;
+						else if(aNumber.test(p[i])) numNums++;
+						else if(aSpecial.test(p[i])) numSpecials++;
+					}
+					
+					// If small phrase. bad result.
+					if(numLongeur < 10) PassScore -= 3;
+					// Esle edit pass var.
+					else PassScore += Math.floor(numLongeur / 10);
+					
+					// If not specials caracter.
+					if(numSpecials <1) PassScore -= 1;
+					// else specials caracter.
+					else PassScore += Math.floor(numSpecials /2);
+					
+					// caracter.
+					if(numUpper * 10 < numLongeur) PassScore -= Math.floor(numLongeur / 20);
+					else PassScore += Math.floor(numUpper /3);
+					
+					// Number.
+					if(numNums * 10 < numLongeur) PassScore -= Math.floor(numLongeur / 20);
+					else PassScore += Math.floor(numNums /3);
+					
+					// Maj
+					if(numLower * 5 < numLongeur) PassScore -= Math.floor(numLongeur / 20);
+					else PassScore += Math.floor(numLower /4);
+					
+					// Analize score. bad html div.
+					if(PassScore <= 20) {
+						
+						// Add var to model.
+						$.m.user.messPass = {"alert" : "danger", "icone" : "ban", "message" : "USER-PHRASE-MESS-DANGER"};
+						// Edit html dom.
+						$('#messDangerPhrase').empty().mustache('messDangerPhraseHTML', $.m);
+					}
+					
+					// warning html div.
+					else if(PassScore <=40) {
+						
+						// Add var to model.
+						$.m.user.messPass = {"alert" : "warning", "icone" : "exclamation-triangle", "message" : "USER-PHRASE-MESS-WARNING"};
+						// Edit html dom.
+						$('#messDangerPhrase').empty().mustache('messDangerPhraseHTML', $.m);
+					}
+					
+					// good html div.	
+					else {
+						
+						// Add var to model.
+						$.m.user.messPass = {"alert" : "success", "icone" : "check", "message" : "USER-PHRASE-MESS-SUCCES"};
+						// Edit html dom.
+						$('#messDangerPhrase').empty().mustache('messDangerPhraseHTML', $.m);
+					}
+				}
 			},
 			
 			/**
