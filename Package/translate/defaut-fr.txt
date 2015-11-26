@@ -1,4 +1,4 @@
-// Mod Langue.
+// Langue.
 
 fr                                    Français
 en                                    English
@@ -14,98 +14,118 @@ ja                                    日本語
 ar                                    العربية
 zh                                    中文
 
-// Modul home
+// Value.
+
+USD                                   U.S. dollar
+JPY                                   Japanese Yen
+CNY                                   Chinese yuan
+SGD                                   Singapore Dollar
+HKD                                   Hong Kong Dollar
+CAD                                   Canadian Dollar
+NZD                                   New Zealand Dollar
+AUD                                   Australian Dollar
+CLP                                   Chilean Peso
+GBP                                   British Pound
+DKK                                   Danish Krone
+SEK                                   Swedish Krona
+ISK                                   Icelandic Króna
+CHF                                   Swiss Franc
+BRL                                   Brazil Real
+EUR                                   Euro
+RUB                                   Russian Ruble
+PLN                                   Polish Zloty
+THB                                   Thai baht
+KRW                                   South Korean Won
+TWD                                   New Taiwan dollar
+
+// World.
 
 HOME                                  Accueil
-HOME-VIDEO                            Video
-HOME-INTRO                            Frameworks RPC
-HOME-DESC                             2 frameworks distinctes utilisant le protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre.
-HOME-SERV-LABEL                       Uniquement en PHP, il vous permet de crée une API avec une architecture MC en quelle que minute.
-HOME-CLIENT-LABEL                     Réaliser facilement une application web avec une architecture MVC uniquement en jQuery, HTML et CSS.
+CANCEL                                Annuler
+NOTIFICATIONS                         Notifications
+YOUR_TEXT_HERE                        Votre texte ici
+MY_ACCOUNT                            Mon compte
+SOUND                                 Audio
+DASHBOARD                             Dashboard
+BITCOIN                               Bitcoin
+BITCOIN_ADDR                          Bitcoin address
+WALLET                                Portefeuille
+SOLD                                  Sold
+SYNCHRONISATION                       Synchronisation
+MY_TRANSACTIONS                       Mes transactions
+WAIT_TRANSACTIONS                     Transactions en attente
+TRANSACTIONS                          Transactions
+WAIT                                  Attente
+RECEIVED                              Reçu
+SENDING                               Envoyer
+BACK                                  Retour
+PRIVAT_KEY                            Clé privée
+SEND_SOLD_INPUT_HOLDER                Transférer tout le solde
+ADDR_BTC_DEST_INPUT                   Adresse Bitcoin du destinataire
+PRIVAT_KEY_INPUT                      Clé privée contenant les fonds
+BTC_SUM_INPUT                         Le montant en bitcoin
+SEND_SOLD_INPUT_WARNING               Si vous laissez ce champs vide, tout le solde du compte sera transféré sur l'adresse bitcoin destinataire.
+TRANSFERT                             Transfert
+PAY_WITH_KEY_DIRECT                   Payez directement avec la clé privée contenue dans votre portefeuille online ou papier.
+BTC_FEES                              Frais de transaction 0,0001 BTC
+KEY_NOT_SEND_SERVER_LABEL             Pour effectuer le transfert, la transaction est signée en local. Votre clé privée ne quitte jamais votre ordinateur. Seule la transaction signée sera transmise sur le réseau. Il est important aussi de se rappeler que les transactions en bitcoin sont définitives et ne peuvent pas être annulées.
+CONFIRM_SEND_TX                       Confirmation de transaction
+PAY_NOT_BACK                          Cette operation est définitive et non reversible
+YOUR_TX_IN_WALLET_5_MN                Votre transaction apparaîtras dans votre portefeuille dans les 3mn.
+CODE_PIN                              Code Pin
+LOGOUT                                Déconnexion
+LOGIN                                 Connexion
+YOUR_CODE_PIN                         Votre code Pin
+NEW_CODE_PIN                          Nouveau code Pin
+MESSAGE                               Message
+USER_PASS_PHRASE_EX                   Ex : lsdkhf -foxminecho- 110299 :mecodelta: (tr304512) lk ze fzefj lsdzef2FSD 669912 0143785912 decoti ++ZEROMONT++ 45er AZF
+SIGNATURE                             Signature
+PRIVAT_KEY                            Clé privée
+PASS_PHRASE                           Phrase secrète
+VERIFICATION                          Vérification
+SIGNED_MESS_INPUT                     Le message signé
+SIGN_MESS_LABEL                       Le message a signier
+SIGN_OF_MESS_INPUT                    La signature du message
+CONTROL_SIGN                          Vérifier une signature
+BTC_ADDR_OF_SIGN                      L'identifiant du signataire
+VALIDE_SIGN                           Le message est bien signé avec l'identifiant de l'utilisateur.
+PHRASE_DANGER                         Votre phrase secrète est faible!!!
+PHRASE_WARNING                        Votre phrase secrète est moyenne.
+PHRASE_SUCCES                         Votre phrase secrète est complexe.
+PHRASE_WARNING_MESS                   Vous êtes responsable de la complexité de votre phrase. Une phrase trop faible met vos fonds en danger.
+SIGN_RESULT_GOOD                      Voici la signature électronique de votre message authentifier par votre identifiant client.
+SECTION_VERIF_MESS_AND_SIGN           Dans cette section, vous pouvez vérifier une signature et son message avec L'identifiant du signataire.
+SECTION_SIGN_MESS                     Dans cette section, vous pouvez signer un message avec votre clé privée et vérifiable avec votre identifiant client.
+CREAT_NEW_CODE_PIN_LABEL              Crée un nouveau code pin, destiner a protéger cette session. À chaque nouvelle connexion, vous pouvez choisir un code pin différent.
+PASS_PHRASE_COMPLEXE_LABEL            Plus la phrase secrète est complexe, plus vos fonds seront en sécurité. Mélanger lettre minuscules, majuscules, chiffres et ponctuation. Si vous oubliez votre phrase secrète, vos Bitcoins sont perdus définitivement.
 
-// Modul user
+// Form warning
 
-USER-PASS-PHRASE-EX                   Ex : decoupa -foxminecho- 110299 :mecodelta: (tr304512) dans le sens du ventre 669912 0143785912 decoti ++ZEROMONT++ 45er
-USER-SIGN-MESS                        Signature
-USER-KEY-PRIVAT                       Clé privée
-USER-PASS-PHRASE                      Phrase secrète
-USER-VERIF-MESS                       Vérification
-USER-SIGN-MESS-INPUT                  Le message signé
-USER-SIGN-MESS-LABEL                  Le message a signier
-USER-SIGN-INPUT-LABEL                 La signature du message
-USER-SIGN-MESS-TITLE                  Signature du message
-USER-VERIF-MESS-TITLE                 Vérifier une signature
-USER-ADR-SIGN-LABEL                   L'identifiant du signataire
-USER-SYNC-BLOCK                       Synchroniser avec la Blockchain
-USER-ALREADY-CONNECTED                Vous êtes déjà connecté
-USER-ALREADY-NOT-CONNECTED            Vous n'êtes pas connecté
-USER-SIGN-INPUT                       Veuillez entrer la signature.
-USER-MESS-INPUT                       Veuillez entrer le message.
-USER-PHRASE-MESS-DANGER               Votre phrase secrète est faible!!!
-USER-PHRASE-MESS-WARNING              Votre phrase secrète est moyenne.
-USER-PHRASE-MESS-SUCCES               Votre phrase secrète est complexe.
-USER-PHRASE-MESS-LABEL                Vous êtes responsable de la complexité de votre phrase. Une phrase trop faible met vos fonds en danger.
-USER-PASS-PHRASE-REQUIRED             Veuillez saisir votre phrase secrète.
-USER-NOT-TX                           Aucune transaction pour cette adresse bitcoin.
-USER-VALIDE-SIGN                      Le message est bien signé avec l'identifiant de l'utilisateur.
-USER-SIGN-MESS-ERR                    La signature du message a échoué, merci de réessayer.
-USER-NOT-SIGN-VALIDE                  La signature du message n'est pas valide et ne correspond pas à l'identifiant de l'utilisateur.
-USER-SIGN-MESS-RESULT                 Voici la signature électronique de votre message authentifier par votre identifiant client.
-USER-VERIF-MESS-DESC                  Dans cette section, vous pouvez vérifier une signature et son message avec L'identifiant du signataire.
-USER-SIGN-MESS-DESC                   Dans cette section, vous pouvez signer un message avec votre clé privée et vérifiable avec votre identifiant client.
-USER-PASS-CODE-LABEL                  Crée un nouveau code pin, destiner a protéger cette session. À chaque nouvelle connexion, vous pouvez choisir un code pin différent.
-USER-KEY-DESC                         Les clés privées ne doivent jamais être divulguées, car elles permettent de dépenser les bitcoins de l'adresse. Pour utiliser la clé privée simplement, vous pouvez visiter
-USER-ADR-DESC                         Votre identifiant public, vous permet de recevoir des paiements en bitcoin. Utiliser le librement, auprès de tout le monde. Pour utiliser les sommes de cette adresse, vous aurez besoin de la clef privée.
-USER-PASS-PHRASE-LABEL                Plus la phrase secrète est complexe, plus vos fonds seront en sécurité. Mélanger lettre minuscules, majuscules, chiffres et ponctuation. Si vous oubliez votre phrase secrète, vos Bitcoins sont perdus définitivement.
-USER-BLOCKCHAIN-DESC                  La connexion est basée sur la technologie cryptographique du bitcoin. Votre identifiant client est une adresse bitcoin que vous pouvez synchroniser avec la blockchain, qui est le livre de compte public et qui contient toutes les transactions du réseau bitcoin.
+FORM_WARNING_EMAIL_REQUIRED           Saisissez votre adresse e-mail
+FORM_WARNING_EMAIL_INVALID            L'adresse email n'est pas valide
+FORM_WARNING_CODE_PIN_REQUIRED        Veillez entrer votre code Pin
+FORM_WARNING_CODE_PIN_INVALID         Votre code Pin ne doit être composé que de chiffres
+FORM_WARNING_CODE_PIN_MIN             Votre code Pin doit être composé de 4 chiffres au minimum
+FORM_WARNING_VALIDATION_FORM_FAILED   Vous devez valider le formulaire avant de poursuivre
+FORM_WARNING_PASS_PHRASE_REQUIRED     Veuillez saisir votre phrase secrète.
+FORM_WARNING_SIGN_INPUT_REQUIRED      Veuillez entrer la signature.
+FORM_WARNING_MESS_INPUT_REQUIRED      Veuillez entrer le message.
+FORM_WARNING_SOM_INVALID              Le montant ne doit être composé que de chiffres
+FORM_WARNING_ADDR_BTC_INVALID         Adresse bitcoin incorrecte
+FORM_WARNING_ADDR_BTC_REQUIRED        Veuillez entrer l'adresse bitcoin
 
-// Defaut.
+// Warning
 
-VOIX-SOUND-TITRE                      Audio
-DEF-CANCEL                            Annuler
-DEF-SERVER                            Serveur
-DEF-CLIENT                            Client
-DEF-MY-COMPTE-LABEL                   Mon compte
-DEF-CODE-PIN                          Code Pin
-DEF-OUT                               Retraits
-DEF-LOGOUT                            Déconnexion
-DEF-LOGIN                             Connexion
-DEF-CODE-PIN-LABEL                    Votre code Pin
-DEF-BITCOIN-ADR                       Adresse Bitcoin
-DEF-CODE-PIN-NEW                      Nouveau code Pin
-DOC-LABEL                             Documentation
-DEF-FRAMEWORK                         Framework
-DEF-MESSAGE                           Message
+WARNING_CONNECTED                     Vous êtes déjà connecté
+WARNING_NOT_CONNECTED                 Vous n'êtes pas connecté
+WARNING_SIGN_MESS_ERR                 La signature du message a échoué, merci de réessayer.
+WARNING_SIGN_INVALID                  La signature du message n'est pas valide et ne correspond pas à l'identifiant de l'utilisateur.
+WARNING_PRIVAT_KEY_INVALID            Clé privée incorrecte
 
-// Mod tmpl.
-
-FORM-MESSAGE-TX-BTC-MIN               Transaction id incorrecte
-FORM-MESSAGE-ADR-BTC-MIN              Adresse bitcoin incorrecte
-FORM-MESSAGE-CODE-PIN-REQUIRED        Veillez entrer votre code Pin
-FORM-MESSAGE-EMAIL-REQUIRED           Saisissez votre adresse e-mail
-FORM-MESSAGE-SOM-REQUIRED             Veuillez entrer le montant (nombre entier)
-FORM-MESSAGE-ADR-BTC-REQUIRED         Veuillez entrer l'adresse bitcoin
-FORM-MESSAGE-EMAIL-INVALID            L'adresse email n'est pas valide
-FORM-MESSAGE-PIN-REQUIRED             Veuillez entrer le code pin crypté
-FORM-MESSAGE-SOM-INVALID              Le montant ne doit être composé que de chiffres
-FORM-MESSAGE-CODE-PIN-INVALID         Votre code Pin ne doit être composé que de chiffres
-FORM-MESSAGE-VALIDATION-FORM-FAILED   Vous devez valider le formulaire avant de poursuivre
-FORM-MESSAGE-CODE-PIN-MIN             Votre code Pin doit être composé de 4 chiffres au minimum
-
-// Server error defaut.
+// Server error default.
 
 SERV-ERROR-NOT-FIND-FILE              Erreur lors du chargement du fichier d'exécution.
 SERV-ERROR-DATABASE                   Impossible de se connecter à la base SQL. Erreur dans les données.
 SERV-ERROR-INVALID-PARAM-OR-METHODE   Méthodes ou Paramètres incorrects. Erreur dans les données d'accès.
 SERV-ERROR-CONNECT-MYSQL              Connexion au serveur MySQL impossible. Erreur dans les données d'accès.
 SERV-ERROR-OFFLINE-MESSAGE            L'application est actuellement indisponible pour cause de maintenance. Désolé pour le désagrément.
-
-// Video titre.
-
-DEF-INTRO                             Introduction
-DEF-INSTAL                            Installation
-DEF-FIRST-DEV                         Premier développement
-DEF-CL-UTIL                           Class Util
-DEF-CL-VAL                            Class valide
-DEF-CONFIG                            Configuration
-DEF-DB                                Base de données

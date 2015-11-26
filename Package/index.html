@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		
 		<!-- start: Meta -->
 		<meta charset="utf-8" />
 		<title>Chagry Framework</title>
-		<meta name="description" content="Chagry framework. Conception et développement d'api sur mesure basé sur le protocole Json RPC. 2 frameworks distinctes utilisant le protocole Json RPC 2. Vous pouvez les utiliser indépendamment l'un de l'autre." />
+		<meta name="description" content="Chagry Framework." />
 		<meta name="author" content="Chagry" />
-		<meta name="keyword" content="framework, php, jQuery, java scrypt, java, js, bootstrap, mustache, json, object, développement, développeur, api, server, client, responsive, design, mysql, bitcoin, litecoin, crypto" />
+		<meta name="keyword" content="No Word" />
 		
 		<!-- start: Mobile Specific -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<!-- start: CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/bootstrap.modal.bs3patch.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/bootstrap.modal.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/jquery.jgrowl.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-		<link rel="stylesheet" href="css/owl.theme.min.css" type="text/css">
 		<link rel="stylesheet" href="css/animate.min.css" type="text/css">
-		<link rel="stylesheet" href="css/defaut.css" type="text/css">
 		
-		<!-- start: Google police !!! https !!! -->
-		<link href='http://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Poiret+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<!-- template CSS dashgumfree_v2 -->
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/style-responsive.css" type="text/css">
 		
 		<!-- start: Favicon and Touch Icons -->
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png" />
@@ -40,47 +34,52 @@
 	</head>
 	
 	<body>
-		
 		<!-- HTML -->
-		<div id="event">
-			<nav class="navbar navbar-fixed-top navbar-static-top navbar-inverse" role="navigation">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<i class="fa fa-tachometer fa-inverse fa-lg"></i>
-						</button>
-						<a><img src="img/css/logo-menu.png" alt="Logo"></a>
-					</div>
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-						<div id="menu" class="btn-toolbar navbar-nav navbar-right"></div>
-					</div>
+		<section id="container">
+			<header class="header black-bg">
+				<div class="sidebar-toggle-box">
+					<div class="fa fa-bars"></div>
 				</div>
-			</nav>
-			<div id="conten">
-				<div class="jumbotron noir">
-					<div class="container-fluid">
+				<!--logo start-->
+				<a class="logo"><b>LOGO</b></a>
+				<!--menu start-->
+				<div class="top-menu">
+					<div id="menu" class="btn-toolbar nav pull-right top-menu"></div>
+				</div>
+			</header>
+			<div id="content">
+				<!--sidebar start-->
+				<aside>
+					<div id="sidebar"  class="nav-collapse">
+						<!-- sidebar menu start-->
+						<ul id="menuRight" class="sidebar-menu" id="nav-accordion">
+							<p class="centered"><i class="fa fa-download fa-5x"></i></p>
+							<h5 class="centered text-uppercase">LOAD</h5>
+						</ul>
+					</div>
+				</aside>
+				<!--main content start-->
+				<section id="main-content">
+					<section id="page" class="wrapper site-min-height">
 						<div class="row">
-							<div class="col-sm-12 text-center">
-								<h2 class="fontH1wt"><i class="fa fa-spinner fa-spin"></i> Loading...</h2>
-								<br>
+							<div class="col-lg-9 page-header text-center">
+								<h1><i class="fa fa-spinner fa-spin"></i> LOADING...</h1>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>	
-		</div>
+					</section>
+				</section>
+			</div>
+			<!--footer start-->
+			<footer class="site-footer"><div class="text-center">CHAGRY - FRAMEWORK <a class="go-top"><i class="fa fa-lock"></i></a></div></footer>	
+		</section>
 		<!-- HTML -->
 		
 		<!-- start: Framework jQuery 2.1.3 -->
 		<script type="text/javascript" src="js/lib/jquery.min.js"></script>
 		<!-- start: Framework Bootstrap 3.3.2 -->
 		<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/lib/bootstrap.modalmanager.js"></script>
-		<script type="text/javascript" src="js/lib/bootstrap.modal.js"></script>
 		<!-- start: Framework jQuery ui 1.10.4 custom Effects Core -->
 		<script type="text/javascript" src="js/lib/jquery.ui.custom.min.js"></script>
-		
 		<!-- plug: form validate -->
 		<script type="text/javascript" src="js/lib/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/lib/additional-methods.min.js"></script>
@@ -97,19 +96,11 @@
 		<script type="text/javascript" src="js/lib/jquery.jgrowl.min.js"></script>
 		<!-- plug: Gestion des cookie -->
 		<script type="text/javascript" src="js/lib/jquery.cookie.min.js"></script>
-		<!-- plug: design springy -->
-		<script type="text/javascript" src="js/lib/springy.r.js"></script>
-		<script type="text/javascript" src="js/lib/springyui.r.js"></script>
 		<!-- plug: Gestion des template -->
 		<script type="text/javascript" src="js/lib/jquery.mustache.min.js"></script>
 		<script type="text/javascript" src="js/lib/mustache.min.js"></script>
-		<!-- plug: Gestion des charts -->
-		<script type="text/javascript" src="js/lib/Chart.min.js"></script>
-		<script type="text/javascript" src="js/lib/jquery.peity.min.js"></script>
 		<!-- plug: time & countdown -->
 		<script type="text/javascript" src="js/lib/moment.min.js"></script>
-		<!-- plug: owl carousel -->
-		<script type="text/javascript" src="js/lib/owl.carousel.min.js"></script>
 		<!-- plug: Gestion youtube -->
 		<script type="text/javascript" src="js/lib/jQuery.tubeplayer.min.r.js"></script>
 		<!-- plug: generate QR codes dynamically -->
@@ -118,21 +109,18 @@
 		<script type="text/javascript" src="js/lib/ion.sound.min.js"></script>
 		<!-- plug: Shuffles an array or the children of a element container. -->
 		<script type="text/javascript" src="js/lib/jquery.shuffle.js"></script>
-		<!-- plug: dynamic character and background animation in pure HTML -->
-		<script type="text/javascript" src="js/lib/jquery.spritely.min.js"></script>
-		<!-- plug: calculates the highest CSS z-index -->
-		<script type="text/javascript" src="js/lib/jquery.topzindex.min.js"></script>
-		<!-- plug: Pagination -->
-		<script type="text/javascript" src="js/lib/jquery.paginatetable.r.js"></script>
 		<!-- plug: Bitcoinjs -->
 		<script type="text/javascript" src="js/lib/bitcoinjs-min.js"></script>
 		
 		<!-- mod: Api Module -->
-		<script type="text/javascript" src="mod/lng/lng.js"></script>
-		<script type="text/javascript" src="mod/tmpl/tmpl.js"></script>
-		<script type="text/javascript" src="mod/voix/voix.js"></script>
 		<script type="text/javascript" src="mod/user/user.js"></script>
 		<script type="text/javascript" src="mod/home/home.js"></script>
+		
+		<!--common script for all pages template dashgumfree_v2 -->
+		<script type="text/javascript" src="js/lib/common-scripts.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.nicescroll.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.dcjqaccordion.2.7.js"></script>
 		
 		<!-- start: Framework Chagry -->
 		<script type="text/javascript" src="js/boot.js"></script>

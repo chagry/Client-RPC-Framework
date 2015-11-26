@@ -1,9 +1,3 @@
 {
-	"off"           : true,
-	"vid" : {
-		"fr"        : "vj9lpxIM4LU"
-	},
-	"func" : {
-		"page"      : "$.user.accueil()"
-	}
+	"off"           : true
 }

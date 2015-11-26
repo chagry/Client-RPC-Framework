@@ -1,5 +1,5 @@
 /**
- * @version 0.6.0
+ * @version 0.7.0
  * @license MIT license
  * @link    https://chagry.com
  * @author  Grigori <git@chagry.com>
@@ -13,122 +13,79 @@
 		user: {
 			
 			/**
-			 * Funct setup. Init mod accueil.
+			 * Funct setup. Init mod user.
 			 */
 			setup: function() {
 				
-				// Load model.
-				$.m.load('user');
+				// Wallet var.
+				$.m.user.wallet = {};
 				
-				// Event. Tmpl mod.
-				$('#'+$.m.div.event).one($.m.event.setup, $.user.defautHtml);
+				// Image for qr code
+				$.m.user.img = {};
+				$.m.user.img.qr = new Image();
+				$.m.user.img.qr.src = "img/css/qr.png";
+				$.m.user.img.qrp = new Image();
+				$.m.user.img.qrp.src = "img/css/qrp.png";
 			},
 			
 			/**
-			 * Funct defautHtml. Menu in dock.
+			 * Funct homePage.
 			 */
-			defautHtml: function() {
-				
-				// Load tmpl.
-				$.tmpl.load('user', function () {
+			homePage: function() {
 					
-					// Wallet var.
-					$.m.user.wallet = {};
-					
-					// Image for qr code
-					$.m.user.img = {};
-					$.m.user.img.qr = new Image();
-					$.m.user.img.qr.src = "img/css/qr.png";
-					$.m.user.img.qrp = new Image();
-					$.m.user.img.qrp.src = "img/css/qrp.png";
-					
-					// add tmpl.
-					$('#'+$.m.div.menu).mustache('mUser', $.m, {method:'prepend'});
-					
-					// Tooltip.
-					$('#mUser button').tooltip();
-					
-					// event. setup listen.
-					$('#'+$.m.div.event).on($.m.event.langue, $.user.editeVideo);
-				});
-			},
-			
-			/**
-			 * Funct accueil.
-			 */
-			accueil: function() {
-				
 				// Clean windows.
 				$.tmpl.clean();
 				
-				// Anim complete.
-				$('#'+$.m.div.content).fadeOut(300, function() {
+				// Verif si menu user prensant dans le dom.
+				if(!$('#sidebarUser').length) $('#'+$.m.div.mRight).empty().mustache('sidebarUser', $.m);
+				
+				// If btc adress exist
+				if($.m.user.wallet.adr) {
 					
-					// If btc adress exist
-					if($.m.user.wallet.adr) {
-						
-						// add tmpl. DOC.
-						$('#'+$.m.div.content).empty().mustache('wallet', $.m);
-						
-						// If tx exist. paginate Table.
-						if($.m.user.wallet.tx) $('#myTxTab').paginateTable({ rowsPerPage: 3, pager: ".pagerMyTx" });
-						
-						// qr code generate.
-						$('#qrCodeAdr').qrcode({
-							text		: $.m.user.wallet.adr,
-							render		: 'canvas',
-							minVersion	: 2,
-							maxVersion	: 20,
-							ecLevel		: 'H',
-							top			: 0,
-							size		: 250,
-							fill		: '#ffffff',
-							background	: null,
-							radius		: 0.5,
-							mode		: 4,
-							mSize		: 0.2,
-							mPosX		: 0.5,
-							mPosY		: 0.5,
-							image		: $.m.user.img.qr,
-						});
-						
-						// Anim complete.
-						$('#'+$.m.div.content).fadeIn(300, function() {
-							
-							// Tooltip.
-							$('#conten i').tooltip();
-						});
-					}
+					// add tmpl. DOC.
+					$('#'+$.m.div.page).empty().mustache('wallet', $.m);
 					
-					// Else not btc adress
-					else {
+					// qr code generate.
+					$('#qrCodeAdr').qrcode({
+						text		: 'bitcoin:'+$.m.user.wallet.adr,
+						render		: 'canvas',
+						minVersion	: 2,
+						maxVersion	: 20,
+						ecLevel		: 'H',
+						top			: 0,
+						size		: 250,
+						fill		: '#333333',
+						background	: null,
+						radius		: 0.5,
+						mode		: 4,
+						mSize		: 0.2,
+						mPosX		: 0.5,
+						mPosY		: 0.5,
+						image		: $.m.user.img.qr,
+					});
+					
+					// Tooltip.
+					$('#conten i').tooltip();
+				}
+				
+				// Else not btc adress
+				else {
+					
+					// add tmpl. DOC.
+					$('#'+$.m.div.page).empty().mustache('userHomePage', $.m);
 						
-						// add tmpl. DOC.
-						$('#'+$.m.div.content).empty().mustache('accueil', $.m);
-						
-						// Anim complete.
-						$('#'+$.m.div.content).fadeIn(300, function() {
-							
-							// Add video bitcoin.
-							$('#videoUser').tubeplayer({
-								initialVideo	: $.lng.tx($.m.user.vid),
-								protocol		: $.m.protocol
-							});
-							
-							// Valid Form.
-							$('#formLogin').validate();
-							
-							// event. Form send. listen.
-							$('#formLogin').on('formLogin', $.user.sendLogin);
-							
-							// Tooltip.
-							$('#conten i').tooltip();
-							
-							// Controle pass phrase for complexity.
-							$('#formLogin #passPhrase').keyup($.user.passPhraseControl);
-						});
-					}
-				});
+					// Valid Form.
+					$('#formLogin').validate();
+					
+					// event. Form send. listen.
+					$('#formLogin').on('formLogin', $.user.sendLogin);
+					
+					// Tooltip.
+					$('#conten i').tooltip();
+					
+					// Controle pass phrase for complexity.
+					$('#formLogin #passPhrase').keyup($.user.passPhraseControl);
+				}
 			},
 			
 			/**
@@ -196,7 +153,7 @@
 					if(PassScore <= 20) {
 						
 						// Add var to model.
-						$.m.user.messPass = {"alert" : "danger", "icone" : "ban", "message" : "USER-PHRASE-MESS-DANGER"};
+						$.m.user.messPass = {"alert" : "danger", "icone" : "ban", "message" : "PHRASE_DANGER"};
 						// Edit html dom.
 						$('#messDangerPhrase').empty().mustache('messDangerPhraseHTML', $.m);
 					}
@@ -205,7 +162,7 @@
 					else if(PassScore <=40) {
 						
 						// Add var to model.
-						$.m.user.messPass = {"alert" : "warning", "icone" : "exclamation-triangle", "message" : "USER-PHRASE-MESS-WARNING"};
+						$.m.user.messPass = {"alert" : "warning", "icone" : "exclamation-triangle", "message" : "PHRASE_WARNING"};
 						// Edit html dom.
 						$('#messDangerPhrase').empty().mustache('messDangerPhraseHTML', $.m);
 					}
@@ -214,29 +171,10 @@
 					else {
 						
 						// Add var to model.
-						$.m.user.messPass = {"alert" : "success", "icone" : "check", "message" : "USER-PHRASE-MESS-SUCCES"};
+						$.m.user.messPass = {"alert" : "success", "icone" : "check", "message" : "PHRASE_SUCCES"};
 						// Edit html dom.
 						$('#messDangerPhrase').empty().mustache('messDangerPhraseHTML', $.m);
 					}
-				}
-			},
-			
-			/**
-			 * html editeVideo.
-			 */
-			editeVideo: function() {
-				
-				// If video in dom.
-				if($('#videoUser').length) {
-									
-					// Add video bitcoin.
-					$('#videoUser').removeClass( "jquery-youtube-tubeplayer" ).empty();
-					
-					// Add new video in dom.
-					$('#videoUser').tubeplayer({
-						initialVideo	: $.lng.tx($.m.user.vid),
-						protocol		: $.m.protocol
-					});
 				}
 			},
 			
@@ -250,27 +188,19 @@
 					
 					// Clean windows.
 					$.tmpl.clean();
+						
+					// add tmpl. DOC.
+					$('#'+$.m.div.page).empty().mustache('keyHTML', $.m);
+						
+					// Valid Form.
+					$('#formKey').validate();
 					
-					// Anim complete.
-					$('#'+$.m.div.content).fadeOut(300, function() {
-						
-						// add tmpl. DOC.
-						$('#'+$.m.div.content).empty().mustache('keyHTML', $.m);
-						
-						// Anim complete.
-						$('#'+$.m.div.content).fadeIn(300, function() {
-							
-							// Valid Form.
-							$('#formKey').validate();
-							
-							// event. Form send. listen.
-							$('#formKey').on('formKey', $.user.keyFUNC);
-						});
-					});
+					// event. Form send. listen.
+					$('#formKey').on('formKey', $.user.keyFUNC);
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+				else $.tmpl.error('WARNING_NOT_CONNECTED');
 			},
 			
 			/**
@@ -307,7 +237,7 @@
 							ecLevel		: 'H',
 							top			: 0,
 							size		: 250,
-							fill		: '#ffffff',
+							fill		: '#333333',
 							background	: null,
 							radius		: 0.5,
 							mode		: 4,
@@ -318,7 +248,7 @@
 						});
 						
 						// Play sound.
-						$.voix.play($.m.tmpl.sound.click);
+						$.voix.play($.m.voix.sound.click);
 						
 						// Destruct var.
 						sec = '';
@@ -330,15 +260,15 @@
 					else {
 						
 						// Error.
-						$.tmpl.error('FORM-MESSAGE-ADR-BTC-MIN');
+						$.tmpl.error('FORM_WARNING_ADDR_BTC_INVALID');
 						
 						// Setup html.
-						$.user.accueil();
+						$.user.homePage();
 					}
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+				else $.tmpl.error('WARNING_NOT_CONNECTED');
 			},
 			
 			/**
@@ -351,27 +281,19 @@
 					
 					// Clean windows.
 					$.tmpl.clean();
+						
+					// add tmpl. DOC.
+					$('#'+$.m.div.page).empty().mustache('signHTML', $.m);
 					
-					// Anim complete.
-					$('#'+$.m.div.content).fadeOut(300, function() {
-						
-						// add tmpl. DOC.
-						$('#'+$.m.div.content).empty().mustache('signHTML', $.m);
-						
-						// Anim complete.
-						$('#'+$.m.div.content).fadeIn(300, function() {
-							
-							// Valid Form.
-							$('#formSignMess').validate();
-							
-							// event. Form send. listen.
-							$('#formSignMess').on('formSignMess', $.user.signFUNC);
-						});
-					});
+					// Valid Form.
+					$('#formSignMess').validate();
+					
+					// event. Form send. listen.
+					$('#formSignMess').on('formSignMess', $.user.signFUNC);
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+				else $.tmpl.error('WARNING_NOT_CONNECTED');
 			},
 			
 			/**
@@ -408,7 +330,7 @@
 							$('#signMess').empty().mustache('goodSignPart', $.m);
 							
 							// Play sound.
-							$.voix.play($.m.tmpl.sound.click);
+							$.voix.play($.m.voix.sound.click);
 							
 							// Destruct var.
 							sec = '';
@@ -421,16 +343,16 @@
 							sec = '';
 							
 							// Error.
-							$.tmpl.error('USER-SIGN-MESS-ERR');
+							$.tmpl.error('WARNING_SIGN_MESS_ERR');
 						}
 					}
 					
 					// If not btcAdr.
-					else $.tmpl.error('FORM-MESSAGE-ADR-BTC-MIN');
+					else $.tmpl.error('FORM_WARNING_ADDR_BTC_INVALID');
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+				else $.tmpl.error('WARNING_NOT_CONNECTED');
 			},
 			
 			/**
@@ -440,23 +362,15 @@
 					
 				// Clean windows.
 				$.tmpl.clean();
+					
+				// add tmpl. DOC.
+				$('#'+$.m.div.page).empty().mustache('verifHTML', $.m);
+					
+				// Valid Form.
+				$('#formVerif').validate();
 				
-				// Anim complete.
-				$('#'+$.m.div.content).fadeOut(300, function() {
-					
-					// add tmpl. DOC.
-					$('#'+$.m.div.content).empty().mustache('verifHTML', $.m);
-					
-					// Anim complete.
-					$('#'+$.m.div.content).fadeIn(300, function() {
-						
-						// Valid Form.
-						$('#formVerif').validate();
-						
-						// event. Form send. listen.
-						$('#formVerif').on('formVerif', $.user.verifFUNC);
-					});
-				});
+				// event. Form send. listen.
+				$('#formVerif').on('formVerif', $.user.verifFUNC);
 			},
 			
 			/**
@@ -471,8 +385,9 @@
 					$('#verifMess').empty().mustache('valideSignPart', $.m);
 					
 					// Play sound.
-					$.voix.play($.m.tmpl.sound.click);
+					$.voix.play($.m.voix.sound.click);
 					
+					// Print message 3s.
 					setTimeout(function() {
 						
 						// html add defaut Partials.
@@ -481,7 +396,7 @@
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-NOT-SIGN-VALIDE');
+				else $.tmpl.error('WARNING_SIGN_INVALID');
 			},
 			
 			/**
@@ -510,18 +425,15 @@
 					// event. login. trigger.
 					$('#'+$.m.div.event).trigger('login');
 					
+					// Delete menu right.
+					$('#'+$.m.div.mRight).empty();
+					
 					// Setup html.
-					$.user.accueil();
-					
-					// add btn logout to menu.
-					$('#mUser').mustache('logoutBtnPart', $.m);
-					
-					// Tooltip.
-					$('#mUser button').tooltip();
+					$.user.homePage();
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-ALREADY-CONNECTED');
+				else $.tmpl.error('WARNING_CONNECTED');
 			},
 			
 			/**
@@ -535,22 +447,22 @@
 					// Add address bitcoin.
 					$.m.user.wallet = {};
 					
+					// Delete menu right.
+					$('#'+$.m.div.mRight).empty();
+					
 					// Setup html.
-					$.user.accueil();
+					$.user.homePage();
 					
 					// event. login. trigger.
 					$('#'+$.m.div.event).trigger('logout');
-					
-					// remove btn logout to menu.
-					$('#mIbtcSignSpin, #mIbtcKeySpin, #mIbtcLogoutSpin').remove();
 				}
 				
 				// If not btcAdr.
-				else $.tmpl.error('USER-ALREADY-NOT-CONNECTED');
+				else $.tmpl.error('WARNING_NOT_CONNECTED');
 			},
 			
 			/**
-			 * Function sign_message.
+			 * Function sign_message interne.
 			 * @param   ...
 			 */
 			sign_message: function(private_key, message, compressed, addrtype) {
@@ -600,7 +512,7 @@
 			},
 			
 			/**
-			 * Funct verify_message.
+			 * Funct verify_message interne.
 			 */
 			verify_message: function(signature, message, addrtype) {
 				

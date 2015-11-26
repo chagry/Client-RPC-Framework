@@ -1,135 +1,34 @@
 <!--
- * @version 0.5.0
+ * @version 0.7.0
  * @license MIT license
  * @link    https://chagry.com
  * @author  Grigori <git@chagry.com>
  * @package	home.home.htm
 -->
 
-<!-- Menu home 0.5 -->
-<script id="mHome" type="text/html">
-	{{#home.off}}
-		<div id="mHome" class="btn-group navbar-btn">
-			<button id='homeSpin' type="button" onClick="{{home.func.home}}" class="btn btn-warning" data-tr="HOME" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}HOME{{/TX}}">
-				<i class="fa fa-home"></i>
-			</button>
-			<button type="button" onClick="$.home.serveurHTML()" class="btn btn-warning" data-tr="DEF-SERVER" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-SERVER{{/TX}}">
-				<i class="fa fa-database"></i>
-			</button>
-			<button type="button" onClick="$.home.clientHTML()" class="btn btn-warning" data-tr="DEF-CLIENT" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}DEF-CLIENT{{/TX}}">
-				<i class="fa fa-desktop"></i>
-			</button>
-		</div>
-	{{/home.off}}
+<!--  Menu right -->
+<script id="sidebarHome" type="text/html">
+	<p id="sidebarHome" class="centered"><i class="fa fa-home fa-5x"></i></p>
+	<h5 class="centered text-uppercase">{{#T}}HOME{{/T}}</h5>
+	<!-- List menu-->
+	<li class="sub-menu">
+		<a class="cursor" onClick="$.home.homePage()"><i class="fa fa-home"></i> <span>{{#T}}HOME{{/T}}</span></a>
+	</li>
+	<li class="sub-menu">
+		<a class="cursor" onClick="$.user.homePage()"><i class="fa fa-user"></i> <span>{{#T}}MY_ACCOUNT{{/T}}</span></a>
+	</li>
 </script>
 
-<!-- Page home 0.5 -->
-<script id="home" type="text/html">
-	<!-- Titre + Desc + video bitcoin -->
-	<div class="container-fluid">
-		<div class="row topMarge-lg">
-			<div class="col-sm-6 col-md-6 col-lg-5 text-center">
-				<h2 class="text-uppercase fontH1blk">{{#T}}HOME-INTRO{{/T}}</h2>
-				<p class="lead fontPblk">{{#T}}HOME-DESC{{/T}}</p>
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="well well-sm blue text-center">
-							<h3 class="text-uppercase fontH1wt"><i class="fa fa-database"></i> {{#T}}DEF-SERVER{{/T}}<br><small>{{#T}}DEF-FRAMEWORK{{/T}}</small></h3>
-							<p class="text-justify fontPwt"> {{#T}}HOME-SERV-LABEL{{/T}}</p>
-							<div class="well well-sm noir">
-								<a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
-							</div>
-							<button type="button" onClick="$.home.serveurHTML()" class="btn btn-warning btn-block footMarge">
-								<span class="text-uppercase fontH1wt"><small><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</small></span>
-							</button>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="well well-sm blue text-center">
-							<h3 class="text-uppercase fontH1wt"><i class="fa fa-desktop"></i> {{#T}}DEF-CLIENT{{/T}}<br><small>{{#T}}DEF-FRAMEWORK{{/T}}</small></h3>
-							<p class="text-justify fontPwt"> {{#T}}HOME-CLIENT-LABEL{{/T}}</p>
-							<div class="well well-sm noir">
-								<a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
-							</div>
-							<button type="button" onClick="$.home.clientHTML()" class="btn btn-warning btn-block footMarge">
-								<span class="text-uppercase fontH1wt"><small><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</small></span>
-							</button>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<div class="col-sm-6 col-md-6 col-lg-7">
-				<div class="well well-sm noir">
-					<div id="videoChagry" class="embed-responsive embed-responsive-16by9"></div>
-				</div>
-			</div>
+<!-- Page homePage -->
+<script id="homePage" type="text/html">
+	<div class="row mt">
+		<div class="col-lg-9">
+			<h2 class="text-uppercase">{{#T}}HOME{{/T}}</h2>
+			<p class="lead">{{#T}}YOUR_TEXT_HERE{{/T}}</p>
 		</div>
-	</div>
-</script>
-
-<!-- Page serveur 0.5 -->
-<script id="serveur" type="text/html">
-	<!-- Titre + Desc + video bitcoin -->
-	<div class="container-fluid">
-		<div class="row topMarge-lg">
-			<div class="col-sm-6 col-md-6 col-lg-5 text-center">
-				<h2 class="text-uppercase fontH1blk"><i class="fa fa-database"></i> {{#T}}DEF-SERVER{{/T}}</h2>
-				<p class="lead fontPblk">{{#T}}HOME-SERV-LABEL{{/T}}</p>
-				<div class="well well-sm noir">
-					<a href="https://github.com/chagry/Server-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
-				</div>
-				<h2 class="text-uppercase fontH1blk topMarge-lg"><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</h2>
-				<div class="owl-carousel owl-theme topMarge-lg" id="owl-head">
-					{{#home.serverVid}}
-						<div class="item cursor" onClick="$.home.serverVideo({{nombre}})" style="margin:0px 10px;" data-tr="{{titre}}" data-toggle="tooltip" data-placement="top" data-container="body" title="{{#TX}}{{titre}}{{/TX}}">
-							<div class="well well-sm blue">
-								<span class="text-uppercase lead fontH1wt">{{nombre}}</span>
-								<br><span class="text-uppercase fontH1blk">{{#T}}HOME-VIDEO{{/T}}</span>
-								<br><span class="lead fontH1wt"><i class="fa fa-youtube-play"></i></span>
-							</div>
-						</div>
-					{{/home.serverVid}}
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-6 col-lg-7">
-				<div class="well well-sm noir">
-					<div id="videoTuto" class="embed-responsive embed-responsive-16by9"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</script>
-
-<!-- Page client 0.5 -->
-<script id="client" type="text/html">
-	<!-- Titre + Desc + video bitcoin -->
-	<div class="container-fluid">
-		<div class="row topMarge-lg">
-			<div class="col-sm-6 col-md-6 col-lg-5 text-center">
-				<h2 class="text-uppercase fontH1blk"><i class="fa fa-desktop"></i> {{#T}}DEF-CLIENT{{/T}}</h2>
-				<p class="lead fontPblk">{{#T}}HOME-CLIENT-LABEL{{/T}}</p>
-				<div class="well well-sm noir">
-					<a href="https://github.com/chagry/Client-RPC-Framework" target="blank"><span class="fontH1wt lead"><i class="fa fa-github-alt"></i> GitHub</span><br><span class="fontPwt">Repositorie</span></a>
-				</div>
-				<h2 class="text-uppercase fontH1blk topMarge-lg"><i class="fa fa-youtube-play"></i> {{#T}}DOC-LABEL{{/T}}</h2>
-				<div class="owl-carousel owl-theme topMarge-lg" id="owl-head">
-					{{#home.clientVid}}
-						<div class="item cursor" onClick="$.home.clientVideo({{nombre}})" style="margin:0px 10px;" data-tr="{{titre}}" data-toggle="tooltip" data-placement="top" data-container="body" title="{{#TX}}{{titre}}{{/TX}}">
-							<div class="well well-sm blue">
-								<span class="text-uppercase lead fontH1wt">{{nombre}}</span>
-								<br><span class="text-uppercase fontH1blk">{{#T}}HOME-VIDEO{{/T}}</span>
-								<br><span class="lead fontH1wt"><i class="fa fa-youtube-play"></i></span>
-							</div>
-						</div>
-					{{/home.clientVid}}
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-6 col-lg-7">
-				<div class="well well-sm noir">
-					<div id="videoTuto" class="embed-responsive embed-responsive-16by9"></div>
-				</div>
-			</div>
+		<!-- menu droit -->
+		<div class="col-lg-3 ds">
+			<h3>{{#T}}NOTIFICATIONS{{/T}}</h3>
 		</div>
 	</div>
 </script>
