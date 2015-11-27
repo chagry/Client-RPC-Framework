@@ -63,9 +63,6 @@
 						mPosY		: 0.5,
 						image		: $.m.user.img.qr,
 					});
-					
-					// Tooltip.
-					$('#conten i').tooltip();
 				}
 				
 				// Else not btc adress
