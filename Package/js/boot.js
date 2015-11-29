@@ -44,8 +44,8 @@
 				
 				// render erreur.
 				$.jGrowl($.lng.tr(e, true)+' ', { 
-					position: $.m.tmpl.error.position,
-					closeTemplate: $.m.tmpl.error.closeIcon
+					position: 'bottom-right',
+					closeTemplate: '<i class=\"fa fa-times\"></i>'
 				});
 				
 				// Play sound after 500ms.
@@ -60,8 +60,8 @@
 				
 				// render erreur.
 				$.jGrowl($.lng.tr(e, true)+' ', { 
-					position: $.m.tmpl.error.position,
-					closeTemplate: $.m.tmpl.error.closeIcon
+					position: 'bottom-right',
+					closeTemplate: '<i class=\"fa fa-times\"></i>'
 				});
 				
 				// Play sound after 500ms.

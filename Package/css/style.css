@@ -232,6 +232,7 @@ ul.top-menu > li > .logout {
     width: 210px;
     height: 100%;
     position: fixed;
+    overflow: scroll;
     background: #424a5d;
 }
 
