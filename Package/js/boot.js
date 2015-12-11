@@ -486,7 +486,7 @@ $(function() {
 		$.m.TX = function(){ return function(text, render){ return $.lng.tr(render(text))}};
 		
 		// Extend model : Func date return from now.
-		$.m.FROMNOW = function(){ return function(text, render){ return moment(render(text), 'X').fromNow()}};
+		$.m.FROMNOW = function(){ return function(text, render){ return '<span class="timeFromNow" data-timestamp="'+render(text)+'">'+moment(render(text), 'X').fromNow()+'</span>'}};
 		
 		// Extend model : Func date return LLLL.
 		$.m.LLLL = function(){ return function(text, render){ return moment(render(text), 'X').format('LLLL')}};
@@ -527,6 +527,17 @@ $(function() {
 			
 			// Tooltip menu.
 			$('#menu button').tooltip();
+			
+			// Set interval 1mn and controle tame from now.
+			setInterval(function(){
+				
+				// Parcoure les time from now in dom.
+				$('.timeFromNow').each(function() {
+					
+					// Edit text from time.
+					$(this).text(moment($(this).data('timestamp'), 'X').fromNow());
+				}); 
+			}, 60000);
 				
 			// Setup plugin.
 			$.each($.m.plug.list, function(key, val) {

@@ -19,7 +19,7 @@
 	"div" : {
 		"event"      : "container",
 		"content"    : "content",
-		"page"   	 : "page",
+		"page"   	 : "main-content",
 		"mRight"     : "menuRight",
 		"menu"       : "menu"
 	},
