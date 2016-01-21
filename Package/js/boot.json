@@ -113,7 +113,7 @@
 			"btnOver"       : "btnOver:0.1",
 			"setup"         : "setup:0.2",
 			"click"         : "top:0.1",
-			"error"         : "error0.5",
+			"error"         : "error:0.5",
 			"url"           : "sounds/",
 			"list" : [
 				"setup",
