@@ -73,6 +73,9 @@
 			 */
 			clean: function() {
 				
+				// Scroll top content.
+				window.scrollTo(0,0);
+				
 				// Clean windows.
 				$('.popover').remove();
 				$('.tooltip').remove();
@@ -528,7 +531,7 @@ $(function() {
 			// Tooltip menu.
 			$('#menu button').tooltip();
 			
-			// Set interval 1mn and controle tame from now.
+			// Set interval 1mn and controle time from now.
 			setInterval(function(){
 				
 				// Parcoure les time from now in dom.
@@ -557,6 +560,5 @@ $(function() {
 				});
 			});
 		});
-		
 	});
 });

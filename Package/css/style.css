@@ -6,8 +6,10 @@ Website: http://blacktie.co
 Premium: http://www.gridgum.com
 */
 
-/* Import fonts */
-@import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@font-face {
+    font-family: 'Ruda'; /*a name to be used later*/
+    src: url('../fonts/Ruda-Regular.ttf'); /*URL to font*/
+}
 
 /* BASIC THEME CONFIGURATION */
 body {
@@ -183,6 +185,10 @@ hr {
 	text-align: right;
 }
 
+.bigmt {
+	margin-top: 100px;
+}
+
 .mt {
 	margin-top: 25px;
 }
@@ -192,7 +198,7 @@ hr {
 }
 
 .ml {
-	margin-left: 5px;
+	margin-left: 10px;
 	}
 
 .no-padding {
@@ -234,6 +240,7 @@ ul.top-menu > li > .logout {
     position: fixed;
     overflow: scroll;
     background: #424a5d;
+    background-image: url("../img/css/bg.png");
 }
 
 #sidebar h5 {
@@ -445,7 +452,11 @@ a.logo:hover, a.logo:focus {
 }
 
 a.logo span {
-    color: #68dff0;
+    color: #287581;
+}
+
+a.logo span.blanc {
+    color: #ffffff;
 }
 
 
@@ -738,13 +749,14 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .sidebar-toggle-box {
     float: left;
-    padding-right: 15px;
-    margin-top: 20px;
+    padding-right: 8px;
+    margin-top: 18px;
 }
 
 .sidebar-toggle-box .fa-bars {
     cursor: pointer;
     display: inline-block;
+    color: white;
     font-size: 20px;
 }
 
@@ -827,8 +839,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 /* LINE ICONS CONFIGURATION */
 
 .mtbox {
-	margin-top: 80px;
-	margin-bottom: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .box1 {
@@ -1025,6 +1037,7 @@ PANELS CONFIGURATIONS
 .darkblue-panel {
 	text-align: center;
 	background: #444c57;
+	background-image: url("../img/css/bg.png");
 }
 .darkblue-panel .darkblue-header {
 	background: transparent;
@@ -1118,7 +1131,7 @@ PANELS CONFIGURATIONS
 }
 .stock .stock-chart #chart {
     height: 10.7em;
-    background: url(http://i.imgbox.com/abmuNQx2) center bottom no-repeat; 
+    background: url("../img/css/bg.png") center bottom no-repeat; 
 }    
 .stock .current-price {
   background: #1d2122;
@@ -1168,13 +1181,13 @@ PANELS CONFIGURATIONS
 
 /* Weather 1 */
 .weather {
-	background: url(../img/weather.jpg) no-repeat center top;
+	background: url(../img/btc/weather.jpg) no-repeat center top;
 	text-align: center;
 	background-position: center center;
 }
 .weather i {
 	color: white;
-	margin-top: 45px;
+	margin-top: 15px;
 }
 .weather h2 {
 	color: white;
@@ -1184,6 +1197,17 @@ PANELS CONFIGURATIONS
 	color: white;
 	font-weight: 900;
 	letter-spacing: 1px;
+}
+.weather h1 {
+	color: white;
+	font-weight: 900;
+	letter-spacing: 1px;
+}
+.weather p {
+	color: white;
+	font-weight: 900;
+	letter-spacing: 1px;
+	margin-top: 10px;
 }
 
 /* Weather 2 */
@@ -1284,7 +1308,7 @@ PANELS CONFIGURATIONS
 
 /* Instagram Panel*/
 .instagram-panel {
-	background: url(../img/instagram.jpg) no-repeat center top;
+	background: url(../img/btc/obs.jpg) no-repeat center top;
 	text-align: center;
 	background-position: center center;
 }
@@ -1328,7 +1352,7 @@ PANELS CONFIGURATIONS
 
 /* Soptify Panel */
 #spotify {
-	background: url(../img/lorde.jpg) no-repeat center top;
+	background: url(../img/btc/coldStor.jpg) no-repeat center top;
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
@@ -1357,6 +1381,7 @@ PANELS CONFIGURATIONS
 }
 #spotify .sp-title h3 {
 	font-weight: 900;
+	color: #D8930D;
 }
 #spotify .play{
 	bottom: 18%;
@@ -1372,7 +1397,7 @@ PANELS CONFIGURATIONS
 
 /* BLOG PANEL */
 #blog-bg {
-	background: url(../img/blog-bg.jpg) no-repeat center top;
+	background: url(../img/btc/microPay.jpg) no-repeat center top;
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
@@ -1497,7 +1522,7 @@ PANELS CONFIGURATIONS
 /* PROFILE PANELS */
 /* Profile 01*/
 #profile-01 {
-	background: url(../img/profile-01.jpg) no-repeat center top;
+	background: url(../img/btc/profile-01.jpg) no-repeat center top;
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
@@ -1545,7 +1570,7 @@ PANELS CONFIGURATIONS
 
 /* Profile 02*/
 #profile-02 {
-	background: url(../img/profile-02.jpg) no-repeat center top;
+	background: url(../img/btc/profile-02.jpg) no-repeat center top;
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
@@ -2254,3 +2279,20 @@ label {
 	cursor: pointer;
 }
 
+.scrollable-menu {
+    height: auto;
+    max-height: 300px;
+    overflow-x: hidden;
+}
+
+.hfix {
+    height: auto;
+    max-height: 220px;
+	border-radius: 4px;
+    overflow-x: hidden;
+    border: 5px solid #ffffff;
+}
+
+.table {
+	margin-bottom: 0px;
+}

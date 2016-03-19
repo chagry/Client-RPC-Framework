@@ -3,10 +3,9 @@
 	<head>
 		<!-- start: Meta -->
 		<meta charset="utf-8" />
-		<title>Chagry Framework</title>
-		<meta name="description" content="Chagry Framework." />
-		<meta name="author" content="Chagry" />
-		<meta name="keyword" content="No Word" />
+		<title>Cold Bitcoin Wallet</title>
+		<meta name="description" content="A wallet that exists nowhere except in your brain. Simply enter your passphrase to access to your bitcoin wallet. Easy to use. No registration or account validation." />
+		<meta name="keyword" content="wallet, wallets, bitcoin, bitcoins, coin, crypto, currency, cryptocurrency, exchange, exchanges, markets, market, transaction, payments, payment, paypal, passphrase, blockchain, account, withdrawal, deposit, cash, funds, paper wallet" />
 		
 		<!-- start: Mobile Specific -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,7 +40,7 @@
 					<div class="fa fa-bars"></div>
 				</div>
 				<!--logo start-->
-				<a class="logo"><b>LOGO</b></a>
+				<a class="logo"><b><span class="text-info">MIR</span><span class="blanc hidden-xs">COIN</span></b></a>
 				<!--menu start-->
 				<div class="top-menu">
 					<div id="menu" class="btn-toolbar nav pull-right top-menu"></div>
@@ -58,9 +57,10 @@
 						</ul>
 					</div>
 				</aside>
+				
 				<!--main content start-->
 				<section id="main-content">
-					<section id="page" class="wrapper site-min-height">
+					<section class="wrapper">
 						<div class="row">
 							<div class="col-lg-9 page-header text-center">
 								<h1><i class="fa fa-spinner fa-spin"></i> LOADING...</h1>
@@ -70,7 +70,6 @@
 				</section>
 			</div>
 			<!--footer start-->
-			<footer class="site-footer"><div class="text-center">CHAGRY - FRAMEWORK <a class="go-top"><i class="fa fa-lock"></i></a></div></footer>	
 		</section>
 		<!-- HTML -->
 		
@@ -111,16 +110,21 @@
 		<script type="text/javascript" src="js/lib/jquery.shuffle.js"></script>
 		<!-- plug: Bitcoinjs -->
 		<script type="text/javascript" src="js/lib/bitcoinjs-min.js"></script>
+		<script type="text/javascript" src="js/lib/money.min.js"></script>
+		<script type="text/javascript" src="js/lib/accounting.min.js"></script>
+		<!-- plug: qr code scan -->
+		<script type="text/javascript" src="js/lib/html5-qrcode.min.js"></script>
+		<script type="text/javascript" src="js/lib/jsqrcode-combined.min.js"></script>
 		
 		<!-- mod: Api Module -->
 		<script type="text/javascript" src="mod/user/user.js"></script>
 		<script type="text/javascript" src="mod/home/home.js"></script>
 		
 		<!--common script for all pages template dashgumfree_v2 -->
-		<script type="text/javascript" src="js/lib/common-scripts.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.scrollTo.min.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.nicescroll.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.dcjqaccordion.2.7.js"></script>
+		<script type="text/javascript" src="js/lib/common-scripts.js"></script>
 		
 		<!-- start: Framework Chagry -->
 		<script type="text/javascript" src="js/boot.js"></script>

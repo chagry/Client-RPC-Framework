@@ -6,44 +6,17 @@
  * @package	user.user.htm
 -->
 
-<!-- Menu right -->
-<script id="sidebarUser" type="text/html">
-	<p id="sidebarUser" class="centered"><i class="fa fa-user fa-5x"></i></p>
-	<h5 class="centered text-uppercase">{{#T}}MY_ACCOUNT{{/T}}</h5>
-	<!-- List menu-->
-	<li class="sub-menu">
-		<a class="cursor" onClick="$.home.homePage()"><i class="fa fa-hand-o-left"></i> <span>{{#T}}BACK{{/T}}</span></a>
-	</li>
-	<li class="sub-menu">
-		<a class="cursor" onClick="$.user.homePage()"><i class="fa fa-dashboard"></i> <span>{{#T}}DASHBOARD{{/T}}</span></a>
-	</li>
-	<li class="sub-menu">
-		<a class="cursor" onClick="$.user.verifHTML()"><i class="fa fa-shield"></i> <span>{{#T}}CONTROL_SIGN{{/T}}</span></a>
-	</li>
-	{{#user.wallet.adr}}
-		<li class="sub-menu">
-			<a class="cursor" onClick="$.user.signHTML()"><i class="fa fa-pencil"></i> <span>{{#T}}SIGNATURE{{/T}}</span></a>
-		</li>
-		<li class="sub-menu">
-			<a class="cursor" onClick="$.user.keyHTML()"><i class="fa fa-key"></i> <span>{{#T}}PRIVAT_KEY{{/T}}</span></a>
-		</li>
-		<li class="sub-menu">
-			<a class="cursor" onClick="$.user.sendLogout()"><i class="fa fa-power-off"></i> <span>{{#T}}LOGOUT{{/T}}</span></a>
-		</li>
-	{{/user.wallet.adr}}
-</script>
-
 <!-- Page userHomePage form login -->
 <script id="userHomePage" type="text/html">
-	<section id="userHomePage" class="wrapper site-min-height">
+	<section id="userHomePage" class="wrapper">	
 		<div class="row mt">
-			<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+			<div class="col-sm-7 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2">
 				<h2 class="text-uppercase"><i class="fa fa-power-off"></i> {{#T}}LOGIN{{/T}}</h2>
 				<form id="formLogin" role="form">
 					<div class="panel green-panel">
 						<div class="panel-body">
 							<p class="text-uppercase text-left">
-								{{#T}}PASS_PHRASE{{/T}} <i class="fa fa-question-circle" data-tr="PASS_PHRASE_COMPLEXE_LABEL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}PASS_PHRASE_COMPLEXE_LABEL{{/TX}}"></i>
+								{{#T}}PASS_PHRASE{{/T}}
 							</p>
 							<div class="form-group">
 								<textarea class="form-control text-left" name="passPhrase" id="passPhrase" placeholder="{{#TX}}USER_PASS_PHRASE_EX{{/TX}}" rows="4"></textarea>
@@ -52,7 +25,7 @@
 							<div class="panel darkblue-panel no-margin text-center">
 								<div class="panel-body">
 									<p class="text-uppercase text-left">
-										{{#T}}NEW_CODE_PIN{{/T}} <i class="fa fa-question-circle" data-tr="CREAT_NEW_CODE_PIN_LABEL" data-toggle="tooltip" data-placement="bottom" data-container="body" title="{{#TX}}CREAT_NEW_CODE_PIN_LABEL{{/TX}}"></i>
+										{{#T}}NEW_CODE_PIN{{/T}}
 									</p>
 									{{>pinPartials}}
 								</div>
@@ -64,13 +37,35 @@
 					</div>
 				</form>
 			</div>
+			<!-- menu droit -->
+			<div class="col-sm-5 col-md-5 col-lg-4 pull-right ds">
+				<h3 class="text-uppercase">{{#T}}LOGIN{{/T}}</h3>
+				<div class="text-center">
+					<h1><i class="fa fa-users fa-3x"></i></h1>
+					<p class="text-center lead mt mb">{{#T}}YOU_SOLE_OWNER_SECRET_SENTENCE{{/T}}</p>
+					
+					<div class="panel green-panel">
+						<div class="panel-body">
+							<p class="text-left lead">{{#T}}PASS_PHRASE{{/T}} <i class="fa fa-question-circle"></i></p>
+							<p class="text-justify">{{#T}}PASS_PHRASE_COMPLEXE_LABEL{{/T}}</p>
+						</div>
+					</div>
+					
+					<div class="panel darkblue-panel">
+						<div class="panel-body">
+							<p class="text-left lead">{{#T}}NEW_CODE_PIN{{/T}} <i class="fa fa-question-circle"></i></p>
+							<p class="text-justify"><i class="fa fa-lock fa-4x pull-left"></i> {{#T}}CREAT_NEW_CODE_PIN_LABEL{{/T}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </script>
 
 <!-- Page verifHTML -->
 <script id="verifHTML" type="text/html">
-	<section id="verifHTML" class="wrapper site-min-height">
+	<section id="verifHTML" class="wrapper">
 		<div class="row mt">
 			<div class="col-sm-7 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2">
 				<h2 class="text-uppercase"><i class="fa fa-shield"></i> {{#T}}CONTROL_SIGN{{/T}}</h2>
@@ -108,10 +103,16 @@
 				</form>
 			</div>
 			<!-- menu droit -->
-			<div class="col-sm-5 col-md-4 pull-right ds">
-				<h3 class="text-uppercase">{{#T}}NOTIFICATIONS{{/T}}</h3>
+			<div class="col-sm-5 col-md-5 col-lg-4 pull-right ds">
+				<h3 class="text-uppercase">{{#T}}VERIFICATION{{/T}}</h3>
 				<div id="verifMess" class="text-center">
 					{{>verifDefautPart}}
+				</div>
+				<hr>
+				<div class="panel green-panel">
+					<div class="panel-body">
+						<p class="text-justify"><i class="fa fa-question-circle fa-5x pull-left"></i> {{#T}}SIGN_MESS_AND_VALIDE_ADDR{{/T}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -122,19 +123,18 @@
 <script id="valideSignPart" type="text/html">
 	<h4 class="text-uppercase">{{#T}}CONTROL_SIGN{{/T}}</h4>
 	<h1><i class="fa fa-check-circle fa-5x"></i></h1>
-	<p class="text-center">{{#T}}VALIDE_SIGN{{/T}}</p>
+	<p class="text-center lead">{{#T}}VALIDE_SIGN{{/T}}</p>
 </script>
 
 <!-- Partials verif defaut -->
 <script id="verifDefautPart" type="text/html">
-	<h4 class="text-uppercase">{{#T}}CONTROL_SIGN{{/T}}</h4>
 	<h1><i class="fa fa-shield fa-5x"></i></h1>
-	<p class="text-center">{{#T}}SECTION_VERIF_MESS_AND_SIGN{{/T}}</p>
+	<p class="text-center lead">{{#T}}SECTION_VERIF_MESS_AND_SIGN{{/T}}</p>
 </script>
 
 <!-- Page signHTML -->
 <script id="signHTML" type="text/html">
-	<section id="signHTML" class="wrapper site-min-height">
+	<section id="signHTML" class="wrapper">
 		<div class="row mt">
 			<div class="col-sm-7 col-md-5 col-lg-4 col-md-offset-1 col-lg-offset-2">
 				<h2 class="text-uppercase"><i class="fa fa-pencil"></i> {{#T}}SIGNATURE{{/T}}</h2>
@@ -163,12 +163,17 @@
 				</form>
 			</div>
 			<!-- Notification -->
-			<div class="col-sm-5 col-md-4 pull-right ds">
-				<h3 class="text-uppercase">{{#T}}NOTIFICATIONS{{/T}}</h3>
+			<div class="col-sm-5 col-md-5 col-lg-4 pull-right ds">
+				<h3 class="text-uppercase">{{#T}}SIGNATURE{{/T}}</h3>
 				<div id="signMess" class="text-center">
-					<h4 class="text-uppercase">{{#T}}SIGN_OF_MESS_INPUT{{/T}}</h4>
 					<h1><i class="fa fa-pencil-square fa-5x"></i></h1>
-					<p class="text-center">{{#T}}SECTION_SIGN_MESS{{/T}}</p>
+					<p class="text-center lead">{{#T}}SECTION_SIGN_MESS{{/T}}</p>
+				</div>
+				<hr>
+				<div class="panel green-panel">
+					<div class="panel-body">
+						<p class="text-justify"><i class="fa fa-question-circle fa-5x pull-left"></i> {{#T}}SIGN_MESS_AND_VALIDE_ADDR{{/T}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -177,8 +182,7 @@
 
 <!-- Partials good Sign -->
 <script id="goodSignPart" type="text/html">
-	<h4 class="text-uppercase">{{#T}}SIGN_OF_MESS_INPUT{{/T}}</h4>
-	<p class="text-center">{{#T}}SIGN_RESULT_GOOD{{/T}}</p>
+	<p class="text-center lead mt">{{#T}}SIGN_RESULT_GOOD{{/T}}</p>
 	<pre>{{user.wallet.sign}}</pre>
 	<h4 class="text-uppercase">{{#T}}MESSAGE{{/T}}</h4>
 	<p class="text-center">{{user.wallet.mess}}</p>
@@ -186,9 +190,9 @@
 
 <!-- Page keyHTML -->
 <script id="keyHTML" type="text/html">
-	<section id="keyHTML" class="wrapper site-min-height">
+	<section id="keyHTML" class="wrapper">
 		<div class="row mt">
-			<div id="keyQrCode" class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+			<div id="keyQrCode" class="col-sm-7 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
 				<h2 class="text-uppercase"><i class="fa fa-key"></i> {{#T}}PRIVAT_KEY{{/T}}</h2>
 				<form id="formKey" role="form">
 					<div class="panel green-panel">
@@ -203,6 +207,19 @@
 						</div>
 					</div>
 				</form>
+			</div>
+			<!-- Notification -->
+			<div class="col-sm-5 col-md-5 col-lg-4 pull-right ds">
+				<h3 class="text-uppercase">{{#T}}PRIVAT_KEY{{/T}}</h3>
+				<div id="signMess" class="text-center">
+					<h1><i class="fa fa-key fa-5x"></i></h1>
+				</div>
+				<hr>
+				<div class="panel green-panel">
+					<div class="panel-body">
+						<p class="text-justify"><i class="fa fa-exclamation-triangle fa-5x pull-left"></i> {{#T}}PRIVAT_KEY_WARNING_LABEL{{/T}}</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -223,20 +240,15 @@
 
 <!-- Page wallet -->
 <script id="wallet" type="text/html">
-	<section id="wallet" class="wrapper site-min-height">
+	<section id="wallet" class="wrapper">
 		<div class="row mt">
 			<!-- wallet -->
 			<div id="wallet" class="col-sm-6 col-md-7 col-lg-8 text-center">
 				<h1 class="text-uppercase text-left"><i class="fa fa-credit-card"></i> {{#T}}WALLET{{/T}}</h1>
 				<p class="text-left">{{user.wallet.adr}}</p>
-				<div id="SoldeBody">
-					<a href="https://blockchain.info/address/{{user.wallet.adr}}" target="blank" class="btn btn-info btn-lg btnSync">
-						<small class="text-uppercase"><i id="btnSyncIcon" class="fa fa-retweet"></i> {{#T}}SYNCHRONISATION{{/T}}</small>
-					</a>
-				</div>
 			</div>
 			<!-- Addr btc & qrcode -->
-			<div class="col-sm-6 col-md-5 col-lg-4">
+			<div class="col-sm-8 col-md-6 col-lg-4 col-lg-offset-4 col-md-offset-3 col-sm-offset-2">
 				<h2 class="text-uppercase"><i class="fa fa-btc"></i> {{#T}}BITCOIN{{/T}}</h2>
 				<div class="panel grey-panel">
 					<div class="panel-body">
@@ -295,3 +307,4 @@
 		<i class="fa fa-{{user.messPass.icone}} fa-3x pull-left"></i> <small><strong>{{#T}}{{user.messPass.message}}{{/T}}</strong> {{#T}}PHRASE_WARNING_MESS{{/T}}</small>
 	</div>
 </script>
+

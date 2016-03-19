@@ -37,7 +37,18 @@
 				$.tmpl.clean();
 				
 				// Verif si menu user prensant dans le dom.
-				if(!$('#sidebarUser').length) $('#'+$.m.div.mRight).empty().mustache('sidebarUser', $.m);
+				if(!$('#sidebarHome').length) $('#'+$.m.div.mRight).empty().mustache('sidebarHome', $.m);
+				
+				// Boucle btn body.
+				$('#'+$.m.div.mRight+' .sub-menu').each(function() {
+					
+					// hover btn
+					$(this).mouseenter(function() {
+						
+						// Play sound.
+						$.voix.play($.m.voix.sound.btnOver);
+					});
+				});
 				
 				// If btc adress exist
 				if($.m.user.wallet.adr) {
@@ -77,11 +88,11 @@
 					// event. Form send. listen.
 					$('#formLogin').on('formLogin', $.user.sendLogin);
 					
-					// Tooltip.
-					$('#conten i').tooltip();
-					
 					// Controle pass phrase for complexity.
 					$('#formLogin #passPhrase').keyup($.user.passPhraseControl);
+					
+					// Tooltip page.
+					$('#'+$.m.div.page+' span').tooltip();
 				}
 			},
 			
@@ -368,6 +379,9 @@
 				
 				// event. Form send. listen.
 				$('#formVerif').on('formVerif', $.user.verifFUNC);
+				
+				// Tooltip page.
+				$('#'+$.m.div.page+' span').tooltip();
 			},
 			
 			/**
@@ -427,6 +441,9 @@
 					
 					// Setup html.
 					$.user.homePage();
+					
+					// Play sound.
+					$.voix.play($.m.voix.sound.click);
 				}
 				
 				// If not btcAdr.

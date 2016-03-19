@@ -1,10 +1,10 @@
 {
-	"api"            : "http://DOMAINE.COM/api/",
-	"protocol"       : "http",
+	"api"            : "https://api.api/api/",
+	"protocol"       : "https",
 	"lng" : {
 		"off"        : true,
 		"list"       : ["en","fr"],
-		"url"        : "http://DOMAINE.COM/translate/",
+		"url"        : "translate/",
 		"file"       : "defaut",
 		"langue"     : false,
 		"cookie"     : "langueClient",
@@ -56,7 +56,17 @@
 			"som" : {
 				"number"    : true
 			},
+			"cles" : {
+				"required"  : true,
+				"minlength" : 32,
+				"maxlength" : 124
+			},
 			"btcadr" : {
+				"required"  : true,
+				"minlength" : 32,
+				"alphanumeric" : true
+			},
+			"ticket" : {
 				"required"  : true,
 				"minlength" : 32,
 				"alphanumeric" : true
@@ -86,10 +96,20 @@
 			"som" : {
 				"number"    : "FORM_WARNING_SOM_INVALID"
 			},
+			"cles" : {
+				"required"  : "FORM_WARNING_KEY_REQUIRED",
+				"minlength"  : "FORM_WARNING_KEY_REQUIRED",
+				"maxlength"  : "FORM_WARNING_KEY_REQUIRED"
+			},
 			"btcadr" : {
 				"required"  : "FORM_WARNING_ADDR_BTC_REQUIRED",
 				"minlength" : "FORM_WARNING_ADDR_BTC_INVALID",
 				"alphanumeric" : "FORM_WARNING_ADDR_BTC_INVALID"
+			},
+			"ticket" : {
+				"required"  : "FORM_WARNING_TICKET_CODE_REQUIRED",
+				"minlength" : "FORM_WARNING_TICKET_CODE_INVALID",
+				"alphanumeric" : "FORM_WARNING_TICKET_CODE_INVALID"
 			},
 			"password" : {
 				"required"  : "FORM_WARNING_CODE_PIN_REQUIRED",
@@ -113,7 +133,7 @@
 			"btnOver"       : "btnOver:0.1",
 			"setup"         : "setup:0.2",
 			"click"         : "top:0.1",
-			"error"         : "error:0.5",
+			"error"         : "error:0.1",
 			"url"           : "sounds/",
 			"list" : [
 				"setup",
