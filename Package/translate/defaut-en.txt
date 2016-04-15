@@ -413,6 +413,8 @@ VI                                    Virgin Islands (US)
 YE                                    Yemen
 ZM                                    Zambia
 ZW                                    Zimbabwe
+WW                                    Unknown
+GL                                    Greenland
 
 // Server error default.                  
                   

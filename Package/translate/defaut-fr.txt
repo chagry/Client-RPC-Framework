@@ -415,6 +415,8 @@ VN                                    Viêtnam
 YE                                    Yémen
 ZM                                    Zambie
 ZW                                    Zimbabwe
+WW                                    Inconnu
+GL                                    Groenland
 
 // Server error default.                         
                          
