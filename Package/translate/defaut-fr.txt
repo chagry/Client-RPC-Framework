@@ -417,6 +417,9 @@ ZM                                    Zambie
 ZW                                    Zimbabwe
 WW                                    Inconnu
 GL                                    Groenland
+AM                                    Arménie
+IR                                    Iran
+SC                                    Seychelles
 
 // Server error default.                         
                          
