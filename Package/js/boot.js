@@ -404,9 +404,6 @@
 					// New cookie.
 					$.cookie('voixSound', 0);
 					
-					// Change btn color.
-					$('#mSound').removeClass('btn-primary').addClass('btn-primary');
-					
 					// Change btn icon.
 					$('#mSound i').removeClass('fa-volume-up').addClass('fa-volume-off');
 				}
@@ -425,9 +422,6 @@
 					
 					// Play sound.
 					$.voix.play($.m.voix.sound.click);
-					
-					// Change btn color.
-					$('#mSound').removeClass('btn-primary').addClass('btn-primary');
 					
 					// Change btn icon.
 					$('#mSound i').removeClass('fa-volume-off').addClass('fa-volume-up');

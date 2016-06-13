@@ -513,6 +513,8 @@ DEMO                                  Demonstration
 GENERATED                             Generate
 CHOSE_COLOR                           Choose your color
 SCAN                                  Scan
+EMPTY                                 Empty
+YOUR_TEXT                             Your text here
 MY_LEVEL                              My level
 DOCUMENTATION                         Documentation
 MAKE_A_PAYMENT                        Make a payment

@@ -27,7 +27,8 @@
 		"url"        : "mod/",
 		"list" : [
 			"user",
-			"home"
+			"home",
+			"empty"
 		]
 	},
 	"tmpl" : {

@@ -521,6 +521,8 @@ OBSERVER                              Observateur
 SCAN_QR_CODE                          QR Code scanner
 CLOSE                                 Fermer
 SCAN                                  Scan
+EMPTY                                 Vide
+YOUR_TEXT                             Votre texte ici
 MY_LEVEL                              Mon niveau
 FREE_BITCOIN                          Bitcoin gratuit
 DOCUMENTATION                         Documentation
