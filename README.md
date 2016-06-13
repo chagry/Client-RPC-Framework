@@ -12,6 +12,8 @@ Consult the website [Chagry](http://chagry.com/)
 
 ***
 
+![logo](Doc/a1.jpg)
+
 # Acknowledgments
 
 * [Bitcoinjs](http://bitcoinjs.org/) Library for Bitcoin JavaScript development.
