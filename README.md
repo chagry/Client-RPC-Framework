@@ -1,6 +1,6 @@
 ![logo](http://chagry.com/img/css/logo-menu.png)
 
-Consult the website [Chagry](http://chagry.com/)
+Consult the Lab [here](http://chagry.github.io/)
 
 [![Chagry Framework](http://img.youtube.com/vi/FOWqazj5Bb0/0.jpg)](http://www.youtube.com/watch?v=FOWqazj5Bb0)
 
@@ -9,6 +9,7 @@ Consult the website [Chagry](http://chagry.com/)
 # Documentation
 
 * [**Techniques manual and video**](Doc/Client-JS-Doc.md)
+* [**Lab**](http://chagry.github.io/)
 
 ***
 
