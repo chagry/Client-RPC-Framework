@@ -1,5 +1,3 @@
-![logo](http://chagry.com/img/css/logo-menu.png)
-
 Consult the Lab [here](http://chagry.github.io/)
 
 [![Chagry Framework](http://img.youtube.com/vi/FOWqazj5Bb0/0.jpg)](http://www.youtube.com/watch?v=FOWqazj5Bb0)
@@ -8,7 +6,7 @@ Consult the Lab [here](http://chagry.github.io/)
 
 # Documentation
 
-* [**Techniques manual and video**](Doc/Client-JS-Doc.md)
+* [**Techniques manual and video**](Doc/README.md)
 * [**Lab**](http://chagry.github.io/)
 
 ***
@@ -43,15 +41,13 @@ Consult the Lab [here](http://chagry.github.io/)
 * [topzindex](https://code.google.com/p/topzindex/) Calculates the highest CSS z-index value in the current document.
 * [PaginateTable](https://github.com/dynamo-media/jquery.paginateTable) Paginate Table.
 * [Animate](https://daneden.github.io/animate.css/) Just-add-water CSS animations.
+* [Showdown](https://github.com/showdownjs/showdown) A Markdown to HTML converter written in Javascript. 
+* [Highlight](https://highlightjs.org/) Syntax highlighting for the Web.
+* [Money](http://josscrowcroft.github.io/money.js/) Is a realtime JavaScript currency conversion library with no dependencies.
+* [Accounting](https://josscrowcroft.github.io/accounting.js/) is a tiny JavaScript library for number, money and currency formatting.
 
 ***
 
 # License
 
 Released under the [ MIT license](http://opensource.org/licenses/mit-license.php).
-
-***
-
-# Contribution
-
-You can also help us translating the documentation in other languages.

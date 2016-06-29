@@ -1,7 +1,3 @@
-![logo](http://chagry.com/img/css/logo-menu.png)
-
-***
-
 # Doc Client JS
 
 Documentation for Client jQuery framework.
@@ -22,6 +18,6 @@ Documentation for Client jQuery framework.
 
 ***
 
-# Contribution
+# Visit the lab.
 
-You can also help us translating the documentation in other languages.
+* Consult the Lab [here](http://chagry.github.io/).
